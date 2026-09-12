@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Zaghouan — Tunisia Water Watch</title>
+<meta name="description" content="Independent, satellite-based monitoring of Tunisia's dams and agriculture.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💧</text></svg>">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Tunisia Water Watch</a>
+    <nav>
+      <a href="../index.html">Dams</a>
+      <a href="../agriculture.html">Agriculture</a>
+      <a href="../about.html">About</a>
+      <a href="https://github.com/geminimir/water-watch" target="_blank" rel="noopener">Source</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+
+
+
+<nav class="crumbs"><a href="../agriculture.html">← All governorates</a></nav>
+
+<section class="dam-header">
+  <h1>Zaghouan</h1>
+  <p class="muted">North region · Focus: cereals / olive</p>
+</section>
+
+<section class="stats">
+  <div class="stat">
+    <div class="stat-value">0.239</div>
+    <div class="stat-label">NDVI (greenness) — 2026-08-20</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">-0.129</div>
+    <div class="stat-label">NDMI (canopy moisture)</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">11%</div>
+    <div class="stat-label">Pixels healthy (NDVI &gt; 0.3 &amp; NDMI &gt; 0)</div>
+  </div>
+  <div class="stat drought-green">
+    <div class="stat-value">43</div>
+    <div class="stat-label">Composite drought severity (normal)</div>
+  </div>
+</section>
+
+<section class="chart-section">
+  <canvas id="gov-chart" height="120"></canvas>
+</section>
+
+<section class="table-section">
+  <h2>Recent readings</h2>
+  <table class="readings">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th class="num">NDVI</th>
+        <th class="num">NDMI</th>
+        <th class="num">Healthy %</th>
+        <th class="num">Cloud %</th>
+        <th class="num">Confidence</th>
+        <th>Scene</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr>
+        <td>2026-08-20</td>
+        <td class="num">0.239</td>
+        <td class="num">-0.129</td>
+        <td class="num">11</td>
+        <td class="num">0</td>
+        <td class="num">1.00</td>
+        <td class="tiny">S2B_32SNF_20260820_0_L2A</td>
+      </tr>
+      
+      <tr>
+        <td>2026-07-25</td>
+        <td class="num">0.223</td>
+        <td class="num">-0.098</td>
+        <td class="num">10</td>
+        <td class="num">0</td>
+        <td class="num">1.00</td>
+        <td class="tiny">S2A_32SNF_20260725_0_L2A</td>
+      </tr>
+      
+      <tr>
+        <td>2026-06-18</td>
+        <td class="num">0.281</td>
+        <td class="num">-0.077</td>
+        <td class="num">17</td>
+        <td class="num">0</td>
+        <td class="num">1.00</td>
+        <td class="tiny">S2B_32SNF_20260618_0_L2A</td>
+      </tr>
+      
+      <tr>
+        <td>2026-05-29</td>
+        <td class="num">0.324</td>
+        <td class="num">-0.035</td>
+        <td class="num">25</td>
+        <td class="num">0</td>
+        <td class="num">1.00</td>
+        <td class="tiny">S2B_32SPF_20260529_0_L2A</td>
+      </tr>
+      
+      <tr>
+        <td>2026-04-07</td>
+        <td class="num">0.571</td>
+        <td class="num">0.161</td>
+        <td class="num">79</td>
+        <td class="num">0</td>
+        <td class="num">1.00</td>
+        <td class="tiny">S2C_32SNF_20260407_0_L2A</td>
+      </tr>
+      
+      <tr>
+        <td>2026-03-18</td>
+        <td class="num">0.585</td>
+        <td class="num">0.164</td>
+        <td class="num">82</td>
+        <td class="num">0</td>
+        <td class="num">1.00</td>
+        <td class="tiny">S2C_32SNF_20260318_0_L2A</td>
+      </tr>
+      
+      <tr>
+        <td>2026-02-26</td>
+        <td class="num">0.532</td>
+        <td class="num">0.108</td>
+        <td class="num">71</td>
+        <td class="num">0</td>
+        <td class="num">1.00</td>
+        <td class="tiny">S2C_32SNF_20260226_0_L2A</td>
+      </tr>
+      
+      <tr>
+        <td>2026-01-09</td>
+        <td class="num">0.433</td>
+        <td class="num">0.013</td>
+        <td class="num">44</td>
+        <td class="num">0</td>
+        <td class="num">1.00</td>
+        <td class="tiny">S2A_32SNF_20260109_0_L2A</td>
+      </tr>
+      
+      <tr>
+        <td>2025-12-08</td>
+        <td class="num">0.340</td>
+        <td class="num">-0.083</td>
+        <td class="num">23</td>
+        <td class="num">0</td>
+        <td class="num">0.99</td>
+        <td class="tiny">S2C_32SNF_20251208_0_L2A</td>
+      </tr>
+      
+      <tr>
+        <td>2025-11-30</td>
+        <td class="num">0.346</td>
+        <td class="num">-0.072</td>
+        <td class="num">24</td>
+        <td class="num">0</td>
+        <td class="num">1.00</td>
+        <td class="tiny">S2A_32SNF_20251130_1_L2A</td>
+      </tr>
+      
+      <tr>
+        <td>2025-10-08</td>
+        <td class="num">0.283</td>
+        <td class="num">-0.107</td>
+        <td class="num">16</td>
+        <td class="num">0</td>
+        <td class="num">1.00</td>
+        <td class="tiny">S2A_32SNF_20251008_0_L2A</td>
+      </tr>
+      
+      <tr>
+        <td>2025-09-01</td>
+        <td class="num">0.255</td>
+        <td class="num">-0.118</td>
+        <td class="num">13</td>
+        <td class="num">0</td>
+        <td class="num">1.00</td>
+        <td class="tiny">S2A_32SNF_20250901_0_L2A</td>
+      </tr>
+      
+      <tr>
+        <td>2025-08-25</td>
+        <td class="num">0.245</td>
+        <td class="num">-0.127</td>
+        <td class="num">12</td>
+        <td class="num">0</td>
+        <td class="num">1.00</td>
+        <td class="tiny">S2B_32SNF_20250825_0_L2A</td>
+      </tr>
+      
+      <tr>
+        <td>2025-07-23</td>
+        <td class="num">0.225</td>
+        <td class="num">-0.116</td>
+        <td class="num">10</td>
+        <td class="num">0</td>
+        <td class="num">1.00</td>
+        <td class="tiny">S2A_32SNF_20250723_0_L2A</td>
+      </tr>
+      
+      <tr>
+        <td>2025-06-23</td>
+        <td class="num">0.256</td>
+        <td class="num">-0.119</td>
+        <td class="num">10</td>
+        <td class="num">0</td>
+        <td class="num">1.00</td>
+        <td class="tiny">S2B_32SPF_20250623_1_L2A</td>
+      </tr>
+      
+      <tr>
+        <td>2025-05-31</td>
+        <td class="num">0.303</td>
+        <td class="num">-0.075</td>
+        <td class="num">18</td>
+        <td class="num">0</td>
+        <td class="num">1.00</td>
+        <td class="tiny">S2A_32SNF_20250531_0_L2A</td>
+      </tr>
+      
+      <tr>
+        <td>2025-04-19</td>
+        <td class="num">0.508</td>
+        <td class="num">0.103</td>
+        <td class="num">74</td>
+        <td class="num">0</td>
+        <td class="num">1.00</td>
+        <td class="tiny">S2C_32SNF_20250419_0_L2A</td>
+      </tr>
+      
+      <tr>
+        <td>2025-03-15</td>
+        <td class="num">0.531</td>
+        <td class="num">0.215</td>
+        <td class="num">92</td>
+        <td class="num">1</td>
+        <td class="num">0.99</td>
+        <td class="tiny">S2B_32SNF_20250315_0_L2A</td>
+      </tr>
+      
+      <tr>
+        <td>2025-02-16</td>
+        <td class="num">0.631</td>
+        <td class="num">0.219</td>
+        <td class="num">87</td>
+        <td class="num">0</td>
+        <td class="num">0.99</td>
+        <td class="tiny">S2B_32SPF_20250216_0_L2A</td>
+      </tr>
+      
+      <tr>
+        <td>2025-01-24</td>
+        <td class="num">0.568</td>
+        <td class="num">0.165</td>
+        <td class="num">79</td>
+        <td class="num">0</td>
+        <td class="num">1.00</td>
+        <td class="tiny">S2B_32SNF_20250124_0_L2A</td>
+      </tr>
+      
+      <tr>
+        <td>2024-12-10</td>
+        <td class="num">0.505</td>
+        <td class="num">0.091</td>
+        <td class="num">64</td>
+        <td class="num">0</td>
+        <td class="num">1.00</td>
+        <td class="tiny">S2A_32SNF_20241210_0_L2A</td>
+      </tr>
+      
+      <tr>
+        <td>2024-11-25</td>
+        <td class="num">0.449</td>
+        <td class="num">0.030</td>
+        <td class="num">51</td>
+        <td class="num">0</td>
+        <td class="num">1.00</td>
+        <td class="tiny">S2B_32SNF_20241125_0_L2A</td>
+      </tr>
+      
+      <tr>
+        <td>2024-10-01</td>
+        <td class="num">0.213</td>
+        <td class="num">-0.159</td>
+        <td class="num">7</td>
+        <td class="num">0</td>
+        <td class="num">1.00</td>
+        <td class="tiny">S2A_32SNF_20241001_0_L2A</td>
+      </tr>
+      
+      <tr>
+        <td>2024-09-01</td>
+        <td class="num">—</td>
+        <td class="num">—</td>
+        <td class="num">—</td>
+        <td class="num">0</td>
+        <td class="num">—</td>
+        <td class="tiny">S2A_32SNF_20240901_0_L2A</td>
+      </tr>
+      
+    </tbody>
+  </table>
+</section>
+
+<p class="muted small">
+  Composite severity combines NDVI z-score (vs same-month history),
+  NDMI z-score, and regional dam pct-of-average, each weighted by measurement
+  confidence. Higher = drier than typical.
+</p>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script>
+const series = [{"date": "2022-01-30", "mean_ndvi": 0.4608, "mean_ndmi": 0.046, "healthy_pct": 53.75, "cloud_pct": 0.6, "confidence": 0.994, "scene_id": "S2B_32SPF_20220130_1_L2A"}, {"date": "2022-02-09", "mean_ndvi": 0.465, "mean_ndmi": 0.0511, "healthy_pct": 55.88, "cloud_pct": 0.3, "confidence": 0.997, "scene_id": "S2B_32SPF_20220209_0_L2A"}, {"date": "2022-03-29", "mean_ndvi": 0.4856, "mean_ndmi": 0.0899, "healthy_pct": 68.47, "cloud_pct": 9.9, "confidence": 0.901, "scene_id": "S2A_32SPF_20220329_0_L2A"}, {"date": "2022-04-08", "mean_ndvi": 0.4908, "mean_ndmi": 0.0812, "healthy_pct": 64.8, "cloud_pct": 0.0, "confidence": 1.0, "scene_id": "S2A_32SNF_20220408_0_L2A"}, {"date": "2022-05-15", "mean_ndvi": 0.3128, "mean_ndmi": -0.0712, "healthy_pct": 19.06, "cloud_pct": 0.0, "confidence": 1.0, "scene_id": "S2A_32SNF_20220515_0_L2A"}, {"date": "2022-06-24", "mean_ndvi": 0.2018, "mean_ndmi": -0.1198, "healthy_pct": 6.65, "cloud_pct": 0.0, "confidence": 1.0, "scene_id": "S2A_32SNF_20220624_0_L2A"}, {"date": "2022-07-17", "mean_ndvi": 0.2114, "mean_ndmi": -0.1228, "healthy_pct": 7.62, "cloud_pct": 0.0, "confidence": 1.0, "scene_id": "S2A_32SNF_20220717_0_L2A"}, {"date": "2022-08-26", "mean_ndvi": 0.2023, "mean_ndmi": -0.1446, "healthy_pct": 6.74, "cloud_pct": 0.0, "confidence": 1.0, "scene_id": "S2A_32SNF_20220826_0_L2A"}, {"date": "2022-09-10", "mean_ndvi": 0.2129, "mean_ndmi": -0.1608, "healthy_pct": 5.03, "cloud_pct": 0.0, "confidence": 1.0, "scene_id": "S2B_32SPF_20220910_0_L2A"}, {"date": "2022-10-20", "mean_ndvi": 0.2296, "mean_ndmi": -0.142, "healthy_pct": 9.58, "cloud_pct": 0.0, "confidence": 1.0, "scene_id": "S2B_32SNF_20221020_0_L2A"}, {"date": "2022-11-14", "mean_ndvi": 0.2383, "mean_ndmi": -0.1397, "healthy_pct": 10.88, "cloud_pct": 0.0, "confidence": 1.0, "scene_id": "S2A_32SNF_20221114_0_L2A"}, {"date": "2022-12-04", "mean_ndvi": 0.2758, "mean_ndmi": -0.0916, "healthy_pct": 16.26, "cloud_pct": 0.0, "confidence": 1.0, "scene_id": "S2A_32SNF_20221204_0_L2A"}, {"date": "2023-01-08", "mean_ndvi": 0.2954, "mean_ndmi": -0.103, "healthy_pct": 14.58, "cloud_pct": 0.0, "confidence": 1.0, "scene_id": "S2B_32SNF_20230108_0_L2A"}, {"date": "2023-02-22", "mean_ndvi": 0.251, "mean_ndmi": -0.1261, "healthy_pct": 7.21, "cloud_pct": 0.0, "confidence": 1.0, "scene_id": "S2A_32SPF_20230222_0_L2A"}, {"date": "2023-03-24", "mean_ndvi": 0.2719, "mean_ndmi": -0.0987, "healthy_pct": 10.88, "cloud_pct": 0.0, "confidence": 1.0, "scene_id": "S2A_32SNF_20230324_0_L2A"}, {"date": "2023-04-08", "mean_ndvi": 0.2815, "mean_ndmi": -0.0959, "healthy_pct": 11.01, "cloud_pct": 0.0, "confidence": 1.0, "scene_id": "S2B_32SPF_20230408_0_L2A"}, {"date": "2023-05-28", "mean_ndvi": 0.2115, "mean_ndmi": -0.1448, "healthy_pct": 5.64, "cloud_pct": 27.6, "confidence": 0.724, "scene_id": "S2B_32SNF_20230528_0_L2A"}, {"date": "2023-06-22", "mean_ndvi": 0.2397, "mean_ndmi": -0.0996, "healthy_pct": 8.35, "cloud_pct": 0.1, "confidence": 0.999, "scene_id": "S2A_32SNF_20230622_1_L2A"}, {"date": "2023-07-14", "mean_ndvi": 0.1962, "mean_ndmi": -0.1352, "healthy_pct": 5.23, "cloud_pct": 0.0, "confidence": 1.0, "scene_id": "S2B_32SNF_20230714_0_L2A"}, {"date": "2023-08-26", "mean_ndvi": 0.1869, "mean_ndmi": -0.1632, "healthy_pct": 4.42, "cloud_pct": 0.0, "confidence": 1.0, "scene_id": "S2B_32SPF_20230826_0_L2A"}, {"date": "2023-09-15", "mean_ndvi": 0.19, "mean_ndmi": -0.175, "healthy_pct": 3.72, "cloud_pct": 0.0, "confidence": 1.0, "scene_id": "S2B_32SPF_20230915_0_L2A"}, {"date": "2023-10-10", "mean_ndvi": 0.1851, "mean_ndmi": -0.1594, "healthy_pct": 5.59, "cloud_pct": 0.0, "confidence": 1.0, "scene_id": "S2A_32SNF_20231010_0_L2A"}, {"date": "2023-11-14", "mean_ndvi": 0.2164, "mean_ndmi": -0.1541, "healthy_pct": 7.86, "cloud_pct": 0.0, "confidence": 1.0, "scene_id": "S2B_32SPF_20231114_0_L2A"}, {"date": "2023-12-26", "mean_ndvi": 0.2935, "mean_ndmi": -0.0822, "healthy_pct": 16.42, "cloud_pct": 0.0, "confidence": 1.0, "scene_id": "S2A_32SNF_20231226_0_L2A"}, {"date": "2024-01-25", "mean_ndvi": 0.3991, "mean_ndmi": -0.0047, "healthy_pct": 37.81, "cloud_pct": 0.0, "confidence": 1.0, "scene_id": "S2A_32SNF_20240125_0_L2A"}, {"date": "2024-02-04", "mean_ndvi": 0.4308, "mean_ndmi": 0.0235, "healthy_pct": 44.28, "cloud_pct": 0.0, "confidence": 1.0, "scene_id": "S2A_32SPF_20240204_0_L2A"}, {"date": "2024-03-30", "mean_ndvi": 0.4159, "mean_ndmi": 0.1076, "healthy_pct": 75.44, "cloud_pct": 0.0, "confidence": 1.0, "scene_id": "S2B_32SNF_20240330_0_L2A"}, {"date": "2024-04-04", "mean_ndvi": 0.425, "mean_ndmi": 0.0479, "healthy_pct": 56.73, "cloud_pct": 0.0, "confidence": 1.0, "scene_id": "S2A_32SNF_20240404_1_L2A"}, {"date": "2024-05-12", "mean_ndvi": 0.3113, "mean_ndmi": -0.0856, "healthy_pct": 16.32, "cloud_pct": 0.0, "confidence": 1.0, "scene_id": "S2B_32SNF_20240512_0_L2A"}, {"date": "2024-06-26", "mean_ndvi": 0.2138, "mean_ndmi": -0.1374, "healthy_pct": 6.69, "cloud_pct": 0.0, "confidence": 1.0, "scene_id": "S2A_32SNF_20240626_0_L2A"}, {"date": "2024-07-31", "mean_ndvi": 0.1936, "mean_ndmi": -0.1413, "healthy_pct": 5.24, "cloud_pct": 0.0, "confidence": 1.0, "scene_id": "S2B_32SNF_20240731_0_L2A"}, {"date": "2024-08-25", "mean_ndvi": 0.1644, "mean_ndmi": -0.1748, "healthy_pct": 4.14, "cloud_pct": 0.0, "confidence": 0.006, "scene_id": "S2A_32SNF_20240825_0_L2A"}, {"date": "2024-09-01", "mean_ndvi": null, "mean_ndmi": null, "healthy_pct": null, "cloud_pct": 0.0, "confidence": null, "scene_id": "S2A_32SNF_20240901_0_L2A"}, {"date": "2024-10-01", "mean_ndvi": 0.2133, "mean_ndmi": -0.1588, "healthy_pct": 6.83, "cloud_pct": 0.0, "confidence": 1.0, "scene_id": "S2A_32SNF_20241001_0_L2A"}, {"date": "2024-11-25", "mean_ndvi": 0.4494, "mean_ndmi": 0.0304, "healthy_pct": 51.17, "cloud_pct": 0.0, "confidence": 1.0, "scene_id": "S2B_32SNF_20241125_0_L2A"}, {"date": "2024-12-10", "mean_ndvi": 0.5051, "mean_ndmi": 0.0907, "healthy_pct": 64.21, "cloud_pct": 0.0, "confidence": 1.0, "scene_id": "S2A_32SNF_20241210_0_L2A"}, {"date": "2025-01-24", "mean_ndvi": 0.5681, "mean_ndmi": 0.1649, "healthy_pct": 79.03, "cloud_pct": 0.0, "confidence": 1.0, "scene_id": "S2B_32SNF_20250124_0_L2A"}, {"date": "2025-02-16", "mean_ndvi": 0.6312, "mean_ndmi": 0.2188, "healthy_pct": 86.84, "cloud_pct": 0.5, "confidence": 0.995, "scene_id": "S2B_32SPF_20250216_0_L2A"}, {"date": "2025-03-15", "mean_ndvi": 0.5307, "mean_ndmi": 0.2154, "healthy_pct": 92.46, "cloud_pct": 1.1, "confidence": 0.989, "scene_id": "S2B_32SNF_20250315_0_L2A"}, {"date": "2025-04-19", "mean_ndvi": 0.5082, "mean_ndmi": 0.1035, "healthy_pct": 73.71, "cloud_pct": 0.0, "confidence": 1.0, "scene_id": "S2C_32SNF_20250419_0_L2A"}, {"date": "2025-05-31", "mean_ndvi": 0.3035, "mean_ndmi": -0.0755, "healthy_pct": 18.15, "cloud_pct": 0.0, "confidence": 1.0, "scene_id": "S2A_32SNF_20250531_0_L2A"}, {"date": "2025-06-23", "mean_ndvi": 0.256, "mean_ndmi": -0.1194, "healthy_pct": 10.32, "cloud_pct": 0.0, "confidence": 1.0, "scene_id": "S2B_32SPF_20250623_1_L2A"}, {"date": "2025-07-23", "mean_ndvi": 0.2248, "mean_ndmi": -0.1161, "healthy_pct": 9.51, "cloud_pct": 0.0, "confidence": 1.0, "scene_id": "S2A_32SNF_20250723_0_L2A"}, {"date": "2025-08-25", "mean_ndvi": 0.245, "mean_ndmi": -0.1266, "healthy_pct": 11.94, "cloud_pct": 0.0, "confidence": 1.0, "scene_id": "S2B_32SNF_20250825_0_L2A"}, {"date": "2025-09-01", "mean_ndvi": 0.2548, "mean_ndmi": -0.1181, "healthy_pct": 12.52, "cloud_pct": 0.0, "confidence": 1.0, "scene_id": "S2A_32SNF_20250901_0_L2A"}, {"date": "2025-10-08", "mean_ndvi": 0.283, "mean_ndmi": -0.1073, "healthy_pct": 15.96, "cloud_pct": 0.0, "confidence": 1.0, "scene_id": "S2A_32SNF_20251008_0_L2A"}, {"date": "2025-11-30", "mean_ndvi": 0.3462, "mean_ndmi": -0.0723, "healthy_pct": 23.53, "cloud_pct": 0.0, "confidence": 1.0, "scene_id": "S2A_32SNF_20251130_1_L2A"}, {"date": "2025-12-08", "mean_ndvi": 0.34, "mean_ndmi": -0.0831, "healthy_pct": 22.69, "cloud_pct": 0.5, "confidence": 0.995, "scene_id": "S2C_32SNF_20251208_0_L2A"}, {"date": "2026-01-09", "mean_ndvi": 0.4332, "mean_ndmi": 0.0135, "healthy_pct": 43.65, "cloud_pct": 0.0, "confidence": 1.0, "scene_id": "S2A_32SNF_20260109_0_L2A"}, {"date": "2026-02-26", "mean_ndvi": 0.5319, "mean_ndmi": 0.108, "healthy_pct": 71.38, "cloud_pct": 0.0, "confidence": 1.0, "scene_id": "S2C_32SNF_20260226_0_L2A"}, {"date": "2026-03-18", "mean_ndvi": 0.585, "mean_ndmi": 0.164, "healthy_pct": 82.36, "cloud_pct": 0.1, "confidence": 0.999, "scene_id": "S2C_32SNF_20260318_0_L2A"}, {"date": "2026-04-07", "mean_ndvi": 0.5711, "mean_ndmi": 0.161, "healthy_pct": 79.21, "cloud_pct": 0.0, "confidence": 1.0, "scene_id": "S2C_32SNF_20260407_0_L2A"}, {"date": "2026-05-29", "mean_ndvi": 0.3235, "mean_ndmi": -0.0345, "healthy_pct": 25.23, "cloud_pct": 0.0, "confidence": 1.0, "scene_id": "S2B_32SPF_20260529_0_L2A"}, {"date": "2026-06-18", "mean_ndvi": 0.2805, "mean_ndmi": -0.0773, "healthy_pct": 17.15, "cloud_pct": 0.0, "confidence": 1.0, "scene_id": "S2B_32SNF_20260618_0_L2A"}, {"date": "2026-07-25", "mean_ndvi": 0.2227, "mean_ndmi": -0.098, "healthy_pct": 10.0, "cloud_pct": 0.0, "confidence": 1.0, "scene_id": "S2A_32SNF_20260725_0_L2A"}, {"date": "2026-08-20", "mean_ndvi": 0.2388, "mean_ndmi": -0.1289, "healthy_pct": 10.52, "cloud_pct": 0.0, "confidence": 1.0, "scene_id": "S2B_32SNF_20260820_0_L2A"}];
+new Chart(document.getElementById('gov-chart'), {
+  type: 'line',
+  data: {
+    labels: series.map(p => p.date),
+    datasets: [
+      { label: 'NDVI (greenness)',      data: series.map(p => p.mean_ndvi), borderColor: '#2e8b57', backgroundColor: 'rgba(46,139,87,0.15)', tension: 0.25, fill: true, spanGaps: true, pointRadius: 1 },
+      { label: 'NDMI (canopy moisture)', data: series.map(p => p.mean_ndmi), borderColor: '#1e6fbf', tension: 0.25, fill: false, spanGaps: true, pointRadius: 1 }
+    ]
+  },
+  options: { responsive: true, scales: { y: { min: -0.5, max: 0.9 } } }
+});
+</script>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Last updated: <strong>2026-09-12 23:35 UTC</strong> · Next run: <strong>2026-09-17</strong></p>
+    <p class="muted">Data derived from Sentinel-2 L2A via public STAC APIs. Surface area is a proxy for reservoir volume, not a substitute for bathymetric survey. MIT-licensed. No warranty.</p>
+    <p class="small"><a href="../oracle/index.json">Data oracle (JSON + SHA-256 manifest)</a> · <a href="../data/latest.json">latest.json</a> · <a href="../data/readings.csv">readings.csv</a></p>
+  </div>
+</footer>
+</body>
+</html>

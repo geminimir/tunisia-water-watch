@@ -1,0 +1,587 @@
+{
+  "id": "sarrat",
+  "name": "Sarrat",
+  "governorate": "Le Kef",
+  "lat": 36.15,
+  "lon": 8.5333,
+  "capacity_hm3": 20,
+  "ndwi_threshold": 0.05,
+  "historical_avg_km2": 2.0,
+  "effective_baseline_km2": 2.0,
+  "baseline_source": "config",
+  "readings": [
+    {
+      "date": "2022-01-28",
+      "surface_area_km2": 0.057,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.0,
+      "confidence": null,
+      "pct_of_avg": 2.85,
+      "scene_id": "S2A_32SME_20220128_0_L2A"
+    },
+    {
+      "date": "2022-02-07",
+      "surface_area_km2": 0.056,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.0,
+      "confidence": null,
+      "pct_of_avg": 2.8000000000000003,
+      "scene_id": "S2A_32SME_20220207_0_L2A"
+    },
+    {
+      "date": "2022-03-14",
+      "surface_area_km2": 0.062,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.0,
+      "confidence": null,
+      "pct_of_avg": 3.1,
+      "scene_id": "S2B_32SME_20220314_0_L2A"
+    },
+    {
+      "date": "2022-04-08",
+      "surface_area_km2": 0.134,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.0,
+      "confidence": null,
+      "pct_of_avg": 6.7,
+      "scene_id": "S2A_32SMF_20220408_0_L2A"
+    },
+    {
+      "date": "2022-05-23",
+      "surface_area_km2": 0.069,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.0,
+      "confidence": null,
+      "pct_of_avg": 3.45,
+      "scene_id": "S2B_32SMF_20220523_0_L2A"
+    },
+    {
+      "date": "2022-06-12",
+      "surface_area_km2": 0.042,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.0,
+      "confidence": null,
+      "pct_of_avg": 2.1,
+      "scene_id": "S2B_32SME_20220612_0_L2A"
+    },
+    {
+      "date": "2022-07-17",
+      "surface_area_km2": 0.046,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.0,
+      "confidence": null,
+      "pct_of_avg": 2.3,
+      "scene_id": "S2A_32SME_20220717_0_L2A"
+    },
+    {
+      "date": "2022-08-21",
+      "surface_area_km2": 0.042,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.0,
+      "confidence": null,
+      "pct_of_avg": 2.1,
+      "scene_id": "S2B_32SME_20220821_0_L2A"
+    },
+    {
+      "date": "2022-09-15",
+      "surface_area_km2": 0.029,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.0,
+      "confidence": null,
+      "pct_of_avg": 1.4500000000000002,
+      "scene_id": "S2A_32SME_20220915_0_L2A"
+    },
+    {
+      "date": "2022-10-15",
+      "surface_area_km2": 0.011,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.0,
+      "confidence": null,
+      "pct_of_avg": 0.5499999999999999,
+      "scene_id": "S2A_32SME_20221015_0_L2A"
+    },
+    {
+      "date": "2022-11-14",
+      "surface_area_km2": 0.031,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.0,
+      "confidence": null,
+      "pct_of_avg": 1.55,
+      "scene_id": "S2A_32SME_20221114_0_L2A"
+    },
+    {
+      "date": "2022-12-04",
+      "surface_area_km2": 0.063,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.0,
+      "confidence": null,
+      "pct_of_avg": 3.15,
+      "scene_id": "S2A_32SMF_20221204_0_L2A"
+    },
+    {
+      "date": "2023-01-08",
+      "surface_area_km2": 0.06,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.0,
+      "confidence": null,
+      "pct_of_avg": 3.0,
+      "scene_id": "S2B_32SMF_20230108_0_L2A"
+    },
+    {
+      "date": "2023-02-22",
+      "surface_area_km2": 0.025,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.0,
+      "confidence": null,
+      "pct_of_avg": 1.25,
+      "scene_id": "S2A_32SME_20230222_0_L2A"
+    },
+    {
+      "date": "2023-03-24",
+      "surface_area_km2": 0.03,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.0,
+      "confidence": null,
+      "pct_of_avg": 1.5,
+      "scene_id": "S2A_32SME_20230324_0_L2A"
+    },
+    {
+      "date": "2023-04-08",
+      "surface_area_km2": 0.085,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 2.4,
+      "confidence": null,
+      "pct_of_avg": 4.25,
+      "scene_id": "S2B_32SMF_20230408_0_L2A"
+    },
+    {
+      "date": "2023-05-18",
+      "surface_area_km2": 0.061,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.7,
+      "confidence": null,
+      "pct_of_avg": 3.05,
+      "scene_id": "S2B_32SME_20230518_0_L2A"
+    },
+    {
+      "date": "2023-06-17",
+      "surface_area_km2": 0.171,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.0,
+      "confidence": null,
+      "pct_of_avg": 8.55,
+      "scene_id": "S2B_32SME_20230617_0_L2A"
+    },
+    {
+      "date": "2023-07-02",
+      "surface_area_km2": 0.133,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.0,
+      "confidence": null,
+      "pct_of_avg": 6.65,
+      "scene_id": "S2A_32SME_20230702_0_L2A"
+    },
+    {
+      "date": "2023-08-11",
+      "surface_area_km2": 0.016,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.0,
+      "confidence": null,
+      "pct_of_avg": 0.8,
+      "scene_id": "S2A_32SME_20230811_0_L2A"
+    },
+    {
+      "date": "2023-09-10",
+      "surface_area_km2": 0.102,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.0,
+      "confidence": null,
+      "pct_of_avg": 5.1,
+      "scene_id": "S2A_32SMF_20230910_1_L2A"
+    },
+    {
+      "date": "2023-10-10",
+      "surface_area_km2": 0.046,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.0,
+      "confidence": null,
+      "pct_of_avg": 2.3,
+      "scene_id": "S2A_32SME_20231010_0_L2A"
+    },
+    {
+      "date": "2023-11-19",
+      "surface_area_km2": 0.038,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.0,
+      "confidence": null,
+      "pct_of_avg": 1.9,
+      "scene_id": "S2A_32SME_20231119_0_L2A"
+    },
+    {
+      "date": "2023-12-24",
+      "surface_area_km2": 0.042,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.0,
+      "confidence": null,
+      "pct_of_avg": 2.1,
+      "scene_id": "S2B_32SME_20231224_0_L2A"
+    },
+    {
+      "date": "2024-01-03",
+      "surface_area_km2": 0.031,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 19.9,
+      "confidence": null,
+      "pct_of_avg": 1.55,
+      "scene_id": "S2B_32SME_20240103_0_L2A"
+    },
+    {
+      "date": "2024-02-07",
+      "surface_area_km2": 0.037,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.0,
+      "confidence": null,
+      "pct_of_avg": 1.8499999999999999,
+      "scene_id": "S2A_32SME_20240207_0_L2A"
+    },
+    {
+      "date": "2024-03-23",
+      "surface_area_km2": 0.036,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.0,
+      "confidence": null,
+      "pct_of_avg": 1.7999999999999998,
+      "scene_id": "S2B_32SME_20240323_0_L2A"
+    },
+    {
+      "date": "2024-04-27",
+      "surface_area_km2": 0.091,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.0,
+      "confidence": null,
+      "pct_of_avg": 4.55,
+      "scene_id": "S2A_32SMF_20240427_0_L2A"
+    },
+    {
+      "date": "2024-05-27",
+      "surface_area_km2": 0.0,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 1.1,
+      "confidence": null,
+      "pct_of_avg": 0.0,
+      "scene_id": "S2A_32SME_20240527_0_L2A"
+    },
+    {
+      "date": "2024-06-26",
+      "surface_area_km2": 0.027,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.0,
+      "confidence": null,
+      "pct_of_avg": 1.35,
+      "scene_id": "S2A_32SME_20240626_0_L2A"
+    },
+    {
+      "date": "2024-07-11",
+      "surface_area_km2": 0.014,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.0,
+      "confidence": null,
+      "pct_of_avg": 0.7000000000000001,
+      "scene_id": "S2B_32SME_20240711_0_L2A"
+    },
+    {
+      "date": "2024-08-05",
+      "surface_area_km2": 0.018,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.0,
+      "confidence": null,
+      "pct_of_avg": 0.8999999999999999,
+      "scene_id": "S2A_32SME_20240805_0_L2A"
+    },
+    {
+      "date": "2024-09-04",
+      "surface_area_km2": 0.001,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.0,
+      "confidence": null,
+      "pct_of_avg": 0.05,
+      "scene_id": "S2A_32SME_20240904_0_L2A"
+    },
+    {
+      "date": "2024-10-14",
+      "surface_area_km2": 0.038,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 32.5,
+      "confidence": null,
+      "pct_of_avg": 1.9,
+      "scene_id": "S2A_32SME_20241014_0_L2A"
+    },
+    {
+      "date": "2024-11-03",
+      "surface_area_km2": 0.074,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.0,
+      "confidence": null,
+      "pct_of_avg": 3.6999999999999997,
+      "scene_id": "S2A_32SMF_20241103_0_L2A"
+    },
+    {
+      "date": "2024-12-13",
+      "surface_area_km2": 0.029,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.0,
+      "confidence": null,
+      "pct_of_avg": 1.4500000000000002,
+      "scene_id": "S2C_32SME_20241213_1_L2A"
+    },
+    {
+      "date": "2025-01-07",
+      "surface_area_km2": 0.002,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 45.7,
+      "confidence": null,
+      "pct_of_avg": 0.1,
+      "scene_id": "S2B_32SME_20250107_0_L2A"
+    },
+    {
+      "date": "2025-02-11",
+      "surface_area_km2": 0.087,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.0,
+      "confidence": null,
+      "pct_of_avg": 4.35,
+      "scene_id": "S2C_32SME_20250211_0_L2A"
+    },
+    {
+      "date": "2025-03-08",
+      "surface_area_km2": 0.0,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.1,
+      "confidence": null,
+      "pct_of_avg": 0.0,
+      "scene_id": "S2B_32SMF_20250308_0_L2A"
+    },
+    {
+      "date": "2025-04-24",
+      "surface_area_km2": 0.001,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.0,
+      "confidence": null,
+      "pct_of_avg": 0.05,
+      "scene_id": "S2A_32SME_20250424_0_L2A"
+    },
+    {
+      "date": "2025-05-27",
+      "surface_area_km2": 0.076,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.0,
+      "confidence": null,
+      "pct_of_avg": 3.8,
+      "scene_id": "S2B_32SME_20250527_0_L2A"
+    },
+    {
+      "date": "2025-06-03",
+      "surface_area_km2": 0.045,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.0,
+      "confidence": null,
+      "pct_of_avg": 2.25,
+      "scene_id": "S2A_32SME_20250603_0_L2A"
+    },
+    {
+      "date": "2025-07-23",
+      "surface_area_km2": 0.018,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.0,
+      "confidence": null,
+      "pct_of_avg": 0.8999999999999999,
+      "scene_id": "S2A_32SME_20250723_0_L2A"
+    },
+    {
+      "date": "2025-08-05",
+      "surface_area_km2": 0.022,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.0,
+      "confidence": null,
+      "pct_of_avg": 1.0999999999999999,
+      "scene_id": "S2B_32SME_20250805_0_L2A"
+    },
+    {
+      "date": "2025-09-01",
+      "surface_area_km2": 0.053,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.0,
+      "confidence": null,
+      "pct_of_avg": 2.65,
+      "scene_id": "S2A_32SMF_20250901_0_L2A"
+    },
+    {
+      "date": "2025-10-24",
+      "surface_area_km2": 0.083,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 22.5,
+      "confidence": null,
+      "pct_of_avg": 4.15,
+      "scene_id": "S2B_32SME_20251024_0_L2A"
+    },
+    {
+      "date": "2025-11-30",
+      "surface_area_km2": 0.097,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.0,
+      "confidence": null,
+      "pct_of_avg": 4.8500000000000005,
+      "scene_id": "S2A_32SME_20251130_0_L2A"
+    },
+    {
+      "date": "2025-12-28",
+      "surface_area_km2": 0.068,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.0,
+      "confidence": null,
+      "pct_of_avg": 3.4000000000000004,
+      "scene_id": "S2C_32SME_20251228_0_L2A"
+    },
+    {
+      "date": "2026-01-09",
+      "surface_area_km2": 0.078,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.0,
+      "confidence": null,
+      "pct_of_avg": 3.9,
+      "scene_id": "S2A_32SME_20260109_0_L2A"
+    },
+    {
+      "date": "2026-02-26",
+      "surface_area_km2": 0.096,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.0,
+      "confidence": null,
+      "pct_of_avg": 4.8,
+      "scene_id": "S2C_32SMF_20260226_0_L2A"
+    },
+    {
+      "date": "2026-03-18",
+      "surface_area_km2": 0.0,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.0,
+      "confidence": null,
+      "pct_of_avg": 0.0,
+      "scene_id": "S2C_32SME_20260318_0_L2A"
+    },
+    {
+      "date": "2026-04-07",
+      "surface_area_km2": 0.079,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.0,
+      "confidence": null,
+      "pct_of_avg": 3.95,
+      "scene_id": "S2C_32SME_20260407_0_L2A"
+    },
+    {
+      "date": "2026-05-19",
+      "surface_area_km2": 0.08,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.7,
+      "confidence": null,
+      "pct_of_avg": 4.0,
+      "scene_id": "S2A_32SMF_20260519_1_L2A"
+    },
+    {
+      "date": "2026-06-21",
+      "surface_area_km2": 0.0,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.0,
+      "confidence": null,
+      "pct_of_avg": 0.0,
+      "scene_id": "S2B_32SME_20260621_0_L2A"
+    },
+    {
+      "date": "2026-07-08",
+      "surface_area_km2": 0.043,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.0,
+      "confidence": null,
+      "pct_of_avg": 2.15,
+      "scene_id": "S2A_32SME_20260708_0_L2A"
+    },
+    {
+      "date": "2026-08-25",
+      "surface_area_km2": 0.01,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.0,
+      "confidence": null,
+      "pct_of_avg": 0.5,
+      "scene_id": "S2C_32SME_20260825_0_L2A"
+    },
+    {
+      "date": "2026-09-12",
+      "surface_area_km2": 0.024,
+      "surface_area_mndwi_km2": null,
+      "cloud_pct": 0.0,
+      "confidence": null,
+      "pct_of_avg": 1.2,
+      "scene_id": "S2B_32SME_20260909_0_L2A"
+    }
+  ],
+  "monthly_medians_km2": {
+    "2022-01": 0.057,
+    "2022-02": 0.056,
+    "2022-03": 0.062,
+    "2022-04": 0.134,
+    "2022-05": 0.069,
+    "2022-06": 0.042,
+    "2022-07": 0.046,
+    "2022-08": 0.042,
+    "2022-09": 0.029,
+    "2022-10": 0.011,
+    "2022-11": 0.031,
+    "2022-12": 0.063,
+    "2023-01": 0.06,
+    "2023-02": 0.025,
+    "2023-03": 0.03,
+    "2023-04": 0.085,
+    "2023-05": 0.061,
+    "2023-06": 0.171,
+    "2023-07": 0.133,
+    "2023-08": 0.016,
+    "2023-09": 0.102,
+    "2023-10": 0.046,
+    "2023-11": 0.038,
+    "2023-12": 0.042,
+    "2024-01": 0.031,
+    "2024-02": 0.037,
+    "2024-03": 0.036,
+    "2024-04": 0.091,
+    "2024-05": 0.0,
+    "2024-06": 0.027,
+    "2024-07": 0.014,
+    "2024-08": 0.018,
+    "2024-09": 0.001,
+    "2024-10": 0.038,
+    "2024-11": 0.074,
+    "2024-12": 0.029,
+    "2025-01": 0.002,
+    "2025-02": 0.087,
+    "2025-03": 0.0,
+    "2025-04": 0.001,
+    "2025-05": 0.076,
+    "2025-06": 0.045,
+    "2025-07": 0.018,
+    "2025-08": 0.022,
+    "2025-09": 0.053,
+    "2025-10": 0.083,
+    "2025-11": 0.097,
+    "2025-12": 0.068,
+    "2026-01": 0.078,
+    "2026-02": 0.096,
+    "2026-03": 0.0,
+    "2026-04": 0.079,
+    "2026-05": 0.08,
+    "2026-06": 0.0,
+    "2026-07": 0.043,
+    "2026-08": 0.01,
+    "2026-09": 0.024
+  },
+  "generated_at": "2026-09-12 23:35 UTC"
+}

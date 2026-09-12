@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gafsa — Tunisia Water Watch</title>
+<meta name="description" content="Independent, satellite-based monitoring of Tunisia's dams and agriculture.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💧</text></svg>">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Tunisia Water Watch</a>
+    <nav>
+      <a href="../index.html">Dams</a>
+      <a href="../agriculture.html">Agriculture</a>
+      <a href="../about.html">About</a>
+      <a href="https://github.com/geminimir/water-watch" target="_blank" rel="noopener">Source</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+
+
+
+<nav class="crumbs"><a href="../agriculture.html">← All governorates</a></nav>
+
+<section class="dam-header">
+  <h1>Gafsa</h1>
+  <p class="muted">South region · Focus: oasis</p>
+</section>
+
+<section class="stats">
+  <div class="stat">
+    <div class="stat-value">—</div>
+    <div class="stat-label">NDVI (greenness) — no reading</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">—</div>
+    <div class="stat-label">NDMI (canopy moisture)</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">—%</div>
+    <div class="stat-label">Pixels healthy (NDVI &gt; 0.3 &amp; NDMI &gt; 0)</div>
+  </div>
+  <div class="stat drought-green">
+    <div class="stat-value">—</div>
+    <div class="stat-label">Composite drought severity (unknown)</div>
+  </div>
+</section>
+
+<section class="chart-section">
+  <canvas id="gov-chart" height="120"></canvas>
+</section>
+
+<section class="table-section">
+  <h2>Recent readings</h2>
+  <table class="readings">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th class="num">NDVI</th>
+        <th class="num">NDMI</th>
+        <th class="num">Healthy %</th>
+        <th class="num">Cloud %</th>
+        <th class="num">Confidence</th>
+        <th>Scene</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+    </tbody>
+  </table>
+</section>
+
+<p class="muted small">
+  Composite severity combines NDVI z-score (vs same-month history),
+  NDMI z-score, and regional dam pct-of-average, each weighted by measurement
+  confidence. Higher = drier than typical.
+</p>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script>
+const series = [];
+new Chart(document.getElementById('gov-chart'), {
+  type: 'line',
+  data: {
+    labels: series.map(p => p.date),
+    datasets: [
+      { label: 'NDVI (greenness)',      data: series.map(p => p.mean_ndvi), borderColor: '#2e8b57', backgroundColor: 'rgba(46,139,87,0.15)', tension: 0.25, fill: true, spanGaps: true, pointRadius: 1 },
+      { label: 'NDMI (canopy moisture)', data: series.map(p => p.mean_ndmi), borderColor: '#1e6fbf', tension: 0.25, fill: false, spanGaps: true, pointRadius: 1 }
+    ]
+  },
+  options: { responsive: true, scales: { y: { min: -0.5, max: 0.9 } } }
+});
+</script>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Last updated: <strong>2026-09-12 23:35 UTC</strong> · Next run: <strong>2026-09-17</strong></p>
+    <p class="muted">Data derived from Sentinel-2 L2A via public STAC APIs. Surface area is a proxy for reservoir volume, not a substitute for bathymetric survey. MIT-licensed. No warranty.</p>
+    <p class="small"><a href="../oracle/index.json">Data oracle (JSON + SHA-256 manifest)</a> · <a href="../data/latest.json">latest.json</a> · <a href="../data/readings.csv">readings.csv</a></p>
+  </div>
+</footer>
+</body>
+</html>

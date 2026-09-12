@@ -3,14 +3,20 @@
 Tries multiple public STAC endpoints in order so the pipeline never depends on
 a single provider. Reads only the pixels inside each dam's bounding box using
 HTTP range requests via rasterio's remote-COG support.
+
+Bands used (Sentinel-2 L2A):
+    B03 (green,  560 nm, 10 m)  → NDWI, MNDWI
+    B04 (red,    665 nm, 10 m)  → NDVI
+    B08 (NIR,    842 nm, 10 m)  → NDWI, NDVI, NDMI
+    B11 (SWIR1, 1610 nm, 20 m)  → MNDWI, NDMI
+    SCL (scene classification, 20 m) → cloud/shadow masking
 """
 
 from __future__ import annotations
 
 import logging
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import datetime, timedelta, timezone
-from typing import Iterable
 
 import httpx
 import numpy as np
@@ -25,20 +31,29 @@ STAC_ENDPOINTS = [
         "name": "earth-search",
         "url": "https://earth-search.aws.element84.com/v1",
         "collection": "sentinel-2-l2a",
-        "asset_keys": {"green": "green", "nir": "nir", "scl": "scl"},
+        "asset_keys": {
+            "green": "green", "red": "red", "nir": "nir",
+            "swir16": "swir16", "scl": "scl",
+        },
     },
     {
         "name": "planetary-computer",
         "url": "https://planetarycomputer.microsoft.com/api/stac/v1",
         "collection": "sentinel-2-l2a",
-        "asset_keys": {"green": "B03", "nir": "B08", "scl": "SCL"},
+        "asset_keys": {
+            "green": "B03", "red": "B04", "nir": "B08",
+            "swir16": "B11", "scl": "SCL",
+        },
         "sign": True,
     },
     {
         "name": "cdse",
         "url": "https://catalogue.dataspace.copernicus.eu/stac",
         "collection": "SENTINEL-2",
-        "asset_keys": {"green": "B03_10m", "nir": "B08_10m", "scl": "SCL_20m"},
+        "asset_keys": {
+            "green": "B03_10m", "red": "B04_10m", "nir": "B08_10m",
+            "swir16": "B11_20m", "scl": "SCL_20m",
+        },
     },
 ]
 
@@ -55,10 +70,12 @@ class Scene:
     green_href: str
     nir_href: str
     scl_href: str
+    red_href: str = ""
+    swir16_href: str = ""
+    extras: dict = field(default_factory=dict)
 
 
 def _sign_planetary_computer(href: str) -> str:
-    """Fetch a SAS-signed URL from the Planetary Computer SAS service."""
     try:
         r = httpx.get(
             "https://planetarycomputer.microsoft.com/api/sas/v1/sign",
@@ -72,12 +89,7 @@ def _sign_planetary_computer(href: str) -> str:
         return href
 
 
-def _search_endpoint(
-    endpoint: dict,
-    bbox: list[float],
-    days: int,
-) -> list[Scene]:
-    """Query one STAC endpoint for recent, low-cloud scenes over a bbox."""
+def _search_endpoint(endpoint: dict, bbox: list[float], days: int) -> list[Scene]:
     now = datetime.now(timezone.utc)
     start = now - timedelta(days=days)
     payload = {
@@ -90,8 +102,7 @@ def _search_endpoint(
     }
     r = httpx.post(
         f"{endpoint['url']}/search",
-        json=payload,
-        timeout=REQUEST_TIMEOUT,
+        json=payload, timeout=REQUEST_TIMEOUT,
         headers={"Accept": "application/geo+json"},
     )
     r.raise_for_status()
@@ -107,30 +118,30 @@ def _search_endpoint(
             scl = assets[keys["scl"]]["href"]
         except KeyError:
             continue
+        red = assets.get(keys.get("red", ""), {}).get("href", "")
+        swir = assets.get(keys.get("swir16", ""), {}).get("href", "")
         if sign:
             green = _sign_planetary_computer(green)
             nir = _sign_planetary_computer(nir)
             scl = _sign_planetary_computer(scl)
+            if red:
+                red = _sign_planetary_computer(red)
+            if swir:
+                swir = _sign_planetary_computer(swir)
         scenes.append(
             Scene(
                 endpoint=endpoint["name"],
                 scene_id=feat.get("id", ""),
                 datetime=feat.get("properties", {}).get("datetime", ""),
                 cloud_cover=float(feat.get("properties", {}).get("eo:cloud_cover", 0.0)),
-                green_href=green,
-                nir_href=nir,
-                scl_href=scl,
+                green_href=green, nir_href=nir, scl_href=scl,
+                red_href=red, swir16_href=swir,
             )
         )
     return scenes
 
 
 def discover_latest_scene(bbox: list[float], days: int = 12) -> Scene | None:
-    """Try each STAC endpoint until one returns a usable recent scene.
-
-    A "usable" scene is the most recent scene with <30% overall cloud cover
-    intersecting the bbox in the past `days` days.
-    """
     last_error: Exception | None = None
     for endpoint in STAC_ENDPOINTS:
         try:
@@ -167,13 +178,25 @@ def read_window(cog_href: str, bbox: list[float]) -> tuple[np.ndarray, float]:
             return data, float(abs(xres * yres))
 
 
-def fetch_bands(scene: Scene, bbox: list[float]) -> dict[str, tuple[np.ndarray, float]]:
-    """Fetch green, NIR, and SCL windows for the given bbox."""
-    return {
-        "green": read_window(scene.green_href, bbox),
-        "nir": read_window(scene.nir_href, bbox),
-        "scl": read_window(scene.scl_href, bbox),
+def fetch_bands(scene: Scene, bbox: list[float], want: tuple[str, ...] = ("green", "nir", "scl")) -> dict:
+    """Fetch requested bands for the given bbox. Missing hrefs are skipped."""
+    href_map = {
+        "green": scene.green_href, "nir": scene.nir_href, "scl": scene.scl_href,
+        "red": scene.red_href, "swir16": scene.swir16_href,
     }
+    out: dict[str, tuple[np.ndarray, float]] = {}
+    for band in want:
+        href = href_map.get(band, "")
+        if not href:
+            continue
+        try:
+            out[band] = read_window(href, bbox)
+        except Exception as exc:  # noqa: BLE001
+            log.warning("failed to read %s (%s): %s", band, href[:80], exc)
+    return out
 
 
-__all__ = ["Scene", "discover_latest_scene", "fetch_bands", "read_window"]
+__all__ = [
+    "Scene", "STAC_ENDPOINTS", "discover_latest_scene",
+    "fetch_bands", "read_window", "_sign_planetary_computer",
+]

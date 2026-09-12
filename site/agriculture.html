@@ -22,20 +22,339 @@
 </header>
 <main class="wrap">
 
+
+
 <section class="hero">
-  <h1>Agriculture (coming soon)</h1>
-  <p>Phase 2 adds NDVI-based crop stress mapping per governorate using the same Sentinel-2 imagery. See the <a href="https://github.com/geminimir/water-watch/blob/main/specs.doc">roadmap</a>.</p>
+  <h1>Tunisia's croplands, watched from orbit</h1>
+  <p>Independent, satellite-derived vegetation health for 24 governorates. NDVI (greenness) and NDMI (canopy moisture) computed together every 5 days — a field can look green while drying out, and tracking both catches drought early.</p>
 </section>
 
-<section class="muted">
-  <p>The pipeline is running weekly; agricultural indices are queued behind the dam-monitoring baseline.</p>
+<section class="stats">
+  <div class="stat drought-yellow">
+    <div class="stat-value">58</div>
+    <div class="stat-label">National composite drought severity (watch)</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">24</div>
+    <div class="stat-label">Governorates monitored</div>
+  </div>
 </section>
+
+<section class="map-section">
+  <div id="gov-map"></div>
+</section>
+
+<section class="table-section">
+  <h2>All governorates</h2>
+  <table class="dams">
+    <thead>
+      <tr>
+        <th>Governorate</th>
+        <th>Region</th>
+        <th>Last reading</th>
+        <th class="num">NDVI</th>
+        <th class="num">NDMI</th>
+        <th class="num">Healthy %</th>
+        <th class="num">Severity</th>
+        <th>Band</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr>
+        <td><a href="governorate/tunis.html">Tunis</a></td>
+        <td>North</td>
+        <td>2026-08-20</td>
+        <td class="num">0.163</td>
+        <td class="num">-0.073</td>
+        <td class="num">6</td>
+        <td class="num">42</td>
+        <td><span class="badge badge-band-normal">normal</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="governorate/ariana.html">Ariana</a></td>
+        <td>North</td>
+        <td>2026-08-20</td>
+        <td class="num">0.171</td>
+        <td class="num">-0.114</td>
+        <td class="num">3</td>
+        <td class="num">26</td>
+        <td><span class="badge badge-band-abundant">abundant</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="governorate/ben-arous.html">Ben Arous</a></td>
+        <td>North</td>
+        <td>2026-08-20</td>
+        <td class="num">0.200</td>
+        <td class="num">-0.126</td>
+        <td class="num">6</td>
+        <td class="num">38</td>
+        <td><span class="badge badge-band-normal">normal</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="governorate/manouba.html">Manouba</a></td>
+        <td>North</td>
+        <td>2026-08-20</td>
+        <td class="num">0.183</td>
+        <td class="num">-0.140</td>
+        <td class="num">4</td>
+        <td class="num">47</td>
+        <td><span class="badge badge-band-normal">normal</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="governorate/nabeul.html">Nabeul</a></td>
+        <td>Cap-bon</td>
+        <td>2026-08-02</td>
+        <td class="num">0.298</td>
+        <td class="num">-0.085</td>
+        <td class="num">18</td>
+        <td class="num">34</td>
+        <td><span class="badge badge-band-normal">normal</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="governorate/zaghouan.html">Zaghouan</a></td>
+        <td>North</td>
+        <td>2026-08-20</td>
+        <td class="num">0.239</td>
+        <td class="num">-0.129</td>
+        <td class="num">11</td>
+        <td class="num">43</td>
+        <td><span class="badge badge-band-normal">normal</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="governorate/bizerte.html">Bizerte</a></td>
+        <td>North</td>
+        <td>2026-08-20</td>
+        <td class="num">0.185</td>
+        <td class="num">-0.111</td>
+        <td class="num">5</td>
+        <td class="num">41</td>
+        <td><span class="badge badge-band-normal">normal</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="governorate/beja.html">Béja</a></td>
+        <td>North</td>
+        <td>2026-08-20</td>
+        <td class="num">0.234</td>
+        <td class="num">-0.071</td>
+        <td class="num">12</td>
+        <td class="num">35</td>
+        <td><span class="badge badge-band-normal">normal</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="governorate/jendouba.html">Jendouba</a></td>
+        <td>North</td>
+        <td>2026-08-20</td>
+        <td class="num">0.275</td>
+        <td class="num">-0.055</td>
+        <td class="num">19</td>
+        <td class="num">35</td>
+        <td><span class="badge badge-band-normal">normal</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="governorate/kef.html">Le Kef</a></td>
+        <td>North</td>
+        <td>2026-08-25</td>
+        <td class="num">0.159</td>
+        <td class="num">-0.139</td>
+        <td class="num">1</td>
+        <td class="num">56</td>
+        <td><span class="badge badge-band-watch">watch</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="governorate/siliana.html">Siliana</a></td>
+        <td>Centre-west</td>
+        <td>2026-08-20</td>
+        <td class="num">0.148</td>
+        <td class="num">-0.160</td>
+        <td class="num">2</td>
+        <td class="num">40</td>
+        <td><span class="badge badge-band-normal">normal</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="governorate/sousse.html">Sousse</a></td>
+        <td>Sahel</td>
+        <td>2026-08-22</td>
+        <td class="num">0.144</td>
+        <td class="num">-0.155</td>
+        <td class="num">1</td>
+        <td class="num">78</td>
+        <td><span class="badge badge-band-drought">drought</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="governorate/monastir.html">Monastir</a></td>
+        <td>Sahel</td>
+        <td>2025-04-19</td>
+        <td class="num">0.272</td>
+        <td class="num">-0.041</td>
+        <td class="num">16</td>
+        <td class="num">41</td>
+        <td><span class="badge badge-band-normal">normal</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="governorate/mahdia.html">Mahdia</a></td>
+        <td>Sahel</td>
+        <td>—</td>
+        <td class="num">—</td>
+        <td class="num">—</td>
+        <td class="num">—</td>
+        <td class="num">—</td>
+        <td><span class="badge badge-band-unknown">unknown</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="governorate/sfax.html">Sfax</a></td>
+        <td>Sahel</td>
+        <td>—</td>
+        <td class="num">—</td>
+        <td class="num">—</td>
+        <td class="num">—</td>
+        <td class="num">—</td>
+        <td><span class="badge badge-band-unknown">unknown</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="governorate/kairouan.html">Kairouan</a></td>
+        <td>Centre-west</td>
+        <td>—</td>
+        <td class="num">—</td>
+        <td class="num">—</td>
+        <td class="num">—</td>
+        <td class="num">87</td>
+        <td><span class="badge badge-band-severe">severe</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="governorate/kasserine.html">Kasserine</a></td>
+        <td>Centre-west</td>
+        <td>—</td>
+        <td class="num">—</td>
+        <td class="num">—</td>
+        <td class="num">—</td>
+        <td class="num">100</td>
+        <td><span class="badge badge-band-severe">severe</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="governorate/sidi-bouzid.html">Sidi Bouzid</a></td>
+        <td>Centre-west</td>
+        <td>—</td>
+        <td class="num">—</td>
+        <td class="num">—</td>
+        <td class="num">—</td>
+        <td class="num">—</td>
+        <td><span class="badge badge-band-unknown">unknown</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="governorate/gabes.html">Gabès</a></td>
+        <td>South</td>
+        <td>—</td>
+        <td class="num">—</td>
+        <td class="num">—</td>
+        <td class="num">—</td>
+        <td class="num">—</td>
+        <td><span class="badge badge-band-unknown">unknown</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="governorate/medenine.html">Medenine</a></td>
+        <td>South</td>
+        <td>—</td>
+        <td class="num">—</td>
+        <td class="num">—</td>
+        <td class="num">—</td>
+        <td class="num">—</td>
+        <td><span class="badge badge-band-unknown">unknown</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="governorate/tataouine.html">Tataouine</a></td>
+        <td>South</td>
+        <td>—</td>
+        <td class="num">—</td>
+        <td class="num">—</td>
+        <td class="num">—</td>
+        <td class="num">—</td>
+        <td><span class="badge badge-band-unknown">unknown</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="governorate/gafsa.html">Gafsa</a></td>
+        <td>South</td>
+        <td>—</td>
+        <td class="num">—</td>
+        <td class="num">—</td>
+        <td class="num">—</td>
+        <td class="num">—</td>
+        <td><span class="badge badge-band-unknown">unknown</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="governorate/tozeur.html">Tozeur</a></td>
+        <td>South</td>
+        <td>—</td>
+        <td class="num">—</td>
+        <td class="num">—</td>
+        <td class="num">—</td>
+        <td class="num">—</td>
+        <td><span class="badge badge-band-unknown">unknown</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="governorate/kebili.html">Kebili</a></td>
+        <td>South</td>
+        <td>—</td>
+        <td class="num">—</td>
+        <td class="num">—</td>
+        <td class="num">—</td>
+        <td class="num">—</td>
+        <td><span class="badge badge-band-unknown">unknown</span></td>
+      </tr>
+      
+    </tbody>
+  </table>
+</section>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const govs = [{"id": "tunis", "name": "Tunis", "region": "north", "lat": 36.8, "lon": 10.18, "weight": 0.5, "focus": "peri-urban", "last_date": "2026-08-20", "mean_ndvi": 0.1629, "mean_ndmi": -0.0729, "healthy_pct": 6.25, "confidence": 1.0, "z_ndvi": 0.9336890053361832, "z_ndmi": 0.23404938671489225, "sample_count_ndvi": 5, "regional_water_pct": null, "severity_score": 41.608448145585015, "severity_band": "normal", "severity_breakdown": {"score": 41.61, "components": [{"name": "vegetation", "severity": 38.33, "weight": 1.0}, {"name": "moisture", "severity": 47.07, "weight": 0.6}]}}, {"id": "ariana", "name": "Ariana", "region": "north", "lat": 36.9, "lon": 10.2, "weight": 0.6, "focus": "cereals", "last_date": "2026-08-20", "mean_ndvi": 0.1714, "mean_ndmi": -0.1139, "healthy_pct": 3.08, "confidence": 1.0, "z_ndvi": 1.3058101577800898, "z_ndmi": 2.942569548605495, "sample_count_ndvi": 5, "regional_water_pct": null, "severity_score": 26.00506338325479, "severity_band": "abundant", "severity_breakdown": {"score": 26.01, "components": [{"name": "vegetation", "severity": 33.68, "weight": 1.0}, {"name": "moisture", "severity": 13.22, "weight": 0.6}]}}, {"id": "ben-arous", "name": "Ben Arous", "region": "north", "lat": 36.65, "lon": 10.2, "weight": 0.6, "focus": "peri-urban", "last_date": "2026-08-20", "mean_ndvi": 0.2002, "mean_ndmi": -0.1259, "healthy_pct": 6.06, "confidence": 1.0, "z_ndvi": 1.2841342007168364, "z_ndmi": 0.4369027959606693, "sample_count_ndvi": 5, "regional_water_pct": null, "severity_score": 37.91971970083407, "severity_band": "normal", "severity_breakdown": {"score": 37.92, "components": [{"name": "vegetation", "severity": 33.95, "weight": 1.0}, {"name": "moisture", "severity": 44.54, "weight": 0.6}]}}, {"id": "manouba", "name": "Manouba", "region": "north", "lat": 36.75, "lon": 9.9, "weight": 0.8, "focus": "cereals", "last_date": "2026-08-20", "mean_ndvi": 0.1829, "mean_ndmi": -0.1397, "healthy_pct": 3.98, "confidence": 1.0, "z_ndvi": 0.46908468638135653, "z_ndmi": -0.04509844968920539, "sample_count_ndvi": 5, "regional_water_pct": null, "severity_score": 46.5466748705638, "severity_band": "normal", "severity_breakdown": {"score": 46.55, "components": [{"name": "vegetation", "severity": 44.14, "weight": 1.0}, {"name": "moisture", "severity": 50.56, "weight": 0.6}]}}, {"id": "nabeul", "name": "Nabeul", "region": "cap-bon", "lat": 36.55, "lon": 10.75, "weight": 1.2, "focus": "citrus-hort", "last_date": "2026-08-02", "mean_ndvi": 0.2981, "mean_ndmi": -0.0848, "healthy_pct": 17.77, "confidence": 1.0, "z_ndvi": 1.0687335969590823, "z_ndmi": 1.2126422343670777, "sample_count_ndvi": 5, "regional_water_pct": 140.81553140736816, "severity_score": 34.44863353734112, "severity_band": "normal", "severity_breakdown": {"score": 34.45, "components": [{"name": "water", "severity": 29.59, "weight": 0.5}, {"name": "vegetation", "severity": 36.64, "weight": 1.0}, {"name": "moisture", "severity": 34.84, "weight": 0.6}]}}, {"id": "zaghouan", "name": "Zaghouan", "region": "north", "lat": 36.4, "lon": 10.15, "weight": 0.9, "focus": "cereals-olive", "last_date": "2026-08-20", "mean_ndvi": 0.2388, "mean_ndmi": -0.1289, "healthy_pct": 10.52, "confidence": 1.0, "z_ndvi": 1.1513427790172979, "z_ndmi": 1.105200762261806, "sample_count_ndvi": 5, "regional_water_pct": 64.07424329553555, "severity_score": 43.47649939116016, "severity_band": "normal", "severity_breakdown": {"score": 43.48, "components": [{"name": "water", "severity": 67.96, "weight": 0.5}, {"name": "vegetation", "severity": 35.61, "weight": 1.0}, {"name": "moisture", "severity": 36.18, "weight": 0.6}]}}, {"id": "bizerte", "name": "Bizerte", "region": "north", "lat": 37.15, "lon": 9.8, "weight": 1.3, "focus": "cereals", "last_date": "2026-08-20", "mean_ndvi": 0.1853, "mean_ndmi": -0.1113, "healthy_pct": 4.75, "confidence": 1.0, "z_ndvi": 0.3252579172115587, "z_ndmi": 7.076501265765566, "sample_count_ndvi": 5, "regional_water_pct": 40.23595710870223, "severity_score": 40.89299369413331, "severity_band": "normal", "severity_breakdown": {"score": 40.89, "components": [{"name": "water", "severity": 79.88, "weight": 0.5}, {"name": "vegetation", "severity": 45.93, "weight": 1.0}, {"name": "moisture", "severity": 0.0, "weight": 0.6}]}}, {"id": "beja", "name": "B\u00e9ja", "region": "north", "lat": 36.75, "lon": 9.2, "weight": 1.6, "focus": "cereals", "last_date": "2026-08-20", "mean_ndvi": 0.2339, "mean_ndmi": -0.0707, "healthy_pct": 12.2, "confidence": 1.0, "z_ndvi": 0.7696023881159948, "z_ndmi": 4.883708953374281, "sample_count_ndvi": 5, "regional_water_pct": 69.79650527686296, "severity_score": 34.72897325206396, "severity_band": "normal", "severity_breakdown": {"score": 34.73, "components": [{"name": "water", "severity": 65.1, "weight": 0.5}, {"name": "vegetation", "severity": 40.38, "weight": 1.0}, {"name": "moisture", "severity": 0.0, "weight": 0.6}]}}, {"id": "jendouba", "name": "Jendouba", "region": "north", "lat": 36.6, "lon": 8.8, "weight": 1.6, "focus": "cereals", "last_date": "2026-08-20", "mean_ndvi": 0.2751, "mean_ndmi": -0.0546, "healthy_pct": 18.92, "confidence": 1.0, "z_ndvi": null, "z_ndmi": null, "sample_count_ndvi": 3, "regional_water_pct": 130.10730355165273, "severity_score": 34.94634822417363, "severity_band": "normal", "severity_breakdown": {"score": 34.95, "components": [{"name": "water", "severity": 34.95, "weight": 0.5}]}}, {"id": "kef", "name": "Le Kef", "region": "north", "lat": 36.15, "lon": 8.7, "weight": 1.3, "focus": "cereals", "last_date": "2026-08-25", "mean_ndvi": 0.1591, "mean_ndmi": -0.1385, "healthy_pct": 0.81, "confidence": 1.0, "z_ndvi": 0.9236279056918013, "z_ndmi": 0.0914236691688205, "sample_count_ndvi": 5, "regional_water_pct": 0.33541666666666664, "severity_score": 56.040533092104596, "severity_band": "watch", "severity_breakdown": {"score": 56.04, "components": [{"name": "water", "severity": 99.83, "weight": 0.5}, {"name": "vegetation", "severity": 38.45, "weight": 1.0}, {"name": "moisture", "severity": 48.86, "weight": 0.6}]}}, {"id": "siliana", "name": "Siliana", "region": "centre-west", "lat": 36.1, "lon": 9.35, "weight": 1.1, "focus": "cereals-olive", "last_date": "2026-08-20", "mean_ndvi": 0.1482, "mean_ndmi": -0.1599, "healthy_pct": 1.6, "confidence": 1.0, "z_ndvi": 0.32593485552316964, "z_ndmi": -1.0690736588970753, "sample_count_ndvi": 5, "regional_water_pct": 242.1713973799127, "severity_score": 39.97326987985164, "severity_band": "normal", "severity_breakdown": {"score": 39.97, "components": [{"name": "water", "severity": 0.0, "weight": 0.5}, {"name": "vegetation", "severity": 45.93, "weight": 1.0}, {"name": "moisture", "severity": 63.36, "weight": 0.6}]}}, {"id": "sousse", "name": "Sousse", "region": "sahel", "lat": 35.85, "lon": 10.55, "weight": 1.4, "focus": "olive", "last_date": "2026-08-22", "mean_ndvi": 0.1444, "mean_ndmi": -0.1553, "healthy_pct": 0.89, "confidence": 1.0, "z_ndvi": -1.9559304615572948, "z_ndmi": -1.2239085041606348, "sample_count_ndvi": 5, "regional_water_pct": 0.028571428571428574, "severity_score": 77.91490556834671, "severity_band": "drought", "severity_breakdown": {"score": 77.91, "components": [{"name": "water", "severity": 99.99, "weight": 0.5}, {"name": "vegetation", "severity": 74.45, "weight": 1.0}, {"name": "moisture", "severity": 65.3, "weight": 0.6}]}}, {"id": "monastir", "name": "Monastir", "region": "sahel", "lat": 35.75, "lon": 10.8, "weight": 1.0, "focus": "olive", "last_date": "2025-04-19", "mean_ndvi": 0.2721, "mean_ndmi": -0.0409, "healthy_pct": 15.53, "confidence": 0.992, "z_ndvi": 1.1431058363128443, "z_ndmi": -0.012693157968157466, "sample_count_ndvi": 4, "regional_water_pct": null, "severity_score": 41.128984831781636, "severity_band": "normal", "severity_breakdown": {"score": 41.13, "components": [{"name": "vegetation", "severity": 35.71, "weight": 0.992}, {"name": "moisture", "severity": 50.16, "weight": 0.595}]}}, {"id": "mahdia", "name": "Mahdia", "region": "sahel", "lat": 35.45, "lon": 10.9, "weight": 1.1, "focus": "olive", "last_date": null, "mean_ndvi": null, "mean_ndmi": null, "healthy_pct": null, "confidence": null, "z_ndvi": null, "z_ndmi": null, "sample_count_ndvi": 0, "regional_water_pct": null, "severity_score": null, "severity_band": "unknown", "severity_breakdown": {"components": []}}, {"id": "sfax", "name": "Sfax", "region": "sahel", "lat": 34.8, "lon": 10.6, "weight": 2.0, "focus": "olive", "last_date": null, "mean_ndvi": null, "mean_ndmi": null, "healthy_pct": null, "confidence": null, "z_ndvi": null, "z_ndmi": null, "sample_count_ndvi": 0, "regional_water_pct": null, "severity_score": null, "severity_band": "unknown", "severity_breakdown": {"components": []}}, {"id": "kairouan", "name": "Kairouan", "region": "centre-west", "lat": 35.7, "lon": 10.05, "weight": 1.5, "focus": "cereals-olive", "last_date": null, "mean_ndvi": null, "mean_ndmi": null, "healthy_pct": null, "confidence": null, "z_ndvi": null, "z_ndmi": null, "sample_count_ndvi": 0, "regional_water_pct": 25.688765887658878, "severity_score": 87.15561705617056, "severity_band": "severe", "severity_breakdown": {"score": 87.16, "components": [{"name": "water", "severity": 87.16, "weight": 0.5}]}}, {"id": "kasserine", "name": "Kasserine", "region": "centre-west", "lat": 35.15, "lon": 8.85, "weight": 1.3, "focus": "cereals", "last_date": null, "mean_ndvi": null, "mean_ndmi": null, "healthy_pct": null, "confidence": null, "z_ndvi": null, "z_ndmi": null, "sample_count_ndvi": 0, "regional_water_pct": 0.0, "severity_score": 100.0, "severity_band": "severe", "severity_breakdown": {"score": 100.0, "components": [{"name": "water", "severity": 100.0, "weight": 0.5}]}}, {"id": "sidi-bouzid", "name": "Sidi Bouzid", "region": "centre-west", "lat": 35.05, "lon": 9.55, "weight": 1.4, "focus": "olive-orchard", "last_date": null, "mean_ndvi": null, "mean_ndmi": null, "healthy_pct": null, "confidence": null, "z_ndvi": null, "z_ndmi": null, "sample_count_ndvi": 0, "regional_water_pct": null, "severity_score": null, "severity_band": "unknown", "severity_breakdown": {"components": []}}, {"id": "gabes", "name": "Gab\u00e8s", "region": "south", "lat": 33.9, "lon": 9.95, "weight": 0.8, "focus": "oasis", "last_date": null, "mean_ndvi": null, "mean_ndmi": null, "healthy_pct": null, "confidence": null, "z_ndvi": null, "z_ndmi": null, "sample_count_ndvi": 0, "regional_water_pct": null, "severity_score": null, "severity_band": "unknown", "severity_breakdown": {"components": []}}, {"id": "medenine", "name": "Medenine", "region": "south", "lat": 33.35, "lon": 10.5, "weight": 0.6, "focus": "rangeland", "last_date": null, "mean_ndvi": null, "mean_ndmi": null, "healthy_pct": null, "confidence": null, "z_ndvi": null, "z_ndmi": null, "sample_count_ndvi": 0, "regional_water_pct": null, "severity_score": null, "severity_band": "unknown", "severity_breakdown": {"components": []}}, {"id": "tataouine", "name": "Tataouine", "region": "south", "lat": 33.0, "lon": 10.45, "weight": 0.4, "focus": "rangeland", "last_date": null, "mean_ndvi": null, "mean_ndmi": null, "healthy_pct": null, "confidence": null, "z_ndvi": null, "z_ndmi": null, "sample_count_ndvi": 0, "regional_water_pct": null, "severity_score": null, "severity_band": "unknown", "severity_breakdown": {"components": []}}, {"id": "gafsa", "name": "Gafsa", "region": "south", "lat": 34.4, "lon": 8.8, "weight": 0.7, "focus": "oasis", "last_date": null, "mean_ndvi": null, "mean_ndmi": null, "healthy_pct": null, "confidence": null, "z_ndvi": null, "z_ndmi": null, "sample_count_ndvi": 0, "regional_water_pct": null, "severity_score": null, "severity_band": "unknown", "severity_breakdown": {"components": []}}, {"id": "tozeur", "name": "Tozeur", "region": "south", "lat": 33.9, "lon": 8.15, "weight": 0.5, "focus": "oasis", "last_date": null, "mean_ndvi": null, "mean_ndmi": null, "healthy_pct": null, "confidence": null, "z_ndvi": null, "z_ndmi": null, "sample_count_ndvi": 0, "regional_water_pct": null, "severity_score": null, "severity_band": "unknown", "severity_breakdown": {"components": []}}, {"id": "kebili", "name": "Kebili", "region": "south", "lat": 33.7, "lon": 8.95, "weight": 0.6, "focus": "oasis", "last_date": null, "mean_ndvi": null, "mean_ndmi": null, "healthy_pct": null, "confidence": null, "z_ndvi": null, "z_ndmi": null, "sample_count_ndvi": 0, "regional_water_pct": null, "severity_score": null, "severity_band": "unknown", "severity_breakdown": {"components": []}}];
+const bandColors = { abundant:'#2e8b57', normal:'#7ea72a', watch:'#e2a03f', drought:'#c0392b', severe:'#7a1d17', unknown:'#8a8f98' };
+const map = L.map('gov-map', { scrollWheelZoom: false }).setView([34.5, 9.6], 6);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap contributors', maxZoom: 12 }).addTo(map);
+for (const g of govs) {
+  L.circleMarker([g.lat, g.lon], {
+    radius: 10, color: bandColors[g.severity_band] || '#8a8f98',
+    fillColor: bandColors[g.severity_band] || '#8a8f98', fillOpacity: 0.75, weight: 1
+  }).bindPopup(
+    `<strong>${g.name}</strong><br>${g.region} — ${g.focus}<br>` +
+    `NDVI: ${g.mean_ndvi == null ? '—' : g.mean_ndvi.toFixed(3)}, NDMI: ${g.mean_ndmi == null ? '—' : g.mean_ndmi.toFixed(3)}<br>` +
+    `Severity: ${g.severity_score == null ? '—' : g.severity_score.toFixed(0)} (${g.severity_band})<br>` +
+    `<a href="governorate/${g.id}.html">Details →</a>`
+  ).addTo(map);
+}
+</script>
 
 </main>
 <footer class="site-footer">
   <div class="wrap">
-    <p>Last updated: <strong>2026-09-12 22:10 UTC</strong> · Next run: <strong>2026-09-17</strong></p>
+    <p>Last updated: <strong>2026-09-12 23:35 UTC</strong> · Next run: <strong>2026-09-17</strong></p>
     <p class="muted">Data derived from Sentinel-2 L2A via public STAC APIs. Surface area is a proxy for reservoir volume, not a substitute for bathymetric survey. MIT-licensed. No warranty.</p>
+    <p class="small"><a href="oracle/index.json">Data oracle (JSON + SHA-256 manifest)</a> · <a href="data/latest.json">latest.json</a> · <a href="data/readings.csv">readings.csv</a></p>
   </div>
 </footer>
 </body>

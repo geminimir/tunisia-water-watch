@@ -1,0 +1,12 @@
+{
+  "id": "sidi-bouzid",
+  "name": "Sidi Bouzid",
+  "region": "centre-west",
+  "lat": 35.05,
+  "lon": 9.55,
+  "weight": 1.4,
+  "readings": [],
+  "monthly_medians_ndvi": {},
+  "monthly_medians_ndmi": {},
+  "generated_at": "2026-09-12 23:35 UTC"
+}

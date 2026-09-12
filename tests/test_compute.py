@@ -7,10 +7,15 @@ import numpy as np
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 
 from compute import (  # noqa: E402
-    Reading,
+    DamReading,
+    GovReading,
     cloud_percent,
+    compute_mndwi,
+    compute_ndvi,
+    compute_ndmi,
     compute_ndwi,
     read_dam,
+    read_governorate,
     surface_area_km2,
     water_mask,
 )
@@ -44,8 +49,9 @@ class TestCompute(unittest.TestCase):
 
     def test_water_mask_excludes_clouds(self):
         ndwi = np.array([[0.5, 0.5], [0.5, 0.5]], dtype=np.float32)
-        scl = np.array([[4, 9], [4, 4]], dtype=np.uint8)  # class 9 = cloud
-        m = water_mask(ndwi, 0.0, scl)
+        # cloud_mask: True where cloud, matching ndwi shape
+        cloud_mask = np.array([[False, True], [False, False]], dtype=bool)
+        m = water_mask(ndwi, 0.0, cloud_mask)
         self.assertEqual(m.sum(), 3)
 
     def test_surface_area(self):

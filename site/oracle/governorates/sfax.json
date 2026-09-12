@@ -1,0 +1,12 @@
+{
+  "id": "sfax",
+  "name": "Sfax",
+  "region": "sahel",
+  "lat": 34.8,
+  "lon": 10.6,
+  "weight": 2.0,
+  "readings": [],
+  "monthly_medians_ndvi": {},
+  "monthly_medians_ndmi": {},
+  "generated_at": "2026-09-12 23:35 UTC"
+}

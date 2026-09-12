@@ -1,0 +1,12 @@
+{
+  "id": "tozeur",
+  "name": "Tozeur",
+  "region": "south",
+  "lat": 33.9,
+  "lon": 8.15,
+  "weight": 0.5,
+  "readings": [],
+  "monthly_medians_ndvi": {},
+  "monthly_medians_ndmi": {},
+  "generated_at": "2026-09-12 23:35 UTC"
+}

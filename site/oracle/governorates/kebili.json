@@ -1,0 +1,12 @@
+{
+  "id": "kebili",
+  "name": "Kebili",
+  "region": "south",
+  "lat": 33.7,
+  "lon": 8.95,
+  "weight": 0.6,
+  "readings": [],
+  "monthly_medians_ndvi": {},
+  "monthly_medians_ndmi": {},
+  "generated_at": "2026-09-12 23:35 UTC"
+}

@@ -51,6 +51,12 @@ a:hover { text-decoration: underline; }
 .badge-yellow { background: var(--yellow); }
 .badge-red { background: var(--red); }
 .badge-gray { background: var(--gray); }
+.badge-band-abundant { background: #2e8b57; }
+.badge-band-normal   { background: #7ea72a; }
+.badge-band-watch    { background: #e2a03f; }
+.badge-band-drought  { background: #c0392b; }
+.badge-band-severe   { background: #7a1d17; }
+.badge-band-unknown  { background: #8a8f98; }
 .muted { color: var(--muted); }
 .small { font-size: 0.85rem; }
 .tiny { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.75rem; color: var(--muted); }

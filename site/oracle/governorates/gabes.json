@@ -1,0 +1,12 @@
+{
+  "id": "gabes",
+  "name": "Gab\u00e8s",
+  "region": "south",
+  "lat": 33.9,
+  "lon": 9.95,
+  "weight": 0.8,
+  "readings": [],
+  "monthly_medians_ndvi": {},
+  "monthly_medians_ndmi": {},
+  "generated_at": "2026-09-12 23:35 UTC"
+}

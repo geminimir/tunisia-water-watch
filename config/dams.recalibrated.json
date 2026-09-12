@@ -1,0 +1,58 @@
+{
+  "suggestions": [
+    {
+      "id": "sejnane",
+      "name": "Sejnane",
+      "current_bbox": [
+        9.17,
+        37.03,
+        9.3,
+        37.12
+      ],
+      "suggested_bbox": [
+        9.3162,
+        37.0816,
+        9.3216,
+        37.0866
+      ],
+      "features_matched": 1,
+      "area_change_pct": 99.8
+    },
+    {
+      "id": "joumine",
+      "name": "Joumine",
+      "current_bbox": [
+        9.39,
+        36.98,
+        9.53,
+        37.08
+      ],
+      "suggested_bbox": [
+        9.3871,
+        37.0517,
+        9.4506,
+        37.0839
+      ],
+      "features_matched": 1,
+      "area_change_pct": 85.4
+    },
+    {
+      "id": "ghezala",
+      "name": "Ghezala",
+      "current_bbox": [
+        9.47,
+        37.07,
+        9.57,
+        37.15
+      ],
+      "suggested_bbox": [
+        9.5307,
+        37.0445,
+        9.5499,
+        37.0624
+      ],
+      "features_matched": 1,
+      "area_change_pct": 95.7
+    }
+  ]
+}

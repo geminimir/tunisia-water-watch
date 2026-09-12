@@ -1,0 +1,12 @@
+{
+  "id": "tataouine",
+  "name": "Tataouine",
+  "region": "south",
+  "lat": 33.0,
+  "lon": 10.45,
+  "weight": 0.4,
+  "readings": [],
+  "monthly_medians_ndvi": {},
+  "monthly_medians_ndmi": {},
+  "generated_at": "2026-09-12 23:35 UTC"
+}

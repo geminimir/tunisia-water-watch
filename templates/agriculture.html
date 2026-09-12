@@ -1,12 +1,81 @@
 {% include "components/header.html" %}
 
+{% if is_stale %}
+<div class="banner banner-stale">
+  <strong>Pipeline is stale.</strong> Last successful reading was {{ stale_days }} days ago.
+</div>
+{% endif %}
+
 <section class="hero">
-  <h1>Agriculture (coming soon)</h1>
-  <p>Phase 2 adds NDVI-based crop stress mapping per governorate using the same Sentinel-2 imagery. See the <a href="https://github.com/{{ github_repo }}/blob/main/specs.doc">roadmap</a>.</p>
+  <h1>Tunisia's croplands, watched from orbit</h1>
+  <p>Independent, satellite-derived vegetation health for {{ govs|length }} governorates. NDVI (greenness) and NDMI (canopy moisture) computed together every 5 days — a field can look green while drying out, and tracking both catches drought early.</p>
 </section>
 
-<section class="muted">
-  <p>The pipeline is running weekly; agricultural indices are queued behind the dam-monitoring baseline.</p>
+<section class="stats">
+  <div class="stat drought-{{ 'red' if composite_band in ('drought', 'severe') else ('yellow' if composite_band == 'watch' else 'green') }}">
+    <div class="stat-value">{{ (composite_score|round(0))|int if composite_score is not none else "—" }}</div>
+    <div class="stat-label">National composite drought severity ({{ composite_band }})</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">{{ govs|length }}</div>
+    <div class="stat-label">Governorates monitored</div>
+  </div>
 </section>
+
+<section class="map-section">
+  <div id="gov-map"></div>
+</section>
+
+<section class="table-section">
+  <h2>All governorates</h2>
+  <table class="dams">
+    <thead>
+      <tr>
+        <th>Governorate</th>
+        <th>Region</th>
+        <th>Last reading</th>
+        <th class="num">NDVI</th>
+        <th class="num">NDMI</th>
+        <th class="num">Healthy %</th>
+        <th class="num">Severity</th>
+        <th>Band</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for g in govs %}
+      <tr>
+        <td><a href="governorate/{{ g.id }}.html">{{ g.name }}</a></td>
+        <td>{{ g.region|capitalize }}</td>
+        <td>{{ g.last_date or "—" }}</td>
+        <td class="num">{{ "%.3f"|format(g.mean_ndvi) if g.mean_ndvi is not none else "—" }}</td>
+        <td class="num">{{ "%.3f"|format(g.mean_ndmi) if g.mean_ndmi is not none else "—" }}</td>
+        <td class="num">{{ "%.0f"|format(g.healthy_pct) if g.healthy_pct is not none else "—" }}</td>
+        <td class="num">{{ (g.severity_score|round(0))|int if g.severity_score is not none else "—" }}</td>
+        <td><span class="badge badge-band-{{ g.severity_band }}">{{ g.severity_band }}</span></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const govs = {{ govs_json|safe }};
+const bandColors = { abundant:'#2e8b57', normal:'#7ea72a', watch:'#e2a03f', drought:'#c0392b', severe:'#7a1d17', unknown:'#8a8f98' };
+const map = L.map('gov-map', { scrollWheelZoom: false }).setView([34.5, 9.6], 6);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap contributors', maxZoom: 12 }).addTo(map);
+for (const g of govs) {
+  L.circleMarker([g.lat, g.lon], {
+    radius: 10, color: bandColors[g.severity_band] || '#8a8f98',
+    fillColor: bandColors[g.severity_band] || '#8a8f98', fillOpacity: 0.75, weight: 1
+  }).bindPopup(
+    `<strong>${g.name}</strong><br>${g.region} — ${g.focus}<br>` +
+    `NDVI: ${g.mean_ndvi == null ? '—' : g.mean_ndvi.toFixed(3)}, NDMI: ${g.mean_ndmi == null ? '—' : g.mean_ndmi.toFixed(3)}<br>` +
+    `Severity: ${g.severity_score == null ? '—' : g.severity_score.toFixed(0)} (${g.severity_band})<br>` +
+    `<a href="governorate/${g.id}.html">Details →</a>`
+  ).addTo(map);
+}
+</script>
 
 {% include "components/footer.html" %}

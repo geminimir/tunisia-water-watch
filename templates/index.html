@@ -29,7 +29,11 @@
   </div>
   <div class="stat drought-{{ 'red' if drought_index is not none and drought_index < 60 else ('yellow' if drought_index is not none and drought_index < 85 else 'green') }}">
     <div class="stat-value">{{ (drought_index|round(0))|int if drought_index is not none else "—" }}</div>
-    <div class="stat-label">National drought index (capacity-weighted % of baseline)</div>
+    <div class="stat-label">Reservoir index (capacity-weighted % of baseline)</div>
+  </div>
+  <div class="stat drought-{{ 'red' if composite_band in ('drought', 'severe') else ('yellow' if composite_band == 'watch' else 'green') }}">
+    <div class="stat-value">{{ (composite_score|round(0))|int if composite_score is not none else "—" }}</div>
+    <div class="stat-label">Composite drought severity ({{ composite_band }})</div>
   </div>
 </section>
 

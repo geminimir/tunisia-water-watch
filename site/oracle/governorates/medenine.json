@@ -1,0 +1,12 @@
+{
+  "id": "medenine",
+  "name": "Medenine",
+  "region": "south",
+  "lat": 33.35,
+  "lon": 10.5,
+  "weight": 0.6,
+  "readings": [],
+  "monthly_medians_ndvi": {},
+  "monthly_medians_ndmi": {},
+  "generated_at": "2026-09-12 23:35 UTC"
+}

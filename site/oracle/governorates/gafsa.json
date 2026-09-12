@@ -1,0 +1,12 @@
+{
+  "id": "gafsa",
+  "name": "Gafsa",
+  "region": "south",
+  "lat": 34.4,
+  "lon": 8.8,
+  "weight": 0.7,
+  "readings": [],
+  "monthly_medians_ndvi": {},
+  "monthly_medians_ndmi": {},
+  "generated_at": "2026-09-12 23:35 UTC"
+}

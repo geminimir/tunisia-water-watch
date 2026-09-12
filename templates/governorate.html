@@ -1,0 +1,91 @@
+{% include "components/header.html" %}
+
+{% if is_stale %}
+<div class="banner banner-stale">
+  <strong>Pipeline is stale.</strong> Last successful reading was {{ stale_days }} days ago.
+</div>
+{% endif %}
+
+<nav class="crumbs"><a href="../agriculture.html">← All governorates</a></nav>
+
+<section class="dam-header">
+  <h1>{{ gov.name }}</h1>
+  <p class="muted">{{ gov.region|capitalize }} region · Focus: {{ gov.focus|replace('-', ' / ') }}</p>
+</section>
+
+<section class="stats">
+  <div class="stat">
+    <div class="stat-value">{{ "%.3f"|format(gov.mean_ndvi) if gov.mean_ndvi is not none else "—" }}</div>
+    <div class="stat-label">NDVI (greenness) — {{ gov.last_date or "no reading" }}</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">{{ "%.3f"|format(gov.mean_ndmi) if gov.mean_ndmi is not none else "—" }}</div>
+    <div class="stat-label">NDMI (canopy moisture)</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">{{ "%.0f"|format(gov.healthy_pct) if gov.healthy_pct is not none else "—" }}%</div>
+    <div class="stat-label">Pixels healthy (NDVI &gt; 0.3 &amp; NDMI &gt; 0)</div>
+  </div>
+  <div class="stat drought-{{ 'red' if gov.severity_band in ('drought', 'severe') else ('yellow' if gov.severity_band == 'watch' else 'green') }}">
+    <div class="stat-value">{{ (gov.severity_score|round(0))|int if gov.severity_score is not none else "—" }}</div>
+    <div class="stat-label">Composite drought severity ({{ gov.severity_band }})</div>
+  </div>
+</section>
+
+<section class="chart-section">
+  <canvas id="gov-chart" height="120"></canvas>
+</section>
+
+<section class="table-section">
+  <h2>Recent readings</h2>
+  <table class="readings">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th class="num">NDVI</th>
+        <th class="num">NDMI</th>
+        <th class="num">Healthy %</th>
+        <th class="num">Cloud %</th>
+        <th class="num">Confidence</th>
+        <th>Scene</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for r in recent %}
+      <tr>
+        <td>{{ r.date }}</td>
+        <td class="num">{{ "%.3f"|format(r.mean_ndvi) if r.mean_ndvi is not none else "—" }}</td>
+        <td class="num">{{ "%.3f"|format(r.mean_ndmi) if r.mean_ndmi is not none else "—" }}</td>
+        <td class="num">{{ "%.0f"|format(r.healthy_pct) if r.healthy_pct is not none else "—" }}</td>
+        <td class="num">{{ "%.0f"|format(r.cloud_pct) if r.cloud_pct is not none else "—" }}</td>
+        <td class="num">{{ "%.2f"|format(r.confidence) if r.confidence is not none else "—" }}</td>
+        <td class="tiny">{{ r.scene_id or "—" }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+
+<p class="muted small">
+  Composite severity combines NDVI z-score (vs same-month history),
+  NDMI z-score, and regional dam pct-of-average, each weighted by measurement
+  confidence. Higher = drier than typical.
+</p>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script>
+const series = {{ series_json|safe }};
+new Chart(document.getElementById('gov-chart'), {
+  type: 'line',
+  data: {
+    labels: series.map(p => p.date),
+    datasets: [
+      { label: 'NDVI (greenness)',      data: series.map(p => p.mean_ndvi), borderColor: '#2e8b57', backgroundColor: 'rgba(46,139,87,0.15)', tension: 0.25, fill: true, spanGaps: true, pointRadius: 1 },
+      { label: 'NDMI (canopy moisture)', data: series.map(p => p.mean_ndmi), borderColor: '#1e6fbf', tension: 0.25, fill: false, spanGaps: true, pointRadius: 1 }
+    ]
+  },
+  options: { responsive: true, scales: { y: { min: -0.5, max: 0.9 } } }
+});
+</script>
+
+{% include "components/footer.html" %}
