@@ -123,17 +123,26 @@ def compute_baselines(
 def effective_baseline(
     baseline: dict[str, Any], reading_date: str | None, hand_guessed: float
 ) -> tuple[float, str]:
-    """Pick the best baseline for a given reading date. Returns (value, source_tag)."""
+    """Pick the best baseline for a given reading date. Returns (value, source_tag).
+
+    A rolling baseline is only trusted if it clears a plausibility floor —
+    otherwise the dam's bbox is probably misconfigured (systematically reads
+    near-zero across history) and dividing current readings by ~0 produces
+    absurd pct_of_avg values. We fall back to the hand-guessed config value.
+    """
+    floor = max(0.02, hand_guessed * 0.05)
+    monthly = None
     if reading_date and len(reading_date) >= 7:
         try:
             m = int(reading_date[5:7])
             monthly = baseline["monthly"].get(m)
-            if monthly is not None and monthly > 0:
-                return monthly, "rolling-monthly"
         except ValueError:
-            pass
-    if baseline["source"] == "rolling" and baseline["annual"] > 0:
-        return baseline["annual"], "rolling-annual"
+            monthly = None
+    if monthly is not None and monthly >= floor:
+        return monthly, "rolling-monthly"
+    annual = baseline["annual"] if baseline["source"] == "rolling" else None
+    if annual is not None and annual >= floor:
+        return annual, "rolling-annual"
     return hand_guessed, "config"
 
 

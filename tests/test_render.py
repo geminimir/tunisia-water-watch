@@ -106,6 +106,14 @@ class TestBaselines(unittest.TestCase):
         self.assertEqual(val, 12.5)
         self.assertEqual(tag, "config")
 
+    def test_effective_baseline_plausibility_floor(self):
+        # Rolling values that fall below 5% of the config value (or 0.02 km²)
+        # are treated as bbox misconfiguration and skipped.
+        base = {"annual": 0.01, "monthly": {6: 0.005}, "source": "rolling"}
+        val, tag = render.effective_baseline(base, "2026-06-15", 10.0)
+        self.assertEqual(val, 10.0)
+        self.assertEqual(tag, "config")
+
 
 class TestDroughtIndex(unittest.TestCase):
     def test_capacity_weighted(self):

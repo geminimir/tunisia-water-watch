@@ -1,5 +1,9 @@
 {
-  "generated_at": "2026-09-12 20:22 UTC",
+  "generated_at": "2026-09-12 22:03 UTC",
+  "stale_days": 0,
+  "national_drought_index": 90.73158263773448,
+  "national_surface_area_km2": 60.4,
+  "national_baseline_km2": 131.3,
   "dams": [
     {
       "id": "sidi-salem",
@@ -10,8 +14,10 @@
       "date": "2026-09-12",
       "surface_area_km2": 18.151,
       "historical_avg_km2": 28.8,
-      "pct_of_avg": 63.0,
-      "status": "yellow"
+      "effective_baseline_km2": 15.31,
+      "baseline_source": "rolling-monthly",
+      "pct_of_avg": 118.53327238294258,
+      "status": "green"
     },
     {
       "id": "sidi-el-barrak",
@@ -22,7 +28,9 @@
       "date": "2026-09-12",
       "surface_area_km2": 17.904,
       "historical_avg_km2": 15.5,
-      "pct_of_avg": 115.5,
+      "effective_baseline_km2": 12.13,
+      "baseline_source": "rolling-monthly",
+      "pct_of_avg": 147.61315854563443,
       "status": "green"
     },
     {
@@ -34,7 +42,9 @@
       "date": "2026-09-12",
       "surface_area_km2": 0.001,
       "historical_avg_km2": 12.0,
-      "pct_of_avg": 0.0,
+      "effective_baseline_km2": 12.0,
+      "baseline_source": "config",
+      "pct_of_avg": 0.008333333333333333,
       "status": "red"
     },
     {
@@ -46,7 +56,9 @@
       "date": "2026-09-12",
       "surface_area_km2": 0.001,
       "historical_avg_km2": 8.0,
-      "pct_of_avg": 0.0,
+      "effective_baseline_km2": 8.0,
+      "baseline_source": "config",
+      "pct_of_avg": 0.0125,
       "status": "red"
     },
     {
@@ -58,7 +70,9 @@
       "date": "2026-09-12",
       "surface_area_km2": 0.001,
       "historical_avg_km2": 3.0,
-      "pct_of_avg": 0.0,
+      "effective_baseline_km2": 3.0,
+      "baseline_source": "config",
+      "pct_of_avg": 0.03333333333333333,
       "status": "red"
     },
     {
@@ -70,8 +84,10 @@
       "date": "2026-09-12",
       "surface_area_km2": 0.197,
       "historical_avg_km2": 1.5,
-      "pct_of_avg": 13.2,
-      "status": "red"
+      "effective_baseline_km2": 0.16,
+      "baseline_source": "rolling-monthly",
+      "pct_of_avg": 124.68354430379746,
+      "status": "green"
     },
     {
       "id": "kasseb",
@@ -82,7 +98,9 @@
       "date": "2026-09-12",
       "surface_area_km2": 0.017,
       "historical_avg_km2": 3.0,
-      "pct_of_avg": 0.6,
+      "effective_baseline_km2": 3.0,
+      "baseline_source": "config",
+      "pct_of_avg": 0.5666666666666668,
       "status": "red"
     },
     {
@@ -94,8 +112,10 @@
       "date": "2026-09-12",
       "surface_area_km2": 2.782,
       "historical_avg_km2": 3.5,
-      "pct_of_avg": 79.5,
-      "status": "yellow"
+      "effective_baseline_km2": 2.13,
+      "baseline_source": "rolling-monthly",
+      "pct_of_avg": 130.8560677328316,
+      "status": "green"
     },
     {
       "id": "bou-heurtma",
@@ -106,7 +126,9 @@
       "date": "2026-09-12",
       "surface_area_km2": 4.367,
       "historical_avg_km2": 5.0,
-      "pct_of_avg": 87.3,
+      "effective_baseline_km2": 2.21,
+      "baseline_source": "rolling-monthly",
+      "pct_of_avg": 197.42314647377935,
       "status": "green"
     },
     {
@@ -118,7 +140,9 @@
       "date": "2026-09-12",
       "surface_area_km2": 0.086,
       "historical_avg_km2": 4.0,
-      "pct_of_avg": 2.2,
+      "effective_baseline_km2": 4.0,
+      "baseline_source": "config",
+      "pct_of_avg": 2.15,
       "status": "red"
     },
     {
@@ -130,7 +154,9 @@
       "date": "2026-09-12",
       "surface_area_km2": 0.006,
       "historical_avg_km2": 8.0,
-      "pct_of_avg": 0.1,
+      "effective_baseline_km2": 8.0,
+      "baseline_source": "config",
+      "pct_of_avg": 0.075,
       "status": "red"
     },
     {
@@ -142,6 +168,8 @@
       "date": "2026-09-12",
       "surface_area_km2": 0.024,
       "historical_avg_km2": 2.0,
+      "effective_baseline_km2": 2.0,
+      "baseline_source": "config",
       "pct_of_avg": 1.2,
       "status": "red"
     },
@@ -154,8 +182,10 @@
       "date": "2026-09-12",
       "surface_area_km2": 1.108,
       "historical_avg_km2": 3.0,
-      "pct_of_avg": 36.9,
-      "status": "red"
+      "effective_baseline_km2": 0.23,
+      "baseline_source": "rolling-annual",
+      "pct_of_avg": 483.8427947598254,
+      "status": "green"
     },
     {
       "id": "lakhmess",
@@ -166,6 +196,8 @@
       "date": "2026-09-12",
       "surface_area_km2": 0.005,
       "historical_avg_km2": 1.0,
+      "effective_baseline_km2": 1.0,
+      "baseline_source": "config",
       "pct_of_avg": 0.5,
       "status": "red"
     },
@@ -178,7 +210,9 @@
       "date": "2026-09-12",
       "surface_area_km2": 1.933,
       "historical_avg_km2": 1.5,
-      "pct_of_avg": 128.8,
+      "effective_baseline_km2": 1.94,
+      "baseline_source": "rolling-monthly",
+      "pct_of_avg": 99.43415637860083,
       "status": "green"
     },
     {
@@ -190,8 +224,10 @@
       "date": "2026-09-12",
       "surface_area_km2": 0.622,
       "historical_avg_km2": 4.5,
-      "pct_of_avg": 13.8,
-      "status": "red"
+      "effective_baseline_km2": 0.69,
+      "baseline_source": "rolling-monthly",
+      "pct_of_avg": 90.53857350800583,
+      "status": "green"
     },
     {
       "id": "el-aroussia",
@@ -202,6 +238,8 @@
       "date": "2026-09-12",
       "surface_area_km2": 0.0,
       "historical_avg_km2": 0.8,
+      "effective_baseline_km2": 0.8,
+      "baseline_source": "config",
       "pct_of_avg": 0.0,
       "status": "red"
     },
@@ -214,6 +252,8 @@
       "date": "2026-09-12",
       "surface_area_km2": 0.018,
       "historical_avg_km2": 6.0,
+      "effective_baseline_km2": 6.0,
+      "baseline_source": "config",
       "pct_of_avg": 0.3,
       "status": "red"
     },
@@ -226,7 +266,9 @@
       "date": "2026-09-12",
       "surface_area_km2": 0.001,
       "historical_avg_km2": 3.5,
-      "pct_of_avg": 0.0,
+      "effective_baseline_km2": 3.5,
+      "baseline_source": "config",
+      "pct_of_avg": 0.028571428571428574,
       "status": "red"
     },
     {
@@ -238,8 +280,10 @@
       "date": "2026-09-12",
       "surface_area_km2": 3.107,
       "historical_avg_km2": 10.0,
-      "pct_of_avg": 31.1,
-      "status": "red"
+      "effective_baseline_km2": 4.07,
+      "baseline_source": "rolling-monthly",
+      "pct_of_avg": 76.4329643296433,
+      "status": "yellow"
     },
     {
       "id": "chiba",
@@ -250,7 +294,9 @@
       "date": "2026-09-12",
       "surface_area_km2": 0.174,
       "historical_avg_km2": 0.7,
-      "pct_of_avg": 24.9,
+      "effective_baseline_km2": 0.7,
+      "baseline_source": "config",
+      "pct_of_avg": 24.857142857142858,
       "status": "red"
     },
     {
@@ -262,7 +308,9 @@
       "date": "2026-09-12",
       "surface_area_km2": 0.066,
       "historical_avg_km2": 0.9,
-      "pct_of_avg": 7.3,
+      "effective_baseline_km2": 0.9,
+      "baseline_source": "config",
+      "pct_of_avg": 7.333333333333334,
       "status": "red"
     },
     {
@@ -274,7 +322,9 @@
       "date": "2026-09-12",
       "surface_area_km2": 5.144,
       "historical_avg_km2": 3.0,
-      "pct_of_avg": 171.5,
+      "effective_baseline_km2": 1.03,
+      "baseline_source": "rolling-monthly",
+      "pct_of_avg": 499.90281827016526,
       "status": "green"
     },
     {
@@ -286,6 +336,8 @@
       "date": "2026-09-12",
       "surface_area_km2": 0.0,
       "historical_avg_km2": 1.2,
+      "effective_baseline_km2": 1.2,
+      "baseline_source": "config",
       "pct_of_avg": 0.0,
       "status": "red"
     },
@@ -298,7 +350,9 @@
       "date": "2026-09-12",
       "surface_area_km2": 0.001,
       "historical_avg_km2": 1.5,
-      "pct_of_avg": 0.0,
+      "effective_baseline_km2": 1.5,
+      "baseline_source": "config",
+      "pct_of_avg": 0.06666666666666667,
       "status": "red"
     },
     {
@@ -310,7 +364,9 @@
       "date": "2026-09-12",
       "surface_area_km2": 3.186,
       "historical_avg_km2": 0.9,
-      "pct_of_avg": 354.0,
+      "effective_baseline_km2": 2.34,
+      "baseline_source": "rolling-monthly",
+      "pct_of_avg": 136.3869863013699,
       "status": "green"
     },
     {
@@ -322,8 +378,10 @@
       "date": "2026-09-12",
       "surface_area_km2": 0.079,
       "historical_avg_km2": 0.6,
-      "pct_of_avg": 13.1,
-      "status": "red"
+      "effective_baseline_km2": 0.05,
+      "baseline_source": "rolling-monthly",
+      "pct_of_avg": 151.92307692307693,
+      "status": "green"
     },
     {
       "id": "moula",
@@ -334,7 +392,9 @@
       "date": "2026-09-12",
       "surface_area_km2": 0.001,
       "historical_avg_km2": 0.7,
-      "pct_of_avg": 0.1,
+      "effective_baseline_km2": 0.7,
+      "baseline_source": "config",
+      "pct_of_avg": 0.14285714285714288,
       "status": "red"
     },
     {
@@ -346,8 +406,10 @@
       "date": "2026-09-12",
       "surface_area_km2": 1.163,
       "historical_avg_km2": 0.8,
-      "pct_of_avg": 145.4,
-      "status": "green"
+      "effective_baseline_km2": 29.89,
+      "baseline_source": "rolling-monthly",
+      "pct_of_avg": 3.891323987017767,
+      "status": "red"
     },
     {
       "id": "harka",
@@ -358,7 +420,9 @@
       "date": "2026-09-12",
       "surface_area_km2": 0.001,
       "historical_avg_km2": 0.7,
-      "pct_of_avg": 0.2,
+      "effective_baseline_km2": 0.7,
+      "baseline_source": "config",
+      "pct_of_avg": 0.14285714285714288,
       "status": "red"
     },
     {
@@ -370,8 +434,10 @@
       "date": "2026-09-12",
       "surface_area_km2": 0.095,
       "historical_avg_km2": 0.9,
-      "pct_of_avg": 10.5,
-      "status": "red"
+      "effective_baseline_km2": 0.05,
+      "baseline_source": "rolling-monthly",
+      "pct_of_avg": 190.0,
+      "status": "green"
     },
     {
       "id": "kebir",
@@ -382,8 +448,10 @@
       "date": "2026-09-12",
       "surface_area_km2": 0.137,
       "historical_avg_km2": 0.9,
-      "pct_of_avg": 15.2,
-      "status": "red"
+      "effective_baseline_km2": 0.24,
+      "baseline_source": "rolling-annual",
+      "pct_of_avg": 56.72877846790891,
+      "status": "yellow"
     },
     {
       "id": "douimis",
@@ -394,6 +462,8 @@
       "date": "2026-09-12",
       "surface_area_km2": null,
       "historical_avg_km2": 0.5,
+      "effective_baseline_km2": 19.61,
+      "baseline_source": "rolling-monthly",
       "pct_of_avg": null,
       "status": "gray"
     },
@@ -406,7 +476,9 @@
       "date": "2026-09-12",
       "surface_area_km2": 0.009,
       "historical_avg_km2": 0.4,
-      "pct_of_avg": 2.2,
+      "effective_baseline_km2": 0.4,
+      "baseline_source": "config",
+      "pct_of_avg": 2.2499999999999996,
       "status": "red"
     },
     {
@@ -418,7 +490,9 @@
       "date": "2026-09-12",
       "surface_area_km2": 0.003,
       "historical_avg_km2": 0.9,
-      "pct_of_avg": 0.4,
+      "effective_baseline_km2": 0.9,
+      "baseline_source": "config",
+      "pct_of_avg": 0.3333333333333333,
       "status": "red"
     },
     {
@@ -430,7 +504,9 @@
       "date": "2026-09-12",
       "surface_area_km2": 0.012,
       "historical_avg_km2": 0.6,
-      "pct_of_avg": 2.0,
+      "effective_baseline_km2": 0.04,
+      "baseline_source": "rolling-annual",
+      "pct_of_avg": 31.16883116883117,
       "status": "red"
     },
     {
@@ -442,6 +518,8 @@
       "date": "2026-09-12",
       "surface_area_km2": 0.0,
       "historical_avg_km2": 0.5,
+      "effective_baseline_km2": 0.5,
+      "baseline_source": "config",
       "pct_of_avg": 0.0,
       "status": "red"
     }
