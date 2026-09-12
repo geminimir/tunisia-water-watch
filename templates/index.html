@@ -1,5 +1,14 @@
 {% include "components/header.html" %}
 
+{% if is_stale %}
+<div class="banner banner-stale">
+  <strong>Pipeline is stale.</strong>
+  Last successful reading was {{ stale_days }} days ago (threshold: {{ staleness_days }} days).
+  Something is likely wrong — check the
+  <a href="https://github.com/{{ github_repo }}/actions">Actions log</a>.
+</div>
+{% endif %}
+
 <section class="hero">
   <h1>Tunisia's dams, watched from orbit</h1>
   <p>Independent, satellite-derived surface area for {{ dams|length }} major reservoirs. Updated every 5 days. Zero cost, zero servers, zero API keys.</p>
@@ -17,6 +26,10 @@
   <div class="stat">
     <div class="stat-value">{{ pct_of_avg|round(0) }}%</div>
     <div class="stat-label">of long-term seasonal average</div>
+  </div>
+  <div class="stat drought-{{ 'red' if drought_index is not none and drought_index < 60 else ('yellow' if drought_index is not none and drought_index < 85 else 'green') }}">
+    <div class="stat-value">{{ (drought_index|round(0))|int if drought_index is not none else "—" }}</div>
+    <div class="stat-label">National drought index (capacity-weighted % of baseline)</div>
   </div>
 </section>
 

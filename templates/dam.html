@@ -1,5 +1,11 @@
 {% include "components/header.html" %}
 
+{% if is_stale %}
+<div class="banner banner-stale">
+  <strong>Pipeline is stale.</strong> Last successful reading was {{ stale_days }} days ago.
+</div>
+{% endif %}
+
 <nav class="crumbs"><a href="../index.html">← All dams</a></nav>
 
 <section class="dam-header">
@@ -14,7 +20,7 @@
   </div>
   <div class="stat">
     <div class="stat-value">{{ "%.0f"|format(latest.pct_of_avg) if latest.pct_of_avg is not none else "—" }}%</div>
-    <div class="stat-label">of long-term average ({{ dam.historical_avg_km2 }} km²)</div>
+    <div class="stat-label">of {% if dam.baseline_source and dam.baseline_source.startswith("rolling") %}rolling baseline ({{ dam.effective_baseline_km2 }} km²){% else %}long-term average ({{ dam.historical_avg_km2 }} km²){% endif %}</div>
   </div>
   <div class="stat">
     <div class="stat-value">{{ trend_symbol }}</div>
@@ -69,8 +75,8 @@ new Chart(document.getElementById('dam-chart'), {
         tension: 0.25, fill: true, spanGaps: true, pointRadius: 2
       },
       {
-        label: 'Long-term average',
-        data: series.map(() => {{ dam.historical_avg_km2 }}),
+        label: '{% if dam.baseline_source and dam.baseline_source.startswith("rolling") %}Rolling baseline{% else %}Long-term average{% endif %}',
+        data: series.map(() => {{ dam.effective_baseline_km2 }}),
         borderColor: '#8a8f98', borderDash: [5, 5], fill: false, pointRadius: 0
       }
     ]

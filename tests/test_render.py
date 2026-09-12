@@ -63,5 +63,95 @@ class TestRender(unittest.TestCase):
             self.assertAlmostEqual(sidi["surface_area_km2"], 18.6, places=1)
 
 
+class TestBaselines(unittest.TestCase):
+    def _series(self, dates_and_values):
+        return [
+            {"date": d, "surface_area_km2": v, "pct_of_avg": None, "cloud_pct": 0, "scene_id": ""}
+            for d, v in dates_and_values
+        ]
+
+    def test_baseline_falls_back_to_config_when_thin(self):
+        per_dam = {"x": self._series([("2026-01-15", 5.0), ("2026-02-15", 6.0)])}
+        cfg = [{"id": "x", "historical_avg_km2": 10.0}]
+        b = render.compute_baselines(per_dam, cfg)
+        self.assertEqual(b["x"]["source"], "config")
+        self.assertEqual(b["x"]["annual"], 10.0)
+        self.assertIsNone(b["x"]["monthly"][1])
+
+    def test_baseline_uses_rolling_when_enough_samples(self):
+        # 12 readings, 3+ in month 6
+        rows = []
+        for year in (2019, 2020, 2021, 2022):
+            for month in (3, 6, 9):
+                rows.append((f"{year}-{month:02d}-15", 10.0 + year - 2019))
+        per_dam = {"x": self._series(rows)}
+        cfg = [{"id": "x", "historical_avg_km2": 100.0}]
+        b = render.compute_baselines(per_dam, cfg)
+        self.assertEqual(b["x"]["source"], "rolling")
+        self.assertAlmostEqual(b["x"]["annual"], 11.5, places=1)
+        self.assertIsNotNone(b["x"]["monthly"][6])
+
+    def test_effective_baseline_prefers_monthly(self):
+        base = {"annual": 20.0, "monthly": {6: 15.0, 7: None}, "source": "rolling"}
+        val, tag = render.effective_baseline(base, "2026-06-15", 30.0)
+        self.assertEqual(val, 15.0)
+        self.assertEqual(tag, "rolling-monthly")
+        val, tag = render.effective_baseline(base, "2026-07-15", 30.0)
+        self.assertEqual(val, 20.0)
+        self.assertEqual(tag, "rolling-annual")
+
+    def test_effective_baseline_falls_back_to_config(self):
+        base = {"annual": 0.0, "monthly": {6: None}, "source": "config"}
+        val, tag = render.effective_baseline(base, "2026-06-15", 12.5)
+        self.assertEqual(val, 12.5)
+        self.assertEqual(tag, "config")
+
+
+class TestDroughtIndex(unittest.TestCase):
+    def test_capacity_weighted(self):
+        dams = [
+            {"pct_of_avg": 50.0, "capacity_hm3": 500},
+            {"pct_of_avg": 100.0, "capacity_hm3": 100},
+        ]
+        idx = render._drought_index(dams)
+        self.assertAlmostEqual(idx, (50 * 500 + 100 * 100) / 600, places=2)
+
+    def test_ignores_missing_readings(self):
+        dams = [
+            {"pct_of_avg": None, "capacity_hm3": 500},
+            {"pct_of_avg": 80.0, "capacity_hm3": 100},
+        ]
+        self.assertAlmostEqual(render._drought_index(dams), 80.0, places=2)
+
+    def test_no_readings_returns_none(self):
+        self.assertIsNone(render._drought_index([{"pct_of_avg": None, "capacity_hm3": 1}]))
+
+
+class TestStaleness(unittest.TestCase):
+    def test_fresh(self):
+        from datetime import datetime, timedelta, timezone
+        recent = (datetime.now(timezone.utc).replace(tzinfo=None) - timedelta(days=3)).strftime("%Y-%m-%d")
+        days, stale = render._staleness(
+            [{"date": recent, "surface_area_km2": "1.0"}], datetime.now(timezone.utc).replace(tzinfo=None)
+        )
+        self.assertFalse(stale)
+        self.assertLessEqual(days, 3)
+
+    def test_stale(self):
+        from datetime import datetime, timedelta, timezone
+        old = (datetime.now(timezone.utc).replace(tzinfo=None) - timedelta(days=30)).strftime("%Y-%m-%d")
+        days, stale = render._staleness(
+            [{"date": old, "surface_area_km2": "1.0"}], datetime.now(timezone.utc).replace(tzinfo=None)
+        )
+        self.assertTrue(stale)
+        self.assertGreaterEqual(days, 29)
+
+    def test_empty(self):
+        from datetime import datetime, timezone
+        days, stale = render._staleness([], datetime.now(timezone.utc).replace(tzinfo=None))
+        self.assertTrue(stale)
+        self.assertIsNone(days)
+
+
 if __name__ == "__main__":
     unittest.main()
