@@ -1,11 +1,11 @@
 # Tunisia Water Watch
 
-[![Update readings](https://github.com/geminimir/tunisia-water-watch/actions/workflows/run.yml/badge.svg)](https://github.com/geminimir/tunisia-water-watch/actions/workflows/run.yml)
+[![Update readings](https://github.com/geminimir/water-watch/actions/workflows/run.yml/badge.svg)](https://github.com/geminimir/water-watch/actions/workflows/run.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 An independent, satellite-based water and agriculture monitoring system for Tunisia. Built to run forever with zero maintenance, zero cost, and zero human intervention.
 
-**Dashboard:** https://geminimir.github.io/tunisia-water-watch/
+**Dashboard:** https://geminimir.github.io/water-watch/
 
 ## What it does
 

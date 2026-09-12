@@ -179,7 +179,7 @@ def _drought_index(dam_view: list[dict[str, Any]]) -> float | None:
     return num / den
 
 
-def render_site(github_repo: str = "geminimir/tunisia-water-watch") -> None:
+def render_site(github_repo: str = "geminimir/water-watch") -> None:
     env = Environment(
         loader=FileSystemLoader(str(TEMPLATES)),
         autoescape=select_autoescape(["html"]),
@@ -351,4 +351,4 @@ def render_site(github_repo: str = "geminimir/tunisia-water-watch") -> None:
 
 
 if __name__ == "__main__":
-    render_site(os.environ.get("GITHUB_REPOSITORY", "geminimir/tunisia-water-watch"))
+    render_site(os.environ.get("GITHUB_REPOSITORY", "geminimir/water-watch"))

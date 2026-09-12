@@ -122,7 +122,7 @@ def main() -> int:
         else:
             skipped += 1
     log.info("run complete: %d read, %d skipped", read, skipped)
-    render_site(os.environ.get("GITHUB_REPOSITORY", "geminimir/tunisia-water-watch"))
+    render_site(os.environ.get("GITHUB_REPOSITORY", "geminimir/water-watch"))
     return 0
 
 
