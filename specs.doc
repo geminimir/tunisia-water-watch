@@ -1,0 +1,440 @@
+# Tunisia Water Watch
+
+An independent, satellite-based water and agriculture monitoring system for Tunisia.
+Built to run forever with zero maintenance, zero cost, and zero human intervention.
+
+---
+
+## The problem
+
+Tunisia is in the middle of a water crisis that threatens its agriculture, its food security, and the livelihoods of millions of people. The numbers tell the story clearly.
+
+### Water infrastructure is failing
+
+Tunisia operates approximately 37 major dams and reservoirs. They are the country's lifeline — and they are deteriorating. A 40-year satellite analysis of Sidi Salem Dam, the country's largest, revealed its surface area dropped from 37.8 km² in 1985 to 19.8 km² in 2025. Nearly halved. A study of 28 reservoirs in the Tunisian Dorsal found a typical operational life of just 14 years before sedimentation renders them ineffective, with soil losses averaging 14.5 tonnes per hectare per year.
+
+The pipe network loses approximately 30% of total water supply through leakage. Dam fill rates dropped to 41% in May 2025 before rain brought partial recovery to roughly 60% by mid-2026. But without continuous, independent monitoring, it is impossible to distinguish temporary rain relief from structural capacity loss.
+
+### Agriculture is flying blind
+
+74% of Tunisia's water is consumed by agriculture — yet only 8% of arable land is irrigated. The remaining 92% depends entirely on rainfall. The northern region produces 85% of the country's cereal output and is acutely vulnerable to drought. Tunisia is one of the world's major producers and exporters of olive oil, with over 65% of olive-growing areas in the central region.
+
+Farmers have no field-level data. They walk their fields and look. There is no continuous system telling them which plots are stressed, when to irrigate, or how their crops compare to seasonal norms.
+
+### Food imports are timed blind
+
+Tunisia is heavily dependent on food imports, particularly wheat. The national economy is structured around exporting olive oil and importing grain. When drought hits, the ministry needs to purchase wheat on international markets — but by the time the drought is visible on the ground, prices have already risen. Early drought detection that feeds into commodity procurement timing could save Tunisia hundreds of millions of dollars in import costs.
+
+### The crisis is accelerating
+
+Tunisia recorded the steepest rise in ecological threat of any country assessed in the 2025 Ecological Threat Report, driven primarily by water insecurity. In 2008, 75% of Tunisia's total land area was already threatened by land degradation. Desertification from the Sahara continues to advance northward through semi-arid zones, driven by overgrazing, deforestation, and salinization.
+
+### Money is flowing, but outcomes can't be verified
+
+The World Bank approved a $700 million water security program for Tunisia in March 2026. The African Development Bank published a drought resilience framework for Tunisia in May 2026. These institutions need independent, verifiable data to evaluate whether their investments are working — not self-reported government statistics that may be politically convenient.
+
+---
+
+## What already exists
+
+Every piece of data needed to address these problems is already being collected by satellites, for free, on a regular schedule.
+
+### Sentinel-2 (European Space Agency / Copernicus)
+
+Three satellites (2A, 2B, 2C) provide 10-meter resolution multispectral imagery. Tunisia falls in the priority coverage zone and receives a new image every 5 days. The data is permanently free and open under the Copernicus open data policy. Sentinel-2 captures 13 spectral bands including green and near-infrared, which are used to compute the Normalized Difference Water Index (NDWI) for reservoir monitoring and the Normalized Difference Vegetation Index (NDVI) for crop health.
+
+### Sentinel-1 (ESA / Copernicus)
+
+Synthetic Aperture Radar (SAR) imaging at 10-meter resolution every 12 days. Works through clouds and at night. Critical for soil moisture mapping. Tunisian researchers have already demonstrated a soil moisture estimation technique combining Sentinel-1 and Sentinel-2 data with a root-mean-square error of 4.3% against ground measurements — validated specifically for Tunisian soil conditions.
+
+### NISAR (NASA / ISRO)
+
+Launched July 2025. Dual-frequency SAR that images nearly all land and ice surfaces twice every 12 days with centimeter-level surface displacement detection. All data is freely accessible within one to two days of observation, and in near real-time during emergencies.
+
+### GRACE-FO (NASA / DLR)
+
+Gravity-based groundwater monitoring at regional scale. Provides monthly estimates of subsurface water storage changes. Already shows Tunisia's aquifer depletion trends.
+
+### Landsat 8/9 (NASA / USGS)
+
+30-meter resolution optical imagery with decades of historical archive. Free and open. Already used in the 40-year Sidi Salem Dam surface area study.
+
+### Digital Earth Africa
+
+Provides a processed, analysis-ready time series of Sentinel-2 data over Africa from 2017 onward — 1.5 million scenes, updated routinely, free to access.
+
+---
+
+## The gap
+
+The satellite data exists. The computation is trivial. The need is desperate. The gap is that no one has built the simple, persistent pipeline that connects the data to the decisions.
+
+What exists today are one-off research papers, isolated case studies, and proof-of-concepts that died when funding ended. The Sidi Salem 40-year analysis was a research project. The Farmonaut precision agriculture demo in Tunisia was a case study across seven plots. The eCDI drought index that Tunisia recently adopted is the right idea — but it is new and not yet integrated into procurement decisions.
+
+There is no continuously running, independent system that:
+
+- Monitors every Tunisian dam weekly and publishes the results
+- Tracks crop health by governorate and compares to seasonal norms
+- Produces drought trajectory forecasts that feed into import timing
+- Accumulates verified historical data that development banks can audit
+
+The gap is not a technology problem. It is not a data problem. It is not a funding problem. It is an engineering and operational problem: someone needs to build a pipeline that ingests free data, does simple math, and publishes the results — and then keep it running indefinitely at near-zero cost.
+
+---
+
+## The impact
+
+### Dam monitoring
+
+Independent, satellite-verified reservoir tracking for all 37 major dams would give Tunisia — and the institutions funding its water infrastructure — the first continuous, unbiased picture of the national water budget. When the government reports 60% fill, satellite data can verify whether that number reflects actual surface extent or is an artifact of aggregation and political convenience.
+
+The Sidi Salem surface area loss (37.8 → 19.8 km²) took 40 years of satellite data to document retrospectively. A running system would have flagged the accelerating decline in real time.
+
+### Drought early warning
+
+A satellite-based drought index that feeds directly into wheat import timing could save hundreds of millions of dollars over time. Tunisia imports grain annually; the difference between buying wheat three months before a drought is confirmed versus three months after is a significant fraction of the import budget. The eCDI system shows the direction — this makes it operational and independent.
+
+### Agricultural intelligence
+
+Field-level crop stress monitoring for even a fraction of Tunisia's farmland would enable precision irrigation where irrigation exists (the irrigated 8%) and provide early harvest forecasting for the rain-fed 92%. A March 2026 case study demonstrated that satellite-based advisories work on real Tunisian farms growing olives, almonds, pistachios, and lemons — the technical feasibility is already proven.
+
+### Development bank accountability
+
+The World Bank's $700M program and the AfDB's drought resilience framework need independent outcome monitoring. A public, satellite-verified dashboard showing reservoir levels and crop health over time provides exactly the kind of evidence these institutions need. The data doesn't need to be perfect — it needs to be independent, consistent, and continuously available.
+
+### Long-term: financial products
+
+Once the system has accumulated 2-3 years of verified, location-specific data, that dataset becomes the foundation for parametric insurance products. Parametric crop insurance pays out automatically when satellite-measured conditions (e.g., NDVI below threshold for consecutive readings) trigger a predefined threshold — no inspector, no paperwork, no corruption. This requires exactly the kind of trusted, historical data oracle that a continuously running monitoring system produces.
+
+---
+
+## Design principles
+
+The system is designed around a single constraint: **it must survive indefinitely with zero human involvement.** Every architectural decision follows from this.
+
+### No servers
+
+Anything that runs on a server requires someone to maintain, patch, scale, and pay for it. The system uses no servers. Computation runs as a scheduled GitHub Actions workflow. The website is static HTML hosted on GitHub Pages. There is no backend, no database, no container, no cloud instance.
+
+### No paid services
+
+Any dependency on a paid service creates a point of failure when the payment method expires or the budget is cut. Every component uses permanently free tiers: Copernicus satellite data (free by EU policy), GitHub Actions (free for public repositories — 2,000 minutes/month included), GitHub Pages (free for public repositories). Total operating cost: $0/month.
+
+### No expiring credentials
+
+API tokens that expire are the silent killer of unattended systems. The primary data source — Sentinel-2 Cloud-Optimized GeoTIFFs on AWS Open Data — is accessible via public HTTP without authentication. The STAC API used to discover scenes requires no API key. GitHub Actions authenticates via the built-in GITHUB_TOKEN, which is automatically provisioned on every run.
+
+### No external state
+
+The Git repository is simultaneously the codebase, the database, the deployment artifact, and the backup. The accumulated data (CSV files) is committed to the repository. The generated website is served from the repository. The entire system — code, data, and output — can be recovered from a single `git clone`. There is no external database, no object store, no third-party state.
+
+### No fragile dependencies
+
+Python dependencies are pinned to exact versions. The dependency tree is minimal: an HTTP client, a GeoTIFF reader, numpy for array math, and Jinja2 for HTML templating. No frameworks, no ORMs, no build tools, no JavaScript bundlers.
+
+### Self-sustaining activity
+
+GitHub disables Actions workflows on repositories with no activity for 60 days. Each run of this system commits updated data and HTML to the repository, which counts as activity. The system keeps itself alive by running.
+
+### Graceful degradation
+
+If a single dam reading fails (cloud cover, API timeout, malformed data), the system skips that dam and continues. The dashboard shows the gap: "last reading: 10 days ago" instead of "5 days ago." The next clear-sky pass fills it in. The system never fails entirely because one component failed.
+
+### Fallback data sources
+
+The STAC API used to discover Sentinel-2 scenes has multiple independent providers serving the same data: Element84 Earth Search, Microsoft Planetary Computer, and Copernicus Data Space. The system tries them in order. If the primary is down, it falls back. If all three are down simultaneously, the run is skipped and retried on the next cycle.
+
+### Observable failure
+
+The dashboard itself shows "last updated: [date]." If the date is stale, something is wrong. The repository's commit history shows every successful run. A README badge shows the latest workflow status. No monitoring system is needed — the output IS the monitoring.
+
+---
+
+## Architecture
+
+### Components
+
+```
+┌──────────────────────────────────────────────────────────┐
+│                    GitHub Repository                     │
+│                                                          │
+│  ┌──────────┐  ┌────────────┐  ┌───────────────────────┐ │
+│  │ config/  │  │  data/     │  │  site/                │ │
+│  │          │  │            │  │                       │ │
+│  │ dams.json│  │ readings.csv│ │  index.html           │ │
+│  │          │  │            │  │  dam/{id}.html        │ │
+│  │          │  │ ndvi.csv   │  │  agriculture.html     │ │
+│  │          │  │            │  │  assets/charts.js     │ │
+│  └──────────┘  └────────────┘  └───────────────────────┘ │
+│                                                          │
+│  ┌──────────────────────┐  ┌──────────────────────────┐  │
+│  │ scripts/             │  │ .github/workflows/       │  │
+│  │                      │  │                          │  │
+│  │ fetch.py             │  │ run.yml                  │  │
+│  │ compute.py           │  │ (cron: every 5 days)     │  │
+│  │ render.py            │  │                          │  │
+│  │ main.py              │  │                          │  │
+│  └──────────────────────┘  └──────────────────────────┘  │
+│                                                          │
+└──────────────────────────────────────────────────────────┘
+              │                          ▲
+              │ GitHub Actions           │ GitHub Pages
+              │ (runs main.py)           │ (serves site/)
+              ▼                          │
+┌──────────────────────┐      ┌─────────────────────┐
+│  Sentinel-2 COGs     │      │  Public dashboard   │
+│  (AWS Open Data)     │      │  (static HTML)      │
+│  via STAC API        │      │                     │
+│  (no auth required)  │      │  tunisiawaterwatch  │
+└──────────────────────┘      └─────────────────────┘
+```
+
+### Data flow
+
+Each run follows the same sequence:
+
+**1. Discover scenes.** The script queries a public STAC API (Earth Search, Planetary Computer, or Copernicus CDSE — tried in order) for the latest Sentinel-2 scenes covering each dam's bounding box. It filters for scenes with less than 30% cloud cover.
+
+**2. Fetch bands.** For each dam with a usable scene, the script downloads two bands from the Cloud-Optimized GeoTIFF: Band 3 (green, 560nm) and Band 8 (near-infrared, 842nm). Because COGs support HTTP range requests, only the pixels within the dam's bounding box are downloaded — typically 100 KB to 1 MB per dam.
+
+**3. Compute NDWI.** The Normalized Difference Water Index is computed as:
+
+```
+NDWI = (Green - NIR) / (Green + NIR)
+```
+
+Pixels with NDWI above a threshold (typically 0.0 to 0.3) are classified as water. The threshold is calibrated per dam during initial setup using historical imagery.
+
+**4. Compute surface area.** Water pixels are counted and multiplied by the pixel area (100 m² at 10m resolution). The result is the estimated water surface area in km².
+
+**5. Append to CSV.** One row is added to `data/readings.csv`:
+
+```csv
+date,dam_id,dam_name,surface_area_km2,cloud_pct,scene_id,threshold_used,historical_avg_km2,pct_of_avg
+2026-09-12,sidi_salem,Sidi Salem,18.4,12,S2B_MSIL2A_20260912...,0.1,28.8,63.9
+```
+
+**6. Regenerate the site.** The script reads the full CSV, computes summary statistics, and generates static HTML pages using Jinja2 templates. Charts are rendered client-side using Chart.js (loaded from a CDN). The map uses Leaflet.js with OpenStreetMap tiles (no API key).
+
+**7. Commit and push.** The updated CSV and HTML are committed to the repository and pushed. GitHub Pages automatically deploys the new site. The commit message includes a summary: "Update: 35/37 dams read, 2 skipped (cloud)."
+
+### File structure
+
+```
+tunisia-water-watch/
+├── .github/
+│   └── workflows/
+│       └── run.yml              # Cron trigger: every 5 days
+├── config/
+│   └── dams.json                # 37 dams: id, name, lat, lon, bbox, ndwi_threshold
+├── scripts/
+│   ├── main.py                  # Entry point: orchestrates the full run
+│   ├── fetch.py                 # STAC scene discovery + COG band download
+│   ├── compute.py               # NDWI computation + water pixel counting
+│   └── render.py                # Static HTML generation from CSV data
+├── templates/
+│   ├── index.html               # National overview map + summary
+│   ├── dam.html                 # Per-dam detail page template
+│   └── components/
+│       ├── header.html
+│       ├── chart.html           # Chart.js time series snippet
+│       └── map.html             # Leaflet map snippet
+├── data/
+│   ├── readings.csv             # Append-only dam surface area readings
+│   └── latest.json              # Most recent reading per dam (machine-readable)
+├── site/                        # Generated static site (committed, served by Pages)
+│   ├── index.html
+│   ├── dam/
+│   │   ├── sidi-salem.html
+│   │   ├── barrage-mellegue.html
+│   │   └── ...
+│   └── assets/
+│       └── style.css
+├── requirements.txt             # Pinned Python dependencies
+├── README.md
+└── LICENSE                      # MIT
+```
+
+### The workflow file
+
+```yaml
+name: Update readings
+on:
+  schedule:
+    - cron: '0 6 */5 * *'        # Every 5 days at 06:00 UTC
+  workflow_dispatch:               # Manual trigger for testing
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r requirements.txt
+      - run: python scripts/main.py
+      - name: Commit and push
+        run: |
+          git config user.name "Tunisia Water Watch Bot"
+          git config user.email "bot@tunisiawaterwatch"
+          git add data/ site/
+          git diff --cached --quiet || git commit -m "$(python -c "
+          import csv
+          with open('data/readings.csv') as f:
+              rows = list(csv.DictReader(f))
+          latest = [r for r in rows if r['date'] == rows[-1]['date']]
+          total = len(latest)
+          skipped = sum(1 for r in latest if r['surface_area_km2'] == '')
+          print(f'Update: {total - skipped}/{total} dams read, {skipped} skipped')
+          ")"
+          git push
+```
+
+### STAC fallback chain
+
+```python
+STAC_ENDPOINTS = [
+    "https://earth-search.aws.element84.com/v1",       # Primary
+    "https://planetarycomputer.microsoft.com/api/stac/v1",  # Fallback 1
+    "https://catalogue.dataspace.copernicus.eu/stac",   # Fallback 2
+]
+
+SENTINEL2_COLLECTION = {
+    "earth-search.aws.element84.com": "sentinel-2-l2a",
+    "planetarycomputer.microsoft.com": "sentinel-2-l2a",
+    "catalogue.dataspace.copernicus.eu": "SENTINEL-2",
+}
+```
+
+Each endpoint serves the same underlying Sentinel-2 data. If the primary returns an error or times out (10-second timeout), the script moves to the next. All three failing in the same 5-day window is extremely unlikely.
+
+### Cloud cover handling
+
+Each Sentinel-2 scene includes a Scene Classification Layer (SCL band). Before computing NDWI for a dam, the script checks what percentage of the bounding box is classified as cloud, cloud shadow, or cirrus. If more than 50%, the dam is skipped for this run. The CSV records the skip as an empty `surface_area_km2` with the `cloud_pct` value filled in, so the gap is visible in the data.
+
+Tunisia is predominantly sunny — extended cloud cover over any given dam rarely persists for more than one or two consecutive passes.
+
+### Dashboard output
+
+The generated dashboard has three tiers:
+
+**National overview (index.html):** A map of Tunisia showing all 37 dams as colored circles. Green: surface area at or above the historical average for this time of year. Yellow: 20–50% below average. Red: more than 50% below average. Gray: no recent reading (cloud cover). Below the map: a simple time series of total national reservoir surface area, updated on each run.
+
+**Per-dam detail (dam/{id}.html):** A line chart showing surface area over time. Current reading versus the same week last year versus the long-term average. A trend indicator (arrow up, flat, or down). The last 12 months of readings in a table. A note showing when the dam was last successfully read and when the next reading is expected.
+
+**Machine-readable API (data/latest.json):** A JSON file with the most recent reading for each dam, suitable for consumption by other tools, bots, or researchers. Updated on every run.
+
+All pages are lightweight static HTML. Charts use Chart.js loaded from a CDN. The map uses Leaflet.js with OpenStreetMap tiles. No frameworks, no build process, no JavaScript bundling. The entire site loads and renders on a low-end phone over a 3G connection.
+
+---
+
+## Expansion path
+
+The architecture does not change as the system grows. New capabilities are new computations in the same script and new pages in the same static site.
+
+### Phase 1: Dam monitoring (month 1–3)
+
+Ship the core pipeline. 37 dams, NDWI-based surface area, weekly updates, public dashboard. Validate against any available ground truth. Build the historical baseline.
+
+### Phase 2: Agricultural stress mapping (month 3–6)
+
+Add NDVI computation per governorate. Same Sentinel-2 data, different index:
+
+```
+NDVI = (NIR - Red) / (NIR + Red)
+```
+
+Aggregate by governorate boundaries (defined in config). Compare to seasonal norms. Add agricultural health pages to the dashboard. Flag governorates with anomalously low vegetation vigor.
+
+### Phase 3: Composite drought status (month 6–12)
+
+Combine water levels (dam NDWI trends), vegetation health (governorate NDVI anomalies), and trend direction into a single composite drought severity indicator per region. This parallels the eCDI that Tunisia recently adopted — but produced independently, at higher spatial resolution, and published openly.
+
+Add a Telegram bot that posts automated alerts when a dam drops below a critical threshold or a governorate enters drought status. Telegram bot API is free and requires no ongoing maintenance beyond the initial setup.
+
+### Phase 4: Data as infrastructure (year 1+)
+
+After 12+ months of continuous, verified operation, the accumulated dataset becomes the most valuable component. It provides:
+
+- **Historical baselines** for every dam and governorate, enabling trend detection and anomaly identification that improve with each passing month.
+- **An independent data oracle** suitable for parametric insurance products, where payouts are triggered automatically by satellite-verified conditions crossing predefined thresholds.
+- **Auditable evidence** for development bank program evaluation, where the data's independence from government reporting is the primary value.
+- **A foundation for crop financing** decisions, where satellite-verified yield indicators reduce risk for lenders.
+
+None of these downstream applications require changes to the core pipeline. They consume the data it already produces.
+
+---
+
+## Initial setup requirements
+
+The system runs unattended forever, but the initial setup requires a one-time human effort:
+
+### Dam configuration
+
+For each of the 37 major Tunisian dams, the config file needs:
+
+- Geographic coordinates (latitude, longitude) of the dam center
+- A bounding box (in decimal degrees) that fully contains the reservoir at maximum capacity, with a small buffer
+- An NDWI threshold calibrated to distinguish water from wet soil at that specific location
+- The historical average surface area for each month (derived from the Landsat archive or the first year of Sentinel-2 operation)
+
+This is approximately 2–4 hours of work using any GIS tool or Google Earth, plus a calibration pass using freely available historical Sentinel-2 imagery.
+
+### Repository setup
+
+- Create a public GitHub repository
+- Enable GitHub Pages serving from the `site/` directory
+- Enable GitHub Actions with the cron workflow
+- Push the initial commit containing code, config, and templates
+- Trigger one manual run to verify the pipeline works end to end
+
+### Validation
+
+Run the pipeline manually for 2–3 weeks. Compare outputs against any available government-reported dam levels or satellite studies. Adjust NDWI thresholds per dam if needed. Once the numbers are reasonable, let the cron take over.
+
+After this point, no further human involvement is required. The system sustains itself.
+
+---
+
+## Cost summary
+
+| Component | Provider | Cost |
+|---|---|---|
+| Satellite imagery | Copernicus (Sentinel-2) | $0 — free by EU policy |
+| Scene discovery | STAC API (Element84 / Microsoft / CDSE) | $0 — public API |
+| Computation | GitHub Actions | $0 — free for public repos (uses ~18 of 2,000 free min/month) |
+| Data storage | Git repository | $0 — the CSV grows at roughly 500 KB/year |
+| Web hosting | GitHub Pages | $0 — free for public repos |
+| Map tiles | OpenStreetMap | $0 — free and open |
+| Charts | Chart.js (CDN) | $0 — open source |
+| Domain (optional) | Any registrar | ~$10/year (optional — works fine on github.io) |
+| Monitoring | The dashboard itself | $0 — stale dates are self-evident |
+| **Total** | | **$0/month** |
+
+---
+
+## Risks and mitigations
+
+| Risk | Likelihood | Impact | Mitigation |
+|---|---|---|---|
+| GitHub changes Actions free tier | Low | High | Migrate workflow to any CI with cron support (GitLab CI, Codeberg). The script is platform-agnostic. |
+| Primary STAC API goes offline | Medium | Low | Automatic fallback to two alternative STAC endpoints serving the same data. |
+| Sentinel-2 mission ends | Very low | High | ESA's Copernicus program has a continuity mandate. Sentinel-2 Next Gen is already planned. Landsat provides a degraded but functional backup. |
+| NDWI threshold drift over time | Low | Medium | Surface area estimates may diverge from reality if dam morphology changes (new construction, major silting). Periodic recalibration (once every few years) is advisable but not critical — relative trends remain valid. |
+| Extended cloud cover | Medium | Low | Tunisia is predominantly sunny. A missed reading is filled by the next clear pass. Gaps are visible on the dashboard and self-correcting. |
+| GitHub disables the workflow | Low | Medium | The system's own commits (pushing updated data) count as repository activity, preventing the 60-day inactivity cutoff. |
+| Data is misused or misinterpreted | Medium | Medium | Clear disclaimers on the dashboard: this is satellite-derived surface extent, not volumetric measurement. Surface area is a proxy for volume, not a replacement for bathymetric survey. |
+| The original developer disappears | Certain | None | This is the design goal. MIT license, public repository, simple architecture. Anyone can fork and it keeps running. |
+
+---
+
+## What this is not
+
+This system does not replace professional hydrological monitoring. It does not measure reservoir volume (which requires bathymetric data). It does not detect underground pipe leaks. It does not provide real-time flood warnings. It does not run weather models.
+
+What it does is take free satellite data that flies over Tunisia every 5 days, compute a simple water index, publish the result on a public website, and accumulate a historical record. It does this forever, for free, without anyone needing to be involved.
+
+The value is not in the sophistication of the analysis. The value is in the fact that it runs.

@@ -1,0 +1,99 @@
+{% include "components/header.html" %}
+
+<section class="hero">
+  <h1>Tunisia's dams, watched from orbit</h1>
+  <p>Independent, satellite-derived surface area for {{ dams|length }} major reservoirs. Updated every 5 days. Zero cost, zero servers, zero API keys.</p>
+</section>
+
+<section class="stats">
+  <div class="stat">
+    <div class="stat-value">{{ total_area_km2|round(1) }} km²</div>
+    <div class="stat-label">Total mapped water surface (latest pass)</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">{{ dams_read }}/{{ dams|length }}</div>
+    <div class="stat-label">Dams read on latest run</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">{{ pct_of_avg|round(0) }}%</div>
+    <div class="stat-label">of long-term seasonal average</div>
+  </div>
+</section>
+
+<section class="map-section">
+  <div id="map"></div>
+</section>
+
+<section class="table-section">
+  <h2>All dams</h2>
+  <table class="dams">
+    <thead>
+      <tr>
+        <th>Dam</th>
+        <th>Governorate</th>
+        <th>Last reading</th>
+        <th class="num">Surface (km²)</th>
+        <th class="num">% of avg</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for d in dams %}
+      <tr>
+        <td><a href="dam/{{ d.id }}.html">{{ d.name }}</a></td>
+        <td>{{ d.governorate }}</td>
+        <td>{{ d.last_date or "—" }}</td>
+        <td class="num">{{ "%.2f"|format(d.surface_area_km2) if d.surface_area_km2 is not none else "—" }}</td>
+        <td class="num">{{ "%.0f"|format(d.pct_of_avg) if d.pct_of_avg is not none else "—" }}</td>
+        <td><span class="badge badge-{{ d.status }}">{{ d.status }}</span></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+
+<section class="chart-section">
+  <h2>National reservoir surface area over time</h2>
+  <canvas id="national-chart" height="120"></canvas>
+</section>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script>
+const dams = {{ dams_json|safe }};
+const nationalSeries = {{ national_series_json|safe }};
+
+const map = L.map('map', { scrollWheelZoom: false }).setView([34.5, 9.6], 6);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '© OpenStreetMap contributors', maxZoom: 12
+}).addTo(map);
+const statusColors = { green: '#2e8b57', yellow: '#e2a03f', red: '#c0392b', gray: '#8a8f98' };
+for (const d of dams) {
+  L.circleMarker([d.lat, d.lon], {
+    radius: 8, color: statusColors[d.status] || '#8a8f98',
+    fillColor: statusColors[d.status] || '#8a8f98', fillOpacity: 0.75, weight: 1
+  }).bindPopup(
+    `<strong>${d.name}</strong><br>${d.governorate}<br>` +
+    `Surface: ${d.surface_area_km2 == null ? '—' : d.surface_area_km2.toFixed(2)} km²<br>` +
+    `<a href="dam/${d.id}.html">Details →</a>`
+  ).addTo(map);
+}
+
+const ctx = document.getElementById('national-chart');
+new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: nationalSeries.map(p => p.date),
+    datasets: [{
+      label: 'Total surface area (km²)',
+      data: nationalSeries.map(p => p.total_area_km2),
+      borderColor: '#1e6fbf', backgroundColor: 'rgba(30,111,191,0.15)',
+      tension: 0.25, fill: true, pointRadius: 2
+    }]
+  },
+  options: { responsive: true, plugins: { legend: { display: false } } }
+});
+</script>
+
+{% include "components/footer.html" %}

@@ -1,0 +1,82 @@
+{% include "components/header.html" %}
+
+<nav class="crumbs"><a href="../index.html">← All dams</a></nav>
+
+<section class="dam-header">
+  <h1>{{ dam.name }}</h1>
+  <p class="muted">{{ dam.governorate }} governorate · {{ dam.river }} · capacity ≈ {{ dam.capacity_hm3 }} hm³</p>
+</section>
+
+<section class="stats">
+  <div class="stat">
+    <div class="stat-value">{{ "%.2f"|format(latest.surface_area_km2) if latest.surface_area_km2 is not none else "—" }} km²</div>
+    <div class="stat-label">Latest surface area ({{ latest.date or "no reading" }})</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">{{ "%.0f"|format(latest.pct_of_avg) if latest.pct_of_avg is not none else "—" }}%</div>
+    <div class="stat-label">of long-term average ({{ dam.historical_avg_km2 }} km²)</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">{{ trend_symbol }}</div>
+    <div class="stat-label">30-day trend</div>
+  </div>
+</section>
+
+<section class="chart-section">
+  <canvas id="dam-chart" height="120"></canvas>
+</section>
+
+<section class="table-section">
+  <h2>Recent readings</h2>
+  <table class="readings">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th class="num">Surface (km²)</th>
+        <th class="num">% of avg</th>
+        <th class="num">Cloud %</th>
+        <th>Scene</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for r in recent %}
+      <tr>
+        <td>{{ r.date }}</td>
+        <td class="num">{{ "%.2f"|format(r.surface_area_km2) if r.surface_area_km2 is not none else "—" }}</td>
+        <td class="num">{{ "%.0f"|format(r.pct_of_avg) if r.pct_of_avg is not none else "—" }}</td>
+        <td class="num">{{ "%.0f"|format(r.cloud_pct) if r.cloud_pct is not none else "—" }}</td>
+        <td class="tiny">{{ r.scene_id or "—" }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+
+<p class="muted small">Next expected reading: {{ next_run_at }}. Data source: Sentinel-2 L2A via public STAC. NDWI threshold: {{ dam.ndwi_threshold }}.</p>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script>
+const series = {{ series_json|safe }};
+new Chart(document.getElementById('dam-chart'), {
+  type: 'line',
+  data: {
+    labels: series.map(p => p.date),
+    datasets: [
+      {
+        label: 'Surface area (km²)',
+        data: series.map(p => p.surface_area_km2),
+        borderColor: '#1e6fbf', backgroundColor: 'rgba(30,111,191,0.15)',
+        tension: 0.25, fill: true, spanGaps: true, pointRadius: 2
+      },
+      {
+        label: 'Long-term average',
+        data: series.map(() => {{ dam.historical_avg_km2 }}),
+        borderColor: '#8a8f98', borderDash: [5, 5], fill: false, pointRadius: 0
+      }
+    ]
+  },
+  options: { responsive: true }
+});
+</script>
+
+{% include "components/footer.html" %}

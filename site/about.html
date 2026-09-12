@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>About — Tunisia Water Watch</title>
+<meta name="description" content="Independent, satellite-based monitoring of Tunisia's dams and agriculture.">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💧</text></svg>">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">Tunisia Water Watch</a>
+    <nav>
+      <a href="index.html">Dams</a>
+      <a href="agriculture.html">Agriculture</a>
+      <a href="about.html">About</a>
+      <a href="https://github.com/geminimir/tunisia-water-watch" target="_blank" rel="noopener">Source</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+
+<section class="hero">
+  <h1>About Tunisia Water Watch</h1>
+  <p>An independent, satellite-based water and agriculture monitoring system for Tunisia. Built to run forever with zero maintenance, zero cost, and zero human intervention.</p>
+</section>
+
+<section>
+  <h2>How it works</h2>
+  <ol>
+    <li>Every 5 days, a GitHub Actions cron job triggers.</li>
+    <li>The pipeline queries a public STAC API for the latest low-cloud Sentinel-2 scene over each dam's bounding box.</li>
+    <li>Only the pixels inside the box are downloaded (COG range requests), typically &lt;1 MB per dam.</li>
+    <li>Green and near-infrared bands are combined into the Normalized Difference Water Index (NDWI = (G − NIR) / (G + NIR)).</li>
+    <li>Pixels above a per-dam threshold are counted as water; the result is the reservoir surface area in km².</li>
+    <li>The reading is appended to <code>data/readings.csv</code>, and this static site is regenerated and pushed.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>What this is not</h2>
+  <p>This is not volumetric measurement (which requires bathymetric survey). It does not detect underground pipe leaks, does not provide real-time flood warnings, and does not run weather models. Its value is <em>continuity</em>: it takes free satellite data that flies over Tunisia every 5 days, computes a simple water index, publishes the result, and accumulates a historical record — forever, for free, with no one needing to be involved.</p>
+</section>
+
+<section>
+  <h2>License &amp; provenance</h2>
+  <p>MIT-licensed. Satellite data © ESA/Copernicus. Map tiles © OpenStreetMap contributors. Source code: <a href="https://github.com/geminimir/tunisia-water-watch">github.com/geminimir/tunisia-water-watch</a>.</p>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Last updated: <strong>2026-09-12 20:14 UTC</strong> · Next run: <strong>2026-09-17</strong></p>
+    <p class="muted">Data derived from Sentinel-2 L2A via public STAC APIs. Surface area is a proxy for reservoir volume, not a substitute for bathymetric survey. MIT-licensed. No warranty.</p>
+  </div>
+</footer>
+</body>
+</html>

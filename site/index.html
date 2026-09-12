@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dams — Tunisia Water Watch</title>
+<meta name="description" content="Independent, satellite-based monitoring of Tunisia's dams and agriculture.">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💧</text></svg>">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">Tunisia Water Watch</a>
+    <nav>
+      <a href="index.html">Dams</a>
+      <a href="agriculture.html">Agriculture</a>
+      <a href="about.html">About</a>
+      <a href="https://github.com/geminimir/tunisia-water-watch" target="_blank" rel="noopener">Source</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+
+<section class="hero">
+  <h1>Tunisia's dams, watched from orbit</h1>
+  <p>Independent, satellite-derived surface area for 37 major reservoirs. Updated every 5 days. Zero cost, zero servers, zero API keys.</p>
+</section>
+
+<section class="stats">
+  <div class="stat">
+    <div class="stat-value">60.4 km²</div>
+    <div class="stat-label">Total mapped water surface (latest pass)</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">36/37</div>
+    <div class="stat-label">Dams read on latest run</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">43.0%</div>
+    <div class="stat-label">of long-term seasonal average</div>
+  </div>
+</section>
+
+<section class="map-section">
+  <div id="map"></div>
+</section>
+
+<section class="table-section">
+  <h2>All dams</h2>
+  <table class="dams">
+    <thead>
+      <tr>
+        <th>Dam</th>
+        <th>Governorate</th>
+        <th>Last reading</th>
+        <th class="num">Surface (km²)</th>
+        <th class="num">% of avg</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr>
+        <td><a href="dam/sidi-salem.html">Sidi Salem</a></td>
+        <td>Béja</td>
+        <td>2026-09-12</td>
+        <td class="num">18.15</td>
+        <td class="num">63</td>
+        <td><span class="badge badge-yellow">yellow</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/sidi-el-barrak.html">Sidi El Barrak</a></td>
+        <td>Béja</td>
+        <td>2026-09-12</td>
+        <td class="num">17.90</td>
+        <td class="num">116</td>
+        <td><span class="badge badge-green">green</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/sejnane.html">Sejnane</a></td>
+        <td>Bizerte</td>
+        <td>2026-09-12</td>
+        <td class="num">0.00</td>
+        <td class="num">0</td>
+        <td><span class="badge badge-red">red</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/joumine.html">Joumine</a></td>
+        <td>Bizerte</td>
+        <td>2026-09-12</td>
+        <td class="num">0.00</td>
+        <td class="num">0</td>
+        <td><span class="badge badge-red">red</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/ghezala.html">Ghezala</a></td>
+        <td>Bizerte</td>
+        <td>2026-09-12</td>
+        <td class="num">0.00</td>
+        <td class="num">0</td>
+        <td><span class="badge badge-red">red</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/zerga.html">Zerga</a></td>
+        <td>Bizerte</td>
+        <td>2026-09-12</td>
+        <td class="num">0.20</td>
+        <td class="num">13</td>
+        <td><span class="badge badge-red">red</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/kasseb.html">Kasseb</a></td>
+        <td>Béja</td>
+        <td>2026-09-12</td>
+        <td class="num">0.02</td>
+        <td class="num">1</td>
+        <td><span class="badge badge-red">red</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/beni-mtir.html">Beni Mtir</a></td>
+        <td>Jendouba</td>
+        <td>2026-09-12</td>
+        <td class="num">2.78</td>
+        <td class="num">80</td>
+        <td><span class="badge badge-yellow">yellow</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/bou-heurtma.html">Bou Heurtma</a></td>
+        <td>Jendouba</td>
+        <td>2026-09-12</td>
+        <td class="num">4.37</td>
+        <td class="num">87</td>
+        <td><span class="badge badge-green">green</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/barbara.html">Barbara</a></td>
+        <td>Jendouba</td>
+        <td>2026-09-12</td>
+        <td class="num">0.09</td>
+        <td class="num">2</td>
+        <td><span class="badge badge-red">red</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/mellegue.html">Mellegue (Nebeur)</a></td>
+        <td>Le Kef</td>
+        <td>2026-09-12</td>
+        <td class="num">0.01</td>
+        <td class="num">0</td>
+        <td><span class="badge badge-red">red</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/sarrat.html">Sarrat</a></td>
+        <td>Le Kef</td>
+        <td>2026-09-12</td>
+        <td class="num">0.02</td>
+        <td class="num">1</td>
+        <td><span class="badge badge-red">red</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/siliana.html">Siliana</a></td>
+        <td>Siliana</td>
+        <td>2026-09-12</td>
+        <td class="num">1.11</td>
+        <td class="num">37</td>
+        <td><span class="badge badge-red">red</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/lakhmess.html">Lakhmess</a></td>
+        <td>Siliana</td>
+        <td>2026-09-12</td>
+        <td class="num">0.01</td>
+        <td class="num">0</td>
+        <td><span class="badge badge-red">red</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/rmil.html">Rmil</a></td>
+        <td>Zaghouan</td>
+        <td>2026-09-12</td>
+        <td class="num">1.93</td>
+        <td class="num">129</td>
+        <td><span class="badge badge-green">green</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/bir-mcherga.html">Bir Mcherga</a></td>
+        <td>Zaghouan</td>
+        <td>2026-09-12</td>
+        <td class="num">0.62</td>
+        <td class="num">14</td>
+        <td><span class="badge badge-red">red</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/el-aroussia.html">El Aroussia</a></td>
+        <td>Béja</td>
+        <td>2026-09-12</td>
+        <td class="num">0.00</td>
+        <td class="num">0</td>
+        <td><span class="badge badge-red">red</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/el-houareb.html">El Houareb</a></td>
+        <td>Kairouan</td>
+        <td>2026-09-12</td>
+        <td class="num">0.02</td>
+        <td class="num">0</td>
+        <td><span class="badge badge-red">red</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/nebhana.html">Nebhana</a></td>
+        <td>Sousse</td>
+        <td>2026-09-12</td>
+        <td class="num">0.00</td>
+        <td class="num">0</td>
+        <td><span class="badge badge-red">red</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/sidi-saad.html">Sidi Saad</a></td>
+        <td>Kairouan</td>
+        <td>2026-09-12</td>
+        <td class="num">3.11</td>
+        <td class="num">31</td>
+        <td><span class="badge badge-red">red</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/chiba.html">Chiba</a></td>
+        <td>Nabeul</td>
+        <td>2026-09-12</td>
+        <td class="num">0.17</td>
+        <td class="num">25</td>
+        <td><span class="badge badge-red">red</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/masri.html">Masri</a></td>
+        <td>Nabeul</td>
+        <td>2026-09-12</td>
+        <td class="num">0.07</td>
+        <td class="num">7</td>
+        <td><span class="badge badge-red">red</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/lebna.html">Lebna</a></td>
+        <td>Nabeul</td>
+        <td>2026-09-12</td>
+        <td class="num">5.14</td>
+        <td class="num">172</td>
+        <td><span class="badge badge-green">green</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/abid.html">Abid</a></td>
+        <td>Le Kef</td>
+        <td>2026-09-12</td>
+        <td class="num">0.00</td>
+        <td class="num">0</td>
+        <td><span class="badge badge-red">red</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/tessa.html">Tessa</a></td>
+        <td>Le Kef</td>
+        <td>2026-09-12</td>
+        <td class="num">0.00</td>
+        <td class="num">0</td>
+        <td><span class="badge badge-red">red</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/ziatine.html">Ziatine</a></td>
+        <td>Bizerte</td>
+        <td>2026-09-12</td>
+        <td class="num">3.19</td>
+        <td class="num">354</td>
+        <td><span class="badge badge-green">green</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/gamgoum.html">Gamgoum</a></td>
+        <td>Béja</td>
+        <td>2026-09-12</td>
+        <td class="num">0.08</td>
+        <td class="num">13</td>
+        <td><span class="badge badge-red">red</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/moula.html">Moula</a></td>
+        <td>Béja</td>
+        <td>2026-09-12</td>
+        <td class="num">0.00</td>
+        <td class="num">0</td>
+        <td><span class="badge badge-red">red</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/melah.html">El Melah</a></td>
+        <td>Bizerte</td>
+        <td>2026-09-12</td>
+        <td class="num">1.16</td>
+        <td class="num">145</td>
+        <td><span class="badge badge-green">green</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/harka.html">Harka</a></td>
+        <td>Bizerte</td>
+        <td>2026-09-12</td>
+        <td class="num">0.00</td>
+        <td class="num">0</td>
+        <td><span class="badge badge-red">red</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/bou-hertma-lower.html">Bou Heurtma Lower</a></td>
+        <td>Jendouba</td>
+        <td>2026-09-12</td>
+        <td class="num">0.10</td>
+        <td class="num">10</td>
+        <td><span class="badge badge-red">red</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/kebir.html">El Kebir</a></td>
+        <td>Bizerte</td>
+        <td>2026-09-12</td>
+        <td class="num">0.14</td>
+        <td class="num">15</td>
+        <td><span class="badge badge-red">red</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/douimis.html">Douimis</a></td>
+        <td>Bizerte</td>
+        <td>2026-09-12</td>
+        <td class="num">—</td>
+        <td class="num">—</td>
+        <td><span class="badge badge-gray">gray</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/el-breck.html">El Breck</a></td>
+        <td>Zaghouan</td>
+        <td>2026-09-12</td>
+        <td class="num">0.01</td>
+        <td class="num">2</td>
+        <td><span class="badge badge-red">red</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/sidi-abdelmoumen.html">Sidi Abdelmoumen</a></td>
+        <td>Kairouan</td>
+        <td>2026-09-12</td>
+        <td class="num">0.00</td>
+        <td class="num">0</td>
+        <td><span class="badge badge-red">red</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/rmel.html">Rmel</a></td>
+        <td>Nabeul</td>
+        <td>2026-09-12</td>
+        <td class="num">0.01</td>
+        <td class="num">2</td>
+        <td><span class="badge badge-red">red</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/el-abid.html">El Abid Upper</a></td>
+        <td>Kasserine</td>
+        <td>2026-09-12</td>
+        <td class="num">0.00</td>
+        <td class="num">0</td>
+        <td><span class="badge badge-red">red</span></td>
+      </tr>
+      
+    </tbody>
+  </table>
+</section>
+
+<section class="chart-section">
+  <h2>National reservoir surface area over time</h2>
+  <canvas id="national-chart" height="120"></canvas>
+</section>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script>
+const dams = [{"id": "sidi-salem", "name": "Sidi Salem", "governorate": "B\u00e9ja", "river": "Medjerda", "lat": 36.5892, "lon": 9.4083, "historical_avg_km2": 28.8, "capacity_hm3": 555, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 18.151, "pct_of_avg": 63.0, "status": "yellow"}, {"id": "sidi-el-barrak", "name": "Sidi El Barrak", "governorate": "B\u00e9ja", "river": "Zouara", "lat": 37.01, "lon": 9.105, "historical_avg_km2": 15.5, "capacity_hm3": 264, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 17.904, "pct_of_avg": 115.5, "status": "green"}, {"id": "sejnane", "name": "Sejnane", "governorate": "Bizerte", "river": "Sejnane", "lat": 37.0764, "lon": 9.235, "historical_avg_km2": 12.0, "capacity_hm3": 137, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.001, "pct_of_avg": 0.0, "status": "red"}, {"id": "joumine", "name": "Joumine", "governorate": "Bizerte", "river": "Joumine", "lat": 37.03, "lon": 9.46, "historical_avg_km2": 8.0, "capacity_hm3": 130, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.001, "pct_of_avg": 0.0, "status": "red"}, {"id": "ghezala", "name": "Ghezala", "governorate": "Bizerte", "river": "Ghezala", "lat": 37.11, "lon": 9.52, "historical_avg_km2": 3.0, "capacity_hm3": 12, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.001, "pct_of_avg": 0.0, "status": "red"}, {"id": "zerga", "name": "Zerga", "governorate": "Bizerte", "river": "Zerga", "lat": 36.9086, "lon": 9.6083, "historical_avg_km2": 1.5, "capacity_hm3": 20, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.197, "pct_of_avg": 13.2, "status": "red"}, {"id": "kasseb", "name": "Kasseb", "governorate": "B\u00e9ja", "river": "Kasseb", "lat": 36.6489, "lon": 9.0031, "historical_avg_km2": 3.0, "capacity_hm3": 82, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.017, "pct_of_avg": 0.6, "status": "red"}, {"id": "beni-mtir", "name": "Beni Mtir", "governorate": "Jendouba", "river": "Oued El Lil", "lat": 36.735, "lon": 8.75, "historical_avg_km2": 3.5, "capacity_hm3": 61, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 2.782, "pct_of_avg": 79.5, "status": "yellow"}, {"id": "bou-heurtma", "name": "Bou Heurtma", "governorate": "Jendouba", "river": "Bou Heurtma", "lat": 36.6167, "lon": 8.735, "historical_avg_km2": 5.0, "capacity_hm3": 118, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 4.367, "pct_of_avg": 87.3, "status": "green"}, {"id": "barbara", "name": "Barbara", "governorate": "Jendouba", "river": "Barbara", "lat": 36.7, "lon": 8.92, "historical_avg_km2": 4.0, "capacity_hm3": 87, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.086, "pct_of_avg": 2.2, "status": "red"}, {"id": "mellegue", "name": "Mellegue (Nebeur)", "governorate": "Le Kef", "river": "Mellegue", "lat": 36.4514, "lon": 8.7642, "historical_avg_km2": 8.0, "capacity_hm3": 187, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.006, "pct_of_avg": 0.1, "status": "red"}, {"id": "sarrat", "name": "Sarrat", "governorate": "Le Kef", "river": "Sarrat", "lat": 36.15, "lon": 8.5333, "historical_avg_km2": 2.0, "capacity_hm3": 20, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.024, "pct_of_avg": 1.2, "status": "red"}, {"id": "siliana", "name": "Siliana", "governorate": "Siliana", "river": "Siliana", "lat": 36.115, "lon": 9.4, "historical_avg_km2": 3.0, "capacity_hm3": 70, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 1.108, "pct_of_avg": 36.9, "status": "red"}, {"id": "lakhmess", "name": "Lakhmess", "governorate": "Siliana", "river": "Lakhmess", "lat": 36.07, "lon": 9.24, "historical_avg_km2": 1.0, "capacity_hm3": 8, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.005, "pct_of_avg": 0.5, "status": "red"}, {"id": "rmil", "name": "Rmil", "governorate": "Zaghouan", "river": "Rmil", "lat": 36.52, "lon": 10.03, "historical_avg_km2": 1.5, "capacity_hm3": 26, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 1.933, "pct_of_avg": 128.8, "status": "green"}, {"id": "bir-mcherga", "name": "Bir Mcherga", "governorate": "Zaghouan", "river": "Medjerda tributary", "lat": 36.5372, "lon": 9.9989, "historical_avg_km2": 4.5, "capacity_hm3": 65, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.622, "pct_of_avg": 13.8, "status": "red"}, {"id": "el-aroussia", "name": "El Aroussia", "governorate": "B\u00e9ja", "river": "Medjerda", "lat": 36.575, "lon": 9.63, "historical_avg_km2": 0.8, "capacity_hm3": 6, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.0, "pct_of_avg": 0.0, "status": "red"}, {"id": "el-houareb", "name": "El Houareb", "governorate": "Kairouan", "river": "Merguellil", "lat": 35.5486, "lon": 9.7625, "historical_avg_km2": 6.0, "capacity_hm3": 95, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.018, "pct_of_avg": 0.3, "status": "red"}, {"id": "nebhana", "name": "Nebhana", "governorate": "Sousse", "river": "Nebhana", "lat": 35.925, "lon": 10.1583, "historical_avg_km2": 3.5, "capacity_hm3": 86, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.001, "pct_of_avg": 0.0, "status": "red"}, {"id": "sidi-saad", "name": "Sidi Saad", "governorate": "Kairouan", "river": "Zeroud", "lat": 35.3833, "lon": 9.7, "historical_avg_km2": 10.0, "capacity_hm3": 209, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 3.107, "pct_of_avg": 31.1, "status": "red"}, {"id": "chiba", "name": "Chiba", "governorate": "Nabeul", "river": "Chiba", "lat": 36.6208, "lon": 10.7508, "historical_avg_km2": 0.7, "capacity_hm3": 8, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.174, "pct_of_avg": 24.9, "status": "red"}, {"id": "masri", "name": "Masri", "governorate": "Nabeul", "river": "Masri", "lat": 36.7472, "lon": 10.8383, "historical_avg_km2": 0.9, "capacity_hm3": 7, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.066, "pct_of_avg": 7.3, "status": "red"}, {"id": "lebna", "name": "Lebna", "governorate": "Nabeul", "river": "Lebna", "lat": 36.7581, "lon": 10.925, "historical_avg_km2": 3.0, "capacity_hm3": 30, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 5.144, "pct_of_avg": 171.5, "status": "green"}, {"id": "abid", "name": "Abid", "governorate": "Le Kef", "river": "Abid", "lat": 36.46, "lon": 9.03, "historical_avg_km2": 1.2, "capacity_hm3": 12, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.0, "pct_of_avg": 0.0, "status": "red"}, {"id": "tessa", "name": "Tessa", "governorate": "Le Kef", "river": "Tessa", "lat": 36.28, "lon": 8.97, "historical_avg_km2": 1.5, "capacity_hm3": 20, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.001, "pct_of_avg": 0.0, "status": "red"}, {"id": "ziatine", "name": "Ziatine", "governorate": "Bizerte", "river": "Ziatine", "lat": 37.15, "lon": 9.4, "historical_avg_km2": 0.9, "capacity_hm3": 8, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 3.186, "pct_of_avg": 354.0, "status": "green"}, {"id": "gamgoum", "name": "Gamgoum", "governorate": "B\u00e9ja", "river": "Gamgoum", "lat": 36.73, "lon": 9.16, "historical_avg_km2": 0.6, "capacity_hm3": 5, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.079, "pct_of_avg": 13.1, "status": "red"}, {"id": "moula", "name": "Moula", "governorate": "B\u00e9ja", "river": "Moula", "lat": 36.81, "lon": 9.07, "historical_avg_km2": 0.7, "capacity_hm3": 6, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.001, "pct_of_avg": 0.1, "status": "red"}, {"id": "melah", "name": "El Melah", "governorate": "Bizerte", "river": "El Melah", "lat": 37.15, "lon": 9.72, "historical_avg_km2": 0.8, "capacity_hm3": 8, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 1.163, "pct_of_avg": 145.4, "status": "green"}, {"id": "harka", "name": "Harka", "governorate": "Bizerte", "river": "Harka", "lat": 37.05, "lon": 9.8, "historical_avg_km2": 0.7, "capacity_hm3": 6, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.001, "pct_of_avg": 0.2, "status": "red"}, {"id": "bou-hertma-lower", "name": "Bou Heurtma Lower", "governorate": "Jendouba", "river": "Bou Heurtma", "lat": 36.59, "lon": 8.81, "historical_avg_km2": 0.9, "capacity_hm3": 10, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.095, "pct_of_avg": 10.5, "status": "red"}, {"id": "kebir", "name": "El Kebir", "governorate": "Bizerte", "river": "El Kebir", "lat": 37.03, "lon": 9.11, "historical_avg_km2": 0.9, "capacity_hm3": 12, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.137, "pct_of_avg": 15.2, "status": "red"}, {"id": "douimis", "name": "Douimis", "governorate": "Bizerte", "river": "Douimis", "lat": 37.21, "lon": 9.77, "historical_avg_km2": 0.5, "capacity_hm3": 4, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": null, "pct_of_avg": null, "status": "gray"}, {"id": "el-breck", "name": "El Breck", "governorate": "Zaghouan", "river": "El Breck", "lat": 36.45, "lon": 10.15, "historical_avg_km2": 0.4, "capacity_hm3": 3, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.009, "pct_of_avg": 2.2, "status": "red"}, {"id": "sidi-abdelmoumen", "name": "Sidi Abdelmoumen", "governorate": "Kairouan", "river": "Merguellil", "lat": 35.68, "lon": 9.62, "historical_avg_km2": 0.9, "capacity_hm3": 10, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.003, "pct_of_avg": 0.4, "status": "red"}, {"id": "rmel", "name": "Rmel", "governorate": "Nabeul", "river": "Rmel", "lat": 36.44, "lon": 10.55, "historical_avg_km2": 0.6, "capacity_hm3": 5, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.012, "pct_of_avg": 2.0, "status": "red"}, {"id": "el-abid", "name": "El Abid Upper", "governorate": "Kasserine", "river": "El Abid", "lat": 35.65, "lon": 8.85, "historical_avg_km2": 0.5, "capacity_hm3": 4, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.0, "pct_of_avg": 0.0, "status": "red"}];
+const nationalSeries = [{"date": "2026-09-12", "total_area_km2": 60.40199999999999}];
+
+const map = L.map('map', { scrollWheelZoom: false }).setView([34.5, 9.6], 6);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '© OpenStreetMap contributors', maxZoom: 12
+}).addTo(map);
+const statusColors = { green: '#2e8b57', yellow: '#e2a03f', red: '#c0392b', gray: '#8a8f98' };
+for (const d of dams) {
+  L.circleMarker([d.lat, d.lon], {
+    radius: 8, color: statusColors[d.status] || '#8a8f98',
+    fillColor: statusColors[d.status] || '#8a8f98', fillOpacity: 0.75, weight: 1
+  }).bindPopup(
+    `<strong>${d.name}</strong><br>${d.governorate}<br>` +
+    `Surface: ${d.surface_area_km2 == null ? '—' : d.surface_area_km2.toFixed(2)} km²<br>` +
+    `<a href="dam/${d.id}.html">Details →</a>`
+  ).addTo(map);
+}
+
+const ctx = document.getElementById('national-chart');
+new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: nationalSeries.map(p => p.date),
+    datasets: [{
+      label: 'Total surface area (km²)',
+      data: nationalSeries.map(p => p.total_area_km2),
+      borderColor: '#1e6fbf', backgroundColor: 'rgba(30,111,191,0.15)',
+      tension: 0.25, fill: true, pointRadius: 2
+    }]
+  },
+  options: { responsive: true, plugins: { legend: { display: false } } }
+});
+</script>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Last updated: <strong>2026-09-12 20:14 UTC</strong> · Next run: <strong>2026-09-17</strong></p>
+    <p class="muted">Data derived from Sentinel-2 L2A via public STAC APIs. Surface area is a proxy for reservoir volume, not a substitute for bathymetric survey. MIT-licensed. No warranty.</p>
+  </div>
+</footer>
+</body>
+</html>

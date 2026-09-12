@@ -1,0 +1,90 @@
+name: Update readings
+
+on:
+  schedule:
+    - cron: '0 6 */5 * *'   # every 5 days at 06:00 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: update-readings
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends libexpat1
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run pipeline
+        env:
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: python scripts/main.py
+
+      - name: Commit and push
+        run: |
+          git config user.name "Tunisia Water Watch Bot"
+          git config user.email "bot@tunisiawaterwatch.local"
+          git add data/ site/
+          if git diff --cached --quiet; then
+            echo "no changes to commit"
+            exit 0
+          fi
+          MSG=$(python - <<'PY'
+          import csv
+          from collections import Counter
+          from pathlib import Path
+          p = Path("data/readings.csv")
+          try:
+              rows = list(csv.DictReader(p.open()))
+          except FileNotFoundError:
+              print("Update: initial commit")
+              raise SystemExit
+          if not rows:
+              print("Update: initial run")
+              raise SystemExit
+          latest_date = rows[-1]["date"]
+          latest = [r for r in rows if r["date"] == latest_date]
+          total = len(latest)
+          skipped = sum(1 for r in latest if not r["surface_area_km2"])
+          print(f"Update {latest_date}: {total - skipped}/{total} dams read, {skipped} skipped")
+          PY
+          )
+          git commit -m "$MSG"
+          git push
+
+  pages-deploy:
+    needs: update
+    if: always()
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deployment
+        uses: actions/deploy-pages@v4

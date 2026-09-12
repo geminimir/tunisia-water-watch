@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chiba — Tunisia Water Watch</title>
+<meta name="description" content="Independent, satellite-based monitoring of Tunisia's dams and agriculture.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💧</text></svg>">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Tunisia Water Watch</a>
+    <nav>
+      <a href="../index.html">Dams</a>
+      <a href="../agriculture.html">Agriculture</a>
+      <a href="../about.html">About</a>
+      <a href="https://github.com/geminimir/tunisia-water-watch" target="_blank" rel="noopener">Source</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+
+<nav class="crumbs"><a href="../index.html">← All dams</a></nav>
+
+<section class="dam-header">
+  <h1>Chiba</h1>
+  <p class="muted">Nabeul governorate · Chiba · capacity ≈ 8 hm³</p>
+</section>
+
+<section class="stats">
+  <div class="stat">
+    <div class="stat-value">0.17 km²</div>
+    <div class="stat-label">Latest surface area (2026-09-12)</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">25%</div>
+    <div class="stat-label">of long-term average (0.7 km²)</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">→</div>
+    <div class="stat-label">30-day trend</div>
+  </div>
+</section>
+
+<section class="chart-section">
+  <canvas id="dam-chart" height="120"></canvas>
+</section>
+
+<section class="table-section">
+  <h2>Recent readings</h2>
+  <table class="readings">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th class="num">Surface (km²)</th>
+        <th class="num">% of avg</th>
+        <th class="num">Cloud %</th>
+        <th>Scene</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr>
+        <td>2026-09-12</td>
+        <td class="num">0.17</td>
+        <td class="num">25</td>
+        <td class="num">7</td>
+        <td class="tiny">S2B_32SPF_20260906_0_L2A</td>
+      </tr>
+      
+    </tbody>
+  </table>
+</section>
+
+<p class="muted small">Next expected reading: 2026-09-17. Data source: Sentinel-2 L2A via public STAC. NDWI threshold: 0.05.</p>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script>
+const series = [{"date": "2026-09-12", "surface_area_km2": 0.174, "cloud_pct": 7.2, "pct_of_avg": 24.9, "scene_id": "S2B_32SPF_20260906_0_L2A"}];
+new Chart(document.getElementById('dam-chart'), {
+  type: 'line',
+  data: {
+    labels: series.map(p => p.date),
+    datasets: [
+      {
+        label: 'Surface area (km²)',
+        data: series.map(p => p.surface_area_km2),
+        borderColor: '#1e6fbf', backgroundColor: 'rgba(30,111,191,0.15)',
+        tension: 0.25, fill: true, spanGaps: true, pointRadius: 2
+      },
+      {
+        label: 'Long-term average',
+        data: series.map(() => 0.7),
+        borderColor: '#8a8f98', borderDash: [5, 5], fill: false, pointRadius: 0
+      }
+    ]
+  },
+  options: { responsive: true }
+});
+</script>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Last updated: <strong>2026-09-12 20:14 UTC</strong> · Next run: <strong>2026-09-17</strong></p>
+    <p class="muted">Data derived from Sentinel-2 L2A via public STAC APIs. Surface area is a proxy for reservoir volume, not a substitute for bathymetric survey. MIT-licensed. No warranty.</p>
+  </div>
+</footer>
+</body>
+</html>
