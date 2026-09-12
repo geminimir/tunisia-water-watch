@@ -67,7 +67,15 @@ jobs:
           PY
           )
           git commit -m "$MSG"
-          git push
+          # Retry push against a concurrent update, rebasing our data commit on top.
+          for i in 1 2 3; do
+            if git push; then
+              exit 0
+            fi
+            echo "push $i failed, rebasing on origin/main and retrying"
+            git pull --rebase --autostash origin main || exit 1
+          done
+          exit 1
 
   pages-deploy:
     needs: update
