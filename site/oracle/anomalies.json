@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-12 23:35 UTC",
+  "generated_at": "2026-09-12 23:48 UTC",
   "dams": [
     {
       "id": "sejnane",
@@ -238,22 +238,58 @@
   ],
   "governorates": [
     {
+      "id": "ben-arous",
+      "name": "Ben Arous",
+      "severity_score": 57.668398021318005,
+      "band": "watch",
+      "z_ndvi": -0.8580167390161542,
+      "z_ndmi": -0.2058970128542522,
+      "date": "2026-09-12"
+    },
+    {
+      "id": "zaghouan",
+      "name": "Zaghouan",
+      "severity_score": 50.21788259944478,
+      "band": "watch",
+      "z_ndvi": 0.284517606941494,
+      "z_ndmi": 0.6623220840684519,
+      "date": "2026-09-12"
+    },
+    {
+      "id": "bizerte",
+      "name": "Bizerte",
+      "severity_score": 62.65023603185138,
+      "band": "watch",
+      "z_ndvi": -1.2512783866257489,
+      "z_ndmi": 1.4716574734672514,
+      "date": "2026-09-12"
+    },
+    {
       "id": "kef",
       "name": "Le Kef",
-      "severity_score": 56.040533092104596,
+      "severity_score": 61.63320605607772,
       "band": "watch",
-      "z_ndvi": 0.9236279056918013,
-      "z_ndmi": 0.0914236691688205,
-      "date": "2026-08-25"
+      "z_ndvi": -0.05800041955812817,
+      "z_ndmi": 0.16152244800622936,
+      "date": "2026-09-12"
     },
     {
       "id": "sousse",
       "name": "Sousse",
-      "severity_score": 77.91490556834671,
-      "band": "drought",
-      "z_ndvi": -1.9559304615572948,
-      "z_ndmi": -1.2239085041606348,
-      "date": "2026-08-22"
+      "severity_score": 60.38815965116272,
+      "band": "watch",
+      "z_ndvi": 0.136181882433161,
+      "z_ndmi": 0.19936892545521576,
+      "date": "2026-09-12"
+    },
+    {
+      "id": "monastir",
+      "name": "Monastir",
+      "severity_score": 52.727601666060465,
+      "band": "watch",
+      "z_ndvi": -0.27608055426079053,
+      "z_ndmi": -0.12175409832491628,
+      "date": "2026-09-12"
     },
     {
       "id": "kairouan",
@@ -262,7 +298,7 @@
       "band": "severe",
       "z_ndvi": null,
       "z_ndmi": null,
-      "date": null
+      "date": "2026-09-12"
     },
     {
       "id": "kasserine",
@@ -271,7 +307,7 @@
       "band": "severe",
       "z_ndvi": null,
       "z_ndmi": null,
-      "date": null
+      "date": "2026-09-12"
     }
   ]
 }

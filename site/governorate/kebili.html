@@ -33,15 +33,15 @@
 
 <section class="stats">
   <div class="stat">
-    <div class="stat-value">—</div>
-    <div class="stat-label">NDVI (greenness) — no reading</div>
+    <div class="stat-value">0.064</div>
+    <div class="stat-label">NDVI (greenness) — 2026-09-12</div>
   </div>
   <div class="stat">
-    <div class="stat-value">—</div>
+    <div class="stat-value">-0.081</div>
     <div class="stat-label">NDMI (canopy moisture)</div>
   </div>
   <div class="stat">
-    <div class="stat-value">—%</div>
+    <div class="stat-value">1%</div>
     <div class="stat-label">Pixels healthy (NDVI &gt; 0.3 &amp; NDMI &gt; 0)</div>
   </div>
   <div class="stat drought-green">
@@ -70,6 +70,16 @@
     </thead>
     <tbody>
       
+      <tr>
+        <td>2026-09-12</td>
+        <td class="num">0.064</td>
+        <td class="num">-0.081</td>
+        <td class="num">1</td>
+        <td class="num">30</td>
+        <td class="num">0.70</td>
+        <td class="tiny">S2C_32SNC_20260911_0_L2A</td>
+      </tr>
+      
     </tbody>
   </table>
 </section>
@@ -82,7 +92,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <script>
-const series = [];
+const series = [{"date": "2026-09-12", "mean_ndvi": 0.0635, "mean_ndmi": -0.0811, "healthy_pct": 1.06, "cloud_pct": 29.6, "confidence": 0.704, "scene_id": "S2C_32SNC_20260911_0_L2A"}];
 new Chart(document.getElementById('gov-chart'), {
   type: 'line',
   data: {
@@ -99,7 +109,7 @@ new Chart(document.getElementById('gov-chart'), {
 </main>
 <footer class="site-footer">
   <div class="wrap">
-    <p>Last updated: <strong>2026-09-12 23:35 UTC</strong> · Next run: <strong>2026-09-17</strong></p>
+    <p>Last updated: <strong>2026-09-12 23:48 UTC</strong> · Next run: <strong>2026-09-17</strong></p>
     <p class="muted">Data derived from Sentinel-2 L2A via public STAC APIs. Surface area is a proxy for reservoir volume, not a substitute for bathymetric survey. MIT-licensed. No warranty.</p>
     <p class="small"><a href="../oracle/index.json">Data oracle (JSON + SHA-256 manifest)</a> · <a href="../data/latest.json">latest.json</a> · <a href="../data/readings.csv">readings.csv</a></p>
   </div>

@@ -5,8 +5,22 @@
   "lat": 35.7,
   "lon": 10.05,
   "weight": 1.5,
-  "readings": [],
-  "monthly_medians_ndvi": {},
-  "monthly_medians_ndmi": {},
-  "generated_at": "2026-09-12 23:35 UTC"
+  "readings": [
+    {
+      "date": "2026-09-12",
+      "mean_ndvi": 0.1523,
+      "mean_ndmi": -0.1326,
+      "healthy_pct": 6.23,
+      "cloud_pct": 0.2,
+      "confidence": 0.998,
+      "scene_id": "S2B_32SNE_20260909_0_L2A"
+    }
+  ],
+  "monthly_medians_ndvi": {
+    "2026-09": 0.1523
+  },
+  "monthly_medians_ndmi": {
+    "2026-09": -0.1326
+  },
+  "generated_at": "2026-09-12 23:48 UTC"
 }
