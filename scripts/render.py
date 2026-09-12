@@ -201,7 +201,14 @@ def render_site(github_repo: str = "geminimir/tunisia-water-watch") -> None:
         ],
     }
     LATEST_JSON.parent.mkdir(parents=True, exist_ok=True)
-    LATEST_JSON.write_text(json.dumps(latest_json, indent=2))
+    latest_body = json.dumps(latest_json, indent=2)
+    LATEST_JSON.write_text(latest_body)
+    # Also expose data files under site/ so GitHub Pages serves them.
+    site_data = SITE / "data"
+    site_data.mkdir(parents=True, exist_ok=True)
+    (site_data / "latest.json").write_text(latest_body)
+    if READINGS_CSV.exists():
+        (site_data / "readings.csv").write_bytes(READINGS_CSV.read_bytes())
 
 
 if __name__ == "__main__":
