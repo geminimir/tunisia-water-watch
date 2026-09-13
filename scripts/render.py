@@ -460,12 +460,18 @@ def _prepare_data() -> dict[str, Any]:
 
 def _view_for_lang(dam_view: list[dict], gov_view: list[dict], lang: str) -> tuple[list[dict], list[dict]]:
     """Return (dam_view_lang, gov_view_lang) with translated display fields."""
+    # Build governorate French-name → Arabic-name lookup so dam pages can show
+    # the right script for the containing governorate.
+    gov_name_to_ar = {g["name"]: g.get("name_ar", g["name"]) for g in gov_view}
     out_dams = []
     for d in dam_view:
         e = dict(d)
         e["display_name"] = d["name_ar"] if lang == "ar" else d["name"]
         e["display_river"] = d["river_ar"] if lang == "ar" else d["river"]
-        e["display_governorate"] = d["governorate"]
+        e["display_governorate"] = (
+            gov_name_to_ar.get(d["governorate"], d["governorate"])
+            if lang == "ar" else d["governorate"]
+        )
         e["display_status"] = translate_status(d["status"], lang)
         e["display_band"] = translate_band(d["severity_band"] or "unknown", lang)
         out_dams.append(e)
@@ -614,7 +620,7 @@ _PICKER_HTML = """<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Tunisia Water Watch — مراقبة مياه تونس</title>
+<title>AquaWatch · أكواووتش</title>
 <link rel="stylesheet" href="assets/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💧</text></svg>">
 <style>
@@ -630,7 +636,7 @@ _PICKER_HTML = """<!doctype html>
 </head>
 <body>
 <div class="picker">
-  <h1>💧 Tunisia Water Watch</h1>
+  <h1>💧 AquaWatch</h1>
   <p>Choisir la langue &middot; اختر اللغة</p>
   <div class="lang-btns">
     <a class="fr" href="fr/index.html">Français</a>

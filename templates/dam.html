@@ -12,7 +12,7 @@
 
 <section class="dam-header">
   <h1>{{ dam.display_name }}</h1>
-  <p class="muted">{{ t.meta_governorate_of|replace("{v}", dam.governorate) }} · {{ t.meta_river|replace("{v}", dam.display_river) }} · {{ t.meta_capacity|replace("{v}", dam.capacity_hm3|string) }}</p>
+  <p class="muted">{{ t.meta_governorate_of|replace("{v}", dam.display_governorate) }} · {{ t.meta_river|replace("{v}", dam.display_river) }} · {{ t.meta_capacity|replace("{v}", dam.capacity_hm3|string) }}</p>
 </section>
 
 <section class="stats">

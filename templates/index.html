@@ -78,7 +78,7 @@
       {% for d in dams %}
       <tr>
         <td><a href="dam/{{ d.id }}.html">{{ d.display_name }}</a></td>
-        <td class="muted">{{ d.governorate }}</td>
+        <td class="muted">{{ d.display_governorate }}</td>
         <td class="tiny">{{ d.last_date or "—" }}</td>
         <td class="num">{{ "%.2f"|format(d.surface_area_km2) if d.surface_area_km2 is not none else "—" }}</td>
         <td class="num">{{ "%.0f"|format(d.pct_of_avg) if d.pct_of_avg is not none else "—" }}</td>
@@ -113,7 +113,7 @@ for (const d of dams) {
   L.circleMarker([d.lat, d.lon], {
     radius: 7, color: c, fillColor: c, fillOpacity: 0.75, weight: 1.5,
   }).bindPopup(
-    `<strong>${d.display_name}</strong><br>${d.governorate}<br>` +
+    `<strong>${d.display_name}</strong><br>${d.display_governorate}<br>` +
     `${d.surface_area_km2 == null ? '—' : d.surface_area_km2.toFixed(2)} km²` +
     (d.pct_of_avg != null ? ` (${d.pct_of_avg.toFixed(0)}%)` : '') + '<br>' +
     `<a href="dam/${d.id}.html">→</a>`

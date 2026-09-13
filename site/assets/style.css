@@ -83,7 +83,8 @@ main.wrap {
   padding: 0.85rem 0;
   position: sticky;
   top: 0;
-  z-index: 20;
+  /* Leaflet panes range from 200 to 700; header must sit above them. */
+  z-index: 1000;
   backdrop-filter: saturate(120%) blur(6px);
 }
 .site-header .wrap {

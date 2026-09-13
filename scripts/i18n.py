@@ -16,8 +16,8 @@ DEFAULT_LANG = "fr"
 STRINGS: dict[str, dict[str, str]] = {
     # Site chrome
     "site_title": {
-        "fr": "Tunisia Water Watch",
-        "ar": "مراقبة مياه تونس",
+        "fr": "AquaWatch",
+        "ar": "أكواووتش",
     },
     "site_description": {
         "fr": "Suivi indépendant et satellitaire de l'eau et de l'agriculture en Tunisie.",
@@ -65,9 +65,9 @@ STRINGS: dict[str, dict[str, str]] = {
     },
     "index_hero_body": {
         "fr": "Surface satellitaire indépendante de {n} grands réservoirs. "
-              "Mise à jour tous les 5 jours. Zéro coût, zéro serveur, aucune clé API.",
+              "Mise à jour tous les 5 jours.",
         "ar": "مساحة سطح المياه المستنبطة من الأقمار الاصطناعية لـ{n} خزانًا كبيرًا. "
-              "تحديث كل 5 أيام. بدون تكلفة، بدون خوادم، بدون مفاتيح API.",
+              "تحديث كل 5 أيام.",
     },
     "agri_hero_title": {
         "fr": "Les terres agricoles de Tunisie, observées depuis l'orbite",

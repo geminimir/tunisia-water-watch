@@ -28,7 +28,6 @@
       <a href="{{ root }}index.html">{{ t.nav_dams }}</a>
       <a href="{{ root }}agriculture.html">{{ t.nav_agriculture }}</a>
       <a href="{{ root }}about.html">{{ t.nav_about }}</a>
-      <a href="https://github.com/{{ github_repo }}" target="_blank" rel="noopener">{{ t.nav_source }}</a>
       <a class="lang-toggle" href="{{ alt_url }}" onclick="try { localStorage.setItem('tww-lang', '{{ other_lang }}'); } catch (e) {}"
          dir="{{ 'rtl' if other_lang == 'ar' else 'ltr' }}"
          lang="{{ other_lang }}">{{ t.lang_toggle_to_ar if other_lang == 'ar' else t.lang_toggle_to_fr }}</a>
