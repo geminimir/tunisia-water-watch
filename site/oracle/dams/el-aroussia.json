@@ -1,7 +1,8 @@
 {
   "id": "el-aroussia",
   "name": "El Aroussia",
-  "governorate": "B\u00e9ja",
+  "name_ar": "العروسية",
+  "governorate": "Béja",
   "lat": 36.575,
   "lon": 9.63,
   "capacity_hm3": 6,

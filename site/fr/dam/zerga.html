@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Zerga — Tunisia Water Watch</title>
+<meta name="description" content="Suivi indépendant et satellitaire de l&#39;eau et de l&#39;agriculture en Tunisie.">
+<link rel="stylesheet" href="../../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💧</text></svg>">
+</head>
+<body class="lang-fr">
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">💧 Tunisia Water Watch</a>
+    <nav>
+      <a href="../index.html">Barrages</a>
+      <a href="../agriculture.html">Agriculture</a>
+      <a href="../about.html">À propos</a>
+      <a href="https://github.com/geminimir/water-watch" target="_blank" rel="noopener">Code source</a>
+      <a class="lang-toggle" href="../../ar/dam/zerga.html" onclick="try { localStorage.setItem('tww-lang', 'ar'); } catch (e) {}"
+         dir="rtl"
+         lang="ar">العربية</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+
+
+
+<nav class="crumbs"><a href="../index.html">← Tous les barrages</a></nav>
+
+<section class="dam-header">
+  <h1>Zerga</h1>
+  <p class="muted">gouvernorat de Bizerte · rivière Zerga · capacité ≈ 20 hm³</p>
+</section>
+
+<section class="stats">
+  <div class="stat">
+    <div class="stat-value">0.20 km²</div>
+    <div class="stat-label">Latest surface area (2026-09-13)</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">112%</div>
+    <div class="stat-label">of rolling baseline (0.18 km²)</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">↑</div>
+    <div class="stat-label">30-day trend</div>
+  </div>
+</section>
+
+<section class="chart-section">
+  <canvas id="dam-chart" height="120"></canvas>
+</section>
+
+<section class="table-section">
+  <h2>Lectures récentes</h2>
+  <table class="readings">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th class="num">Surface (km²)</th>
+        <th class="num">% de la moyenne</th>
+        <th class="num">% de nuages</th>
+        <th>Scène</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr>
+        <td>2026-09-13</td>
+        <td class="num">0.20</td>
+        <td class="num">112</td>
+        <td class="num">0</td>
+        <td class="tiny">S2B_32SNF_20260909_0_L2A</td>
+      </tr>
+      
+      <tr>
+        <td>2026-09-12</td>
+        <td class="num">0.20</td>
+        <td class="num">112</td>
+        <td class="num">0</td>
+        <td class="tiny">S2B_32SNF_20260909_0_L2A</td>
+      </tr>
+      
+      <tr>
+        <td>2026-08-20</td>
+        <td class="num">0.24</td>
+        <td class="num">118</td>
+        <td class="num">0</td>
+        <td class="tiny">S2B_32SNF_20260820_0_L2A</td>
+      </tr>
+      
+      <tr>
+        <td>2026-07-25</td>
+        <td class="num">0.00</td>
+        <td class="num">1</td>
+        <td class="num">0</td>
+        <td class="tiny">S2A_32SNF_20260725_0_L2A</td>
+      </tr>
+      
+      <tr>
+        <td>2026-06-18</td>
+        <td class="num">0.00</td>
+        <td class="num">1</td>
+        <td class="num">0</td>
+        <td class="tiny">S2B_32SNF_20260618_0_L2A</td>
+      </tr>
+      
+      <tr>
+        <td>2026-05-29</td>
+        <td class="num">0.00</td>
+        <td class="num">0</td>
+        <td class="num">0</td>
+        <td class="tiny">S2B_32SNF_20260529_0_L2A</td>
+      </tr>
+      
+      <tr>
+        <td>2026-04-07</td>
+        <td class="num">0.37</td>
+        <td class="num">141</td>
+        <td class="num">0</td>
+        <td class="tiny">S2C_32SNF_20260407_0_L2A</td>
+      </tr>
+      
+      <tr>
+        <td>2026-03-18</td>
+        <td class="num">0.27</td>
+        <td class="num">138</td>
+        <td class="num">26</td>
+        <td class="tiny">S2C_32SNF_20260318_0_L2A</td>
+      </tr>
+      
+      <tr>
+        <td>2026-02-26</td>
+        <td class="num">0.39</td>
+        <td class="num">237</td>
+        <td class="num">0</td>
+        <td class="tiny">S2C_32SNF_20260226_0_L2A</td>
+      </tr>
+      
+      <tr>
+        <td>2026-01-09</td>
+        <td class="num">0.28</td>
+        <td class="num">169</td>
+        <td class="num">0</td>
+        <td class="tiny">S2A_32SNF_20260109_0_L2A</td>
+      </tr>
+      
+      <tr>
+        <td>2025-12-08</td>
+        <td class="num">0.13</td>
+        <td class="num">78</td>
+        <td class="num">3</td>
+        <td class="tiny">S2C_32SNF_20251208_0_L2A</td>
+      </tr>
+      
+      <tr>
+        <td>2025-11-30</td>
+        <td class="num">0.26</td>
+        <td class="num">128</td>
+        <td class="num">0</td>
+        <td class="tiny">S2A_32SNF_20251130_1_L2A</td>
+      </tr>
+      
+      <tr>
+        <td>2025-10-08</td>
+        <td class="num">0.01</td>
+        <td class="num">9</td>
+        <td class="num">0</td>
+        <td class="tiny">S2A_32SNF_20251008_0_L2A</td>
+      </tr>
+      
+      <tr>
+        <td>2025-09-01</td>
+        <td class="num">0.16</td>
+        <td class="num">90</td>
+        <td class="num">0</td>
+        <td class="tiny">S2A_32SNF_20250901_0_L2A</td>
+      </tr>
+      
+      <tr>
+        <td>2025-08-25</td>
+        <td class="num">0.20</td>
+        <td class="num">100</td>
+        <td class="num">0</td>
+        <td class="tiny">S2B_32SNF_20250825_0_L2A</td>
+      </tr>
+      
+      <tr>
+        <td>2025-07-23</td>
+        <td class="num">0.18</td>
+        <td class="num">102</td>
+        <td class="num">0</td>
+        <td class="tiny">S2A_32SNF_20250723_0_L2A</td>
+      </tr>
+      
+      <tr>
+        <td>2025-06-13</td>
+        <td class="num">0.00</td>
+        <td class="num">0</td>
+        <td class="num">0</td>
+        <td class="tiny">S2B_32SNF_20250613_1_L2A</td>
+      </tr>
+      
+      <tr>
+        <td>2025-05-31</td>
+        <td class="num">0.04</td>
+        <td class="num">23</td>
+        <td class="num">0</td>
+        <td class="tiny">S2A_32SNF_20250531_0_L2A</td>
+      </tr>
+      
+      <tr>
+        <td>2025-04-19</td>
+        <td class="num">0.02</td>
+        <td class="num">9</td>
+        <td class="num">0</td>
+        <td class="tiny">S2C_32SNF_20250419_0_L2A</td>
+      </tr>
+      
+      <tr>
+        <td>2025-03-15</td>
+        <td class="num">0.00</td>
+        <td class="num">1</td>
+        <td class="num">0</td>
+        <td class="tiny">S2B_32SNF_20250315_0_L2A</td>
+      </tr>
+      
+      <tr>
+        <td>2025-02-18</td>
+        <td class="num">0.01</td>
+        <td class="num">4</td>
+        <td class="num">0</td>
+        <td class="tiny">S2C_32SNF_20250218_0_L2A</td>
+      </tr>
+      
+      <tr>
+        <td>2025-01-24</td>
+        <td class="num">0.00</td>
+        <td class="num">0</td>
+        <td class="num">0</td>
+        <td class="tiny">S2B_32SNF_20250124_0_L2A</td>
+      </tr>
+      
+      <tr>
+        <td>2024-12-10</td>
+        <td class="num">0.01</td>
+        <td class="num">3</td>
+        <td class="num">0</td>
+        <td class="tiny">S2A_32SNF_20241210_0_L2A</td>
+      </tr>
+      
+      <tr>
+        <td>2024-11-25</td>
+        <td class="num">0.01</td>
+        <td class="num">3</td>
+        <td class="num">0</td>
+        <td class="tiny">S2B_32SNF_20241125_0_L2A</td>
+      </tr>
+      
+    </tbody>
+  </table>
+</section>
+
+<p class="muted small">
+  Prochaine lecture attendue : 2026-09-18. Source : Sentinel-2 L2A via STAC public. Seuil NDWI : 0.05.
+</p>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script>
+const series = [{"date": "2022-01-05", "surface_area_km2": 0.0, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 0.0, "scene_id": "S2A_32SNF_20220105_0_L2A"}, {"date": "2022-02-09", "surface_area_km2": 0.009, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 5.521472392638036, "scene_id": "S2B_32SNF_20220209_0_L2A"}, {"date": "2022-03-24", "surface_area_km2": 0.193, "surface_area_mndwi_km2": null, "cloud_pct": 3.0, "confidence": null, "pct_of_avg": 100.0, "scene_id": "S2B_32SNF_20220324_0_L2A"}, {"date": "2022-04-08", "surface_area_km2": 0.328, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 123.30827067669173, "scene_id": "S2A_32SNF_20220408_0_L2A"}, {"date": "2022-05-15", "surface_area_km2": 0.0, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 0.0, "scene_id": "S2A_32SNF_20220515_0_L2A"}, {"date": "2022-06-24", "surface_area_km2": 0.043, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 26.380368098159508, "scene_id": "S2A_32SNF_20220624_0_L2A"}, {"date": "2022-07-17", "surface_area_km2": 0.223, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 128.1609195402299, "scene_id": "S2A_32SNF_20220717_0_L2A"}, {"date": "2022-08-26", "surface_area_km2": 0.111, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 55.22388059701492, "scene_id": "S2A_32SNF_20220826_0_L2A"}, {"date": "2022-09-10", "surface_area_km2": 0.118, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 67.23646723646723, "scene_id": "S2B_32SNF_20220910_0_L2A"}, {"date": "2022-10-20", "surface_area_km2": 0.214, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 232.6086956521739, "scene_id": "S2B_32SNF_20221020_0_L2A"}, {"date": "2022-11-14", "surface_area_km2": 0.221, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 111.05527638190955, "scene_id": "S2A_32SNF_20221114_0_L2A"}, {"date": "2022-12-04", "surface_area_km2": 0.236, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 144.78527607361963, "scene_id": "S2A_32SNF_20221204_0_L2A"}, {"date": "2023-01-08", "surface_area_km2": 0.241, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 147.8527607361963, "scene_id": "S2B_32SNF_20230108_0_L2A"}, {"date": "2023-02-19", "surface_area_km2": 0.0, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 0.0, "scene_id": "S2A_32SNF_20230219_0_L2A"}, {"date": "2023-03-24", "surface_area_km2": 0.27, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 139.8963730569948, "scene_id": "S2A_32SNF_20230324_0_L2A"}, {"date": "2023-04-08", "surface_area_km2": 0.266, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 100.0, "scene_id": "S2B_32SNF_20230408_0_L2A"}, {"date": "2023-05-28", "surface_area_km2": 0.248, "surface_area_mndwi_km2": null, "cloud_pct": 2.0, "confidence": null, "pct_of_avg": 152.14723926380367, "scene_id": "S2B_32SNF_20230528_0_L2A"}, {"date": "2023-06-22", "surface_area_km2": 0.168, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 103.06748466257669, "scene_id": "S2A_32SNF_20230622_1_L2A"}, {"date": "2023-07-14", "surface_area_km2": 0.0, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 0.0, "scene_id": "S2B_32SNF_20230714_0_L2A"}, {"date": "2023-08-16", "surface_area_km2": 0.221, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 109.95024875621891, "scene_id": "S2B_32SNF_20230816_0_L2A"}, {"date": "2023-09-10", "surface_area_km2": 0.193, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 109.97150997150999, "scene_id": "S2A_32SNF_20230910_1_L2A"}, {"date": "2023-10-10", "surface_area_km2": 0.176, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 191.30434782608694, "scene_id": "S2A_32SNF_20231010_0_L2A"}, {"date": "2023-11-14", "surface_area_km2": 0.177, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 88.94472361809045, "scene_id": "S2B_32SNF_20231114_0_L2A"}, {"date": "2023-12-26", "surface_area_km2": 0.001, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 0.6134969325153374, "scene_id": "S2A_32SNF_20231226_0_L2A"}, {"date": "2024-01-25", "surface_area_km2": 0.0, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 0.0, "scene_id": "S2A_32SNF_20240125_0_L2A"}, {"date": "2024-02-04", "surface_area_km2": 0.0, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 0.0, "scene_id": "S2A_32SNF_20240204_0_L2A"}, {"date": "2024-03-30", "surface_area_km2": 0.0, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 0.0, "scene_id": "S2B_32SNF_20240330_0_L2A"}, {"date": "2024-04-04", "surface_area_km2": 0.0, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 0.0, "scene_id": "S2A_32SNF_20240404_1_L2A"}, {"date": "2024-05-12", "surface_area_km2": 0.307, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 188.3435582822086, "scene_id": "S2B_32SNF_20240512_0_L2A"}, {"date": "2024-06-26", "surface_area_km2": 0.218, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 133.74233128834356, "scene_id": "S2A_32SNF_20240626_0_L2A"}, {"date": "2024-07-31", "surface_area_km2": 0.174, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 100.0, "scene_id": "S2B_32SNF_20240731_0_L2A"}, {"date": "2024-08-25", "surface_area_km2": 0.185, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 92.03980099502488, "scene_id": "S2A_32SNF_20240825_0_L2A"}, {"date": "2024-09-01", "surface_area_km2": 0.0, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 0.0, "scene_id": "S2A_32SNF_20240901_0_L2A"}, {"date": "2024-10-01", "surface_area_km2": 0.004, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 4.347826086956522, "scene_id": "S2A_32SNF_20241001_0_L2A"}, {"date": "2024-11-25", "surface_area_km2": 0.006, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 3.015075376884422, "scene_id": "S2B_32SNF_20241125_0_L2A"}, {"date": "2024-12-10", "surface_area_km2": 0.005, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 3.067484662576687, "scene_id": "S2A_32SNF_20241210_0_L2A"}, {"date": "2025-01-24", "surface_area_km2": 0.0, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 0.0, "scene_id": "S2B_32SNF_20250124_0_L2A"}, {"date": "2025-02-18", "surface_area_km2": 0.006, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 3.680981595092024, "scene_id": "S2C_32SNF_20250218_0_L2A"}, {"date": "2025-03-15", "surface_area_km2": 0.002, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 1.0362694300518136, "scene_id": "S2B_32SNF_20250315_0_L2A"}, {"date": "2025-04-19", "surface_area_km2": 0.024, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 9.022556390977442, "scene_id": "S2C_32SNF_20250419_0_L2A"}, {"date": "2025-05-31", "surface_area_km2": 0.038, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 23.31288343558282, "scene_id": "S2A_32SNF_20250531_0_L2A"}, {"date": "2025-06-13", "surface_area_km2": 0.0, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 0.0, "scene_id": "S2B_32SNF_20250613_1_L2A"}, {"date": "2025-07-23", "surface_area_km2": 0.177, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 101.72413793103449, "scene_id": "S2A_32SNF_20250723_0_L2A"}, {"date": "2025-08-25", "surface_area_km2": 0.201, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 100.0, "scene_id": "S2B_32SNF_20250825_0_L2A"}, {"date": "2025-09-01", "surface_area_km2": 0.158, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 90.02849002849004, "scene_id": "S2A_32SNF_20250901_0_L2A"}, {"date": "2025-10-08", "surface_area_km2": 0.008, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 8.695652173913045, "scene_id": "S2A_32SNF_20251008_0_L2A"}, {"date": "2025-11-30", "surface_area_km2": 0.255, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 128.14070351758792, "scene_id": "S2A_32SNF_20251130_1_L2A"}, {"date": "2025-12-08", "surface_area_km2": 0.127, "surface_area_mndwi_km2": null, "cloud_pct": 2.6, "confidence": null, "pct_of_avg": 77.91411042944785, "scene_id": "S2C_32SNF_20251208_0_L2A"}, {"date": "2026-01-09", "surface_area_km2": 0.276, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 169.32515337423314, "scene_id": "S2A_32SNF_20260109_0_L2A"}, {"date": "2026-02-26", "surface_area_km2": 0.387, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 237.42331288343559, "scene_id": "S2C_32SNF_20260226_0_L2A"}, {"date": "2026-03-18", "surface_area_km2": 0.266, "surface_area_mndwi_km2": null, "cloud_pct": 25.9, "confidence": null, "pct_of_avg": 137.8238341968912, "scene_id": "S2C_32SNF_20260318_0_L2A"}, {"date": "2026-04-07", "surface_area_km2": 0.374, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 140.6015037593985, "scene_id": "S2C_32SNF_20260407_0_L2A"}, {"date": "2026-05-29", "surface_area_km2": 0.0, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 0.0, "scene_id": "S2B_32SNF_20260529_0_L2A"}, {"date": "2026-06-18", "surface_area_km2": 0.001, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 0.6134969325153374, "scene_id": "S2B_32SNF_20260618_0_L2A"}, {"date": "2026-07-25", "surface_area_km2": 0.002, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 1.149425287356322, "scene_id": "S2A_32SNF_20260725_0_L2A"}, {"date": "2026-08-20", "surface_area_km2": 0.237, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 117.91044776119402, "scene_id": "S2B_32SNF_20260820_0_L2A"}, {"date": "2026-09-12", "surface_area_km2": 0.197, "surface_area_mndwi_km2": null, "cloud_pct": 0.0, "confidence": null, "pct_of_avg": 112.25071225071225, "scene_id": "S2B_32SNF_20260909_0_L2A"}, {"date": "2026-09-13", "surface_area_km2": 0.197, "surface_area_mndwi_km2": 0.147, "cloud_pct": 0.0, "confidence": 0.745, "pct_of_avg": 112.25071225071225, "scene_id": "S2B_32SNF_20260909_0_L2A"}];
+new Chart(document.getElementById('dam-chart'), {
+  type: 'line',
+  data: {
+    labels: series.map(p => p.date),
+    datasets: [
+      {
+        label: "Surface (km\u00b2)",
+        data: series.map(p => p.surface_area_km2),
+        borderColor: '#1e6fbf', backgroundColor: 'rgba(30,111,191,0.15)',
+        tension: 0.25, fill: true, spanGaps: true, pointRadius: 2
+      },
+      {
+        label: 'Rolling baseline',
+        data: series.map(() => 0.18),
+        borderColor: '#8a8f98', borderDash: [5, 5], fill: false, pointRadius: 0
+      }
+    ]
+  },
+  options: { responsive: true }
+});
+</script>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Last updated: <strong>2026-09-13 01:09 UTC</strong> · Next run: <strong>2026-09-18</strong></p>
+    <p class="muted">Data derived from Sentinel-2 L2A via public STAC APIs. Surface area is a proxy for reservoir volume, not a substitute for bathymetric survey. MIT-licensed. No warranty.</p>
+    <p class="small"><a href="../oracle/index.json">Data oracle (JSON + SHA-256 manifest)</a> · <a href="../data/latest.json">latest.json</a> · <a href="../data/readings.csv">readings.csv</a></p>
+  </div>
+</footer>
+</body>
+</html>

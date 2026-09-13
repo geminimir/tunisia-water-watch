@@ -1,9 +1,9 @@
 </main>
 <footer class="site-footer">
   <div class="wrap">
-    <p>Last updated: <strong>{{ generated_at }}</strong> · Next run: <strong>{{ next_run_at }}</strong></p>
-    <p class="muted">Data derived from Sentinel-2 L2A via public STAC APIs. Surface area is a proxy for reservoir volume, not a substitute for bathymetric survey. MIT-licensed. No warranty.</p>
-    <p class="small"><a href="{{ root }}oracle/index.json">Data oracle (JSON + SHA-256 manifest)</a> · <a href="{{ root }}data/latest.json">latest.json</a> · <a href="{{ root }}data/readings.csv">readings.csv</a></p>
+    <p>{{ t.footer_updated }} <strong>{{ generated_at }}</strong> · {{ t.footer_next_run }} <strong>{{ next_run_at }}</strong></p>
+    <p class="muted">{{ t.footer_disclaimer }}</p>
+    <p class="small"><a href="{{ site_root }}oracle/index.json">{{ t.footer_oracle_link }}</a> · <a href="{{ site_root }}data/latest.json">{{ t.footer_latest_link }}</a> · <a href="{{ site_root }}data/readings.csv">{{ t.footer_readings_link }}</a></p>
   </div>
 </footer>
 </body>

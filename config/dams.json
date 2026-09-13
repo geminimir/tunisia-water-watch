@@ -15,22 +15,36 @@
       "river": "Medjerda",
       "lat": 36.5892,
       "lon": 9.4083,
-      "bbox": [9.30, 36.53, 9.52, 36.65],
+      "bbox": [
+        9.3,
+        36.53,
+        9.52,
+        36.65
+      ],
       "ndwi_threshold": 0.05,
       "historical_avg_km2": 28.8,
-      "capacity_hm3": 555
+      "capacity_hm3": 555,
+      "name_ar": "سيدي سالم",
+      "river_ar": "مجردة"
     },
     {
       "id": "sidi-el-barrak",
       "name": "Sidi El Barrak",
       "governorate": "Béja",
       "river": "Zouara",
-      "lat": 37.0100,
-      "lon": 9.1050,
-      "bbox": [9.00, 36.94, 9.22, 37.08],
+      "lat": 37.01,
+      "lon": 9.105,
+      "bbox": [
+        9.0,
+        36.94,
+        9.22,
+        37.08
+      ],
       "ndwi_threshold": 0.05,
       "historical_avg_km2": 15.5,
-      "capacity_hm3": 264
+      "capacity_hm3": 264,
+      "name_ar": "سيدي البراك",
+      "river_ar": "زوارة"
     },
     {
       "id": "sejnane",
@@ -38,35 +52,56 @@
       "governorate": "Bizerte",
       "river": "Sejnane",
       "lat": 37.0764,
-      "lon": 9.2350,
-      "bbox": [9.17, 37.03, 9.30, 37.12],
+      "lon": 9.235,
+      "bbox": [
+        9.17,
+        37.03,
+        9.3,
+        37.12
+      ],
       "ndwi_threshold": 0.05,
       "historical_avg_km2": 0.01,
-      "capacity_hm3": 137
+      "capacity_hm3": 137,
+      "name_ar": "سجنان",
+      "river_ar": "سجنان"
     },
     {
       "id": "joumine",
       "name": "Joumine",
       "governorate": "Bizerte",
       "river": "Joumine",
-      "lat": 37.0300,
-      "lon": 9.4600,
-      "bbox": [9.39, 36.98, 9.53, 37.08],
+      "lat": 37.03,
+      "lon": 9.46,
+      "bbox": [
+        9.39,
+        36.98,
+        9.53,
+        37.08
+      ],
       "ndwi_threshold": 0.05,
       "historical_avg_km2": 8.0,
-      "capacity_hm3": 130
+      "capacity_hm3": 130,
+      "name_ar": "جومين",
+      "river_ar": "جومين"
     },
     {
       "id": "ghezala",
       "name": "Ghezala",
       "governorate": "Bizerte",
       "river": "Ghezala",
-      "lat": 37.1100,
-      "lon": 9.5200,
-      "bbox": [9.47, 37.07, 9.57, 37.15],
+      "lat": 37.11,
+      "lon": 9.52,
+      "bbox": [
+        9.47,
+        37.07,
+        9.57,
+        37.15
+      ],
       "ndwi_threshold": 0.05,
       "historical_avg_km2": 0.01,
-      "capacity_hm3": 12
+      "capacity_hm3": 12,
+      "name_ar": "غزالة",
+      "river_ar": "غزالة"
     },
     {
       "id": "zerga",
@@ -75,10 +110,17 @@
       "river": "Zerga",
       "lat": 36.9086,
       "lon": 9.6083,
-      "bbox": [9.55, 36.87, 9.66, 36.95],
+      "bbox": [
+        9.55,
+        36.87,
+        9.66,
+        36.95
+      ],
       "ndwi_threshold": 0.05,
       "historical_avg_km2": 1.5,
-      "capacity_hm3": 20
+      "capacity_hm3": 20,
+      "name_ar": "الزرقاء",
+      "river_ar": "الزرقاء"
     },
     {
       "id": "kasseb",
@@ -87,22 +129,36 @@
       "river": "Kasseb",
       "lat": 36.6489,
       "lon": 9.0031,
-      "bbox": [8.95, 36.61, 9.06, 36.69],
+      "bbox": [
+        8.95,
+        36.61,
+        9.06,
+        36.69
+      ],
       "ndwi_threshold": 0.05,
       "historical_avg_km2": 3.0,
-      "capacity_hm3": 82
+      "capacity_hm3": 82,
+      "name_ar": "الكاسب",
+      "river_ar": "الكاسب"
     },
     {
       "id": "beni-mtir",
       "name": "Beni Mtir",
       "governorate": "Jendouba",
       "river": "Oued El Lil",
-      "lat": 36.7350,
-      "lon": 8.7500,
-      "bbox": [8.70, 36.69, 8.80, 36.78],
+      "lat": 36.735,
+      "lon": 8.75,
+      "bbox": [
+        8.7,
+        36.69,
+        8.8,
+        36.78
+      ],
       "ndwi_threshold": 0.05,
       "historical_avg_km2": 3.5,
-      "capacity_hm3": 61
+      "capacity_hm3": 61,
+      "name_ar": "بني مطير",
+      "river_ar": "وادي الليل"
     },
     {
       "id": "bou-heurtma",
@@ -110,23 +166,37 @@
       "governorate": "Jendouba",
       "river": "Bou Heurtma",
       "lat": 36.6167,
-      "lon": 8.7350,
-      "bbox": [8.68, 36.57, 8.80, 36.66],
+      "lon": 8.735,
+      "bbox": [
+        8.68,
+        36.57,
+        8.8,
+        36.66
+      ],
       "ndwi_threshold": 0.05,
       "historical_avg_km2": 5.0,
-      "capacity_hm3": 118
+      "capacity_hm3": 118,
+      "name_ar": "بوهرتمة",
+      "river_ar": "بوهرتمة"
     },
     {
       "id": "barbara",
       "name": "Barbara",
       "governorate": "Jendouba",
       "river": "Barbara",
-      "lat": 36.7000,
-      "lon": 8.9200,
-      "bbox": [8.87, 36.66, 8.97, 36.74],
+      "lat": 36.7,
+      "lon": 8.92,
+      "bbox": [
+        8.87,
+        36.66,
+        8.97,
+        36.74
+      ],
       "ndwi_threshold": 0.05,
       "historical_avg_km2": 4.0,
-      "capacity_hm3": 87
+      "capacity_hm3": 87,
+      "name_ar": "بربرة",
+      "river_ar": "بربرة"
     },
     {
       "id": "mellegue",
@@ -135,58 +205,93 @@
       "river": "Mellegue",
       "lat": 36.4514,
       "lon": 8.7642,
-      "bbox": [8.70, 36.41, 8.83, 36.49],
+      "bbox": [
+        8.7,
+        36.41,
+        8.83,
+        36.49
+      ],
       "ndwi_threshold": 0.05,
       "historical_avg_km2": 8.0,
-      "capacity_hm3": 187
+      "capacity_hm3": 187,
+      "name_ar": "ملاق (نبر)",
+      "river_ar": "ملاق"
     },
     {
       "id": "sarrat",
       "name": "Sarrat",
       "governorate": "Le Kef",
       "river": "Sarrat",
-      "lat": 36.1500,
+      "lat": 36.15,
       "lon": 8.5333,
-      "bbox": [8.48, 36.11, 8.59, 36.19],
+      "bbox": [
+        8.48,
+        36.11,
+        8.59,
+        36.19
+      ],
       "ndwi_threshold": 0.05,
       "historical_avg_km2": 2.0,
-      "capacity_hm3": 20
+      "capacity_hm3": 20,
+      "name_ar": "السراط",
+      "river_ar": "السراط"
     },
     {
       "id": "siliana",
       "name": "Siliana",
       "governorate": "Siliana",
       "river": "Siliana",
-      "lat": 36.1150,
-      "lon": 9.4000,
-      "bbox": [9.34, 36.08, 9.46, 36.15],
+      "lat": 36.115,
+      "lon": 9.4,
+      "bbox": [
+        9.34,
+        36.08,
+        9.46,
+        36.15
+      ],
       "ndwi_threshold": 0.05,
       "historical_avg_km2": 3.0,
-      "capacity_hm3": 70
+      "capacity_hm3": 70,
+      "name_ar": "سليانة",
+      "river_ar": "سليانة"
     },
     {
       "id": "lakhmess",
       "name": "Lakhmess",
       "governorate": "Siliana",
       "river": "Lakhmess",
-      "lat": 36.0700,
-      "lon": 9.2400,
-      "bbox": [9.19, 36.03, 9.29, 36.10],
+      "lat": 36.07,
+      "lon": 9.24,
+      "bbox": [
+        9.19,
+        36.03,
+        9.29,
+        36.1
+      ],
       "ndwi_threshold": 0.05,
       "historical_avg_km2": 1.0,
-      "capacity_hm3": 8
+      "capacity_hm3": 8,
+      "name_ar": "لخمس",
+      "river_ar": "لخمس"
     },
     {
       "id": "rmil",
       "name": "Rmil",
       "governorate": "Zaghouan",
       "river": "Rmil",
-      "lat": 36.5200,
-      "lon": 10.0300,
-      "bbox": [9.98, 36.48, 10.08, 36.55],
+      "lat": 36.52,
+      "lon": 10.03,
+      "bbox": [
+        9.98,
+        36.48,
+        10.08,
+        36.55
+      ],
       "ndwi_threshold": 0.05,
       "historical_avg_km2": 1.5,
-      "capacity_hm3": 26
+      "capacity_hm3": 26,
+      "name_ar": "الرميل",
+      "river_ar": "الرميل"
     },
     {
       "id": "bir-mcherga",
@@ -195,22 +300,36 @@
       "river": "Medjerda tributary",
       "lat": 36.5372,
       "lon": 9.9989,
-      "bbox": [9.94, 36.50, 10.05, 36.58],
+      "bbox": [
+        9.94,
+        36.5,
+        10.05,
+        36.58
+      ],
       "ndwi_threshold": 0.05,
       "historical_avg_km2": 4.5,
-      "capacity_hm3": 65
+      "capacity_hm3": 65,
+      "name_ar": "بير مشارقة",
+      "river_ar": "رافد مجردة"
     },
     {
       "id": "el-aroussia",
       "name": "El Aroussia",
       "governorate": "Béja",
       "river": "Medjerda",
-      "lat": 36.5750,
-      "lon": 9.6300,
-      "bbox": [9.58, 36.55, 9.68, 36.60],
+      "lat": 36.575,
+      "lon": 9.63,
+      "bbox": [
+        9.58,
+        36.55,
+        9.68,
+        36.6
+      ],
       "ndwi_threshold": 0.05,
       "historical_avg_km2": 0.8,
-      "capacity_hm3": 6
+      "capacity_hm3": 6,
+      "name_ar": "العروسية",
+      "river_ar": "مجردة"
     },
     {
       "id": "el-houareb",
@@ -219,22 +338,36 @@
       "river": "Merguellil",
       "lat": 35.5486,
       "lon": 9.7625,
-      "bbox": [9.70, 35.51, 9.82, 35.59],
+      "bbox": [
+        9.7,
+        35.51,
+        9.82,
+        35.59
+      ],
       "ndwi_threshold": 0.05,
       "historical_avg_km2": 6.0,
-      "capacity_hm3": 95
+      "capacity_hm3": 95,
+      "name_ar": "الهوارب",
+      "river_ar": "مرقلّيل"
     },
     {
       "id": "nebhana",
       "name": "Nebhana",
       "governorate": "Sousse",
       "river": "Nebhana",
-      "lat": 35.9250,
+      "lat": 35.925,
       "lon": 10.1583,
-      "bbox": [10.10, 35.88, 10.22, 35.96],
+      "bbox": [
+        10.1,
+        35.88,
+        10.22,
+        35.96
+      ],
       "ndwi_threshold": 0.05,
       "historical_avg_km2": 3.5,
-      "capacity_hm3": 86
+      "capacity_hm3": 86,
+      "name_ar": "نبهانة",
+      "river_ar": "نبهانة"
     },
     {
       "id": "sidi-saad",
@@ -242,11 +375,18 @@
       "governorate": "Kairouan",
       "river": "Zeroud",
       "lat": 35.3833,
-      "lon": 9.7000,
-      "bbox": [9.63, 35.35, 9.77, 35.42],
+      "lon": 9.7,
+      "bbox": [
+        9.63,
+        35.35,
+        9.77,
+        35.42
+      ],
       "ndwi_threshold": 0.05,
       "historical_avg_km2": 10.0,
-      "capacity_hm3": 209
+      "capacity_hm3": 209,
+      "name_ar": "سيدي سعد",
+      "river_ar": "زرود"
     },
     {
       "id": "chiba",
@@ -255,10 +395,17 @@
       "river": "Chiba",
       "lat": 36.6208,
       "lon": 10.7508,
-      "bbox": [10.71, 36.59, 10.79, 36.65],
+      "bbox": [
+        10.71,
+        36.59,
+        10.79,
+        36.65
+      ],
       "ndwi_threshold": 0.05,
       "historical_avg_km2": 0.7,
-      "capacity_hm3": 8
+      "capacity_hm3": 8,
+      "name_ar": "الشيبة",
+      "river_ar": "الشيبة"
     },
     {
       "id": "masri",
@@ -267,10 +414,17 @@
       "river": "Masri",
       "lat": 36.7472,
       "lon": 10.8383,
-      "bbox": [10.80, 36.72, 10.88, 36.78],
+      "bbox": [
+        10.8,
+        36.72,
+        10.88,
+        36.78
+      ],
       "ndwi_threshold": 0.05,
       "historical_avg_km2": 0.9,
-      "capacity_hm3": 7
+      "capacity_hm3": 7,
+      "name_ar": "المصري",
+      "river_ar": "المصري"
     },
     {
       "id": "lebna",
@@ -278,179 +432,284 @@
       "governorate": "Nabeul",
       "river": "Lebna",
       "lat": 36.7581,
-      "lon": 10.9250,
-      "bbox": [10.88, 36.72, 10.97, 36.79],
+      "lon": 10.925,
+      "bbox": [
+        10.88,
+        36.72,
+        10.97,
+        36.79
+      ],
       "ndwi_threshold": 0.05,
       "historical_avg_km2": 3.0,
-      "capacity_hm3": 30
+      "capacity_hm3": 30,
+      "name_ar": "لبنة",
+      "river_ar": "لبنة"
     },
     {
       "id": "abid",
       "name": "Abid",
       "governorate": "Le Kef",
       "river": "Abid",
-      "lat": 36.4600,
-      "lon": 9.0300,
-      "bbox": [8.98, 36.42, 9.08, 36.50],
+      "lat": 36.46,
+      "lon": 9.03,
+      "bbox": [
+        8.98,
+        36.42,
+        9.08,
+        36.5
+      ],
       "ndwi_threshold": 0.05,
       "historical_avg_km2": 1.2,
-      "capacity_hm3": 12
+      "capacity_hm3": 12,
+      "name_ar": "العابد",
+      "river_ar": "العابد"
     },
     {
       "id": "tessa",
       "name": "Tessa",
       "governorate": "Le Kef",
       "river": "Tessa",
-      "lat": 36.2800,
-      "lon": 8.9700,
-      "bbox": [8.92, 36.24, 9.02, 36.32],
+      "lat": 36.28,
+      "lon": 8.97,
+      "bbox": [
+        8.92,
+        36.24,
+        9.02,
+        36.32
+      ],
       "ndwi_threshold": 0.05,
       "historical_avg_km2": 1.5,
-      "capacity_hm3": 20
+      "capacity_hm3": 20,
+      "name_ar": "التساء",
+      "river_ar": "التساء"
     },
     {
       "id": "ziatine",
       "name": "Ziatine",
       "governorate": "Bizerte",
       "river": "Ziatine",
-      "lat": 37.1500,
-      "lon": 9.4000,
-      "bbox": [9.35, 37.11, 9.45, 37.19],
+      "lat": 37.15,
+      "lon": 9.4,
+      "bbox": [
+        9.35,
+        37.11,
+        9.45,
+        37.19
+      ],
       "ndwi_threshold": 0.05,
       "historical_avg_km2": 0.9,
-      "capacity_hm3": 8
+      "capacity_hm3": 8,
+      "name_ar": "الزياتين",
+      "river_ar": "الزياتين"
     },
     {
       "id": "gamgoum",
       "name": "Gamgoum",
       "governorate": "Béja",
       "river": "Gamgoum",
-      "lat": 36.7300,
-      "lon": 9.1600,
-      "bbox": [9.11, 36.70, 9.21, 36.77],
+      "lat": 36.73,
+      "lon": 9.16,
+      "bbox": [
+        9.11,
+        36.7,
+        9.21,
+        36.77
+      ],
       "ndwi_threshold": 0.05,
       "historical_avg_km2": 0.6,
-      "capacity_hm3": 5
+      "capacity_hm3": 5,
+      "name_ar": "قمقوم",
+      "river_ar": "قمقوم"
     },
     {
       "id": "moula",
       "name": "Moula",
       "governorate": "Béja",
       "river": "Moula",
-      "lat": 36.8100,
-      "lon": 9.0700,
-      "bbox": [9.02, 36.77, 9.12, 36.85],
+      "lat": 36.81,
+      "lon": 9.07,
+      "bbox": [
+        9.02,
+        36.77,
+        9.12,
+        36.85
+      ],
       "ndwi_threshold": 0.05,
       "historical_avg_km2": 0.7,
-      "capacity_hm3": 6
+      "capacity_hm3": 6,
+      "name_ar": "مولى",
+      "river_ar": "مولى"
     },
     {
       "id": "melah",
       "name": "El Melah",
       "governorate": "Bizerte",
       "river": "El Melah",
-      "lat": 37.1500,
-      "lon": 9.7200,
-      "bbox": [9.68, 37.12, 9.77, 37.19],
+      "lat": 37.15,
+      "lon": 9.72,
+      "bbox": [
+        9.68,
+        37.12,
+        9.77,
+        37.19
+      ],
       "ndwi_threshold": 0.05,
       "historical_avg_km2": 0.8,
-      "capacity_hm3": 8
+      "capacity_hm3": 8,
+      "name_ar": "الملاح",
+      "river_ar": "الملاح"
     },
     {
       "id": "harka",
       "name": "Harka",
       "governorate": "Bizerte",
       "river": "Harka",
-      "lat": 37.0500,
-      "lon": 9.8000,
-      "bbox": [9.76, 37.02, 9.85, 37.09],
+      "lat": 37.05,
+      "lon": 9.8,
+      "bbox": [
+        9.76,
+        37.02,
+        9.85,
+        37.09
+      ],
       "ndwi_threshold": 0.05,
       "historical_avg_km2": 0.7,
-      "capacity_hm3": 6
+      "capacity_hm3": 6,
+      "name_ar": "الحركة",
+      "river_ar": "الحركة"
     },
     {
       "id": "bou-hertma-lower",
       "name": "Bou Heurtma Lower",
       "governorate": "Jendouba",
       "river": "Bou Heurtma",
-      "lat": 36.5900,
-      "lon": 8.8100,
-      "bbox": [8.76, 36.56, 8.86, 36.63],
+      "lat": 36.59,
+      "lon": 8.81,
+      "bbox": [
+        8.76,
+        36.56,
+        8.86,
+        36.63
+      ],
       "ndwi_threshold": 0.05,
       "historical_avg_km2": 0.9,
-      "capacity_hm3": 10
+      "capacity_hm3": 10,
+      "name_ar": "بوهرتمة السفلي",
+      "river_ar": "بوهرتمة"
     },
     {
       "id": "kebir",
       "name": "El Kebir",
       "governorate": "Bizerte",
       "river": "El Kebir",
-      "lat": 37.0300,
-      "lon": 9.1100,
-      "bbox": [9.06, 37.00, 9.16, 37.07],
+      "lat": 37.03,
+      "lon": 9.11,
+      "bbox": [
+        9.06,
+        37.0,
+        9.16,
+        37.07
+      ],
       "ndwi_threshold": 0.05,
       "historical_avg_km2": 0.9,
-      "capacity_hm3": 12
+      "capacity_hm3": 12,
+      "name_ar": "الكبير",
+      "river_ar": "الكبير"
     },
     {
       "id": "douimis",
       "name": "Douimis",
       "governorate": "Bizerte",
       "river": "Douimis",
-      "lat": 37.2100,
-      "lon": 9.7700,
-      "bbox": [9.73, 37.18, 9.82, 37.24],
+      "lat": 37.21,
+      "lon": 9.77,
+      "bbox": [
+        9.73,
+        37.18,
+        9.82,
+        37.24
+      ],
       "ndwi_threshold": 0.05,
       "historical_avg_km2": 0.5,
-      "capacity_hm3": 4
+      "capacity_hm3": 4,
+      "name_ar": "الدويميس",
+      "river_ar": "الدويميس"
     },
     {
       "id": "el-breck",
       "name": "El Breck",
       "governorate": "Zaghouan",
       "river": "El Breck",
-      "lat": 36.4500,
-      "lon": 10.1500,
-      "bbox": [10.10, 36.42, 10.20, 36.49],
+      "lat": 36.45,
+      "lon": 10.15,
+      "bbox": [
+        10.1,
+        36.42,
+        10.2,
+        36.49
+      ],
       "ndwi_threshold": 0.05,
       "historical_avg_km2": 0.4,
-      "capacity_hm3": 3
+      "capacity_hm3": 3,
+      "name_ar": "البريك",
+      "river_ar": "البريك"
     },
     {
       "id": "sidi-abdelmoumen",
       "name": "Sidi Abdelmoumen",
       "governorate": "Kairouan",
       "river": "Merguellil",
-      "lat": 35.6800,
-      "lon": 9.6200,
-      "bbox": [9.57, 35.65, 9.67, 35.72],
+      "lat": 35.68,
+      "lon": 9.62,
+      "bbox": [
+        9.57,
+        35.65,
+        9.67,
+        35.72
+      ],
       "ndwi_threshold": 0.05,
       "historical_avg_km2": 0.9,
-      "capacity_hm3": 10
+      "capacity_hm3": 10,
+      "name_ar": "سيدي عبد المؤمن",
+      "river_ar": "مرقلّيل"
     },
     {
       "id": "rmel",
       "name": "Rmel",
       "governorate": "Nabeul",
       "river": "Rmel",
-      "lat": 36.4400,
-      "lon": 10.5500,
-      "bbox": [10.50, 36.41, 10.60, 36.48],
+      "lat": 36.44,
+      "lon": 10.55,
+      "bbox": [
+        10.5,
+        36.41,
+        10.6,
+        36.48
+      ],
       "ndwi_threshold": 0.05,
       "historical_avg_km2": 0.6,
-      "capacity_hm3": 5
+      "capacity_hm3": 5,
+      "name_ar": "الرمل",
+      "river_ar": "الرمل"
     },
     {
       "id": "el-abid",
       "name": "El Abid Upper",
       "governorate": "Kasserine",
       "river": "El Abid",
-      "lat": 35.6500,
-      "lon": 8.8500,
-      "bbox": [8.80, 35.62, 8.90, 35.69],
+      "lat": 35.65,
+      "lon": 8.85,
+      "bbox": [
+        8.8,
+        35.62,
+        8.9,
+        35.69
+      ],
       "ndwi_threshold": 0.05,
       "historical_avg_km2": 0.5,
-      "capacity_hm3": 4
+      "capacity_hm3": 4,
+      "name_ar": "العابد العلوي",
+      "river_ar": "العابد"
     }
   ]
 }

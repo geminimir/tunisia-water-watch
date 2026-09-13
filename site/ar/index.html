@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>السدود — مراقبة مياه تونس</title>
+<meta name="description" content="مراقبة مستقلة عبر الأقمار الاصطناعية للموارد المائية والزراعة في تونس.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💧</text></svg>">
+</head>
+<body class="lang-ar">
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">💧 مراقبة مياه تونس</a>
+    <nav>
+      <a href="index.html">السدود</a>
+      <a href="agriculture.html">الزراعة</a>
+      <a href="about.html">حول</a>
+      <a href="https://github.com/geminimir/water-watch" target="_blank" rel="noopener">الرمز المصدري</a>
+      <a class="lang-toggle" href="../fr/index.html" onclick="try { localStorage.setItem('tww-lang', 'fr'); } catch (e) {}"
+         dir="ltr"
+         lang="fr">Français</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+
+
+
+<section class="hero">
+  <h1>سدود تونس تحت المراقبة من المدار</h1>
+  <p>مساحة سطح المياه المستنبطة من الأقمار الاصطناعية لـ37 خزانًا كبيرًا. تحديث كل 5 أيام. بدون تكلفة، بدون خوادم، بدون مفاتيح API.</p>
+</section>
+
+<section class="stats">
+  <div class="stat">
+    <div class="stat-value">60.4 km²</div>
+    <div class="stat-label">المساحة الإجمالية المقاسة (آخر مرور)</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">36/37</div>
+    <div class="stat-label">السدود المقروءة في آخر تشغيل</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">52.0%</div>
+    <div class="stat-label">من المتوسط الموسمي طويل الأمد</div>
+  </div>
+  <div class="stat drought-green">
+    <div class="stat-value">91</div>
+    <div class="stat-label">مؤشر الخزانات (متوسط مرجّح بالسعة)</div>
+  </div>
+  <div class="stat drought-yellow">
+    <div class="stat-value">57</div>
+    <div class="stat-label">الشدة المركبة للجفاف (تحذير)</div>
+  </div>
+</section>
+
+<section class="map-section">
+  <div id="map"></div>
+</section>
+
+<section class="table-section">
+  <h2>جميع السدود</h2>
+  <table class="dams">
+    <thead>
+      <tr>
+        <th>السد</th>
+        <th>الولاية</th>
+        <th>آخر قراءة</th>
+        <th class="num">المساحة (كم²)</th>
+        <th class="num">% من المتوسط</th>
+        <th>الحالة</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr>
+        <td><a href="dam/sidi-salem.html">سيدي سالم</a></td>
+        <td>Béja</td>
+        <td>2026-09-12</td>
+        <td class="num">18.15</td>
+        <td class="num">119</td>
+        <td><span class="badge badge-green">عادي</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/sidi-el-barrak.html">سيدي البراك</a></td>
+        <td>Béja</td>
+        <td>2026-09-12</td>
+        <td class="num">17.90</td>
+        <td class="num">148</td>
+        <td><span class="badge badge-green">عادي</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/sejnane.html">سجنان</a></td>
+        <td>Bizerte</td>
+        <td>2026-09-12</td>
+        <td class="num">0.00</td>
+        <td class="num">10</td>
+        <td><span class="badge badge-red">منخفض</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/joumine.html">جومين</a></td>
+        <td>Bizerte</td>
+        <td>2026-09-12</td>
+        <td class="num">0.00</td>
+        <td class="num">0</td>
+        <td><span class="badge badge-red">منخفض</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/ghezala.html">غزالة</a></td>
+        <td>Bizerte</td>
+        <td>2026-09-12</td>
+        <td class="num">0.00</td>
+        <td class="num">10</td>
+        <td><span class="badge badge-red">منخفض</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/zerga.html">الزرقاء</a></td>
+        <td>Bizerte</td>
+        <td>2026-09-12</td>
+        <td class="num">0.20</td>
+        <td class="num">125</td>
+        <td><span class="badge badge-green">عادي</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/kasseb.html">الكاسب</a></td>
+        <td>Béja</td>
+        <td>2026-09-12</td>
+        <td class="num">0.02</td>
+        <td class="num">1</td>
+        <td><span class="badge badge-red">منخفض</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/beni-mtir.html">بني مطير</a></td>
+        <td>Jendouba</td>
+        <td>2026-09-12</td>
+        <td class="num">2.78</td>
+        <td class="num">131</td>
+        <td><span class="badge badge-green">عادي</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/bou-heurtma.html">بوهرتمة</a></td>
+        <td>Jendouba</td>
+        <td>2026-09-12</td>
+        <td class="num">4.37</td>
+        <td class="num">197</td>
+        <td><span class="badge badge-green">عادي</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/barbara.html">بربرة</a></td>
+        <td>Jendouba</td>
+        <td>2026-09-12</td>
+        <td class="num">0.09</td>
+        <td class="num">2</td>
+        <td><span class="badge badge-red">منخفض</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/mellegue.html">ملاق (نبر)</a></td>
+        <td>Le Kef</td>
+        <td>2026-09-12</td>
+        <td class="num">0.01</td>
+        <td class="num">0</td>
+        <td><span class="badge badge-red">منخفض</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/sarrat.html">السراط</a></td>
+        <td>Le Kef</td>
+        <td>2026-09-12</td>
+        <td class="num">0.02</td>
+        <td class="num">1</td>
+        <td><span class="badge badge-red">منخفض</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/siliana.html">سليانة</a></td>
+        <td>Siliana</td>
+        <td>2026-09-12</td>
+        <td class="num">1.11</td>
+        <td class="num">484</td>
+        <td><span class="badge badge-green">عادي</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/lakhmess.html">لخمس</a></td>
+        <td>Siliana</td>
+        <td>2026-09-12</td>
+        <td class="num">0.01</td>
+        <td class="num">0</td>
+        <td><span class="badge badge-red">منخفض</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/rmil.html">الرميل</a></td>
+        <td>Zaghouan</td>
+        <td>2026-09-12</td>
+        <td class="num">1.93</td>
+        <td class="num">99</td>
+        <td><span class="badge badge-green">عادي</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/bir-mcherga.html">بير مشارقة</a></td>
+        <td>Zaghouan</td>
+        <td>2026-09-12</td>
+        <td class="num">0.62</td>
+        <td class="num">91</td>
+        <td><span class="badge badge-green">عادي</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/el-aroussia.html">العروسية</a></td>
+        <td>Béja</td>
+        <td>2026-09-12</td>
+        <td class="num">0.00</td>
+        <td class="num">0</td>
+        <td><span class="badge badge-red">منخفض</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/el-houareb.html">الهوارب</a></td>
+        <td>Kairouan</td>
+        <td>2026-09-12</td>
+        <td class="num">0.02</td>
+        <td class="num">0</td>
+        <td><span class="badge badge-red">منخفض</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/nebhana.html">نبهانة</a></td>
+        <td>Sousse</td>
+        <td>2026-09-12</td>
+        <td class="num">0.00</td>
+        <td class="num">0</td>
+        <td><span class="badge badge-red">منخفض</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/sidi-saad.html">سيدي سعد</a></td>
+        <td>Kairouan</td>
+        <td>2026-09-12</td>
+        <td class="num">3.11</td>
+        <td class="num">76</td>
+        <td><span class="badge badge-yellow">قيد المتابعة</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/chiba.html">الشيبة</a></td>
+        <td>Nabeul</td>
+        <td>2026-09-12</td>
+        <td class="num">0.17</td>
+        <td class="num">25</td>
+        <td><span class="badge badge-red">منخفض</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/masri.html">المصري</a></td>
+        <td>Nabeul</td>
+        <td>2026-09-12</td>
+        <td class="num">0.07</td>
+        <td class="num">7</td>
+        <td><span class="badge badge-red">منخفض</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/lebna.html">لبنة</a></td>
+        <td>Nabeul</td>
+        <td>2026-09-12</td>
+        <td class="num">5.14</td>
+        <td class="num">500</td>
+        <td><span class="badge badge-green">عادي</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/abid.html">العابد</a></td>
+        <td>Le Kef</td>
+        <td>2026-09-12</td>
+        <td class="num">0.00</td>
+        <td class="num">0</td>
+        <td><span class="badge badge-red">منخفض</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/tessa.html">التساء</a></td>
+        <td>Le Kef</td>
+        <td>2026-09-12</td>
+        <td class="num">0.00</td>
+        <td class="num">0</td>
+        <td><span class="badge badge-red">منخفض</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/ziatine.html">الزياتين</a></td>
+        <td>Bizerte</td>
+        <td>2026-09-12</td>
+        <td class="num">3.19</td>
+        <td class="num">136</td>
+        <td><span class="badge badge-green">عادي</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/gamgoum.html">قمقوم</a></td>
+        <td>Béja</td>
+        <td>2026-09-12</td>
+        <td class="num">0.08</td>
+        <td class="num">152</td>
+        <td><span class="badge badge-green">عادي</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/moula.html">مولى</a></td>
+        <td>Béja</td>
+        <td>2026-09-12</td>
+        <td class="num">0.00</td>
+        <td class="num">0</td>
+        <td><span class="badge badge-red">منخفض</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/melah.html">الملاح</a></td>
+        <td>Bizerte</td>
+        <td>2026-09-12</td>
+        <td class="num">1.16</td>
+        <td class="num">4</td>
+        <td><span class="badge badge-red">منخفض</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/harka.html">الحركة</a></td>
+        <td>Bizerte</td>
+        <td>2026-09-12</td>
+        <td class="num">0.00</td>
+        <td class="num">0</td>
+        <td><span class="badge badge-red">منخفض</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/bou-hertma-lower.html">بوهرتمة السفلي</a></td>
+        <td>Jendouba</td>
+        <td>2026-09-12</td>
+        <td class="num">0.10</td>
+        <td class="num">190</td>
+        <td><span class="badge badge-green">عادي</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/kebir.html">الكبير</a></td>
+        <td>Bizerte</td>
+        <td>2026-09-12</td>
+        <td class="num">0.14</td>
+        <td class="num">57</td>
+        <td><span class="badge badge-yellow">قيد المتابعة</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/douimis.html">الدويميس</a></td>
+        <td>Bizerte</td>
+        <td>2026-09-12</td>
+        <td class="num">—</td>
+        <td class="num">—</td>
+        <td><span class="badge badge-gray">غير معروف</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/el-breck.html">البريك</a></td>
+        <td>Zaghouan</td>
+        <td>2026-09-12</td>
+        <td class="num">0.01</td>
+        <td class="num">2</td>
+        <td><span class="badge badge-red">منخفض</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/sidi-abdelmoumen.html">سيدي عبد المؤمن</a></td>
+        <td>Kairouan</td>
+        <td>2026-09-12</td>
+        <td class="num">0.00</td>
+        <td class="num">0</td>
+        <td><span class="badge badge-red">منخفض</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/rmel.html">الرمل</a></td>
+        <td>Nabeul</td>
+        <td>2026-09-12</td>
+        <td class="num">0.01</td>
+        <td class="num">31</td>
+        <td><span class="badge badge-red">منخفض</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="dam/el-abid.html">العابد العلوي</a></td>
+        <td>Kasserine</td>
+        <td>2026-09-12</td>
+        <td class="num">0.00</td>
+        <td class="num">0</td>
+        <td><span class="badge badge-red">منخفض</span></td>
+      </tr>
+      
+    </tbody>
+  </table>
+</section>
+
+<section class="chart-section">
+  <h2>المساحة الوطنية للخزانات عبر الزمن</h2>
+  <canvas id="national-chart" height="120"></canvas>
+</section>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script>
+const dams = [{"id": "sidi-salem", "name": "Sidi Salem", "name_ar": "سيدي سالم", "governorate": "Béja", "river": "Medjerda", "river_ar": "مجردة", "lat": 36.5892, "lon": 9.4083, "historical_avg_km2": 28.8, "effective_baseline_km2": 15.31, "baseline_source": "rolling-monthly", "capacity_hm3": 555, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 18.151, "surface_area_mndwi_km2": null, "confidence": null, "pct_of_avg": 118.53327238294258, "status": "green", "z_score_water": 1.994097328932997, "sample_count_water": 5, "severity_score": 40.73336380852871, "severity_band": "normal", "severity_breakdown": {"score": 40.73, "components": [{"name": "water", "severity": 40.73, "weight": 0.5}]}, "display_name": "سيدي سالم", "display_river": "مجردة", "display_governorate": "Béja", "display_status": "عادي", "display_band": "عادي"}, {"id": "sidi-el-barrak", "name": "Sidi El Barrak", "name_ar": "سيدي البراك", "governorate": "Béja", "river": "Zouara", "river_ar": "زوارة", "lat": 37.01, "lon": 9.105, "historical_avg_km2": 15.5, "effective_baseline_km2": 12.13, "baseline_source": "rolling-monthly", "capacity_hm3": 264, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 17.904, "surface_area_mndwi_km2": null, "confidence": null, "pct_of_avg": 147.61315854563443, "status": "green", "z_score_water": 1.7210634310511082, "sample_count_water": 5, "severity_score": 26.193420727182783, "severity_band": "abundant", "severity_breakdown": {"score": 26.19, "components": [{"name": "water", "severity": 26.19, "weight": 0.5}]}, "display_name": "سيدي البراك", "display_river": "زوارة", "display_governorate": "Béja", "display_status": "عادي", "display_band": "وفير"}, {"id": "sejnane", "name": "Sejnane", "name_ar": "سجنان", "governorate": "Bizerte", "river": "Sejnane", "river_ar": "سجنان", "lat": 37.0764, "lon": 9.235, "historical_avg_km2": 0.01, "effective_baseline_km2": 0.01, "baseline_source": "config", "capacity_hm3": 137, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.001, "surface_area_mndwi_km2": null, "confidence": null, "pct_of_avg": 10.0, "status": "red", "z_score_water": -0.7825659062664225, "sample_count_water": 5, "severity_score": 95.0, "severity_band": "severe", "severity_breakdown": {"score": 95.0, "components": [{"name": "water", "severity": 95.0, "weight": 0.5}]}, "display_name": "سجنان", "display_river": "سجنان", "display_governorate": "Bizerte", "display_status": "منخفض", "display_band": "شديد"}, {"id": "joumine", "name": "Joumine", "name_ar": "جومين", "governorate": "Bizerte", "river": "Joumine", "river_ar": "جومين", "lat": 37.03, "lon": 9.46, "historical_avg_km2": 8.0, "effective_baseline_km2": 8.0, "baseline_source": "config", "capacity_hm3": 130, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.001, "surface_area_mndwi_km2": null, "confidence": null, "pct_of_avg": 0.0125, "status": "red", "z_score_water": -0.6923575314371633, "sample_count_water": 5, "severity_score": 99.99375, "severity_band": "severe", "severity_breakdown": {"score": 99.99, "components": [{"name": "water", "severity": 99.99, "weight": 0.5}]}, "display_name": "جومين", "display_river": "جومين", "display_governorate": "Bizerte", "display_status": "منخفض", "display_band": "شديد"}, {"id": "ghezala", "name": "Ghezala", "name_ar": "غزالة", "governorate": "Bizerte", "river": "Ghezala", "river_ar": "غزالة", "lat": 37.11, "lon": 9.52, "historical_avg_km2": 0.01, "effective_baseline_km2": 0.01, "baseline_source": "config", "capacity_hm3": 12, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.001, "surface_area_mndwi_km2": null, "confidence": null, "pct_of_avg": 10.0, "status": "red", "z_score_water": -0.9979487157886733, "sample_count_water": 5, "severity_score": 95.0, "severity_band": "severe", "severity_breakdown": {"score": 95.0, "components": [{"name": "water", "severity": 95.0, "weight": 0.5}]}, "display_name": "غزالة", "display_river": "غزالة", "display_governorate": "Bizerte", "display_status": "منخفض", "display_band": "شديد"}, {"id": "zerga", "name": "Zerga", "name_ar": "الزرقاء", "governorate": "Bizerte", "river": "Zerga", "river_ar": "الزرقاء", "lat": 36.9086, "lon": 9.6083, "historical_avg_km2": 1.5, "effective_baseline_km2": 0.16, "baseline_source": "rolling-monthly", "capacity_hm3": 20, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.197, "surface_area_mndwi_km2": null, "confidence": null, "pct_of_avg": 124.68354430379746, "status": "green", "z_score_water": 0.9498816622652538, "sample_count_water": 5, "severity_score": 37.65822784810127, "severity_band": "normal", "severity_breakdown": {"score": 37.66, "components": [{"name": "water", "severity": 37.66, "weight": 0.5}]}, "display_name": "الزرقاء", "display_river": "الزرقاء", "display_governorate": "Bizerte", "display_status": "عادي", "display_band": "عادي"}, {"id": "kasseb", "name": "Kasseb", "name_ar": "الكاسب", "governorate": "Béja", "river": "Kasseb", "river_ar": "الكاسب", "lat": 36.6489, "lon": 9.0031, "historical_avg_km2": 3.0, "effective_baseline_km2": 3.0, "baseline_source": "config", "capacity_hm3": 82, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.017, "surface_area_mndwi_km2": null, "confidence": null, "pct_of_avg": 0.5666666666666668, "status": "red", "z_score_water": 6.06217782649107, "sample_count_water": 5, "severity_score": 99.71666666666667, "severity_band": "severe", "severity_breakdown": {"score": 99.72, "components": [{"name": "water", "severity": 99.72, "weight": 0.5}]}, "display_name": "الكاسب", "display_river": "الكاسب", "display_governorate": "Béja", "display_status": "منخفض", "display_band": "شديد"}, {"id": "beni-mtir", "name": "Beni Mtir", "name_ar": "بني مطير", "governorate": "Jendouba", "river": "Oued El Lil", "river_ar": "وادي الليل", "lat": 36.735, "lon": 8.75, "historical_avg_km2": 3.5, "effective_baseline_km2": 2.13, "baseline_source": "rolling-monthly", "capacity_hm3": 61, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 2.782, "surface_area_mndwi_km2": null, "confidence": null, "pct_of_avg": 130.8560677328316, "status": "green", "z_score_water": 2.2384683752554237, "sample_count_water": 5, "severity_score": 34.5719661335842, "severity_band": "normal", "severity_breakdown": {"score": 34.57, "components": [{"name": "water", "severity": 34.57, "weight": 0.5}]}, "display_name": "بني مطير", "display_river": "وادي الليل", "display_governorate": "Jendouba", "display_status": "عادي", "display_band": "عادي"}, {"id": "bou-heurtma", "name": "Bou Heurtma", "name_ar": "بوهرتمة", "governorate": "Jendouba", "river": "Bou Heurtma", "river_ar": "بوهرتمة", "lat": 36.6167, "lon": 8.735, "historical_avg_km2": 5.0, "effective_baseline_km2": 2.21, "baseline_source": "rolling-monthly", "capacity_hm3": 118, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 4.367, "surface_area_mndwi_km2": null, "confidence": null, "pct_of_avg": 197.42314647377935, "status": "green", "z_score_water": 4.156730262363087, "sample_count_water": 5, "severity_score": 1.2884267631103228, "severity_band": "abundant", "severity_breakdown": {"score": 1.29, "components": [{"name": "water", "severity": 1.29, "weight": 0.5}]}, "display_name": "بوهرتمة", "display_river": "بوهرتمة", "display_governorate": "Jendouba", "display_status": "عادي", "display_band": "وفير"}, {"id": "barbara", "name": "Barbara", "name_ar": "بربرة", "governorate": "Jendouba", "river": "Barbara", "river_ar": "بربرة", "lat": 36.7, "lon": 8.92, "historical_avg_km2": 4.0, "effective_baseline_km2": 4.0, "baseline_source": "config", "capacity_hm3": 87, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.086, "surface_area_mndwi_km2": null, "confidence": null, "pct_of_avg": 2.15, "status": "red", "z_score_water": -0.12371791482634857, "sample_count_water": 5, "severity_score": 98.925, "severity_band": "severe", "severity_breakdown": {"score": 98.92, "components": [{"name": "water", "severity": 98.92, "weight": 0.5}]}, "display_name": "بربرة", "display_river": "بربرة", "display_governorate": "Jendouba", "display_status": "منخفض", "display_band": "شديد"}, {"id": "mellegue", "name": "Mellegue (Nebeur)", "name_ar": "ملاق (نبر)", "governorate": "Le Kef", "river": "Mellegue", "river_ar": "ملاق", "lat": 36.4514, "lon": 8.7642, "historical_avg_km2": 8.0, "effective_baseline_km2": 8.0, "baseline_source": "config", "capacity_hm3": 187, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.006, "surface_area_mndwi_km2": null, "confidence": null, "pct_of_avg": 0.075, "status": "red", "z_score_water": 0.7833494518006401, "sample_count_water": 5, "severity_score": 99.9625, "severity_band": "severe", "severity_breakdown": {"score": 99.96, "components": [{"name": "water", "severity": 99.96, "weight": 0.5}]}, "display_name": "ملاق (نبر)", "display_river": "ملاق", "display_governorate": "Le Kef", "display_status": "منخفض", "display_band": "شديد"}, {"id": "sarrat", "name": "Sarrat", "name_ar": "السراط", "governorate": "Le Kef", "river": "Sarrat", "river_ar": "السراط", "lat": 36.15, "lon": 8.5333, "historical_avg_km2": 2.0, "effective_baseline_km2": 2.0, "baseline_source": "config", "capacity_hm3": 20, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.024, "surface_area_mndwi_km2": null, "confidence": null, "pct_of_avg": 1.2, "status": "red", "z_score_water": -0.5197071062094505, "sample_count_water": 5, "severity_score": 99.4, "severity_band": "severe", "severity_breakdown": {"score": 99.4, "components": [{"name": "water", "severity": 99.4, "weight": 0.5}]}, "display_name": "السراط", "display_river": "السراط", "display_governorate": "Le Kef", "display_status": "منخفض", "display_band": "شديد"}, {"id": "siliana", "name": "Siliana", "name_ar": "سليانة", "governorate": "Siliana", "river": "Siliana", "river_ar": "سليانة", "lat": 36.115, "lon": 9.4, "historical_avg_km2": 3.0, "effective_baseline_km2": 0.23, "baseline_source": "rolling-annual", "capacity_hm3": 70, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 1.108, "surface_area_mndwi_km2": null, "confidence": null, "pct_of_avg": 483.8427947598254, "status": "green", "z_score_water": 3.8825587224733353, "sample_count_water": 5, "severity_score": 0.0, "severity_band": "abundant", "severity_breakdown": {"score": 0.0, "components": [{"name": "water", "severity": 0.0, "weight": 0.5}]}, "display_name": "سليانة", "display_river": "سليانة", "display_governorate": "Siliana", "display_status": "عادي", "display_band": "وفير"}, {"id": "lakhmess", "name": "Lakhmess", "name_ar": "لخمس", "governorate": "Siliana", "river": "Lakhmess", "river_ar": "لخمس", "lat": 36.07, "lon": 9.24, "historical_avg_km2": 1.0, "effective_baseline_km2": 1.0, "baseline_source": "config", "capacity_hm3": 8, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.005, "surface_area_mndwi_km2": null, "confidence": null, "pct_of_avg": 0.5, "status": "red", "z_score_water": 0.6111111111111113, "sample_count_water": 5, "severity_score": 99.75, "severity_band": "severe", "severity_breakdown": {"score": 99.75, "components": [{"name": "water", "severity": 99.75, "weight": 0.5}]}, "display_name": "لخمس", "display_river": "لخمس", "display_governorate": "Siliana", "display_status": "منخفض", "display_band": "شديد"}, {"id": "rmil", "name": "Rmil", "name_ar": "الرميل", "governorate": "Zaghouan", "river": "Rmil", "river_ar": "الرميل", "lat": 36.52, "lon": 10.03, "historical_avg_km2": 1.5, "effective_baseline_km2": 1.94, "baseline_source": "rolling-monthly", "capacity_hm3": 26, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 1.933, "surface_area_mndwi_km2": null, "confidence": null, "pct_of_avg": 99.43415637860083, "status": "green", "z_score_water": 0.06023494790606783, "sample_count_water": 5, "severity_score": 50.282921810699584, "severity_band": "watch", "severity_breakdown": {"score": 50.28, "components": [{"name": "water", "severity": 50.28, "weight": 0.5}]}, "display_name": "الرميل", "display_river": "الرميل", "display_governorate": "Zaghouan", "display_status": "عادي", "display_band": "تحذير"}, {"id": "bir-mcherga", "name": "Bir Mcherga", "name_ar": "بير مشارقة", "governorate": "Zaghouan", "river": "Medjerda tributary", "river_ar": "رافد مجردة", "lat": 36.5372, "lon": 9.9989, "historical_avg_km2": 4.5, "effective_baseline_km2": 0.69, "baseline_source": "rolling-monthly", "capacity_hm3": 65, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.622, "surface_area_mndwi_km2": null, "confidence": null, "pct_of_avg": 90.53857350800583, "status": "green", "z_score_water": 0.21097247606636746, "sample_count_water": 5, "severity_score": 54.73071324599709, "severity_band": "watch", "severity_breakdown": {"score": 54.73, "components": [{"name": "water", "severity": 54.73, "weight": 0.5}]}, "display_name": "بير مشارقة", "display_river": "رافد مجردة", "display_governorate": "Zaghouan", "display_status": "عادي", "display_band": "تحذير"}, {"id": "el-aroussia", "name": "El Aroussia", "name_ar": "العروسية", "governorate": "Béja", "river": "Medjerda", "river_ar": "مجردة", "lat": 36.575, "lon": 9.63, "historical_avg_km2": 0.8, "effective_baseline_km2": 0.8, "baseline_source": "config", "capacity_hm3": 6, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.0, "surface_area_mndwi_km2": null, "confidence": null, "pct_of_avg": 0.0, "status": "red", "z_score_water": -0.5, "sample_count_water": 5, "severity_score": 100.0, "severity_band": "severe", "severity_breakdown": {"score": 100.0, "components": [{"name": "water", "severity": 100.0, "weight": 0.5}]}, "display_name": "العروسية", "display_river": "مجردة", "display_governorate": "Béja", "display_status": "منخفض", "display_band": "شديد"}, {"id": "el-houareb", "name": "El Houareb", "name_ar": "الهوارب", "governorate": "Kairouan", "river": "Merguellil", "river_ar": "مرقلّيل", "lat": 35.5486, "lon": 9.7625, "historical_avg_km2": 6.0, "effective_baseline_km2": 6.0, "baseline_source": "config", "capacity_hm3": 95, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.018, "surface_area_mndwi_km2": null, "confidence": null, "pct_of_avg": 0.3, "status": "red", "z_score_water": -0.4892530591415386, "sample_count_water": 5, "severity_score": 99.85, "severity_band": "severe", "severity_breakdown": {"score": 99.85, "components": [{"name": "water", "severity": 99.85, "weight": 0.5}]}, "display_name": "الهوارب", "display_river": "مرقلّيل", "display_governorate": "Kairouan", "display_status": "منخفض", "display_band": "شديد"}, {"id": "nebhana", "name": "Nebhana", "name_ar": "نبهانة", "governorate": "Sousse", "river": "Nebhana", "river_ar": "نبهانة", "lat": 35.925, "lon": 10.1583, "historical_avg_km2": 3.5, "effective_baseline_km2": 3.5, "baseline_source": "config", "capacity_hm3": 86, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.001, "surface_area_mndwi_km2": null, "confidence": null, "pct_of_avg": 0.028571428571428574, "status": "red", "z_score_water": 0.5, "sample_count_water": 5, "severity_score": 99.98571428571428, "severity_band": "severe", "severity_breakdown": {"score": 99.99, "components": [{"name": "water", "severity": 99.99, "weight": 0.5}]}, "display_name": "نبهانة", "display_river": "نبهانة", "display_governorate": "Sousse", "display_status": "منخفض", "display_band": "شديد"}, {"id": "sidi-saad", "name": "Sidi Saad", "name_ar": "سيدي سعد", "governorate": "Kairouan", "river": "Zeroud", "river_ar": "زرود", "lat": 35.3833, "lon": 9.7, "historical_avg_km2": 10.0, "effective_baseline_km2": 4.07, "baseline_source": "rolling-monthly", "capacity_hm3": 209, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 3.107, "surface_area_mndwi_km2": null, "confidence": null, "pct_of_avg": 76.4329643296433, "status": "yellow", "z_score_water": -0.2292213042279111, "sample_count_water": 5, "severity_score": 61.78351783517835, "severity_band": "watch", "severity_breakdown": {"score": 61.78, "components": [{"name": "water", "severity": 61.78, "weight": 0.5}]}, "display_name": "سيدي سعد", "display_river": "زرود", "display_governorate": "Kairouan", "display_status": "قيد المتابعة", "display_band": "تحذير"}, {"id": "chiba", "name": "Chiba", "name_ar": "الشيبة", "governorate": "Nabeul", "river": "Chiba", "river_ar": "الشيبة", "lat": 36.6208, "lon": 10.7508, "historical_avg_km2": 0.7, "effective_baseline_km2": 0.7, "baseline_source": "config", "capacity_hm3": 8, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.174, "surface_area_mndwi_km2": null, "confidence": null, "pct_of_avg": 24.857142857142858, "status": "red", "z_score_water": 6.538280379448765, "sample_count_water": 5, "severity_score": 87.57142857142857, "severity_band": "severe", "severity_breakdown": {"score": 87.57, "components": [{"name": "water", "severity": 87.57, "weight": 0.5}]}, "display_name": "الشيبة", "display_river": "الشيبة", "display_governorate": "Nabeul", "display_status": "منخفض", "display_band": "شديد"}, {"id": "masri", "name": "Masri", "name_ar": "المصري", "governorate": "Nabeul", "river": "Masri", "river_ar": "المصري", "lat": 36.7472, "lon": 10.8383, "historical_avg_km2": 0.9, "effective_baseline_km2": 0.9, "baseline_source": "config", "capacity_hm3": 7, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.066, "surface_area_mndwi_km2": null, "confidence": null, "pct_of_avg": 7.333333333333334, "status": "red", "z_score_water": 0.8689468060105425, "sample_count_water": 5, "severity_score": 96.33333333333333, "severity_band": "severe", "severity_breakdown": {"score": 96.33, "components": [{"name": "water", "severity": 96.33, "weight": 0.5}]}, "display_name": "المصري", "display_river": "المصري", "display_governorate": "Nabeul", "display_status": "منخفض", "display_band": "شديد"}, {"id": "lebna", "name": "Lebna", "name_ar": "لبنة", "governorate": "Nabeul", "river": "Lebna", "river_ar": "لبنة", "lat": 36.7581, "lon": 10.925, "historical_avg_km2": 3.0, "effective_baseline_km2": 1.03, "baseline_source": "rolling-monthly", "capacity_hm3": 30, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 5.144, "surface_area_mndwi_km2": null, "confidence": null, "pct_of_avg": 499.90281827016526, "status": "green", "z_score_water": 5.850865061316788, "sample_count_water": 5, "severity_score": 0.0, "severity_band": "abundant", "severity_breakdown": {"score": 0.0, "components": [{"name": "water", "severity": 0.0, "weight": 0.5}]}, "display_name": "لبنة", "display_river": "لبنة", "display_governorate": "Nabeul", "display_status": "عادي", "display_band": "وفير"}, {"id": "abid", "name": "Abid", "name_ar": "العابد", "governorate": "Le Kef", "river": "Abid", "river_ar": "العابد", "lat": 36.46, "lon": 9.03, "historical_avg_km2": 1.2, "effective_baseline_km2": 1.2, "baseline_source": "config", "capacity_hm3": 12, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.0, "surface_area_mndwi_km2": null, "confidence": null, "pct_of_avg": 0.0, "status": "red", "z_score_water": 0.0, "sample_count_water": 5, "severity_score": 100.0, "severity_band": "severe", "severity_breakdown": {"score": 100.0, "components": [{"name": "water", "severity": 100.0, "weight": 0.5}]}, "display_name": "العابد", "display_river": "العابد", "display_governorate": "Le Kef", "display_status": "منخفض", "display_band": "شديد"}, {"id": "tessa", "name": "Tessa", "name_ar": "التساء", "governorate": "Le Kef", "river": "Tessa", "river_ar": "التساء", "lat": 36.28, "lon": 8.97, "historical_avg_km2": 1.5, "effective_baseline_km2": 1.5, "baseline_source": "config", "capacity_hm3": 20, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.001, "surface_area_mndwi_km2": null, "confidence": null, "pct_of_avg": 0.06666666666666667, "status": "red", "z_score_water": 0.0, "sample_count_water": 5, "severity_score": 99.96666666666667, "severity_band": "severe", "severity_breakdown": {"score": 99.97, "components": [{"name": "water", "severity": 99.97, "weight": 0.5}]}, "display_name": "التساء", "display_river": "التساء", "display_governorate": "Le Kef", "display_status": "منخفض", "display_band": "شديد"}, {"id": "ziatine", "name": "Ziatine", "name_ar": "الزياتين", "governorate": "Bizerte", "river": "Ziatine", "river_ar": "الزياتين", "lat": 37.15, "lon": 9.4, "historical_avg_km2": 0.9, "effective_baseline_km2": 2.34, "baseline_source": "rolling-monthly", "capacity_hm3": 8, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 3.186, "surface_area_mndwi_km2": null, "confidence": null, "pct_of_avg": 136.3869863013699, "status": "green", "z_score_water": 1.3575366965040072, "sample_count_water": 5, "severity_score": 31.806506849315056, "severity_band": "normal", "severity_breakdown": {"score": 31.81, "components": [{"name": "water", "severity": 31.81, "weight": 0.5}]}, "display_name": "الزياتين", "display_river": "الزياتين", "display_governorate": "Bizerte", "display_status": "عادي", "display_band": "عادي"}, {"id": "gamgoum", "name": "Gamgoum", "name_ar": "قمقوم", "governorate": "Béja", "river": "Gamgoum", "river_ar": "قمقوم", "lat": 36.73, "lon": 9.16, "historical_avg_km2": 0.6, "effective_baseline_km2": 0.05, "baseline_source": "rolling-monthly", "capacity_hm3": 5, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.079, "surface_area_mndwi_km2": null, "confidence": null, "pct_of_avg": 151.92307692307693, "status": "green", "z_score_water": 1.5788585319172952, "sample_count_water": 5, "severity_score": 24.038461538461533, "severity_band": "abundant", "severity_breakdown": {"score": 24.04, "components": [{"name": "water", "severity": 24.04, "weight": 0.5}]}, "display_name": "قمقوم", "display_river": "قمقوم", "display_governorate": "Béja", "display_status": "عادي", "display_band": "وفير"}, {"id": "moula", "name": "Moula", "name_ar": "مولى", "governorate": "Béja", "river": "Moula", "river_ar": "مولى", "lat": 36.81, "lon": 9.07, "historical_avg_km2": 0.7, "effective_baseline_km2": 0.7, "baseline_source": "config", "capacity_hm3": 6, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.001, "surface_area_mndwi_km2": null, "confidence": null, "pct_of_avg": 0.14285714285714288, "status": "red", "z_score_water": 0.8660254037844386, "sample_count_water": 5, "severity_score": 99.92857142857143, "severity_band": "severe", "severity_breakdown": {"score": 99.93, "components": [{"name": "water", "severity": 99.93, "weight": 0.5}]}, "display_name": "مولى", "display_river": "مولى", "display_governorate": "Béja", "display_status": "منخفض", "display_band": "شديد"}, {"id": "melah", "name": "El Melah", "name_ar": "الملاح", "governorate": "Bizerte", "river": "El Melah", "river_ar": "الملاح", "lat": 37.15, "lon": 9.72, "historical_avg_km2": 0.8, "effective_baseline_km2": 29.89, "baseline_source": "rolling-monthly", "capacity_hm3": 8, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 1.163, "surface_area_mndwi_km2": null, "confidence": null, "pct_of_avg": 3.891323987017767, "status": "red", "z_score_water": -1.4230045300509773, "sample_count_water": 5, "severity_score": 98.05433800649112, "severity_band": "severe", "severity_breakdown": {"score": 98.05, "components": [{"name": "water", "severity": 98.05, "weight": 0.5}]}, "display_name": "الملاح", "display_river": "الملاح", "display_governorate": "Bizerte", "display_status": "منخفض", "display_band": "شديد"}, {"id": "harka", "name": "Harka", "name_ar": "الحركة", "governorate": "Bizerte", "river": "Harka", "river_ar": "الحركة", "lat": 37.05, "lon": 9.8, "historical_avg_km2": 0.7, "effective_baseline_km2": 0.7, "baseline_source": "config", "capacity_hm3": 6, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.001, "surface_area_mndwi_km2": null, "confidence": null, "pct_of_avg": 0.14285714285714288, "status": "red", "z_score_water": -0.944911182523068, "sample_count_water": 5, "severity_score": 99.92857142857143, "severity_band": "severe", "severity_breakdown": {"score": 99.93, "components": [{"name": "water", "severity": 99.93, "weight": 0.5}]}, "display_name": "الحركة", "display_river": "الحركة", "display_governorate": "Bizerte", "display_status": "منخفض", "display_band": "شديد"}, {"id": "bou-hertma-lower", "name": "Bou Heurtma Lower", "name_ar": "بوهرتمة السفلي", "governorate": "Jendouba", "river": "Bou Heurtma", "river_ar": "بوهرتمة", "lat": 36.59, "lon": 8.81, "historical_avg_km2": 0.9, "effective_baseline_km2": 0.05, "baseline_source": "rolling-monthly", "capacity_hm3": 10, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.095, "surface_area_mndwi_km2": null, "confidence": null, "pct_of_avg": 190.0, "status": "green", "z_score_water": 1.5127442507735702, "sample_count_water": 5, "severity_score": 5.0, "severity_band": "abundant", "severity_breakdown": {"score": 5.0, "components": [{"name": "water", "severity": 5.0, "weight": 0.5}]}, "display_name": "بوهرتمة السفلي", "display_river": "بوهرتمة", "display_governorate": "Jendouba", "display_status": "عادي", "display_band": "وفير"}, {"id": "kebir", "name": "El Kebir", "name_ar": "الكبير", "governorate": "Bizerte", "river": "El Kebir", "river_ar": "الكبير", "lat": 37.03, "lon": 9.11, "historical_avg_km2": 0.9, "effective_baseline_km2": 0.24, "baseline_source": "rolling-annual", "capacity_hm3": 12, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.137, "surface_area_mndwi_km2": null, "confidence": null, "pct_of_avg": 56.72877846790891, "status": "yellow", "z_score_water": 6.3358291582151205, "sample_count_water": 5, "severity_score": 71.63561076604555, "severity_band": "drought", "severity_breakdown": {"score": 71.64, "components": [{"name": "water", "severity": 71.64, "weight": 0.5}]}, "display_name": "الكبير", "display_river": "الكبير", "display_governorate": "Bizerte", "display_status": "قيد المتابعة", "display_band": "جفاف"}, {"id": "douimis", "name": "Douimis", "name_ar": "الدويميس", "governorate": "Bizerte", "river": "Douimis", "river_ar": "الدويميس", "lat": 37.21, "lon": 9.77, "historical_avg_km2": 0.5, "effective_baseline_km2": 19.61, "baseline_source": "rolling-monthly", "capacity_hm3": 4, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": null, "surface_area_mndwi_km2": null, "confidence": null, "pct_of_avg": null, "status": "gray", "z_score_water": 0.5120049250275132, "sample_count_water": 4, "severity_score": null, "severity_band": "unknown", "severity_breakdown": {"components": []}, "display_name": "الدويميس", "display_river": "الدويميس", "display_governorate": "Bizerte", "display_status": "غير معروف", "display_band": "غير معروف"}, {"id": "el-breck", "name": "El Breck", "name_ar": "البريك", "governorate": "Zaghouan", "river": "El Breck", "river_ar": "البريك", "lat": 36.45, "lon": 10.15, "historical_avg_km2": 0.4, "effective_baseline_km2": 0.4, "baseline_source": "config", "capacity_hm3": 3, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.009, "surface_area_mndwi_km2": null, "confidence": null, "pct_of_avg": 2.2499999999999996, "status": "red", "z_score_water": 0.39217020329753544, "sample_count_water": 5, "severity_score": 98.875, "severity_band": "severe", "severity_breakdown": {"score": 98.88, "components": [{"name": "water", "severity": 98.88, "weight": 0.5}]}, "display_name": "البريك", "display_river": "البريك", "display_governorate": "Zaghouan", "display_status": "منخفض", "display_band": "شديد"}, {"id": "sidi-abdelmoumen", "name": "Sidi Abdelmoumen", "name_ar": "سيدي عبد المؤمن", "governorate": "Kairouan", "river": "Merguellil", "river_ar": "مرقلّيل", "lat": 35.68, "lon": 9.62, "historical_avg_km2": 0.9, "effective_baseline_km2": 0.9, "baseline_source": "config", "capacity_hm3": 10, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.003, "surface_area_mndwi_km2": null, "confidence": null, "pct_of_avg": 0.3333333333333333, "status": "red", "z_score_water": 5.5, "sample_count_water": 5, "severity_score": 99.83333333333333, "severity_band": "severe", "severity_breakdown": {"score": 99.83, "components": [{"name": "water", "severity": 99.83, "weight": 0.5}]}, "display_name": "سيدي عبد المؤمن", "display_river": "مرقلّيل", "display_governorate": "Kairouan", "display_status": "منخفض", "display_band": "شديد"}, {"id": "rmel", "name": "Rmel", "name_ar": "الرمل", "governorate": "Nabeul", "river": "Rmel", "river_ar": "الرمل", "lat": 36.44, "lon": 10.55, "historical_avg_km2": 0.6, "effective_baseline_km2": 0.04, "baseline_source": "rolling-annual", "capacity_hm3": 5, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.012, "surface_area_mndwi_km2": null, "confidence": null, "pct_of_avg": 31.16883116883117, "status": "red", "z_score_water": -0.11028219331407113, "sample_count_water": 5, "severity_score": 84.41558441558442, "severity_band": "severe", "severity_breakdown": {"score": 84.42, "components": [{"name": "water", "severity": 84.42, "weight": 0.5}]}, "display_name": "الرمل", "display_river": "الرمل", "display_governorate": "Nabeul", "display_status": "منخفض", "display_band": "شديد"}, {"id": "el-abid", "name": "El Abid Upper", "name_ar": "العابد العلوي", "governorate": "Kasserine", "river": "El Abid", "river_ar": "العابد", "lat": 35.65, "lon": 8.85, "historical_avg_km2": 0.5, "effective_baseline_km2": 0.5, "baseline_source": "config", "capacity_hm3": 4, "ndwi_threshold": 0.05, "last_date": "2026-09-12", "surface_area_km2": 0.0, "surface_area_mndwi_km2": null, "confidence": null, "pct_of_avg": 0.0, "status": "red", "z_score_water": -1.1176758740742283, "sample_count_water": 5, "severity_score": 100.0, "severity_band": "severe", "severity_breakdown": {"score": 100.0, "components": [{"name": "water", "severity": 100.0, "weight": 0.5}]}, "display_name": "العابد العلوي", "display_river": "العابد", "display_governorate": "Kasserine", "display_status": "منخفض", "display_band": "شديد"}];
+const nationalSeries = [{"date": "2022-01-05", "total_area_km2": 39.32}, {"date": "2022-01-23", "total_area_km2": 4.07}, {"date": "2022-01-28", "total_area_km2": 46.89}, {"date": "2022-01-30", "total_area_km2": 14.09}, {"date": "2022-02-07", "total_area_km2": 5.71}, {"date": "2022-02-09", "total_area_km2": 47.24}, {"date": "2022-02-22", "total_area_km2": 18.71}, {"date": "2022-03-01", "total_area_km2": 3.55}, {"date": "2022-03-14", "total_area_km2": 27.73}, {"date": "2022-03-24", "total_area_km2": 63.67}, {"date": "2022-03-29", "total_area_km2": 5.53}, {"date": "2022-04-08", "total_area_km2": 122.6}, {"date": "2022-04-23", "total_area_km2": 0.0}, {"date": "2022-04-25", "total_area_km2": 3.16}, {"date": "2022-05-13", "total_area_km2": 26.38}, {"date": "2022-05-15", "total_area_km2": 41.95}, {"date": "2022-05-18", "total_area_km2": 0.0}, {"date": "2022-05-20", "total_area_km2": 3.07}, {"date": "2022-05-23", "total_area_km2": 32.47}, {"date": "2022-06-12", "total_area_km2": 3.5}, {"date": "2022-06-14", "total_area_km2": 2.48}, {"date": "2022-06-17", "total_area_km2": 40.59}, {"date": "2022-06-22", "total_area_km2": 0.0}, {"date": "2022-06-24", "total_area_km2": 57.88}, {"date": "2022-07-17", "total_area_km2": 44.56}, {"date": "2022-07-19", "total_area_km2": 10.02}, {"date": "2022-07-22", "total_area_km2": 3.39}, {"date": "2022-07-24", "total_area_km2": 38.81}, {"date": "2022-08-01", "total_area_km2": 3.27}, {"date": "2022-08-13", "total_area_km2": 51.01}, {"date": "2022-08-21", "total_area_km2": 0.04}, {"date": "2022-08-26", "total_area_km2": 39.1}, {"date": "2022-09-10", "total_area_km2": 90.44}, {"date": "2022-09-12", "total_area_km2": 1.82}, {"date": "2022-09-15", "total_area_km2": 7.63}, {"date": "2022-10-15", "total_area_km2": 0.04}, {"date": "2022-10-20", "total_area_km2": 43.19}, {"date": "2022-10-22", "total_area_km2": 33.06}, {"date": "2022-10-30", "total_area_km2": 2.72}, {"date": "2022-11-01", "total_area_km2": 38.4}, {"date": "2022-11-14", "total_area_km2": 36.8}, {"date": "2022-11-21", "total_area_km2": 9.25}, {"date": "2022-12-04", "total_area_km2": 90.91}, {"date": "2022-12-21", "total_area_km2": 1.8}, {"date": "2022-12-26", "total_area_km2": 7.11}, {"date": "2023-01-03", "total_area_km2": 7.07}, {"date": "2023-01-08", "total_area_km2": 91.56}, {"date": "2023-01-15", "total_area_km2": 1.76}, {"date": "2023-02-19", "total_area_km2": 43.7}, {"date": "2023-02-22", "total_area_km2": 36.3}, {"date": "2023-03-24", "total_area_km2": 101.32}, {"date": "2023-03-26", "total_area_km2": 1.67}, {"date": "2023-04-08", "total_area_km2": 98.33}, {"date": "2023-04-10", "total_area_km2": 1.65}, {"date": "2023-05-10", "total_area_km2": 25.26}, {"date": "2023-05-18", "total_area_km2": 3.1}, {"date": "2023-05-28", "total_area_km2": 16.5}, {"date": "2023-06-12", "total_area_km2": 15.46}, {"date": "2023-06-17", "total_area_km2": 3.61}, {"date": "2023-06-22", "total_area_km2": 18.51}, {"date": "2023-06-27", "total_area_km2": 8.1}, {"date": "2023-06-29", "total_area_km2": 43.87}, {"date": "2023-07-02", "total_area_km2": 0.2}, {"date": "2023-07-12", "total_area_km2": 11.66}, {"date": "2023-07-14", "total_area_km2": 1.88}, {"date": "2023-07-17", "total_area_km2": 2.47}, {"date": "2023-07-22", "total_area_km2": 17.37}, {"date": "2023-07-24", "total_area_km2": 47.38}, {"date": "2023-07-27", "total_area_km2": 3.4}, {"date": "2023-08-11", "total_area_km2": 0.07}, {"date": "2023-08-13", "total_area_km2": 7.17}, {"date": "2023-08-16", "total_area_km2": 53.27}, {"date": "2023-08-18", "total_area_km2": 1.12}, {"date": "2023-08-23", "total_area_km2": 3.22}, {"date": "2023-08-26", "total_area_km2": 29.44}, {"date": "2023-09-10", "total_area_km2": 85.24}, {"date": "2023-09-15", "total_area_km2": 0.01}, {"date": "2023-09-17", "total_area_km2": 6.2}, {"date": "2023-10-10", "total_area_km2": 81.04}, {"date": "2023-10-12", "total_area_km2": 6.51}, {"date": "2023-10-15", "total_area_km2": 0.0}, {"date": "2023-11-14", "total_area_km2": 88.51}, {"date": "2023-11-16", "total_area_km2": 0.83}, {"date": "2023-11-19", "total_area_km2": 0.07}, {"date": "2023-12-24", "total_area_km2": 23.42}, {"date": "2023-12-26", "total_area_km2": 52.49}, {"date": "2024-01-03", "total_area_km2": 0.05}, {"date": "2024-01-13", "total_area_km2": 4.65}, {"date": "2024-01-18", "total_area_km2": 0.02}, {"date": "2024-01-25", "total_area_km2": 37.06}, {"date": "2024-01-28", "total_area_km2": 15.4}, {"date": "2024-02-04", "total_area_km2": 10.22}, {"date": "2024-02-07", "total_area_km2": 34.58}, {"date": "2024-02-22", "total_area_km2": 47.68}, {"date": "2024-03-13", "total_area_km2": 0.03}, {"date": "2024-03-18", "total_area_km2": 77.25}, {"date": "2024-03-20", "total_area_km2": 4.59}, {"date": "2024-03-23", "total_area_km2": 19.99}, {"date": "2024-03-28", "total_area_km2": 0.01}, {"date": "2024-03-30", "total_area_km2": 0.98}, {"date": "2024-04-04", "total_area_km2": 45.82}, {"date": "2024-04-27", "total_area_km2": 37.89}, {"date": "2024-05-12", "total_area_km2": 92.76}, {"date": "2024-05-19", "total_area_km2": 0.94}, {"date": "2024-05-27", "total_area_km2": 5.99}, {"date": "2024-06-06", "total_area_km2": 7.04}, {"date": "2024-06-21", "total_area_km2": 0.0}, {"date": "2024-06-26", "total_area_km2": 36.1}, {"date": "2024-06-28", "total_area_km2": 17.46}, {"date": "2024-07-11", "total_area_km2": 5.29}, {"date": "2024-07-13", "total_area_km2": 0.45}, {"date": "2024-07-21", "total_area_km2": 0.0}, {"date": "2024-07-31", "total_area_km2": 84.38}, {"date": "2024-08-05", "total_area_km2": 0.02}, {"date": "2024-08-10", "total_area_km2": 29.7}, {"date": "2024-08-12", "total_area_km2": 38.72}, {"date": "2024-08-25", "total_area_km2": 1.82}, {"date": "2024-08-30", "total_area_km2": 0.0}, {"date": "2024-09-01", "total_area_km2": 0.0}, {"date": "2024-09-04", "total_area_km2": 4.87}, {"date": "2024-09-29", "total_area_km2": 23.48}, {"date": "2024-10-01", "total_area_km2": 44.95}, {"date": "2024-10-04", "total_area_km2": 21.65}, {"date": "2024-10-09", "total_area_km2": 1.41}, {"date": "2024-10-14", "total_area_km2": 4.74}, {"date": "2024-11-03", "total_area_km2": 25.02}, {"date": "2024-11-13", "total_area_km2": 1.71}, {"date": "2024-11-20", "total_area_km2": 0.86}, {"date": "2024-11-25", "total_area_km2": 48.41}, {"date": "2024-11-28", "total_area_km2": 0.0}, {"date": "2024-12-10", "total_area_km2": 3.82}, {"date": "2024-12-13", "total_area_km2": 13.78}, {"date": "2024-12-18", "total_area_km2": 18.18}, {"date": "2024-12-30", "total_area_km2": 41.9}, {"date": "2025-01-07", "total_area_km2": 24.58}, {"date": "2025-01-24", "total_area_km2": 48.53}, {"date": "2025-02-11", "total_area_km2": 0.1}, {"date": "2025-02-16", "total_area_km2": 94.08}, {"date": "2025-02-18", "total_area_km2": 8.6}, {"date": "2025-03-08", "total_area_km2": 23.47}, {"date": "2025-03-15", "total_area_km2": 13.94}, {"date": "2025-03-18", "total_area_km2": 0.0}, {"date": "2025-03-20", "total_area_km2": 37.02}, {"date": "2025-03-22", "total_area_km2": 4.46}, {"date": "2025-04-04", "total_area_km2": 12.55}, {"date": "2025-04-19", "total_area_km2": 48.61}, {"date": "2025-04-24", "total_area_km2": 21.77}, {"date": "2025-05-01", "total_area_km2": 44.97}, {"date": "2025-05-27", "total_area_km2": 45.81}, {"date": "2025-05-31", "total_area_km2": 5.55}, {"date": "2025-06-01", "total_area_km2": 1.67}, {"date": "2025-06-03", "total_area_km2": 0.08}, {"date": "2025-06-13", "total_area_km2": 39.58}, {"date": "2025-06-16", "total_area_km2": 0.0}, {"date": "2025-06-21", "total_area_km2": 5.43}, {"date": "2025-06-23", "total_area_km2": 17.15}, {"date": "2025-06-26", "total_area_km2": 16.83}, {"date": "2025-07-01", "total_area_km2": 2.24}, {"date": "2025-07-11", "total_area_km2": 14.25}, {"date": "2025-07-20", "total_area_km2": 45.83}, {"date": "2025-07-23", "total_area_km2": 28.69}, {"date": "2025-07-26", "total_area_km2": 0.0}, {"date": "2025-08-05", "total_area_km2": 5.2}, {"date": "2025-08-07", "total_area_km2": 1.71}, {"date": "2025-08-12", "total_area_km2": 5.07}, {"date": "2025-08-22", "total_area_km2": 0.02}, {"date": "2025-08-25", "total_area_km2": 84.11}, {"date": "2025-09-01", "total_area_km2": 92.94}, {"date": "2025-09-04", "total_area_km2": 0.0}, {"date": "2025-10-08", "total_area_km2": 8.6}, {"date": "2025-10-21", "total_area_km2": 29.62}, {"date": "2025-10-24", "total_area_km2": 0.11}, {"date": "2025-10-26", "total_area_km2": 38.97}, {"date": "2025-11-13", "total_area_km2": 53.62}, {"date": "2025-11-20", "total_area_km2": 1.6}, {"date": "2025-11-30", "total_area_km2": 38.48}, {"date": "2025-12-08", "total_area_km2": 30.02}, {"date": "2025-12-13", "total_area_km2": 57.14}, {"date": "2025-12-23", "total_area_km2": 0.0}, {"date": "2025-12-28", "total_area_km2": 5.34}, {"date": "2025-12-30", "total_area_km2": 0.13}, {"date": "2026-01-09", "total_area_km2": 43.5}, {"date": "2026-01-14", "total_area_km2": 40.06}, {"date": "2026-02-06", "total_area_km2": 60.34}, {"date": "2026-02-18", "total_area_km2": 7.77}, {"date": "2026-02-26", "total_area_km2": 59.23}, {"date": "2026-03-08", "total_area_km2": 84.75}, {"date": "2026-03-18", "total_area_km2": 34.06}, {"date": "2026-03-25", "total_area_km2": 5.55}, {"date": "2026-04-06", "total_area_km2": 7.93}, {"date": "2026-04-07", "total_area_km2": 100.1}, {"date": "2026-04-29", "total_area_km2": 0.0}, {"date": "2026-05-19", "total_area_km2": 58.42}, {"date": "2026-05-22", "total_area_km2": 0.0}, {"date": "2026-05-24", "total_area_km2": 44.12}, {"date": "2026-05-29", "total_area_km2": 7.18}, {"date": "2026-06-05", "total_area_km2": 7.05}, {"date": "2026-06-18", "total_area_km2": 6.86}, {"date": "2026-06-21", "total_area_km2": 8.34}, {"date": "2026-06-23", "total_area_km2": 39.97}, {"date": "2026-06-28", "total_area_km2": 45.5}, {"date": "2026-07-08", "total_area_km2": 25.93}, {"date": "2026-07-15", "total_area_km2": 38.01}, {"date": "2026-07-16", "total_area_km2": 3.82}, {"date": "2026-07-18", "total_area_km2": 24.08}, {"date": "2026-07-21", "total_area_km2": 4.92}, {"date": "2026-07-25", "total_area_km2": 2.98}, {"date": "2026-08-02", "total_area_km2": 5.93}, {"date": "2026-08-17", "total_area_km2": 18.7}, {"date": "2026-08-20", "total_area_km2": 89.49}, {"date": "2026-08-25", "total_area_km2": 0.01}, {"date": "2026-08-30", "total_area_km2": 0.0}, {"date": "2026-09-12", "total_area_km2": 60.4}];
+
+const map = L.map('map', { scrollWheelZoom: false }).setView([34.5, 9.6], 6);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '© OpenStreetMap contributors', maxZoom: 12
+}).addTo(map);
+const statusColors = { green: '#2e8b57', yellow: '#e2a03f', red: '#c0392b', gray: '#8a8f98' };
+for (const d of dams) {
+  L.circleMarker([d.lat, d.lon], {
+    radius: 8, color: statusColors[d.status] || '#8a8f98',
+    fillColor: statusColors[d.status] || '#8a8f98', fillOpacity: 0.75, weight: 1
+  }).bindPopup(
+    `<strong>${d.display_name}</strong><br>${d.governorate}<br>` +
+    `${d.surface_area_km2 == null ? '—' : d.surface_area_km2.toFixed(2)} km²<br>` +
+    `<a href="dam/${d.id}.html">→</a>`
+  ).addTo(map);
+}
+
+const ctx = document.getElementById('national-chart');
+new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: nationalSeries.map(p => p.date),
+    datasets: [{
+      label: "\u0627\u0644\u0645\u0633\u0627\u062d\u0629 (\u0643\u0645\u00b2)",
+      data: nationalSeries.map(p => p.total_area_km2),
+      borderColor: '#1e6fbf', backgroundColor: 'rgba(30,111,191,0.15)',
+      tension: 0.25, fill: true, pointRadius: 2
+    }]
+  },
+  options: { responsive: true, plugins: { legend: { display: false } } }
+});
+</script>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p>آخر تحديث: <strong>2026-09-13 01:19 UTC</strong> · التشغيل التالي: <strong>2026-09-18</strong></p>
+    <p class="muted">بيانات مستنبطة من Sentinel-2 L2A عبر واجهات STAC العامة. المساحة المائية مؤشر تقريبي لحجم الخزان وليست بديلاً عن المسح البحري. رخصة MIT. بدون ضمان.</p>
+    <p class="small"><a href="../oracle/index.json">أوراكل البيانات (JSON + بصمة SHA-256)</a> · <a href="../data/latest.json">latest.json</a> · <a href="../data/readings.csv">readings.csv</a></p>
+  </div>
+</footer>
+</body>
+</html>

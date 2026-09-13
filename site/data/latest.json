@@ -10,7 +10,8 @@
     {
       "id": "sidi-salem",
       "name": "Sidi Salem",
-      "governorate": "B\u00e9ja",
+      "name_ar": "سيدي سالم",
+      "governorate": "Béja",
       "lat": 36.5892,
       "lon": 9.4083,
       "date": "2026-09-13",
@@ -29,7 +30,8 @@
     {
       "id": "sidi-el-barrak",
       "name": "Sidi El Barrak",
-      "governorate": "B\u00e9ja",
+      "name_ar": "سيدي البراك",
+      "governorate": "Béja",
       "lat": 37.01,
       "lon": 9.105,
       "date": "2026-09-13",
@@ -48,6 +50,7 @@
     {
       "id": "sejnane",
       "name": "Sejnane",
+      "name_ar": "سجنان",
       "governorate": "Bizerte",
       "lat": 37.0764,
       "lon": 9.235,
@@ -67,6 +70,7 @@
     {
       "id": "joumine",
       "name": "Joumine",
+      "name_ar": "جومين",
       "governorate": "Bizerte",
       "lat": 37.03,
       "lon": 9.46,
@@ -86,6 +90,7 @@
     {
       "id": "ghezala",
       "name": "Ghezala",
+      "name_ar": "غزالة",
       "governorate": "Bizerte",
       "lat": 37.11,
       "lon": 9.52,
@@ -105,6 +110,7 @@
     {
       "id": "zerga",
       "name": "Zerga",
+      "name_ar": "الزرقاء",
       "governorate": "Bizerte",
       "lat": 36.9086,
       "lon": 9.6083,
@@ -124,7 +130,8 @@
     {
       "id": "kasseb",
       "name": "Kasseb",
-      "governorate": "B\u00e9ja",
+      "name_ar": "الكاسب",
+      "governorate": "Béja",
       "lat": 36.6489,
       "lon": 9.0031,
       "date": "2026-09-13",
@@ -143,6 +150,7 @@
     {
       "id": "beni-mtir",
       "name": "Beni Mtir",
+      "name_ar": "بني مطير",
       "governorate": "Jendouba",
       "lat": 36.735,
       "lon": 8.75,
@@ -162,6 +170,7 @@
     {
       "id": "bou-heurtma",
       "name": "Bou Heurtma",
+      "name_ar": "بوهرتمة",
       "governorate": "Jendouba",
       "lat": 36.6167,
       "lon": 8.735,
@@ -181,6 +190,7 @@
     {
       "id": "barbara",
       "name": "Barbara",
+      "name_ar": "بربرة",
       "governorate": "Jendouba",
       "lat": 36.7,
       "lon": 8.92,
@@ -200,6 +210,7 @@
     {
       "id": "mellegue",
       "name": "Mellegue (Nebeur)",
+      "name_ar": "ملاق (نبر)",
       "governorate": "Le Kef",
       "lat": 36.4514,
       "lon": 8.7642,
@@ -219,6 +230,7 @@
     {
       "id": "sarrat",
       "name": "Sarrat",
+      "name_ar": "السراط",
       "governorate": "Le Kef",
       "lat": 36.15,
       "lon": 8.5333,
@@ -238,6 +250,7 @@
     {
       "id": "siliana",
       "name": "Siliana",
+      "name_ar": "سليانة",
       "governorate": "Siliana",
       "lat": 36.115,
       "lon": 9.4,
@@ -257,6 +270,7 @@
     {
       "id": "lakhmess",
       "name": "Lakhmess",
+      "name_ar": "لخمس",
       "governorate": "Siliana",
       "lat": 36.07,
       "lon": 9.24,
@@ -276,6 +290,7 @@
     {
       "id": "rmil",
       "name": "Rmil",
+      "name_ar": "الرميل",
       "governorate": "Zaghouan",
       "lat": 36.52,
       "lon": 10.03,
@@ -295,6 +310,7 @@
     {
       "id": "bir-mcherga",
       "name": "Bir Mcherga",
+      "name_ar": "بير مشارقة",
       "governorate": "Zaghouan",
       "lat": 36.5372,
       "lon": 9.9989,
@@ -314,7 +330,8 @@
     {
       "id": "el-aroussia",
       "name": "El Aroussia",
-      "governorate": "B\u00e9ja",
+      "name_ar": "العروسية",
+      "governorate": "Béja",
       "lat": 36.575,
       "lon": 9.63,
       "date": "2026-09-13",
@@ -333,6 +350,7 @@
     {
       "id": "el-houareb",
       "name": "El Houareb",
+      "name_ar": "الهوارب",
       "governorate": "Kairouan",
       "lat": 35.5486,
       "lon": 9.7625,
@@ -352,6 +370,7 @@
     {
       "id": "nebhana",
       "name": "Nebhana",
+      "name_ar": "نبهانة",
       "governorate": "Sousse",
       "lat": 35.925,
       "lon": 10.1583,
@@ -371,6 +390,7 @@
     {
       "id": "sidi-saad",
       "name": "Sidi Saad",
+      "name_ar": "سيدي سعد",
       "governorate": "Kairouan",
       "lat": 35.3833,
       "lon": 9.7,
@@ -390,6 +410,7 @@
     {
       "id": "chiba",
       "name": "Chiba",
+      "name_ar": "الشيبة",
       "governorate": "Nabeul",
       "lat": 36.6208,
       "lon": 10.7508,
@@ -409,6 +430,7 @@
     {
       "id": "masri",
       "name": "Masri",
+      "name_ar": "المصري",
       "governorate": "Nabeul",
       "lat": 36.7472,
       "lon": 10.8383,
@@ -428,6 +450,7 @@
     {
       "id": "lebna",
       "name": "Lebna",
+      "name_ar": "لبنة",
       "governorate": "Nabeul",
       "lat": 36.7581,
       "lon": 10.925,
@@ -447,6 +470,7 @@
     {
       "id": "abid",
       "name": "Abid",
+      "name_ar": "العابد",
       "governorate": "Le Kef",
       "lat": 36.46,
       "lon": 9.03,
@@ -466,6 +490,7 @@
     {
       "id": "tessa",
       "name": "Tessa",
+      "name_ar": "التساء",
       "governorate": "Le Kef",
       "lat": 36.28,
       "lon": 8.97,
@@ -485,6 +510,7 @@
     {
       "id": "ziatine",
       "name": "Ziatine",
+      "name_ar": "الزياتين",
       "governorate": "Bizerte",
       "lat": 37.15,
       "lon": 9.4,
@@ -504,7 +530,8 @@
     {
       "id": "gamgoum",
       "name": "Gamgoum",
-      "governorate": "B\u00e9ja",
+      "name_ar": "قمقوم",
+      "governorate": "Béja",
       "lat": 36.73,
       "lon": 9.16,
       "date": "2026-09-13",
@@ -523,7 +550,8 @@
     {
       "id": "moula",
       "name": "Moula",
-      "governorate": "B\u00e9ja",
+      "name_ar": "مولى",
+      "governorate": "Béja",
       "lat": 36.81,
       "lon": 9.07,
       "date": "2026-09-13",
@@ -542,6 +570,7 @@
     {
       "id": "melah",
       "name": "El Melah",
+      "name_ar": "الملاح",
       "governorate": "Bizerte",
       "lat": 37.15,
       "lon": 9.72,
@@ -561,6 +590,7 @@
     {
       "id": "harka",
       "name": "Harka",
+      "name_ar": "الحركة",
       "governorate": "Bizerte",
       "lat": 37.05,
       "lon": 9.8,
@@ -580,6 +610,7 @@
     {
       "id": "bou-hertma-lower",
       "name": "Bou Heurtma Lower",
+      "name_ar": "بوهرتمة السفلي",
       "governorate": "Jendouba",
       "lat": 36.59,
       "lon": 8.81,
@@ -599,6 +630,7 @@
     {
       "id": "kebir",
       "name": "El Kebir",
+      "name_ar": "الكبير",
       "governorate": "Bizerte",
       "lat": 37.03,
       "lon": 9.11,
@@ -618,6 +650,7 @@
     {
       "id": "douimis",
       "name": "Douimis",
+      "name_ar": "الدويميس",
       "governorate": "Bizerte",
       "lat": 37.21,
       "lon": 9.77,
@@ -637,6 +670,7 @@
     {
       "id": "el-breck",
       "name": "El Breck",
+      "name_ar": "البريك",
       "governorate": "Zaghouan",
       "lat": 36.45,
       "lon": 10.15,
@@ -656,6 +690,7 @@
     {
       "id": "sidi-abdelmoumen",
       "name": "Sidi Abdelmoumen",
+      "name_ar": "سيدي عبد المؤمن",
       "governorate": "Kairouan",
       "lat": 35.68,
       "lon": 9.62,
@@ -675,6 +710,7 @@
     {
       "id": "rmel",
       "name": "Rmel",
+      "name_ar": "الرمل",
       "governorate": "Nabeul",
       "lat": 36.44,
       "lon": 10.55,
@@ -694,6 +730,7 @@
     {
       "id": "el-abid",
       "name": "El Abid Upper",
+      "name_ar": "العابد العلوي",
       "governorate": "Kasserine",
       "lat": 35.65,
       "lon": 8.85,
@@ -715,6 +752,7 @@
     {
       "id": "tunis",
       "name": "Tunis",
+      "name_ar": "تونس",
       "region": "north",
       "lat": 36.8,
       "lon": 10.18,
@@ -723,15 +761,16 @@
       "mean_ndmi": -0.0752,
       "healthy_pct": 5.87,
       "confidence": 1.0,
-      "z_ndvi": 0.09408762401495746,
-      "z_ndmi": 0.6552951737239353,
+      "z_ndvi": 0.9336890053361832,
+      "z_ndmi": 0.23404938671489225,
       "regional_water_pct": null,
-      "severity_score": 46.193244310552195,
+      "severity_score": 41.608448145585015,
       "severity_band": "normal"
     },
     {
       "id": "ariana",
       "name": "Ariana",
+      "name_ar": "أريانة",
       "region": "north",
       "lat": 36.9,
       "lon": 10.2,
@@ -743,12 +782,13 @@
       "z_ndvi": null,
       "z_ndmi": null,
       "regional_water_pct": null,
-      "severity_score": null,
-      "severity_band": "unknown"
+      "severity_score": 26.00506338325479,
+      "severity_band": "abundant"
     },
     {
       "id": "ben-arous",
       "name": "Ben Arous",
+      "name_ar": "بن عروس",
       "region": "north",
       "lat": 36.65,
       "lon": 10.2,
@@ -757,15 +797,16 @@
       "mean_ndmi": -0.1284,
       "healthy_pct": 5.32,
       "confidence": 1.0,
-      "z_ndvi": -0.8580167390161542,
-      "z_ndmi": -0.2058970128542522,
+      "z_ndvi": 1.2841342007168364,
+      "z_ndmi": 0.4369027959606693,
       "regional_water_pct": null,
-      "severity_score": 57.668398021318005,
-      "severity_band": "watch"
+      "severity_score": 37.91971970083407,
+      "severity_band": "normal"
     },
     {
       "id": "manouba",
       "name": "Manouba",
+      "name_ar": "منوبة",
       "region": "north",
       "lat": 36.75,
       "lon": 9.9,
@@ -774,15 +815,16 @@
       "mean_ndmi": -0.1362,
       "healthy_pct": 3.95,
       "confidence": 1.0,
-      "z_ndvi": 0.7143301178788952,
-      "z_ndmi": 1.0818894346309043,
+      "z_ndvi": 0.46908468638135653,
+      "z_ndmi": -0.04509844968920539,
       "regional_water_pct": null,
-      "severity_score": 39.34793922923877,
+      "severity_score": 46.5466748705638,
       "severity_band": "normal"
     },
     {
       "id": "nabeul",
       "name": "Nabeul",
+      "name_ar": "نابل",
       "region": "cap-bon",
       "lat": 36.55,
       "lon": 10.75,
@@ -800,6 +842,7 @@
     {
       "id": "zaghouan",
       "name": "Zaghouan",
+      "name_ar": "زغوان",
       "region": "north",
       "lat": 36.4,
       "lon": 10.15,
@@ -817,6 +860,7 @@
     {
       "id": "bizerte",
       "name": "Bizerte",
+      "name_ar": "بنزرت",
       "region": "north",
       "lat": 37.15,
       "lon": 9.8,
@@ -833,7 +877,8 @@
     },
     {
       "id": "beja",
-      "name": "B\u00e9ja",
+      "name": "Béja",
+      "name_ar": "باجة",
       "region": "north",
       "lat": 36.75,
       "lon": 9.2,
@@ -851,6 +896,7 @@
     {
       "id": "jendouba",
       "name": "Jendouba",
+      "name_ar": "جندوبة",
       "region": "north",
       "lat": 36.6,
       "lon": 8.8,
@@ -868,6 +914,7 @@
     {
       "id": "kef",
       "name": "Le Kef",
+      "name_ar": "الكاف",
       "region": "north",
       "lat": 36.15,
       "lon": 8.7,
@@ -876,15 +923,16 @@
       "mean_ndmi": -0.1394,
       "healthy_pct": 1.26,
       "confidence": 1.0,
-      "z_ndvi": -0.05800041955812817,
-      "z_ndmi": 0.16152244800622936,
+      "z_ndvi": 0.9236279056918013,
+      "z_ndmi": 0.0914236691688205,
       "regional_water_pct": 0.33541666666666664,
-      "severity_score": 61.63320605607772,
+      "severity_score": 56.040533092104596,
       "severity_band": "watch"
     },
     {
       "id": "siliana",
       "name": "Siliana",
+      "name_ar": "سليانة",
       "region": "centre-west",
       "lat": 36.1,
       "lon": 9.35,
@@ -902,6 +950,7 @@
     {
       "id": "sousse",
       "name": "Sousse",
+      "name_ar": "سوسة",
       "region": "sahel",
       "lat": 35.85,
       "lon": 10.55,
@@ -913,12 +962,13 @@
       "z_ndvi": 0.136181882433161,
       "z_ndmi": 0.19936892545521576,
       "regional_water_pct": 0.028571428571428574,
-      "severity_score": 60.38815965116272,
-      "severity_band": "watch"
+      "severity_score": 77.91490556834671,
+      "severity_band": "drought"
     },
     {
       "id": "monastir",
       "name": "Monastir",
+      "name_ar": "المنستير",
       "region": "sahel",
       "lat": 35.75,
       "lon": 10.8,
@@ -936,6 +986,7 @@
     {
       "id": "mahdia",
       "name": "Mahdia",
+      "name_ar": "المهدية",
       "region": "sahel",
       "lat": 35.45,
       "lon": 10.9,
@@ -953,6 +1004,7 @@
     {
       "id": "sfax",
       "name": "Sfax",
+      "name_ar": "صفاقس",
       "region": "sahel",
       "lat": 34.8,
       "lon": 10.6,
@@ -970,6 +1022,7 @@
     {
       "id": "kairouan",
       "name": "Kairouan",
+      "name_ar": "القيروان",
       "region": "centre-west",
       "lat": 35.7,
       "lon": 10.05,
@@ -987,6 +1040,7 @@
     {
       "id": "kasserine",
       "name": "Kasserine",
+      "name_ar": "القصرين",
       "region": "centre-west",
       "lat": 35.15,
       "lon": 8.85,
@@ -1004,6 +1058,7 @@
     {
       "id": "sidi-bouzid",
       "name": "Sidi Bouzid",
+      "name_ar": "سيدي بوزيد",
       "region": "centre-west",
       "lat": 35.05,
       "lon": 9.55,
@@ -1020,7 +1075,8 @@
     },
     {
       "id": "gabes",
-      "name": "Gab\u00e8s",
+      "name": "Gabès",
+      "name_ar": "قابس",
       "region": "south",
       "lat": 33.9,
       "lon": 9.95,
@@ -1038,6 +1094,7 @@
     {
       "id": "medenine",
       "name": "Medenine",
+      "name_ar": "مدنين",
       "region": "south",
       "lat": 33.35,
       "lon": 10.5,
@@ -1055,6 +1112,7 @@
     {
       "id": "tataouine",
       "name": "Tataouine",
+      "name_ar": "تطاوين",
       "region": "south",
       "lat": 33.0,
       "lon": 10.45,
@@ -1072,6 +1130,7 @@
     {
       "id": "gafsa",
       "name": "Gafsa",
+      "name_ar": "قفصة",
       "region": "south",
       "lat": 34.4,
       "lon": 8.8,
@@ -1089,6 +1148,7 @@
     {
       "id": "tozeur",
       "name": "Tozeur",
+      "name_ar": "توزر",
       "region": "south",
       "lat": 33.9,
       "lon": 8.15,
@@ -1106,6 +1166,7 @@
     {
       "id": "kebili",
       "name": "Kebili",
+      "name_ar": "قبلي",
       "region": "south",
       "lat": 33.7,
       "lon": 8.95,

@@ -1,7 +1,8 @@
 {
   "id": "sidi-salem",
   "name": "Sidi Salem",
-  "governorate": "B\u00e9ja",
+  "name_ar": "سيدي سالم",
+  "governorate": "Béja",
   "lat": 36.5892,
   "lon": 9.4083,
   "capacity_hm3": 555,

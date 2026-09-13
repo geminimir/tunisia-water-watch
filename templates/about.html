@@ -1,30 +1,27 @@
 {% include "components/header.html" %}
 
 <section class="hero">
-  <h1>About Tunisia Water Watch</h1>
-  <p>An independent, satellite-based water and agriculture monitoring system for Tunisia. Built to run forever with zero maintenance, zero cost, and zero human intervention.</p>
+  <h1>{{ t.about_h1 }}</h1>
+  <p>{{ t.about_lede }}</p>
 </section>
 
 <section>
-  <h2>How it works</h2>
+  <h2>{{ t.about_how_h }}</h2>
   <ol>
-    <li>Every 5 days, a GitHub Actions cron job triggers.</li>
-    <li>The pipeline queries a public STAC API for the latest low-cloud Sentinel-2 scene over each dam's bounding box.</li>
-    <li>Only the pixels inside the box are downloaded (COG range requests), typically &lt;1 MB per dam.</li>
-    <li>Green and near-infrared bands are combined into the Normalized Difference Water Index (NDWI = (G − NIR) / (G + NIR)).</li>
-    <li>Pixels above a per-dam threshold are counted as water; the result is the reservoir surface area in km².</li>
-    <li>The reading is appended to <code>data/readings.csv</code>, and this static site is regenerated and pushed.</li>
+    {% for step in t.about_how_steps %}
+    <li>{{ step }}</li>
+    {% endfor %}
   </ol>
 </section>
 
 <section>
-  <h2>What this is not</h2>
-  <p>This is not volumetric measurement (which requires bathymetric survey). It does not detect underground pipe leaks, does not provide real-time flood warnings, and does not run weather models. Its value is <em>continuity</em>: it takes free satellite data that flies over Tunisia every 5 days, computes a simple water index, publishes the result, and accumulates a historical record — forever, for free, with no one needing to be involved.</p>
+  <h2>{{ t.about_notthis_h }}</h2>
+  <p>{{ t.about_notthis_p }}</p>
 </section>
 
 <section>
-  <h2>License &amp; provenance</h2>
-  <p>MIT-licensed. Satellite data © ESA/Copernicus. Map tiles © OpenStreetMap contributors. Source code: <a href="https://github.com/{{ github_repo }}">github.com/{{ github_repo }}</a>.</p>
+  <h2>{{ t.about_license_h }}</h2>
+  <p>{{ t.about_license_p }} <a href="https://github.com/{{ github_repo }}">github.com/{{ github_repo }}</a>.</p>
 </section>
 
 {% include "components/footer.html" %}

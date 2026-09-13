@@ -1,22 +1,25 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{ lang }}" dir="{{ dir }}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{{ page_title }} — Tunisia Water Watch</title>
-<meta name="description" content="Independent, satellite-based monitoring of Tunisia's dams and agriculture.">
-<link rel="stylesheet" href="{{ root }}assets/style.css">
+<title>{{ page_title }} — {{ t.site_title }}</title>
+<meta name="description" content="{{ t.site_description }}">
+<link rel="stylesheet" href="{{ site_root }}assets/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💧</text></svg>">
 </head>
-<body>
+<body class="lang-{{ lang }}">
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="{{ root }}index.html">Tunisia Water Watch</a>
+    <a class="brand" href="{{ root }}index.html">💧 {{ t.site_title }}</a>
     <nav>
-      <a href="{{ root }}index.html">Dams</a>
-      <a href="{{ root }}agriculture.html">Agriculture</a>
-      <a href="{{ root }}about.html">About</a>
-      <a href="https://github.com/{{ github_repo }}" target="_blank" rel="noopener">Source</a>
+      <a href="{{ root }}index.html">{{ t.nav_dams }}</a>
+      <a href="{{ root }}agriculture.html">{{ t.nav_agriculture }}</a>
+      <a href="{{ root }}about.html">{{ t.nav_about }}</a>
+      <a href="https://github.com/{{ github_repo }}" target="_blank" rel="noopener">{{ t.nav_source }}</a>
+      <a class="lang-toggle" href="{{ alt_url }}" onclick="try { localStorage.setItem('tww-lang', '{{ other_lang }}'); } catch (e) {}"
+         dir="{{ 'rtl' if other_lang == 'ar' else 'ltr' }}"
+         lang="{{ other_lang }}">{{ t.lang_toggle_to_ar if other_lang == 'ar' else t.lang_toggle_to_fr }}</a>
     </nav>
   </div>
 </header>

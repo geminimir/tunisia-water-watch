@@ -2,33 +2,34 @@
 
 {% if is_stale %}
 <div class="banner banner-stale">
-  <strong>Pipeline is stale.</strong> Last successful reading was {{ stale_days }} days ago.
+  <strong>{{ t.banner_stale_title }}</strong>
+  {{ t.banner_stale_body|replace("{days}", stale_days|string)|replace("{threshold}", staleness_days|string) }}
 </div>
 {% endif %}
 
-<nav class="crumbs"><a href="../agriculture.html">← All governorates</a></nav>
+<nav class="crumbs"><a href="{{ root }}agriculture.html">{{ t.crumbs_back_govs }}</a></nav>
 
 <section class="dam-header">
-  <h1>{{ gov.name }}</h1>
-  <p class="muted">{{ gov.region|capitalize }} region · Focus: {{ gov.focus|replace('-', ' / ') }}</p>
+  <h1>{{ gov.display_name }}</h1>
+  <p class="muted">{{ t.meta_region_of|replace("{v}", gov.display_region) }} · {{ t.meta_focus|replace("{v}", gov.display_focus) }}</p>
 </section>
 
 <section class="stats">
   <div class="stat">
     <div class="stat-value">{{ "%.3f"|format(gov.mean_ndvi) if gov.mean_ndvi is not none else "—" }}</div>
-    <div class="stat-label">NDVI (greenness) — {{ gov.last_date or "no reading" }}</div>
+    <div class="stat-label">{{ t.stat_ndvi_label|replace("{date}", (gov.last_date or t.no_reading)) }}</div>
   </div>
   <div class="stat">
     <div class="stat-value">{{ "%.3f"|format(gov.mean_ndmi) if gov.mean_ndmi is not none else "—" }}</div>
-    <div class="stat-label">NDMI (canopy moisture)</div>
+    <div class="stat-label">{{ t.stat_ndmi_label }}</div>
   </div>
   <div class="stat">
     <div class="stat-value">{{ "%.0f"|format(gov.healthy_pct) if gov.healthy_pct is not none else "—" }}%</div>
-    <div class="stat-label">Pixels healthy (NDVI &gt; 0.3 &amp; NDMI &gt; 0)</div>
+    <div class="stat-label">{{ t.stat_healthy_label }}</div>
   </div>
   <div class="stat drought-{{ 'red' if gov.severity_band in ('drought', 'severe') else ('yellow' if gov.severity_band == 'watch' else 'green') }}">
     <div class="stat-value">{{ (gov.severity_score|round(0))|int if gov.severity_score is not none else "—" }}</div>
-    <div class="stat-label">Composite drought severity ({{ gov.severity_band }})</div>
+    <div class="stat-label">{{ t.stat_severity_short|replace("{band}", gov.display_band) }}</div>
   </div>
 </section>
 
@@ -37,17 +38,17 @@
 </section>
 
 <section class="table-section">
-  <h2>Recent readings</h2>
+  <h2>{{ t.section_recent_readings }}</h2>
   <table class="readings">
     <thead>
       <tr>
-        <th>Date</th>
-        <th class="num">NDVI</th>
-        <th class="num">NDMI</th>
-        <th class="num">Healthy %</th>
-        <th class="num">Cloud %</th>
-        <th class="num">Confidence</th>
-        <th>Scene</th>
+        <th>{{ t.th_date }}</th>
+        <th class="num">{{ t.th_ndvi }}</th>
+        <th class="num">{{ t.th_ndmi }}</th>
+        <th class="num">{{ t.th_healthy_pct }}</th>
+        <th class="num">{{ t.th_cloud_pct }}</th>
+        <th class="num">{{ t.th_confidence }}</th>
+        <th>{{ t.th_scene }}</th>
       </tr>
     </thead>
     <tbody>
@@ -66,11 +67,7 @@
   </table>
 </section>
 
-<p class="muted small">
-  Composite severity combines NDVI z-score (vs same-month history),
-  NDMI z-score, and regional dam pct-of-average, each weighted by measurement
-  confidence. Higher = drier than typical.
-</p>
+<p class="muted small">{{ t.composite_note }}</p>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <script>
@@ -80,8 +77,8 @@ new Chart(document.getElementById('gov-chart'), {
   data: {
     labels: series.map(p => p.date),
     datasets: [
-      { label: 'NDVI (greenness)',      data: series.map(p => p.mean_ndvi), borderColor: '#2e8b57', backgroundColor: 'rgba(46,139,87,0.15)', tension: 0.25, fill: true, spanGaps: true, pointRadius: 1 },
-      { label: 'NDMI (canopy moisture)', data: series.map(p => p.mean_ndmi), borderColor: '#1e6fbf', tension: 0.25, fill: false, spanGaps: true, pointRadius: 1 }
+      { label: {{ t.chart_ndvi_label|tojson }}, data: series.map(p => p.mean_ndvi), borderColor: '#2e8b57', backgroundColor: 'rgba(46,139,87,0.15)', tension: 0.25, fill: true, spanGaps: true, pointRadius: 1 },
+      { label: {{ t.chart_ndmi_label|tojson }}, data: series.map(p => p.mean_ndmi), borderColor: '#1e6fbf', tension: 0.25, fill: false, spanGaps: true, pointRadius: 1 }
     ]
   },
   options: { responsive: true, scales: { y: { min: -0.5, max: 0.9 } } }

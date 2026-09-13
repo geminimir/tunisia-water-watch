@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>الزراعة — مراقبة مياه تونس</title>
+<meta name="description" content="مراقبة مستقلة عبر الأقمار الاصطناعية للموارد المائية والزراعة في تونس.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💧</text></svg>">
+</head>
+<body class="lang-ar">
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">💧 مراقبة مياه تونس</a>
+    <nav>
+      <a href="index.html">السدود</a>
+      <a href="agriculture.html">الزراعة</a>
+      <a href="about.html">حول</a>
+      <a href="https://github.com/geminimir/water-watch" target="_blank" rel="noopener">الرمز المصدري</a>
+      <a class="lang-toggle" href="../fr/agriculture.html" onclick="try { localStorage.setItem('tww-lang', 'fr'); } catch (e) {}"
+         dir="ltr"
+         lang="fr">Français</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+
+
+
+<section class="hero">
+  <h1>الأراضي الزراعية التونسية تحت المراقبة من المدار</h1>
+  <p>حالة الغطاء النباتي مستنبطة من الأقمار الاصطناعية لـ24 ولاية. يتم حساب NDVI (الاخضرار) وNDMI (رطوبة النبات) كل 5 أيام — قد تبدو الأرض خضراء بينما هي تجفّ، ومتابعة المؤشرين معًا تكشف الجفاف مبكرًا.</p>
+</section>
+
+<section class="stats">
+  <div class="stat drought-yellow">
+    <div class="stat-value">57</div>
+    <div class="stat-label">الشدة الوطنية للجفاف (تحذير)</div>
+  </div>
+  <div class="stat">
+    <div class="stat-value">24</div>
+    <div class="stat-label">الولايات المتابعة</div>
+  </div>
+</section>
+
+<section class="map-section">
+  <div id="gov-map"></div>
+</section>
+
+<section class="table-section">
+  <h2>جميع الولايات</h2>
+  <table class="dams">
+    <thead>
+      <tr>
+        <th>الولاية</th>
+        <th>المنطقة</th>
+        <th>آخر قراءة</th>
+        <th class="num">NDVI</th>
+        <th class="num">NDMI</th>
+        <th class="num">% صحي</th>
+        <th class="num">الشدة</th>
+        <th>المستوى</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr>
+        <td><a href="governorate/tunis.html">تونس</a></td>
+        <td>الشمال</td>
+        <td>2026-08-20</td>
+        <td class="num">0.163</td>
+        <td class="num">-0.073</td>
+        <td class="num">6</td>
+        <td class="num">42</td>
+        <td><span class="badge badge-band-normal">عادي</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="governorate/ariana.html">أريانة</a></td>
+        <td>الشمال</td>
+        <td>2026-08-20</td>
+        <td class="num">0.171</td>
+        <td class="num">-0.114</td>
+        <td class="num">3</td>
+        <td class="num">26</td>
+        <td><span class="badge badge-band-abundant">وفير</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="governorate/ben-arous.html">بن عروس</a></td>
+        <td>الشمال</td>
+        <td>2026-08-20</td>
+        <td class="num">0.200</td>
+        <td class="num">-0.126</td>
+        <td class="num">6</td>
+        <td class="num">38</td>
+        <td><span class="badge badge-band-normal">عادي</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="governorate/manouba.html">منوبة</a></td>
+        <td>الشمال</td>
+        <td>2026-08-20</td>
+        <td class="num">0.183</td>
+        <td class="num">-0.140</td>
+        <td class="num">4</td>
+        <td class="num">47</td>
+        <td><span class="badge badge-band-normal">عادي</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="governorate/nabeul.html">نابل</a></td>
+        <td>الوطن القبلي</td>
+        <td>2026-08-02</td>
+        <td class="num">0.298</td>
+        <td class="num">-0.085</td>
+        <td class="num">18</td>
+        <td class="num">34</td>
+        <td><span class="badge badge-band-normal">عادي</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="governorate/zaghouan.html">زغوان</a></td>
+        <td>الشمال</td>
+        <td>2026-08-20</td>
+        <td class="num">0.239</td>
+        <td class="num">-0.129</td>
+        <td class="num">11</td>
+        <td class="num">43</td>
+        <td><span class="badge badge-band-normal">عادي</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="governorate/bizerte.html">بنزرت</a></td>
+        <td>الشمال</td>
+        <td>2026-08-20</td>
+        <td class="num">0.185</td>
+        <td class="num">-0.111</td>
+        <td class="num">5</td>
+        <td class="num">41</td>
+        <td><span class="badge badge-band-normal">عادي</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="governorate/beja.html">باجة</a></td>
+        <td>الشمال</td>
+        <td>2026-08-20</td>
+        <td class="num">0.234</td>
+        <td class="num">-0.071</td>
+        <td class="num">12</td>
+        <td class="num">35</td>
+        <td><span class="badge badge-band-normal">عادي</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="governorate/jendouba.html">جندوبة</a></td>
+        <td>الشمال</td>
+        <td>2026-08-20</td>
+        <td class="num">0.275</td>
+        <td class="num">-0.055</td>
+        <td class="num">19</td>
+        <td class="num">35</td>
+        <td><span class="badge badge-band-normal">عادي</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="governorate/kef.html">الكاف</a></td>
+        <td>الشمال</td>
+        <td>2026-08-25</td>
+        <td class="num">0.159</td>
+        <td class="num">-0.139</td>
+        <td class="num">1</td>
+        <td class="num">56</td>
+        <td><span class="badge badge-band-watch">تحذير</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="governorate/siliana.html">سليانة</a></td>
+        <td>الوسط الغربي</td>
+        <td>2026-08-20</td>
+        <td class="num">0.148</td>
+        <td class="num">-0.160</td>
+        <td class="num">2</td>
+        <td class="num">40</td>
+        <td><span class="badge badge-band-normal">عادي</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="governorate/sousse.html">سوسة</a></td>
+        <td>الساحل</td>
+        <td>2026-08-22</td>
+        <td class="num">0.144</td>
+        <td class="num">-0.155</td>
+        <td class="num">1</td>
+        <td class="num">78</td>
+        <td><span class="badge badge-band-drought">جفاف</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="governorate/monastir.html">المنستير</a></td>
+        <td>الساحل</td>
+        <td>2026-08-22</td>
+        <td class="num">0.151</td>
+        <td class="num">-0.133</td>
+        <td class="num">1</td>
+        <td class="num">68</td>
+        <td><span class="badge badge-band-drought">جفاف</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="governorate/mahdia.html">المهدية</a></td>
+        <td>الساحل</td>
+        <td>2026-08-22</td>
+        <td class="num">0.140</td>
+        <td class="num">-0.161</td>
+        <td class="num">0</td>
+        <td class="num">70</td>
+        <td><span class="badge badge-band-drought">جفاف</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="governorate/sfax.html">صفاقس</a></td>
+        <td>الساحل</td>
+        <td>2026-08-12</td>
+        <td class="num">0.116</td>
+        <td class="num">-0.147</td>
+        <td class="num">0</td>
+        <td class="num">56</td>
+        <td><span class="badge badge-band-watch">تحذير</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="governorate/kairouan.html">القيروان</a></td>
+        <td>الوسط الغربي</td>
+        <td>2026-08-30</td>
+        <td class="num">0.112</td>
+        <td class="num">-0.147</td>
+        <td class="num">3</td>
+        <td class="num">73</td>
+        <td><span class="badge badge-band-drought">جفاف</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="governorate/kasserine.html">القصرين</a></td>
+        <td>الوسط الغربي</td>
+        <td>2026-08-20</td>
+        <td class="num">0.143</td>
+        <td class="num">-0.140</td>
+        <td class="num">2</td>
+        <td class="num">61</td>
+        <td><span class="badge badge-band-watch">تحذير</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="governorate/sidi-bouzid.html">سيدي بوزيد</a></td>
+        <td>الوسط الغربي</td>
+        <td>2026-08-20</td>
+        <td class="num">0.149</td>
+        <td class="num">-0.125</td>
+        <td class="num">4</td>
+        <td class="num">43</td>
+        <td><span class="badge badge-band-normal">عادي</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="governorate/gabes.html">قابس</a></td>
+        <td>الجنوب</td>
+        <td>2026-08-17</td>
+        <td class="num">0.147</td>
+        <td class="num">-0.086</td>
+        <td class="num">8</td>
+        <td class="num">47</td>
+        <td><span class="badge badge-band-normal">عادي</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="governorate/medenine.html">مدنين</a></td>
+        <td>الجنوب</td>
+        <td>2026-08-12</td>
+        <td class="num">0.084</td>
+        <td class="num">-0.135</td>
+        <td class="num">0</td>
+        <td class="num">58</td>
+        <td><span class="badge badge-band-watch">تحذير</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="governorate/tataouine.html">تطاوين</a></td>
+        <td>الجنوب</td>
+        <td>2026-08-04</td>
+        <td class="num">0.086</td>
+        <td class="num">-0.139</td>
+        <td class="num">0</td>
+        <td class="num">59</td>
+        <td><span class="badge badge-band-watch">تحذير</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="governorate/gafsa.html">قفصة</a></td>
+        <td>الجنوب</td>
+        <td>2026-08-20</td>
+        <td class="num">0.099</td>
+        <td class="num">-0.124</td>
+        <td class="num">2</td>
+        <td class="num">55</td>
+        <td><span class="badge badge-band-watch">تحذير</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="governorate/tozeur.html">توزر</a></td>
+        <td>الجنوب</td>
+        <td>2026-08-20</td>
+        <td class="num">0.078</td>
+        <td class="num">-0.076</td>
+        <td class="num">4</td>
+        <td class="num">53</td>
+        <td><span class="badge badge-band-watch">تحذير</span></td>
+      </tr>
+      
+      <tr>
+        <td><a href="governorate/kebili.html">قبلي</a></td>
+        <td>الجنوب</td>
+        <td>2026-08-12</td>
+        <td class="num">0.079</td>
+        <td class="num">-0.066</td>
+        <td class="num">1</td>
+        <td class="num">23</td>
+        <td><span class="badge badge-band-abundant">وفير</span></td>
+      </tr>
+      
+    </tbody>
+  </table>
+</section>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const govs = [{"id": "tunis", "name": "Tunis", "name_ar": "تونس", "region": "north", "lat": 36.8, "lon": 10.18, "weight": 0.5, "focus": "peri-urban", "last_date": "2026-08-20", "mean_ndvi": 0.1629, "mean_ndmi": -0.0729, "healthy_pct": 6.25, "confidence": 1.0, "z_ndvi": 0.9336890053361832, "z_ndmi": 0.23404938671489225, "sample_count_ndvi": 5, "regional_water_pct": null, "severity_score": 41.608448145585015, "severity_band": "normal", "severity_breakdown": {"score": 41.61, "components": [{"name": "vegetation", "severity": 38.33, "weight": 1.0}, {"name": "moisture", "severity": 47.07, "weight": 0.6}]}, "display_name": "تونس", "display_region": "الشمال", "display_focus": "شبه حضري", "display_band": "عادي"}, {"id": "ariana", "name": "Ariana", "name_ar": "أريانة", "region": "north", "lat": 36.9, "lon": 10.2, "weight": 0.6, "focus": "cereals", "last_date": "2026-08-20", "mean_ndvi": 0.1714, "mean_ndmi": -0.1139, "healthy_pct": 3.08, "confidence": 1.0, "z_ndvi": 1.3058101577800898, "z_ndmi": 2.942569548605495, "sample_count_ndvi": 5, "regional_water_pct": null, "severity_score": 26.00506338325479, "severity_band": "abundant", "severity_breakdown": {"score": 26.01, "components": [{"name": "vegetation", "severity": 33.68, "weight": 1.0}, {"name": "moisture", "severity": 13.22, "weight": 0.6}]}, "display_name": "أريانة", "display_region": "الشمال", "display_focus": "حبوب", "display_band": "وفير"}, {"id": "ben-arous", "name": "Ben Arous", "name_ar": "بن عروس", "region": "north", "lat": 36.65, "lon": 10.2, "weight": 0.6, "focus": "peri-urban", "last_date": "2026-08-20", "mean_ndvi": 0.2002, "mean_ndmi": -0.1259, "healthy_pct": 6.06, "confidence": 1.0, "z_ndvi": 1.2841342007168364, "z_ndmi": 0.4369027959606693, "sample_count_ndvi": 5, "regional_water_pct": null, "severity_score": 37.91971970083407, "severity_band": "normal", "severity_breakdown": {"score": 37.92, "components": [{"name": "vegetation", "severity": 33.95, "weight": 1.0}, {"name": "moisture", "severity": 44.54, "weight": 0.6}]}, "display_name": "بن عروس", "display_region": "الشمال", "display_focus": "شبه حضري", "display_band": "عادي"}, {"id": "manouba", "name": "Manouba", "name_ar": "منوبة", "region": "north", "lat": 36.75, "lon": 9.9, "weight": 0.8, "focus": "cereals", "last_date": "2026-08-20", "mean_ndvi": 0.1829, "mean_ndmi": -0.1397, "healthy_pct": 3.98, "confidence": 1.0, "z_ndvi": 0.46908468638135653, "z_ndmi": -0.04509844968920539, "sample_count_ndvi": 5, "regional_water_pct": null, "severity_score": 46.5466748705638, "severity_band": "normal", "severity_breakdown": {"score": 46.55, "components": [{"name": "vegetation", "severity": 44.14, "weight": 1.0}, {"name": "moisture", "severity": 50.56, "weight": 0.6}]}, "display_name": "منوبة", "display_region": "الشمال", "display_focus": "حبوب", "display_band": "عادي"}, {"id": "nabeul", "name": "Nabeul", "name_ar": "نابل", "region": "cap-bon", "lat": 36.55, "lon": 10.75, "weight": 1.2, "focus": "citrus-hort", "last_date": "2026-08-02", "mean_ndvi": 0.2981, "mean_ndmi": -0.0848, "healthy_pct": 17.77, "confidence": 1.0, "z_ndvi": 1.0687335969590823, "z_ndmi": 1.2126422343670777, "sample_count_ndvi": 5, "regional_water_pct": 140.81553140736816, "severity_score": 34.44863353734112, "severity_band": "normal", "severity_breakdown": {"score": 34.45, "components": [{"name": "water", "severity": 29.59, "weight": 0.5}, {"name": "vegetation", "severity": 36.64, "weight": 1.0}, {"name": "moisture", "severity": 34.84, "weight": 0.6}]}, "display_name": "نابل", "display_region": "الوطن القبلي", "display_focus": "حمضيات / بستنة", "display_band": "عادي"}, {"id": "zaghouan", "name": "Zaghouan", "name_ar": "زغوان", "region": "north", "lat": 36.4, "lon": 10.15, "weight": 0.9, "focus": "cereals-olive", "last_date": "2026-08-20", "mean_ndvi": 0.2388, "mean_ndmi": -0.1289, "healthy_pct": 10.52, "confidence": 1.0, "z_ndvi": 1.1513427790172979, "z_ndmi": 1.105200762261806, "sample_count_ndvi": 5, "regional_water_pct": 64.07424329553555, "severity_score": 43.47649939116016, "severity_band": "normal", "severity_breakdown": {"score": 43.48, "components": [{"name": "water", "severity": 67.96, "weight": 0.5}, {"name": "vegetation", "severity": 35.61, "weight": 1.0}, {"name": "moisture", "severity": 36.18, "weight": 0.6}]}, "display_name": "زغوان", "display_region": "الشمال", "display_focus": "حبوب / زيتون", "display_band": "عادي"}, {"id": "bizerte", "name": "Bizerte", "name_ar": "بنزرت", "region": "north", "lat": 37.15, "lon": 9.8, "weight": 1.3, "focus": "cereals", "last_date": "2026-08-20", "mean_ndvi": 0.1853, "mean_ndmi": -0.1113, "healthy_pct": 4.75, "confidence": 1.0, "z_ndvi": 0.3252579172115587, "z_ndmi": 7.076501265765566, "sample_count_ndvi": 5, "regional_water_pct": 42.730748775368895, "severity_score": 40.5959946861968, "severity_band": "normal", "severity_breakdown": {"score": 40.6, "components": [{"name": "water", "severity": 78.63, "weight": 0.5}, {"name": "vegetation", "severity": 45.93, "weight": 1.0}, {"name": "moisture", "severity": 0.0, "weight": 0.6}]}, "display_name": "بنزرت", "display_region": "الشمال", "display_focus": "حبوب", "display_band": "عادي"}, {"id": "beja", "name": "Béja", "name_ar": "باجة", "region": "north", "lat": 36.75, "lon": 9.2, "weight": 1.6, "focus": "cereals", "last_date": "2026-08-20", "mean_ndvi": 0.2339, "mean_ndmi": -0.0707, "healthy_pct": 12.2, "confidence": 1.0, "z_ndvi": 0.7696023881159948, "z_ndmi": 4.883708953374281, "sample_count_ndvi": 5, "regional_water_pct": 69.79650527686296, "severity_score": 34.72897325206396, "severity_band": "normal", "severity_breakdown": {"score": 34.73, "components": [{"name": "water", "severity": 65.1, "weight": 0.5}, {"name": "vegetation", "severity": 40.38, "weight": 1.0}, {"name": "moisture", "severity": 0.0, "weight": 0.6}]}, "display_name": "باجة", "display_region": "الشمال", "display_focus": "حبوب", "display_band": "عادي"}, {"id": "jendouba", "name": "Jendouba", "name_ar": "جندوبة", "region": "north", "lat": 36.6, "lon": 8.8, "weight": 1.6, "focus": "cereals", "last_date": "2026-08-20", "mean_ndvi": 0.2751, "mean_ndmi": -0.0546, "healthy_pct": 18.92, "confidence": 1.0, "z_ndvi": null, "z_ndmi": null, "sample_count_ndvi": 3, "regional_water_pct": 130.10730355165273, "severity_score": 34.94634822417363, "severity_band": "normal", "severity_breakdown": {"score": 34.95, "components": [{"name": "water", "severity": 34.95, "weight": 0.5}]}, "display_name": "جندوبة", "display_region": "الشمال", "display_focus": "حبوب", "display_band": "عادي"}, {"id": "kef", "name": "Le Kef", "name_ar": "الكاف", "region": "north", "lat": 36.15, "lon": 8.7, "weight": 1.3, "focus": "cereals", "last_date": "2026-08-25", "mean_ndvi": 0.1591, "mean_ndmi": -0.1385, "healthy_pct": 0.81, "confidence": 1.0, "z_ndvi": 0.9236279056918013, "z_ndmi": 0.0914236691688205, "sample_count_ndvi": 5, "regional_water_pct": 0.33541666666666664, "severity_score": 56.040533092104596, "severity_band": "watch", "severity_breakdown": {"score": 56.04, "components": [{"name": "water", "severity": 99.83, "weight": 0.5}, {"name": "vegetation", "severity": 38.45, "weight": 1.0}, {"name": "moisture", "severity": 48.86, "weight": 0.6}]}, "display_name": "الكاف", "display_region": "الشمال", "display_focus": "حبوب", "display_band": "تحذير"}, {"id": "siliana", "name": "Siliana", "name_ar": "سليانة", "region": "centre-west", "lat": 36.1, "lon": 9.35, "weight": 1.1, "focus": "cereals-olive", "last_date": "2026-08-20", "mean_ndvi": 0.1482, "mean_ndmi": -0.1599, "healthy_pct": 1.6, "confidence": 1.0, "z_ndvi": 0.32593485552316964, "z_ndmi": -1.0690736588970753, "sample_count_ndvi": 5, "regional_water_pct": 242.1713973799127, "severity_score": 39.97326987985164, "severity_band": "normal", "severity_breakdown": {"score": 39.97, "components": [{"name": "water", "severity": 0.0, "weight": 0.5}, {"name": "vegetation", "severity": 45.93, "weight": 1.0}, {"name": "moisture", "severity": 63.36, "weight": 0.6}]}, "display_name": "سليانة", "display_region": "الوسط الغربي", "display_focus": "حبوب / زيتون", "display_band": "عادي"}, {"id": "sousse", "name": "Sousse", "name_ar": "سوسة", "region": "sahel", "lat": 35.85, "lon": 10.55, "weight": 1.4, "focus": "olive", "last_date": "2026-08-22", "mean_ndvi": 0.1444, "mean_ndmi": -0.1553, "healthy_pct": 0.89, "confidence": 1.0, "z_ndvi": -1.9559304615572948, "z_ndmi": -1.2239085041606348, "sample_count_ndvi": 5, "regional_water_pct": 0.028571428571428574, "severity_score": 77.91490556834671, "severity_band": "drought", "severity_breakdown": {"score": 77.91, "components": [{"name": "water", "severity": 99.99, "weight": 0.5}, {"name": "vegetation", "severity": 74.45, "weight": 1.0}, {"name": "moisture", "severity": 65.3, "weight": 0.6}]}, "display_name": "سوسة", "display_region": "الساحل", "display_focus": "زيتون", "display_band": "جفاف"}, {"id": "monastir", "name": "Monastir", "name_ar": "المنستير", "region": "sahel", "lat": 35.75, "lon": 10.8, "weight": 1.0, "focus": "olive", "last_date": "2026-08-22", "mean_ndvi": 0.1507, "mean_ndmi": -0.1333, "healthy_pct": 1.1, "confidence": 1.0, "z_ndvi": -1.5897371419538746, "z_ndmi": -1.2875162789874364, "sample_count_ndvi": 5, "regional_water_pct": null, "severity_score": 68.45505397926824, "severity_band": "drought", "severity_breakdown": {"score": 68.46, "components": [{"name": "vegetation", "severity": 69.87, "weight": 1.0}, {"name": "moisture", "severity": 66.09, "weight": 0.6}]}, "display_name": "المنستير", "display_region": "الساحل", "display_focus": "زيتون", "display_band": "جفاف"}, {"id": "mahdia", "name": "Mahdia", "name_ar": "المهدية", "region": "sahel", "lat": 35.45, "lon": 10.9, "weight": 1.1, "focus": "olive", "last_date": "2026-08-22", "mean_ndvi": 0.1398, "mean_ndmi": -0.161, "healthy_pct": 0.15, "confidence": 1.0, "z_ndvi": -1.7667063675282821, "z_ndmi": -1.3517477729918626, "sample_count_ndvi": 5, "regional_water_pct": null, "severity_score": 70.13871118221405, "severity_band": "drought", "severity_breakdown": {"score": 70.14, "components": [{"name": "vegetation", "severity": 72.08, "weight": 1.0}, {"name": "moisture", "severity": 66.9, "weight": 0.6}]}, "display_name": "المهدية", "display_region": "الساحل", "display_focus": "زيتون", "display_band": "جفاف"}, {"id": "sfax", "name": "Sfax", "name_ar": "صفاقس", "region": "sahel", "lat": 34.8, "lon": 10.6, "weight": 2.0, "focus": "olive", "last_date": "2026-08-12", "mean_ndvi": 0.1162, "mean_ndmi": -0.1472, "healthy_pct": 0.3, "confidence": 1.0, "z_ndvi": 0.09425513270614168, "z_ndmi": -1.3444648572700026, "sample_count_ndvi": 5, "regional_water_pct": null, "severity_score": 55.5658107941864, "severity_band": "watch", "severity_breakdown": {"score": 55.57, "components": [{"name": "vegetation", "severity": 48.82, "weight": 1.0}, {"name": "moisture", "severity": 66.81, "weight": 0.6}]}, "display_name": "صفاقس", "display_region": "الساحل", "display_focus": "زيتون", "display_band": "تحذير"}, {"id": "kairouan", "name": "Kairouan", "name_ar": "القيروان", "region": "centre-west", "lat": 35.7, "lon": 10.05, "weight": 1.5, "focus": "cereals-olive", "last_date": "2026-08-30", "mean_ndvi": 0.1118, "mean_ndmi": -0.1466, "healthy_pct": 2.73, "confidence": 0.366, "z_ndvi": -1.0167655723422255, "z_ndmi": -0.6825459363831485, "sample_count_ndvi": 5, "regional_water_pct": 25.688765887658878, "severity_score": 73.12371003769594, "severity_band": "drought", "severity_breakdown": {"score": 73.12, "components": [{"name": "water", "severity": 87.16, "weight": 0.5}, {"name": "vegetation", "severity": 62.71, "weight": 0.366}, {"name": "moisture", "severity": 58.53, "weight": 0.22}]}, "display_name": "القيروان", "display_region": "الوسط الغربي", "display_focus": "حبوب / زيتون", "display_band": "جفاف"}, {"id": "kasserine", "name": "Kasserine", "name_ar": "القصرين", "region": "centre-west", "lat": 35.15, "lon": 8.85, "weight": 1.3, "focus": "cereals", "last_date": "2026-08-20", "mean_ndvi": 0.1426, "mean_ndmi": -0.1399, "healthy_pct": 1.89, "confidence": 1.0, "z_ndvi": 0.21237469485828775, "z_ndmi": 0.001522553919594273, "sample_count_ndvi": 5, "regional_water_pct": 0.0, "severity_score": 60.63518912374973, "severity_band": "watch", "severity_breakdown": {"score": 60.64, "components": [{"name": "water", "severity": 100.0, "weight": 0.5}, {"name": "vegetation", "severity": 47.35, "weight": 1.0}, {"name": "moisture", "severity": 49.98, "weight": 0.6}]}, "display_name": "القصرين", "display_region": "الوسط الغربي", "display_focus": "حبوب", "display_band": "تحذير"}, {"id": "sidi-bouzid", "name": "Sidi Bouzid", "name_ar": "سيدي بوزيد", "region": "centre-west", "lat": 35.05, "lon": 9.55, "weight": 1.4, "focus": "olive-orchard", "last_date": "2026-08-20", "mean_ndvi": 0.1491, "mean_ndmi": -0.1248, "healthy_pct": 3.86, "confidence": 1.0, "z_ndvi": 0.8814979762505252, "z_ndmi": -0.03348873433115546, "sample_count_ndvi": 5, "regional_water_pct": null, "severity_score": 43.270275502720054, "severity_band": "normal", "severity_breakdown": {"score": 43.27, "components": [{"name": "vegetation", "severity": 38.98, "weight": 1.0}, {"name": "moisture", "severity": 50.42, "weight": 0.6}]}, "display_name": "سيدي بوزيد", "display_region": "الوسط الغربي", "display_focus": "زيتون / بستنة", "display_band": "عادي"}, {"id": "gabes", "name": "Gabès", "name_ar": "قابس", "region": "south", "lat": 33.9, "lon": 9.95, "weight": 0.8, "focus": "oasis", "last_date": "2026-08-17", "mean_ndvi": 0.1467, "mean_ndmi": -0.0855, "healthy_pct": 8.26, "confidence": 0.976, "z_ndvi": 0.4640104328090402, "z_ndmi": -0.1811235914939952, "sample_count_ndvi": 5, "regional_water_pct": null, "severity_score": 47.22393532880748, "severity_band": "normal", "severity_breakdown": {"score": 47.22, "components": [{"name": "vegetation", "severity": 44.2, "weight": 0.976}, {"name": "moisture", "severity": 52.26, "weight": 0.586}]}, "display_name": "قابس", "display_region": "الجنوب", "display_focus": "واحات", "display_band": "عادي"}, {"id": "medenine", "name": "Medenine", "name_ar": "مدنين", "region": "south", "lat": 33.35, "lon": 10.5, "weight": 0.6, "focus": "rangeland", "last_date": "2026-08-12", "mean_ndvi": 0.0836, "mean_ndmi": -0.1354, "healthy_pct": 0.09, "confidence": 1.0, "z_ndvi": -1.0204599858285326, "z_ndmi": -0.08700899461691007, "sample_count_ndvi": 5, "regional_water_pct": null, "severity_score": 58.38019830155217, "severity_band": "watch", "severity_breakdown": {"score": 58.38, "components": [{"name": "vegetation", "severity": 62.76, "weight": 1.0}, {"name": "moisture", "severity": 51.09, "weight": 0.6}]}, "display_name": "مدنين", "display_region": "الجنوب", "display_focus": "مراعي", "display_band": "تحذير"}, {"id": "tataouine", "name": "Tataouine", "name_ar": "تطاوين", "region": "south", "lat": 33.0, "lon": 10.45, "weight": 0.4, "focus": "rangeland", "last_date": "2026-08-04", "mean_ndvi": 0.086, "mean_ndmi": -0.1391, "healthy_pct": 0.0, "confidence": 1.0, "z_ndvi": -0.3769204293547214, "z_ndmi": -1.3165918369824965, "sample_count_ndvi": 5, "regional_water_pct": null, "severity_score": 59.116215090189215, "severity_band": "watch", "severity_breakdown": {"score": 59.12, "components": [{"name": "vegetation", "severity": 54.71, "weight": 1.0}, {"name": "moisture", "severity": 66.46, "weight": 0.6}]}, "display_name": "تطاوين", "display_region": "الجنوب", "display_focus": "مراعي", "display_band": "تحذير"}, {"id": "gafsa", "name": "Gafsa", "name_ar": "قفصة", "region": "south", "lat": 34.4, "lon": 8.8, "weight": 0.7, "focus": "oasis", "last_date": "2026-08-20", "mean_ndvi": 0.0989, "mean_ndmi": -0.124, "healthy_pct": 2.33, "confidence": 1.0, "z_ndvi": -0.3870308501684954, "z_ndmi": -0.4522761762411978, "sample_count_ndvi": 5, "regional_water_pct": null, "severity_score": 55.14372309307198, "severity_band": "watch", "severity_breakdown": {"score": 55.14, "components": [{"name": "vegetation", "severity": 54.84, "weight": 1.0}, {"name": "moisture", "severity": 55.65, "weight": 0.6}]}, "display_name": "قفصة", "display_region": "الجنوب", "display_focus": "واحات", "display_band": "تحذير"}, {"id": "tozeur", "name": "Tozeur", "name_ar": "توزر", "region": "south", "lat": 33.9, "lon": 8.15, "weight": 0.5, "focus": "oasis", "last_date": "2026-08-20", "mean_ndvi": 0.0783, "mean_ndmi": -0.0764, "healthy_pct": 4.22, "confidence": 0.997, "z_ndvi": -0.4012887856023693, "z_ndmi": 0.10555259047260743, "sample_count_ndvi": 5, "regional_water_pct": null, "severity_score": 52.64029086967816, "severity_band": "watch", "severity_breakdown": {"score": 52.64, "components": [{"name": "vegetation", "severity": 55.02, "weight": 0.997}, {"name": "moisture", "severity": 48.68, "weight": 0.598}]}, "display_name": "توزر", "display_region": "الجنوب", "display_focus": "واحات", "display_band": "تحذير"}, {"id": "kebili", "name": "Kebili", "name_ar": "قبلي", "region": "south", "lat": 33.7, "lon": 8.95, "weight": 0.6, "focus": "oasis", "last_date": "2026-08-12", "mean_ndvi": 0.0789, "mean_ndmi": -0.0662, "healthy_pct": 1.48, "confidence": 0.994, "z_ndvi": 1.5231229992745259, "z_ndmi": 3.290737466359877, "sample_count_ndvi": 5, "regional_water_pct": null, "severity_score": 22.675269694605845, "severity_band": "abundant", "severity_breakdown": {"score": 22.68, "components": [{"name": "vegetation", "severity": 30.96, "weight": 0.994}, {"name": "moisture", "severity": 8.87, "weight": 0.596}]}, "display_name": "قبلي", "display_region": "الجنوب", "display_focus": "واحات", "display_band": "وفير"}];
+const bandColors = { abundant:'#2e8b57', normal:'#7ea72a', watch:'#e2a03f', drought:'#c0392b', severe:'#7a1d17', unknown:'#8a8f98' };
+const map = L.map('gov-map', { scrollWheelZoom: false }).setView([34.5, 9.6], 6);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap contributors', maxZoom: 12 }).addTo(map);
+for (const g of govs) {
+  L.circleMarker([g.lat, g.lon], {
+    radius: 10, color: bandColors[g.severity_band] || '#8a8f98',
+    fillColor: bandColors[g.severity_band] || '#8a8f98', fillOpacity: 0.75, weight: 1
+  }).bindPopup(
+    `<strong>${g.display_name}</strong><br>${g.display_region}<br>` +
+    `NDVI: ${g.mean_ndvi == null ? '—' : g.mean_ndvi.toFixed(3)}, NDMI: ${g.mean_ndmi == null ? '—' : g.mean_ndmi.toFixed(3)}<br>` +
+    `<a href="governorate/${g.id}.html">→</a>`
+  ).addTo(map);
+}
+</script>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p>آخر تحديث: <strong>2026-09-13 01:19 UTC</strong> · التشغيل التالي: <strong>2026-09-18</strong></p>
+    <p class="muted">بيانات مستنبطة من Sentinel-2 L2A عبر واجهات STAC العامة. المساحة المائية مؤشر تقريبي لحجم الخزان وليست بديلاً عن المسح البحري. رخصة MIT. بدون ضمان.</p>
+    <p class="small"><a href="../oracle/index.json">أوراكل البيانات (JSON + بصمة SHA-256)</a> · <a href="../data/latest.json">latest.json</a> · <a href="../data/readings.csv">readings.csv</a></p>
+  </div>
+</footer>
+</body>
+</html>

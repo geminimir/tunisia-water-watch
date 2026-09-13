@@ -1,7 +1,8 @@
 {
   "id": "kasseb",
   "name": "Kasseb",
-  "governorate": "B\u00e9ja",
+  "name_ar": "الكاسب",
+  "governorate": "Béja",
   "lat": 36.6489,
   "lon": 9.0031,
   "capacity_hm3": 82,

@@ -2,29 +2,37 @@
 
 {% if is_stale %}
 <div class="banner banner-stale">
-  <strong>Pipeline is stale.</strong> Last successful reading was {{ stale_days }} days ago.
+  <strong>{{ t.banner_stale_title }}</strong>
+  {{ t.banner_stale_body|replace("{days}", stale_days|string)|replace("{threshold}", staleness_days|string) }}
+  <a href="https://github.com/{{ github_repo }}/actions">{{ t.banner_stale_link }}</a>.
 </div>
 {% endif %}
 
-<nav class="crumbs"><a href="../index.html">← All dams</a></nav>
+<nav class="crumbs"><a href="{{ root }}index.html">{{ t.crumbs_back_dams }}</a></nav>
 
 <section class="dam-header">
-  <h1>{{ dam.name }}</h1>
-  <p class="muted">{{ dam.governorate }} governorate · {{ dam.river }} · capacity ≈ {{ dam.capacity_hm3 }} hm³</p>
+  <h1>{{ dam.display_name }}</h1>
+  <p class="muted">{{ t.meta_governorate_of|replace("{v}", dam.governorate) }} · {{ t.meta_river|replace("{v}", dam.display_river) }} · {{ t.meta_capacity|replace("{v}", dam.capacity_hm3|string) }}</p>
 </section>
 
 <section class="stats">
   <div class="stat">
     <div class="stat-value">{{ "%.2f"|format(latest.surface_area_km2) if latest.surface_area_km2 is not none else "—" }} km²</div>
-    <div class="stat-label">Latest surface area ({{ latest.date or "no reading" }})</div>
+    <div class="stat-label">{{ t.stat_latest_surface|replace("{date}", (latest.date or t.no_reading)) }}</div>
   </div>
   <div class="stat">
     <div class="stat-value">{{ "%.0f"|format(latest.pct_of_avg) if latest.pct_of_avg is not none else "—" }}%</div>
-    <div class="stat-label">of {% if dam.baseline_source and dam.baseline_source.startswith("rolling") %}rolling baseline ({{ dam.effective_baseline_km2 }} km²){% else %}long-term average ({{ dam.historical_avg_km2 }} km²){% endif %}</div>
+    <div class="stat-label">
+      {% if dam.baseline_source and dam.baseline_source.startswith("rolling") %}
+        {{ t.stat_of_baseline_rolling|replace("{v}", dam.effective_baseline_km2|string) }}
+      {% else %}
+        {{ t.stat_of_baseline_config|replace("{v}", dam.historical_avg_km2|string) }}
+      {% endif %}
+    </div>
   </div>
   <div class="stat">
     <div class="stat-value">{{ trend_symbol }}</div>
-    <div class="stat-label">30-day trend</div>
+    <div class="stat-label">{{ t.stat_trend_30d }}</div>
   </div>
 </section>
 
@@ -33,15 +41,15 @@
 </section>
 
 <section class="table-section">
-  <h2>Recent readings</h2>
+  <h2>{{ t.section_recent_readings }}</h2>
   <table class="readings">
     <thead>
       <tr>
-        <th>Date</th>
-        <th class="num">Surface (km²)</th>
-        <th class="num">% of avg</th>
-        <th class="num">Cloud %</th>
-        <th>Scene</th>
+        <th>{{ t.th_date }}</th>
+        <th class="num">{{ t.th_surface_km2 }}</th>
+        <th class="num">{{ t.th_pct_of_avg }}</th>
+        <th class="num">{{ t.th_cloud_pct }}</th>
+        <th>{{ t.th_scene }}</th>
       </tr>
     </thead>
     <tbody>
@@ -58,7 +66,9 @@
   </table>
 </section>
 
-<p class="muted small">Next expected reading: {{ next_run_at }}. Data source: Sentinel-2 L2A via public STAC. NDWI threshold: {{ dam.ndwi_threshold }}.</p>
+<p class="muted small">
+  {{ t.next_reading_note|replace("{date}", next_run_at)|replace("{th}", dam.ndwi_threshold|string) }}
+</p>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <script>
@@ -69,13 +79,13 @@ new Chart(document.getElementById('dam-chart'), {
     labels: series.map(p => p.date),
     datasets: [
       {
-        label: 'Surface area (km²)',
+        label: {{ t.chart_surface|tojson }},
         data: series.map(p => p.surface_area_km2),
         borderColor: '#1e6fbf', backgroundColor: 'rgba(30,111,191,0.15)',
         tension: 0.25, fill: true, spanGaps: true, pointRadius: 2
       },
       {
-        label: '{% if dam.baseline_source and dam.baseline_source.startswith("rolling") %}Rolling baseline{% else %}Long-term average{% endif %}',
+        label: {{ (t.chart_baseline_rolling if dam.baseline_source and dam.baseline_source.startswith("rolling") else t.chart_baseline_config)|tojson }},
         data: series.map(() => {{ dam.effective_baseline_km2 }}),
         borderColor: '#8a8f98', borderDash: [5, 5], fill: false, pointRadius: 0
       }

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>À propos — Tunisia Water Watch</title>
+<meta name="description" content="Suivi indépendant et satellitaire de l&#39;eau et de l&#39;agriculture en Tunisie.">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💧</text></svg>">
+</head>
+<body class="lang-fr">
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">💧 Tunisia Water Watch</a>
+    <nav>
+      <a href="index.html">Barrages</a>
+      <a href="agriculture.html">Agriculture</a>
+      <a href="about.html">À propos</a>
+      <a href="https://github.com/geminimir/water-watch" target="_blank" rel="noopener">Code source</a>
+      <a class="lang-toggle" href="../ar/about.html" onclick="try { localStorage.setItem('tww-lang', 'ar'); } catch (e) {}"
+         dir="rtl"
+         lang="ar">العربية</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+
+<section class="hero">
+  <h1>À propos de Tunisia Water Watch</h1>
+  <p>Un système indépendant de suivi de l&#39;eau et de l&#39;agriculture pour la Tunisie, basé sur des données satellitaires. Conçu pour fonctionner indéfiniment sans maintenance, sans coût et sans intervention humaine.</p>
+</section>
+
+<section>
+  <h2>Comment ça fonctionne</h2>
+  <ol>
+    
+    <li>Tous les 5 jours, un cron GitHub Actions se déclenche.</li>
+    
+    <li>Le pipeline interroge une API STAC publique pour la dernière scène Sentinel-2 peu nuageuse au-dessus de chaque zone.</li>
+    
+    <li>Seuls les pixels à l&#39;intérieur de la zone sont téléchargés (lectures COG par plages) — souvent &lt;1 Mo par barrage.</li>
+    
+    <li>Les bandes verte et proche infrarouge sont combinées en NDWI = (V − PIR) / (V + PIR).</li>
+    
+    <li>Les pixels au-dessus du seuil sont comptés comme eau ; le résultat est la surface en km².</li>
+    
+    <li>La lecture est ajoutée à data/readings.csv, et ce site statique est régénéré puis publié.</li>
+    
+  </ol>
+</section>
+
+<section>
+  <h2>Ce que ce système n&#39;est pas</h2>
+  <p>Ce n&#39;est pas une mesure volumétrique (qui exige une bathymétrie). Il ne détecte pas les fuites de canalisations enterrées, ne fournit pas d&#39;alertes crues en temps réel, et ne fait pas tourner de modèles météo. Sa valeur est la continuité : il prend des données satellitaires gratuites qui survolent la Tunisie tous les 5 jours, calcule un indice simple, publie le résultat, et accumule un historique — pour toujours, gratuitement, sans que personne ait à s&#39;impliquer.</p>
+</section>
+
+<section>
+  <h2>Licence &amp; provenance</h2>
+  <p>Sous licence MIT. Données satellitaires © ESA / Copernicus. Tuiles cartographiques © contributeurs OpenStreetMap. Code source : <a href="https://github.com/geminimir/water-watch">github.com/geminimir/water-watch</a>.</p>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Dernière mise à jour : <strong>2026-09-13 01:19 UTC</strong> · Prochaine exécution : <strong>2026-09-18</strong></p>
+    <p class="muted">Données dérivées de Sentinel-2 L2A via des API STAC publiques. La surface d&#39;eau est un indicateur du volume du réservoir, non un substitut à un relevé bathymétrique. Sous licence MIT. Sans garantie.</p>
+    <p class="small"><a href="../oracle/index.json">Oracle de données (JSON + manifeste SHA-256)</a> · <a href="../data/latest.json">latest.json</a> · <a href="../data/readings.csv">readings.csv</a></p>
+  </div>
+</footer>
+</body>
+</html>

@@ -23,7 +23,27 @@ body {
 }
 .site-header .wrap { display: flex; align-items: center; justify-content: space-between; }
 .brand { color: white; font-weight: 700; text-decoration: none; letter-spacing: 0.02em; }
-nav a { color: white; margin-left: 1rem; text-decoration: none; opacity: 0.85; font-size: 0.95rem; }
+nav a { color: white; margin-inline-start: 1rem; text-decoration: none; opacity: 0.85; font-size: 0.95rem; }
+nav a.lang-toggle {
+  padding: 0.15rem 0.6rem;
+  border: 1px solid rgba(255,255,255,0.35);
+  border-radius: 6px;
+  margin-inline-start: 1rem;
+  opacity: 0.95;
+}
+nav a.lang-toggle:hover { background: rgba(255,255,255,0.1); }
+html[dir="rtl"] body {
+  font-family: system-ui, -apple-system, "Segoe UI Arabic", "Noto Naskh Arabic", "Amiri", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+html[dir="rtl"] .stat-value,
+html[dir="rtl"] .num,
+html[dir="rtl"] table td.num,
+html[dir="rtl"] table th.num {
+  text-align: end;
+  font-variant-numeric: tabular-nums;
+}
+html[dir="rtl"] .crumbs a::before { content: ""; }
+html[dir="rtl"] .tiny { direction: ltr; text-align: right; unicode-bidi: embed; }
 nav a:hover { opacity: 1; }
 main.wrap { padding: 2rem 1rem 3rem; }
 h1 { font-size: 2rem; margin: 0 0 0.5rem; }

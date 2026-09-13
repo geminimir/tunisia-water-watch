@@ -2,23 +2,25 @@
 
 {% if is_stale %}
 <div class="banner banner-stale">
-  <strong>Pipeline is stale.</strong> Last successful reading was {{ stale_days }} days ago.
+  <strong>{{ t.banner_stale_title }}</strong>
+  {{ t.banner_stale_body|replace("{days}", stale_days|string)|replace("{threshold}", staleness_days|string) }}
+  <a href="https://github.com/{{ github_repo }}/actions">{{ t.banner_stale_link }}</a>.
 </div>
 {% endif %}
 
 <section class="hero">
-  <h1>Tunisia's croplands, watched from orbit</h1>
-  <p>Independent, satellite-derived vegetation health for {{ govs|length }} governorates. NDVI (greenness) and NDMI (canopy moisture) computed together every 5 days — a field can look green while drying out, and tracking both catches drought early.</p>
+  <h1>{{ t.agri_hero_title }}</h1>
+  <p>{{ t.agri_hero_body|replace("{n}", govs|length|string) }}</p>
 </section>
 
 <section class="stats">
-  <div class="stat drought-{{ 'red' if composite_band in ('drought', 'severe') else ('yellow' if composite_band == 'watch' else 'green') }}">
+  <div class="stat drought-{{ 'red' if composite_band in (t.band_drought, t.band_severe) else ('yellow' if composite_band == t.band_watch else 'green') }}">
     <div class="stat-value">{{ (composite_score|round(0))|int if composite_score is not none else "—" }}</div>
-    <div class="stat-label">National composite drought severity ({{ composite_band }})</div>
+    <div class="stat-label">{{ t.stat_national_composite|replace("{band}", composite_band) }}</div>
   </div>
   <div class="stat">
     <div class="stat-value">{{ govs|length }}</div>
-    <div class="stat-label">Governorates monitored</div>
+    <div class="stat-label">{{ t.stat_governorates_monitored }}</div>
   </div>
 </section>
 
@@ -27,31 +29,31 @@
 </section>
 
 <section class="table-section">
-  <h2>All governorates</h2>
+  <h2>{{ t.section_all_govs }}</h2>
   <table class="dams">
     <thead>
       <tr>
-        <th>Governorate</th>
-        <th>Region</th>
-        <th>Last reading</th>
-        <th class="num">NDVI</th>
-        <th class="num">NDMI</th>
-        <th class="num">Healthy %</th>
-        <th class="num">Severity</th>
-        <th>Band</th>
+        <th>{{ t.th_governorate }}</th>
+        <th>{{ t.th_region }}</th>
+        <th>{{ t.th_last_reading }}</th>
+        <th class="num">{{ t.th_ndvi }}</th>
+        <th class="num">{{ t.th_ndmi }}</th>
+        <th class="num">{{ t.th_healthy_pct }}</th>
+        <th class="num">{{ t.th_severity }}</th>
+        <th>{{ t.th_band }}</th>
       </tr>
     </thead>
     <tbody>
       {% for g in govs %}
       <tr>
-        <td><a href="governorate/{{ g.id }}.html">{{ g.name }}</a></td>
-        <td>{{ g.region|capitalize }}</td>
+        <td><a href="governorate/{{ g.id }}.html">{{ g.display_name }}</a></td>
+        <td>{{ g.display_region }}</td>
         <td>{{ g.last_date or "—" }}</td>
         <td class="num">{{ "%.3f"|format(g.mean_ndvi) if g.mean_ndvi is not none else "—" }}</td>
         <td class="num">{{ "%.3f"|format(g.mean_ndmi) if g.mean_ndmi is not none else "—" }}</td>
         <td class="num">{{ "%.0f"|format(g.healthy_pct) if g.healthy_pct is not none else "—" }}</td>
         <td class="num">{{ (g.severity_score|round(0))|int if g.severity_score is not none else "—" }}</td>
-        <td><span class="badge badge-band-{{ g.severity_band }}">{{ g.severity_band }}</span></td>
+        <td><span class="badge badge-band-{{ g.severity_band }}">{{ g.display_band }}</span></td>
       </tr>
       {% endfor %}
     </tbody>
@@ -70,10 +72,9 @@ for (const g of govs) {
     radius: 10, color: bandColors[g.severity_band] || '#8a8f98',
     fillColor: bandColors[g.severity_band] || '#8a8f98', fillOpacity: 0.75, weight: 1
   }).bindPopup(
-    `<strong>${g.name}</strong><br>${g.region} — ${g.focus}<br>` +
+    `<strong>${g.display_name}</strong><br>${g.display_region}<br>` +
     `NDVI: ${g.mean_ndvi == null ? '—' : g.mean_ndvi.toFixed(3)}, NDMI: ${g.mean_ndmi == null ? '—' : g.mean_ndmi.toFixed(3)}<br>` +
-    `Severity: ${g.severity_score == null ? '—' : g.severity_score.toFixed(0)} (${g.severity_band})<br>` +
-    `<a href="governorate/${g.id}.html">Details →</a>`
+    `<a href="governorate/${g.id}.html">→</a>`
   ).addTo(map);
 }
 </script>

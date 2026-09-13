@@ -1,7 +1,8 @@
 {
   "id": "gamgoum",
   "name": "Gamgoum",
-  "governorate": "B\u00e9ja",
+  "name_ar": "قمقوم",
+  "governorate": "Béja",
   "lat": 36.73,
   "lon": 9.16,
   "capacity_hm3": 5,

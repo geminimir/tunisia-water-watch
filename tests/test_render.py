@@ -54,13 +54,27 @@ class TestRender(unittest.TestCase):
                  patch.object(render, "SITE", tmp_site), \
                  patch.object(render, "LATEST_JSON", tmp_data / "latest.json"):
                 render.render_site("test/repo")
+            # Language picker at root
             self.assertTrue((tmp_site / "index.html").exists())
-            self.assertTrue((tmp_site / "dam" / "sidi-salem.html").exists())
-            self.assertTrue((tmp_site / "about.html").exists())
+            # Both language trees
+            for lang in ("fr", "ar"):
+                self.assertTrue((tmp_site / lang / "index.html").exists())
+                self.assertTrue((tmp_site / lang / "dam" / "sidi-salem.html").exists())
+                self.assertTrue((tmp_site / lang / "about.html").exists())
+                self.assertTrue((tmp_site / lang / "agriculture.html").exists())
+            # Arabic page uses RTL
+            ar_index = (tmp_site / "ar" / "index.html").read_text()
+            self.assertIn('dir="rtl"', ar_index)
+            self.assertIn('lang="ar"', ar_index)
+            # French page uses LTR
+            fr_index = (tmp_site / "fr" / "index.html").read_text()
+            self.assertIn('dir="ltr"', fr_index)
+            # latest.json still language-neutral
             latest = json.loads((tmp_data / "latest.json").read_text())
             self.assertIn("dams", latest)
             sidi = next(d for d in latest["dams"] if d["id"] == "sidi-salem")
             self.assertAlmostEqual(sidi["surface_area_km2"], 18.6, places=1)
+            self.assertEqual(sidi["name_ar"], "سيدي سالم")
 
 
 class TestBaselines(unittest.TestCase):

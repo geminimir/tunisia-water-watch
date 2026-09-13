@@ -4,6 +4,7 @@
     {
       "id": "sejnane",
       "name": "Sejnane",
+      "name_ar": "سجنان",
       "severity_score": 95.0,
       "band": "severe",
       "pct_of_avg": 10.0,
@@ -13,6 +14,7 @@
     {
       "id": "joumine",
       "name": "Joumine",
+      "name_ar": "جومين",
       "severity_score": 99.99375,
       "band": "severe",
       "pct_of_avg": 0.0125,
@@ -22,6 +24,7 @@
     {
       "id": "ghezala",
       "name": "Ghezala",
+      "name_ar": "غزالة",
       "severity_score": 95.0,
       "band": "severe",
       "pct_of_avg": 10.0,
@@ -31,6 +34,7 @@
     {
       "id": "kasseb",
       "name": "Kasseb",
+      "name_ar": "الكاسب",
       "severity_score": 99.71666666666667,
       "band": "severe",
       "pct_of_avg": 0.5666666666666668,
@@ -40,6 +44,7 @@
     {
       "id": "barbara",
       "name": "Barbara",
+      "name_ar": "بربرة",
       "severity_score": 98.925,
       "band": "severe",
       "pct_of_avg": 2.15,
@@ -49,6 +54,7 @@
     {
       "id": "mellegue",
       "name": "Mellegue (Nebeur)",
+      "name_ar": "ملاق (نبر)",
       "severity_score": 99.9625,
       "band": "severe",
       "pct_of_avg": 0.075,
@@ -58,6 +64,7 @@
     {
       "id": "sarrat",
       "name": "Sarrat",
+      "name_ar": "السراط",
       "severity_score": 99.4,
       "band": "severe",
       "pct_of_avg": 1.2,
@@ -67,6 +74,7 @@
     {
       "id": "lakhmess",
       "name": "Lakhmess",
+      "name_ar": "لخمس",
       "severity_score": 99.75,
       "band": "severe",
       "pct_of_avg": 0.5,
@@ -94,6 +102,7 @@
     {
       "id": "el-aroussia",
       "name": "El Aroussia",
+      "name_ar": "العروسية",
       "severity_score": 100.0,
       "band": "severe",
       "pct_of_avg": 0.0,
@@ -112,6 +121,7 @@
     {
       "id": "nebhana",
       "name": "Nebhana",
+      "name_ar": "نبهانة",
       "severity_score": 99.98571428571428,
       "band": "severe",
       "pct_of_avg": 0.028571428571428574,
@@ -130,6 +140,7 @@
     {
       "id": "masri",
       "name": "Masri",
+      "name_ar": "المصري",
       "severity_score": 96.33333333333333,
       "band": "severe",
       "pct_of_avg": 7.333333333333334,
@@ -139,6 +150,7 @@
     {
       "id": "abid",
       "name": "Abid",
+      "name_ar": "العابد",
       "severity_score": 100.0,
       "band": "severe",
       "pct_of_avg": 0.0,
@@ -157,6 +169,7 @@
     {
       "id": "moula",
       "name": "Moula",
+      "name_ar": "مولى",
       "severity_score": 99.92857142857143,
       "band": "severe",
       "pct_of_avg": 0.14285714285714288,
@@ -175,6 +188,7 @@
     {
       "id": "harka",
       "name": "Harka",
+      "name_ar": "الحركة",
       "severity_score": 99.92857142857143,
       "band": "severe",
       "pct_of_avg": 0.14285714285714288,
@@ -193,6 +207,7 @@
     {
       "id": "el-breck",
       "name": "El Breck",
+      "name_ar": "البريك",
       "severity_score": 98.875,
       "band": "severe",
       "pct_of_avg": 2.2499999999999996,
@@ -202,6 +217,7 @@
     {
       "id": "sidi-abdelmoumen",
       "name": "Sidi Abdelmoumen",
+      "name_ar": "سيدي عبد المؤمن",
       "severity_score": 99.83333333333333,
       "band": "severe",
       "pct_of_avg": 0.3333333333333333,
@@ -220,6 +236,7 @@
     {
       "id": "el-abid",
       "name": "El Abid Upper",
+      "name_ar": "العابد العلوي",
       "severity_score": 100.0,
       "band": "severe",
       "pct_of_avg": 0.0,
@@ -258,7 +275,8 @@
     {
       "id": "kef",
       "name": "Le Kef",
-      "severity_score": 61.63320605607772,
+      "name_ar": "الكاف",
+      "severity_score": 56.040533092104596,
       "band": "watch",
       "z_ndvi": -0.05800041955812817,
       "z_ndmi": 0.16152244800622936,

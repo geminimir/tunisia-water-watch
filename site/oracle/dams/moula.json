@@ -1,7 +1,8 @@
 {
   "id": "moula",
   "name": "Moula",
-  "governorate": "B\u00e9ja",
+  "name_ar": "مولى",
+  "governorate": "Béja",
   "lat": 36.81,
   "lon": 9.07,
   "capacity_hm3": 6,
