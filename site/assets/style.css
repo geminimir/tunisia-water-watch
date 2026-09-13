@@ -265,6 +265,11 @@ h2 {
   box-shadow: var(--shadow-sm);
   z-index: 500;
 }
+/* Turn standard OSM tiles into a subdued monochrome basemap so the coloured
+   data dots pop. Pure CSS filter — no third-party tile server, no API key. */
+.leaflet-tile-pane {
+  filter: grayscale(0.85) contrast(0.9) brightness(1.05) saturate(0.6);
+}
 .map-legend .row {
   display: flex; align-items: center; gap: 0.5rem;
   padding: 0.1rem 0;

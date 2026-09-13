@@ -103,9 +103,8 @@ const dams = {{ dams_json|safe }};
 const nationalSeries = {{ national_series_json|safe }};
 
 const map = L.map('map', { scrollWheelZoom: false, zoomControl: true }).setView([34.5, 9.6], 6);
-L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-  attribution: '© OpenStreetMap · CARTO',
-  subdomains: 'abcd', maxZoom: 12,
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '© OpenStreetMap contributors', maxZoom: 12,
 }).addTo(map);
 const statusColors = { green: '#2f7d5c', yellow: '#c98a2b', red: '#b0361c', gray: '#8a8f98' };
 const bandColors = { abundant:'#2f7d5c', normal:'#7a8a2a', watch:'#c98a2b', drought:'#b0361c', severe:'#7a2417', unknown:'#8a8f98' };
