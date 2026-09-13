@@ -168,6 +168,11 @@ def read_window(cog_href: str, bbox: list[float]) -> tuple[np.ndarray, float]:
         GDAL_HTTP_MERGE_CONSECUTIVE_RANGES="YES",
         CPL_VSIL_CURL_ALLOWED_EXTENSIONS=".tif,.tiff,.jp2",
         GDAL_DISABLE_READDIR_ON_OPEN="EMPTY_DIR",
+        # Fail fast instead of hanging forever on a stuck TCP connection.
+        GDAL_HTTP_TIMEOUT="60",
+        GDAL_HTTP_CONNECTTIMEOUT="15",
+        GDAL_HTTP_LOW_SPEED_TIME="30",
+        GDAL_HTTP_LOW_SPEED_LIMIT="1000",
     ):
         with rasterio.open(cog_href) as src:
             src_bounds = transform_bounds("EPSG:4326", src.crs, *bbox, densify_pts=21)

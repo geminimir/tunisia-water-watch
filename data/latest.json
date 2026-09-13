@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-09-13 06:01 UTC",
+  "generated_at": "2026-09-13 19:36 UTC",
   "stale_days": 0,
-  "national_drought_index": 88.11132047028335,
-  "national_composite_severity": 58.00655301215394,
+  "national_drought_index": 72.52567733721396,
+  "national_composite_severity": 61.56234769584645,
   "national_composite_band": "watch",
   "national_surface_area_km2": 61.64,
-  "national_baseline_km2": 106.4,
+  "national_baseline_km2": 123.05,
   "dams": [
     {
       "id": "sidi-salem",
@@ -19,12 +19,12 @@
       "surface_area_mndwi_km2": 17.573,
       "confidence": 0.968,
       "historical_avg_km2": 28.8,
-      "effective_baseline_km2": 15.93,
+      "effective_baseline_km2": 15.31,
       "baseline_source": "rolling-monthly",
-      "pct_of_avg": 113.93509509760842,
+      "pct_of_avg": 118.53327238294258,
       "status": "green",
-      "z_score_water": 1.2833114464746957,
-      "severity_score": 43.03245245119579,
+      "z_score_water": 0.5946679207119753,
+      "severity_score": 40.73336380852871,
       "severity_band": "normal"
     },
     {
@@ -39,12 +39,12 @@
       "surface_area_mndwi_km2": 17.841,
       "confidence": 0.996,
       "historical_avg_km2": 15.5,
-      "effective_baseline_km2": 14.39,
+      "effective_baseline_km2": 16.19,
       "baseline_source": "rolling-monthly",
-      "pct_of_avg": 124.38516048353483,
+      "pct_of_avg": 110.61411096008896,
       "status": "green",
-      "z_score_water": 1.188348911070985,
-      "severity_score": 37.807419758232584,
+      "z_score_water": 0.8777260480844608,
+      "severity_score": 44.69294451995552,
       "severity_band": "normal"
     },
     {
@@ -59,12 +59,12 @@
       "surface_area_mndwi_km2": 0.001,
       "confidence": 0.5,
       "historical_avg_km2": 3.668,
-      "effective_baseline_km2": 3.67,
-      "baseline_source": "config",
-      "pct_of_avg": 0.027262813522355506,
+      "effective_baseline_km2": 0.84,
+      "baseline_source": "rolling-monthly",
+      "pct_of_avg": 0.11883541295306004,
       "status": "red",
-      "z_score_water": -0.7531834322226393,
-      "severity_score": 99.98636859323882,
+      "z_score_water": -0.9333713962170072,
+      "severity_score": 99.94058229352348,
       "severity_band": "severe"
     },
     {
@@ -83,7 +83,7 @@
       "baseline_source": "config",
       "pct_of_avg": 0.0125,
       "status": "red",
-      "z_score_water": -0.6928183985346723,
+      "z_score_water": -0.6333577477768434,
       "severity_score": 99.99375000000002,
       "severity_band": "severe"
     },
@@ -99,12 +99,12 @@
       "surface_area_mndwi_km2": 0.175,
       "confidence": 0.786,
       "historical_avg_km2": 0.271,
-      "effective_baseline_km2": 0.16,
+      "effective_baseline_km2": 0.21,
       "baseline_source": "rolling-monthly",
-      "pct_of_avg": 137.88819875776397,
+      "pct_of_avg": 107.24637681159419,
       "status": "green",
-      "z_score_water": 1.3811716135290006,
-      "severity_score": 31.055900621118013,
+      "z_score_water": 0.7366551784613355,
+      "severity_score": 46.37681159420291,
       "severity_band": "normal"
     },
     {
@@ -119,12 +119,12 @@
       "surface_area_mndwi_km2": 0.147,
       "confidence": 0.745,
       "historical_avg_km2": 1.5,
-      "effective_baseline_km2": 0.18,
+      "effective_baseline_km2": 0.15,
       "baseline_source": "rolling-monthly",
-      "pct_of_avg": 112.25071225071225,
+      "pct_of_avg": 132.21476510067114,
       "status": "green",
-      "z_score_water": 0.7877924158954139,
-      "severity_score": 43.87464387464387,
+      "z_score_water": 1.1111914609431972,
+      "severity_score": 33.89261744966443,
       "severity_band": "normal"
     },
     {
@@ -143,7 +143,7 @@
       "baseline_source": "config",
       "pct_of_avg": 1.7,
       "status": "red",
-      "z_score_water": 0.5679250479628687,
+      "z_score_water": 0.4017754451790972,
       "severity_score": 99.15,
       "severity_band": "severe"
     },
@@ -159,12 +159,12 @@
       "surface_area_mndwi_km2": 2.799,
       "confidence": 0.994,
       "historical_avg_km2": 3.5,
-      "effective_baseline_km2": 2.24,
+      "effective_baseline_km2": 2.02,
       "baseline_source": "rolling-monthly",
-      "pct_of_avg": 124.19642857142856,
+      "pct_of_avg": 137.4505928853755,
       "status": "green",
-      "z_score_water": 1.3528683601287064,
-      "severity_score": 37.90178571428572,
+      "z_score_water": 1.1371968785941815,
+      "severity_score": 31.27470355731225,
       "severity_band": "normal"
     },
     {
@@ -179,12 +179,12 @@
       "surface_area_mndwi_km2": 4.21,
       "confidence": 0.964,
       "historical_avg_km2": 5.0,
-      "effective_baseline_km2": 2.42,
+      "effective_baseline_km2": 2.21,
       "baseline_source": "rolling-monthly",
-      "pct_of_avg": 180.7907265576485,
+      "pct_of_avg": 197.42314647377935,
       "status": "green",
-      "z_score_water": 1.6215250074180745,
-      "severity_score": 9.604636721175751,
+      "z_score_water": 2.2645874204577945,
+      "severity_score": 1.2884267631103228,
       "severity_band": "abundant"
     },
     {
@@ -203,7 +203,7 @@
       "baseline_source": "config",
       "pct_of_avg": 2.15,
       "status": "red",
-      "z_score_water": -0.11405318970243959,
+      "z_score_water": 0.32229846697091674,
       "severity_score": 98.925,
       "severity_band": "severe"
     },
@@ -223,7 +223,7 @@
       "baseline_source": "config",
       "pct_of_avg": 2.5375,
       "status": "red",
-      "z_score_water": 1.3145275681284345,
+      "z_score_water": 0.8243340411793642,
       "severity_score": 98.73125,
       "severity_band": "severe"
     },
@@ -243,7 +243,7 @@
       "baseline_source": "config",
       "pct_of_avg": 1.3,
       "status": "red",
-      "z_score_water": 0.6458294083028322,
+      "z_score_water": 0.21564360703964727,
       "severity_score": 99.35,
       "severity_band": "severe"
     },
@@ -259,13 +259,13 @@
       "surface_area_mndwi_km2": 1.201,
       "confidence": 0.922,
       "historical_avg_km2": 3.0,
-      "effective_baseline_km2": 0.25,
-      "baseline_source": "rolling-monthly",
-      "pct_of_avg": 436.22047244094495,
-      "status": "green",
-      "z_score_water": 1.6007888110688955,
-      "severity_score": 0.0,
-      "severity_band": "abundant"
+      "effective_baseline_km2": 3.0,
+      "baseline_source": "config",
+      "pct_of_avg": 36.93333333333334,
+      "status": "red",
+      "z_score_water": 1.7239802429052395,
+      "severity_score": 81.53333333333333,
+      "severity_band": "severe"
     },
     {
       "id": "lakhmess",
@@ -283,7 +283,7 @@
       "baseline_source": "config",
       "pct_of_avg": 50.0,
       "status": "yellow",
-      "z_score_water": 0.6111111111111113,
+      "z_score_water": -0.22930984721757777,
       "severity_score": 75.0,
       "severity_band": "drought"
     },
@@ -299,12 +299,12 @@
       "surface_area_mndwi_km2": 1.782,
       "confidence": 0.922,
       "historical_avg_km2": 1.5,
-      "effective_baseline_km2": 1.94,
+      "effective_baseline_km2": 2.37,
       "baseline_source": "rolling-monthly",
-      "pct_of_avg": 99.7162754707248,
+      "pct_of_avg": 81.49241146711637,
       "status": "green",
-      "z_score_water": 0.05561576288140831,
-      "severity_score": 50.141862264637595,
+      "z_score_water": -0.3008072412350525,
+      "severity_score": 59.253794266441815,
       "severity_band": "watch"
     },
     {
@@ -319,12 +319,12 @@
       "surface_area_mndwi_km2": 0.569,
       "confidence": 0.915,
       "historical_avg_km2": 4.5,
-      "effective_baseline_km2": 0.65,
+      "effective_baseline_km2": 0.7,
       "baseline_source": "rolling-monthly",
-      "pct_of_avg": 95.03437738731856,
+      "pct_of_avg": 88.85714285714286,
       "status": "green",
-      "z_score_water": 0.19374164079381867,
-      "severity_score": 52.48281130634072,
+      "z_score_water": -0.040261549058268176,
+      "severity_score": 55.57142857142857,
       "severity_band": "watch"
     },
     {
@@ -343,7 +343,7 @@
       "baseline_source": "config",
       "pct_of_avg": 2.2499999999999996,
       "status": "red",
-      "z_score_water": 0.6418674080138395,
+      "z_score_water": 0.04562572738861029,
       "severity_score": 98.875,
       "severity_band": "severe"
     },
@@ -363,7 +363,7 @@
       "baseline_source": "config",
       "pct_of_avg": 0.2833333333333334,
       "status": "red",
-      "z_score_water": -0.49007624053304294,
+      "z_score_water": -0.8176496974537373,
       "severity_score": 99.85833333333333,
       "severity_band": "severe"
     },
@@ -399,13 +399,13 @@
       "surface_area_mndwi_km2": 3.115,
       "confidence": 0.998,
       "historical_avg_km2": 10.0,
-      "effective_baseline_km2": 3.59,
+      "effective_baseline_km2": 5.24,
       "baseline_source": "rolling-monthly",
-      "pct_of_avg": 86.6424986056888,
-      "status": "green",
-      "z_score_water": -0.21027756312171003,
-      "severity_score": 56.6787506971556,
-      "severity_band": "watch"
+      "pct_of_avg": 59.32785946152378,
+      "status": "yellow",
+      "z_score_water": -0.4841129514653495,
+      "severity_score": 70.3360702692381,
+      "severity_band": "drought"
     },
     {
       "id": "chiba",
@@ -419,12 +419,12 @@
       "surface_area_mndwi_km2": 0.041,
       "confidence": 0.237,
       "historical_avg_km2": 0.7,
-      "effective_baseline_km2": 0.04,
-      "baseline_source": "rolling-monthly",
-      "pct_of_avg": 457.89473684210526,
+      "effective_baseline_km2": 0.09,
+      "baseline_source": "rolling-annual",
+      "pct_of_avg": 192.26519337016575,
       "status": "green",
-      "z_score_water": 1.7152056862821625,
-      "severity_score": 0.0,
+      "z_score_water": 2.0694385949734224,
+      "severity_score": 3.867403314917126,
       "severity_band": "abundant"
     },
     {
@@ -439,13 +439,13 @@
       "surface_area_mndwi_km2": 0.07,
       "confidence": 0.939,
       "historical_avg_km2": 0.9,
-      "effective_baseline_km2": 0.9,
-      "baseline_source": "config",
-      "pct_of_avg": 7.333333333333334,
-      "status": "red",
-      "z_score_water": 0.7323479639107047,
-      "severity_score": 96.33333333333333,
-      "severity_band": "severe"
+      "effective_baseline_km2": 0.07,
+      "baseline_source": "rolling-annual",
+      "pct_of_avg": 94.28571428571428,
+      "status": "green",
+      "z_score_water": 0.5054313906844333,
+      "severity_score": 52.85714285714286,
+      "severity_band": "watch"
     },
     {
       "id": "lebna",
@@ -459,11 +459,11 @@
       "surface_area_mndwi_km2": 5.216,
       "confidence": 0.986,
       "historical_avg_km2": 3.0,
-      "effective_baseline_km2": 1.39,
+      "effective_baseline_km2": 2.09,
       "baseline_source": "rolling-monthly",
-      "pct_of_avg": 369.6730147323033,
+      "pct_of_avg": 246.242221158449,
       "status": "green",
-      "z_score_water": 1.6982538221492756,
+      "z_score_water": 1.3648681527041475,
       "severity_score": 0.0,
       "severity_band": "abundant"
     },
@@ -499,11 +499,11 @@
       "surface_area_mndwi_km2": 0.518,
       "confidence": 0.795,
       "historical_avg_km2": 1.5,
-      "effective_baseline_km2": 0.3,
+      "effective_baseline_km2": 0.32,
       "baseline_source": "rolling-monthly",
-      "pct_of_avg": 218.45637583892622,
+      "pct_of_avg": 206.66666666666669,
       "status": "green",
-      "z_score_water": 3.6880686751380662,
+      "z_score_water": 1.2053375612492079,
       "severity_score": 0.0,
       "severity_band": "abundant"
     },
@@ -519,12 +519,12 @@
       "surface_area_mndwi_km2": 2.916,
       "confidence": 0.915,
       "historical_avg_km2": 0.9,
-      "effective_baseline_km2": 2.71,
+      "effective_baseline_km2": 2.52,
       "baseline_source": "rolling-monthly",
-      "pct_of_avg": 117.47787610619471,
+      "pct_of_avg": 126.67992047713717,
       "status": "green",
-      "z_score_water": 1.026851901732593,
-      "severity_score": 41.26106194690264,
+      "z_score_water": 1.2706900824301264,
+      "severity_score": 36.66003976143141,
       "severity_band": "normal"
     },
     {
@@ -539,13 +539,13 @@
       "surface_area_mndwi_km2": 0.138,
       "confidence": 0.569,
       "historical_avg_km2": 0.6,
-      "effective_baseline_km2": 0.06,
+      "effective_baseline_km2": 0.04,
       "baseline_source": "rolling-monthly",
-      "pct_of_avg": 137.3913043478261,
+      "pct_of_avg": 192.6829268292683,
       "status": "green",
-      "z_score_water": 1.1303910132315986,
-      "severity_score": 31.30434782608695,
-      "severity_band": "normal"
+      "z_score_water": 1.5955759876987516,
+      "severity_score": 3.6585365853658516,
+      "severity_band": "abundant"
     },
     {
       "id": "moula",
@@ -559,13 +559,13 @@
       "surface_area_mndwi_km2": 0.097,
       "confidence": 0.85,
       "historical_avg_km2": 0.7,
-      "effective_baseline_km2": 0.7,
-      "baseline_source": "config",
-      "pct_of_avg": 16.42857142857143,
-      "status": "red",
-      "z_score_water": 8.078966946503014,
-      "severity_score": 91.78571428571428,
-      "severity_band": "severe"
+      "effective_baseline_km2": 0.05,
+      "baseline_source": "rolling-monthly",
+      "pct_of_avg": 227.72277227722773,
+      "status": "green",
+      "z_score_water": 1.3564686561093904,
+      "severity_score": 0.0,
+      "severity_band": "abundant"
     },
     {
       "id": "melah",
@@ -579,12 +579,12 @@
       "surface_area_mndwi_km2": 1.21,
       "confidence": 0.961,
       "historical_avg_km2": 0.8,
-      "effective_baseline_km2": 15.53,
+      "effective_baseline_km2": 29.55,
       "baseline_source": "rolling-monthly",
-      "pct_of_avg": 7.491143317230273,
+      "pct_of_avg": 3.935569016276945,
       "status": "red",
-      "z_score_water": -1.0592719263861878,
-      "severity_score": 96.25442834138487,
+      "z_score_water": -1.7312124397872177,
+      "severity_score": 98.03221549186152,
       "severity_band": "severe"
     },
     {
@@ -603,7 +603,7 @@
       "baseline_source": "config",
       "pct_of_avg": 0.8571428571428572,
       "status": "red",
-      "z_score_water": 0.1290994448735807,
+      "z_score_water": 0.22497308832511878,
       "severity_score": 99.57142857142858,
       "severity_band": "severe"
     },
@@ -619,13 +619,13 @@
       "surface_area_mndwi_km2": 0.036,
       "confidence": 0.377,
       "historical_avg_km2": 0.9,
-      "effective_baseline_km2": 0.07,
-      "baseline_source": "rolling-monthly",
-      "pct_of_avg": 136.69064748201438,
-      "status": "green",
-      "z_score_water": 1.1012343123913395,
-      "severity_score": 31.654676258992804,
-      "severity_band": "normal"
+      "effective_baseline_km2": 0.9,
+      "baseline_source": "config",
+      "pct_of_avg": 10.555555555555555,
+      "status": "red",
+      "z_score_water": 1.8160926818015677,
+      "severity_score": 94.72222222222224,
+      "severity_band": "severe"
     },
     {
       "id": "kebir",
@@ -639,13 +639,13 @@
       "surface_area_mndwi_km2": 0.144,
       "confidence": 0.948,
       "historical_avg_km2": 0.9,
-      "effective_baseline_km2": 0.24,
-      "baseline_source": "rolling-annual",
-      "pct_of_avg": 57.08333333333334,
-      "status": "yellow",
-      "z_score_water": 1.710732653753407,
-      "severity_score": 71.45833333333333,
-      "severity_band": "drought"
+      "effective_baseline_km2": 0.12,
+      "baseline_source": "rolling-monthly",
+      "pct_of_avg": 117.09401709401709,
+      "status": "green",
+      "z_score_water": -0.1597862785170017,
+      "severity_score": 41.452991452991455,
+      "severity_band": "normal"
     },
     {
       "id": "douimis",
@@ -659,11 +659,11 @@
       "surface_area_mndwi_km2": null,
       "confidence": null,
       "historical_avg_km2": 0.5,
-      "effective_baseline_km2": 19.61,
+      "effective_baseline_km2": 19.13,
       "baseline_source": "rolling-monthly",
       "pct_of_avg": null,
       "status": "gray",
-      "z_score_water": 0.5120049250275132,
+      "z_score_water": 0.4633935002827112,
       "severity_score": null,
       "severity_band": "unknown"
     },
@@ -683,7 +683,7 @@
       "baseline_source": "config",
       "pct_of_avg": 2.2499999999999996,
       "status": "red",
-      "z_score_water": 0.35506342941861213,
+      "z_score_water": 0.7569684641750579,
       "severity_score": 98.875,
       "severity_band": "severe"
     },
@@ -703,7 +703,7 @@
       "baseline_source": "config",
       "pct_of_avg": 0.3333333333333333,
       "status": "red",
-      "z_score_water": 1.687322975464215,
+      "z_score_water": -0.4928880046477904,
       "severity_score": 99.83333333333333,
       "severity_band": "severe"
     },
@@ -719,12 +719,12 @@
       "surface_area_mndwi_km2": 0.212,
       "confidence": 0.056,
       "historical_avg_km2": 0.6,
-      "effective_baseline_km2": 0.04,
+      "effective_baseline_km2": 0.06,
       "baseline_source": "rolling-annual",
-      "pct_of_avg": 33.333333333333336,
+      "pct_of_avg": 19.047619047619047,
       "status": "red",
-      "z_score_water": -0.10170952554312153,
-      "severity_score": 83.33333333333333,
+      "z_score_water": -0.6794227359075382,
+      "severity_score": 90.47619047619048,
       "severity_band": "severe"
     },
     {
@@ -743,7 +743,7 @@
       "baseline_source": "config",
       "pct_of_avg": 0.0,
       "status": "red",
-      "z_score_water": -0.8942122963847935,
+      "z_score_water": -0.8571086290421802,
       "severity_score": 100.0,
       "severity_band": "severe"
     }
@@ -761,11 +761,11 @@
       "mean_ndmi": -0.0752,
       "healthy_pct": 5.87,
       "confidence": 1.0,
-      "z_ndvi": 0.09408762401495746,
-      "z_ndmi": 0.6552951737239353,
+      "z_ndvi": -0.059199901493743094,
+      "z_ndmi": -0.3933019919478867,
       "regional_water_pct": null,
-      "severity_score": 46.193244310552195,
-      "severity_band": "normal"
+      "severity_score": 52.30610231767558,
+      "severity_band": "watch"
     },
     {
       "id": "ariana",
@@ -779,11 +779,11 @@
       "mean_ndmi": null,
       "healthy_pct": null,
       "confidence": null,
-      "z_ndvi": null,
-      "z_ndmi": null,
+      "z_ndvi": 0.4398145524313596,
+      "z_ndmi": 0.33804376479441806,
       "regional_water_pct": null,
-      "severity_score": null,
-      "severity_band": "unknown"
+      "severity_score": 44.97936866165617,
+      "severity_band": "normal"
     },
     {
       "id": "ben-arous",
@@ -797,10 +797,10 @@
       "mean_ndmi": -0.1284,
       "healthy_pct": 5.32,
       "confidence": 1.0,
-      "z_ndvi": -0.8580167390161542,
-      "z_ndmi": -0.2058970128542522,
+      "z_ndvi": -0.7515706292992312,
+      "z_ndmi": -1.1735944402827305,
       "regional_water_pct": null,
-      "severity_score": 57.668398021318005,
+      "severity_score": 61.37286948022554,
       "severity_band": "watch"
     },
     {
@@ -815,11 +815,11 @@
       "mean_ndmi": -0.1362,
       "healthy_pct": 3.95,
       "confidence": 1.0,
-      "z_ndvi": 0.7143301178788952,
-      "z_ndmi": 1.0818894346309043,
+      "z_ndvi": -0.13100031942649967,
+      "z_ndmi": 0.17842591378753575,
       "regional_water_pct": null,
-      "severity_score": 39.34793922923877,
-      "severity_band": "normal"
+      "severity_score": 50.18706852464046,
+      "severity_band": "watch"
     },
     {
       "id": "nabeul",
@@ -833,10 +833,10 @@
       "mean_ndmi": -0.0814,
       "healthy_pct": 18.32,
       "confidence": 0.954,
-      "z_ndvi": 0.6510105170483598,
-      "z_ndmi": 0.85944488126236,
-      "regional_water_pct": 217.0586045602688,
-      "severity_score": 30.797163175466903,
+      "z_ndvi": -0.24302857184197654,
+      "z_ndmi": 0.09825513674415982,
+      "regional_water_pct": 137.96018696548703,
+      "severity_score": 46.400046128325776,
       "severity_band": "normal"
     },
     {
@@ -851,10 +851,10 @@
       "mean_ndmi": -0.1275,
       "healthy_pct": 10.03,
       "confidence": 1.0,
-      "z_ndvi": 0.284517606941494,
-      "z_ndmi": 0.6623220840684519,
-      "regional_water_pct": 65.66688428601445,
-      "severity_score": 50.028282481530624,
+      "z_ndvi": 0.09271469787676319,
+      "z_ndmi": 0.1422893126321656,
+      "regional_water_pct": 57.533184774753074,
+      "severity_score": 53.995523922909975,
       "severity_band": "watch"
     },
     {
@@ -869,10 +869,10 @@
       "mean_ndmi": -0.1171,
       "healthy_pct": 2.58,
       "confidence": 0.551,
-      "z_ndvi": -1.2512783866257489,
-      "z_ndmi": 1.4716574734672514,
-      "regional_water_pct": 54.13602117948747,
-      "severity_score": 60.13502466988243,
+      "z_ndvi": -1.2465334865171596,
+      "z_ndmi": 1.6678951332155425,
+      "regional_water_pct": 61.01989084622406,
+      "severity_score": 58.27877101825253,
       "severity_band": "watch"
     },
     {
@@ -887,10 +887,10 @@
       "mean_ndmi": -0.0825,
       "healthy_pct": 12.03,
       "confidence": 1.0,
-      "z_ndvi": 0.8708292954440467,
-      "z_ndmi": 2.119095932630962,
-      "regional_water_pct": 66.01502189292346,
-      "severity_score": 41.29412325666015,
+      "z_ndvi": 0.8105435490950694,
+      "z_ndmi": 2.4093999149597964,
+      "regional_water_pct": 108.9171804082546,
+      "severity_score": 35.50876722478548,
       "severity_band": "normal"
     },
     {
@@ -905,10 +905,10 @@
       "mean_ndmi": -0.0719,
       "healthy_pct": 18.61,
       "confidence": 1.0,
-      "z_ndvi": null,
-      "z_ndmi": null,
-      "regional_water_pct": 110.95695065277286,
-      "severity_score": 44.52152467361357,
+      "z_ndvi": 0.6538544076816988,
+      "z_ndmi": 1.373634699272524,
+      "regional_water_pct": 86.89482372867761,
+      "severity_score": 42.762311298697824,
       "severity_band": "normal"
     },
     {
@@ -923,10 +923,10 @@
       "mean_ndmi": -0.1394,
       "healthy_pct": 1.26,
       "confidence": 1.0,
-      "z_ndvi": -0.05800041955812817,
-      "z_ndmi": 0.16152244800622936,
-      "regional_water_pct": 55.57346895973156,
-      "severity_score": 55.057247449760474,
+      "z_ndvi": -0.3150657090796787,
+      "z_ndmi": 0.34231280081603077,
+      "regional_water_pct": 52.62604166666667,
+      "severity_score": 56.29260235271861,
       "severity_band": "watch"
     },
     {
@@ -941,11 +941,11 @@
       "mean_ndmi": -0.1651,
       "healthy_pct": 1.77,
       "confidence": 0.997,
-      "z_ndvi": 0.19618616611706166,
-      "z_ndmi": -0.7914306400573348,
-      "regional_water_pct": 243.11023622047247,
-      "severity_score": 39.72554052872987,
-      "severity_band": "normal"
+      "z_ndvi": -0.41953241085122556,
+      "z_ndmi": -0.7236629861686975,
+      "regional_water_pct": 43.46666666666667,
+      "severity_score": 61.82366646747001,
+      "severity_band": "watch"
     },
     {
       "id": "sousse",
@@ -959,11 +959,11 @@
       "mean_ndmi": -0.1474,
       "healthy_pct": 1.1,
       "confidence": 0.999,
-      "z_ndvi": 0.136181882433161,
-      "z_ndmi": 0.19936892545521576,
+      "z_ndvi": -0.5944398855291785,
+      "z_ndmi": -0.5834063468564497,
       "regional_water_pct": 0.028571428571428574,
-      "severity_score": 60.38815965116272,
-      "severity_band": "watch"
+      "severity_score": 67.531022334743,
+      "severity_band": "drought"
     },
     {
       "id": "monastir",
@@ -977,10 +977,10 @@
       "mean_ndmi": -0.1265,
       "healthy_pct": 1.37,
       "confidence": 1.0,
-      "z_ndvi": -0.27608055426079053,
-      "z_ndmi": -0.12175409832491628,
+      "z_ndvi": -0.6843097641102964,
+      "z_ndmi": -0.6570788316810838,
       "regional_water_pct": null,
-      "severity_score": 52.727601666060465,
+      "severity_score": 58.42622705561677,
       "severity_band": "watch"
     },
     {
@@ -995,10 +995,10 @@
       "mean_ndmi": -0.1524,
       "healthy_pct": 0.2,
       "confidence": 0.998,
-      "z_ndvi": -0.5980884257552348,
-      "z_ndmi": -0.26613578011862776,
+      "z_ndvi": -0.8557611934442786,
+      "z_ndmi": -0.5433885644747286,
       "regional_water_pct": null,
-      "severity_score": 55.92007729551884,
+      "severity_score": 59.23276821975871,
       "severity_band": "watch"
     },
     {
@@ -1013,10 +1013,10 @@
       "mean_ndmi": -0.1471,
       "healthy_pct": 0.26,
       "confidence": 0.802,
-      "z_ndvi": -0.6895255938356861,
-      "z_ndmi": -0.35448992660135303,
+      "z_ndvi": -0.9679864039015573,
+      "z_ndmi": -0.7333694754824265,
       "regional_water_pct": null,
-      "severity_score": 57.04859023278514,
+      "severity_score": 61.00006319680478,
       "severity_band": "watch"
     },
     {
@@ -1031,11 +1031,11 @@
       "mean_ndmi": -0.1326,
       "healthy_pct": 6.23,
       "confidence": 0.998,
-      "z_ndvi": 1.3211043000420317,
-      "z_ndmi": 1.3786215293202653,
-      "regional_water_pct": 29.086388424118486,
-      "severity_score": 45.673714519259754,
-      "severity_band": "normal"
+      "z_ndvi": -0.10486132002569933,
+      "z_ndmi": -0.33076710589126757,
+      "regional_water_pct": 19.981508709396817,
+      "severity_score": 61.345173396398096,
+      "severity_band": "watch"
     },
     {
       "id": "kasserine",
@@ -1049,11 +1049,11 @@
       "mean_ndmi": -0.1418,
       "healthy_pct": 2.24,
       "confidence": 0.978,
-      "z_ndvi": 0.05458715371668454,
-      "z_ndmi": -0.03948025981888824,
+      "z_ndvi": -0.46974207659238154,
+      "z_ndmi": -0.48221454832887706,
       "regional_water_pct": 0.0,
-      "severity_score": 61.92476741165492,
-      "severity_band": "watch"
+      "severity_score": 66.60191815107234,
+      "severity_band": "drought"
     },
     {
       "id": "sidi-bouzid",
@@ -1067,10 +1067,10 @@
       "mean_ndmi": -0.1351,
       "healthy_pct": 3.19,
       "confidence": 0.91,
-      "z_ndvi": -1.1460029680999488,
-      "z_ndmi": -1.0678816148058845,
+      "z_ndvi": -0.8014118803518456,
+      "z_ndmi": -0.7303821478202427,
       "regional_water_pct": null,
-      "severity_score": 63.95884325768345,
+      "severity_score": 59.68469663315618,
       "severity_band": "watch"
     },
     {
@@ -1085,11 +1085,11 @@
       "mean_ndmi": -0.1134,
       "healthy_pct": 2.06,
       "confidence": 0.9,
-      "z_ndvi": null,
-      "z_ndmi": null,
+      "z_ndvi": -1.4266199545948153,
+      "z_ndmi": -1.1521056235206517,
       "regional_water_pct": null,
-      "severity_score": null,
-      "severity_band": "unknown"
+      "severity_score": 66.54596350552505,
+      "severity_band": "drought"
     },
     {
       "id": "medenine",
@@ -1103,10 +1103,10 @@
       "mean_ndmi": -0.1398,
       "healthy_pct": 0.07,
       "confidence": 1.0,
-      "z_ndvi": -0.37564619770651675,
-      "z_ndmi": -0.21854084396623466,
+      "z_ndvi": -0.9263273414749958,
+      "z_ndmi": 0.3380291331489083,
       "regional_water_pct": null,
-      "severity_score": 53.95914612567388,
+      "severity_score": 55.652420793637894,
       "severity_band": "watch"
     },
     {
@@ -1121,10 +1121,10 @@
       "mean_ndmi": -0.1362,
       "healthy_pct": 0.0,
       "confidence": 0.974,
-      "z_ndvi": 0.14756356347937183,
-      "z_ndmi": -0.30088352126505846,
+      "z_ndvi": -0.42447347337666386,
+      "z_ndmi": -0.35111782090937205,
       "regional_water_pct": null,
-      "severity_score": 50.25755116624737,
+      "severity_score": 54.96206379626787,
       "severity_band": "watch"
     },
     {
@@ -1139,11 +1139,11 @@
       "mean_ndmi": -0.1243,
       "healthy_pct": 0.24,
       "confidence": 1.0,
-      "z_ndvi": -1.2211989359413347,
-      "z_ndmi": -0.48530065510530274,
+      "z_ndvi": -3.1360534191717706,
+      "z_ndmi": -0.03684118388060652,
       "regional_water_pct": null,
-      "severity_score": 61.81546350784778,
-      "severity_band": "watch"
+      "severity_score": 74.6731103867198,
+      "severity_band": "drought"
     },
     {
       "id": "tozeur",
@@ -1157,10 +1157,10 @@
       "mean_ndmi": -0.081,
       "healthy_pct": 4.29,
       "confidence": 0.998,
-      "z_ndvi": -0.6178117672427864,
-      "z_ndmi": -1.9688175941086596,
+      "z_ndvi": -0.9829143680308383,
+      "z_ndmi": -1.0187347811361114,
       "regional_water_pct": null,
-      "severity_score": 64.0554869039686,
+      "severity_score": 62.454337786816446,
       "severity_band": "watch"
     },
     {
@@ -1175,10 +1175,10 @@
       "mean_ndmi": -0.0811,
       "healthy_pct": 1.06,
       "confidence": 0.704,
-      "z_ndvi": -0.585592262814099,
-      "z_ndmi": -0.5553440519448097,
+      "z_ndvi": -0.9192692878963362,
+      "z_ndmi": -0.19769747390328346,
       "regional_water_pct": null,
-      "severity_score": 57.178114796726454,
+      "severity_score": 58.108498220611764,
       "severity_band": "watch"
     }
   ]

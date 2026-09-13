@@ -1,6 +1,238 @@
 {
-  "generated_at": "2026-09-13 06:01 UTC",
+  "generated_at": "2026-09-13 19:36 UTC",
   "national": {
+    "2017-03": {
+      "total_area_km2": 75.25,
+      "dam_readings": 28
+    },
+    "2017-04": {
+      "total_area_km2": 135.12,
+      "dam_readings": 37
+    },
+    "2017-05": {
+      "total_area_km2": 103.0,
+      "dam_readings": 37
+    },
+    "2017-06": {
+      "total_area_km2": 85.42,
+      "dam_readings": 37
+    },
+    "2017-07": {
+      "total_area_km2": 97.39,
+      "dam_readings": 37
+    },
+    "2017-08": {
+      "total_area_km2": 102.23,
+      "dam_readings": 37
+    },
+    "2017-09": {
+      "total_area_km2": 99.77,
+      "dam_readings": 37
+    },
+    "2017-10": {
+      "total_area_km2": 100.29,
+      "dam_readings": 37
+    },
+    "2017-11": {
+      "total_area_km2": 72.07,
+      "dam_readings": 37
+    },
+    "2017-12": {
+      "total_area_km2": 102.78,
+      "dam_readings": 37
+    },
+    "2018-01": {
+      "total_area_km2": 42.88,
+      "dam_readings": 28
+    },
+    "2018-02": {
+      "total_area_km2": 105.7,
+      "dam_readings": 33
+    },
+    "2018-03": {
+      "total_area_km2": 120.49,
+      "dam_readings": 33
+    },
+    "2018-04": {
+      "total_area_km2": 125.82,
+      "dam_readings": 37
+    },
+    "2018-05": {
+      "total_area_km2": 114.66,
+      "dam_readings": 37
+    },
+    "2018-06": {
+      "total_area_km2": 91.84,
+      "dam_readings": 37
+    },
+    "2018-07": {
+      "total_area_km2": 99.6,
+      "dam_readings": 37
+    },
+    "2018-08": {
+      "total_area_km2": 116.06,
+      "dam_readings": 37
+    },
+    "2018-09": {
+      "total_area_km2": 111.21,
+      "dam_readings": 36
+    },
+    "2018-10": {
+      "total_area_km2": 122.7,
+      "dam_readings": 36
+    },
+    "2018-11": {
+      "total_area_km2": 131.79,
+      "dam_readings": 37
+    },
+    "2018-12": {
+      "total_area_km2": 77.3,
+      "dam_readings": 35
+    },
+    "2019-01": {
+      "total_area_km2": 105.86,
+      "dam_readings": 35
+    },
+    "2019-02": {
+      "total_area_km2": 98.3,
+      "dam_readings": 33
+    },
+    "2019-03": {
+      "total_area_km2": 152.31,
+      "dam_readings": 37
+    },
+    "2019-04": {
+      "total_area_km2": 118.1,
+      "dam_readings": 37
+    },
+    "2019-05": {
+      "total_area_km2": 91.36,
+      "dam_readings": 30
+    },
+    "2019-06": {
+      "total_area_km2": 118.17,
+      "dam_readings": 37
+    },
+    "2019-07": {
+      "total_area_km2": 120.7,
+      "dam_readings": 37
+    },
+    "2019-08": {
+      "total_area_km2": 129.26,
+      "dam_readings": 37
+    },
+    "2019-09": {
+      "total_area_km2": 127.4,
+      "dam_readings": 36
+    },
+    "2019-10": {
+      "total_area_km2": 130.98,
+      "dam_readings": 37
+    },
+    "2019-11": {
+      "total_area_km2": 119.53,
+      "dam_readings": 37
+    },
+    "2019-12": {
+      "total_area_km2": 105.41,
+      "dam_readings": 37
+    },
+    "2020-01": {
+      "total_area_km2": 133.74,
+      "dam_readings": 37
+    },
+    "2020-02": {
+      "total_area_km2": 110.66,
+      "dam_readings": 37
+    },
+    "2020-03": {
+      "total_area_km2": 70.07,
+      "dam_readings": 24
+    },
+    "2020-04": {
+      "total_area_km2": 139.69,
+      "dam_readings": 37
+    },
+    "2020-05": {
+      "total_area_km2": 111.99,
+      "dam_readings": 36
+    },
+    "2020-06": {
+      "total_area_km2": 117.17,
+      "dam_readings": 37
+    },
+    "2020-07": {
+      "total_area_km2": 97.25,
+      "dam_readings": 37
+    },
+    "2020-08": {
+      "total_area_km2": 63.11,
+      "dam_readings": 37
+    },
+    "2020-09": {
+      "total_area_km2": 99.02,
+      "dam_readings": 37
+    },
+    "2020-10": {
+      "total_area_km2": 96.45,
+      "dam_readings": 37
+    },
+    "2020-11": {
+      "total_area_km2": 95.99,
+      "dam_readings": 37
+    },
+    "2020-12": {
+      "total_area_km2": 119.6,
+      "dam_readings": 37
+    },
+    "2021-01": {
+      "total_area_km2": 116.54,
+      "dam_readings": 37
+    },
+    "2021-02": {
+      "total_area_km2": 124.35,
+      "dam_readings": 37
+    },
+    "2021-03": {
+      "total_area_km2": 85.86,
+      "dam_readings": 36
+    },
+    "2021-04": {
+      "total_area_km2": 106.92,
+      "dam_readings": 37
+    },
+    "2021-05": {
+      "total_area_km2": 108.91,
+      "dam_readings": 37
+    },
+    "2021-06": {
+      "total_area_km2": 99.49,
+      "dam_readings": 37
+    },
+    "2021-07": {
+      "total_area_km2": 90.12,
+      "dam_readings": 37
+    },
+    "2021-08": {
+      "total_area_km2": 106.36,
+      "dam_readings": 37
+    },
+    "2021-09": {
+      "total_area_km2": 65.18,
+      "dam_readings": 37
+    },
+    "2021-10": {
+      "total_area_km2": 98.86,
+      "dam_readings": 37
+    },
+    "2021-11": {
+      "total_area_km2": 104.86,
+      "dam_readings": 37
+    },
+    "2021-12": {
+      "total_area_km2": 118.07,
+      "dam_readings": 35
+    },
     "2022-01": {
       "total_area_km2": 105.85,
       "dam_readings": 37
