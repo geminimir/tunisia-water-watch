@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-09-13 01:21 UTC",
+  "generated_at": "2026-09-13 03:19 UTC",
   "dams": [
     {
       "id": "sejnane",
       "name": "Sejnane",
       "name_ar": "سجنان",
-      "severity_score": 95.0,
+      "severity_score": 80.75245365321702,
       "band": "severe",
-      "pct_of_avg": 10.0,
-      "z_score_water": -0.6702436410211757,
-      "date": "2026-09-13"
+      "pct_of_avg": 38.49509269356597,
+      "z_score_water": 2823.4999999999995,
+      "date": "2026-08-17"
     },
     {
       "id": "joumine",
@@ -18,28 +18,18 @@
       "severity_score": 99.99375,
       "band": "severe",
       "pct_of_avg": 0.0125,
-      "z_score_water": -0.602237974882263,
-      "date": "2026-09-13"
-    },
-    {
-      "id": "ghezala",
-      "name": "Ghezala",
-      "name_ar": "غزالة",
-      "severity_score": 95.0,
-      "band": "severe",
-      "pct_of_avg": 10.0,
-      "z_score_water": -0.8194526164907736,
-      "date": "2026-09-13"
+      "z_score_water": -1.5,
+      "date": "2026-08-20"
     },
     {
       "id": "kasseb",
       "name": "Kasseb",
       "name_ar": "الكاسب",
-      "severity_score": 99.71666666666667,
+      "severity_score": 99.06666666666666,
       "band": "severe",
-      "pct_of_avg": 0.5666666666666668,
-      "z_score_water": 1.704025734460517,
-      "date": "2026-09-13"
+      "pct_of_avg": 1.866666666666667,
+      "z_score_water": 0.6661401356129093,
+      "date": "2026-08-20"
     },
     {
       "id": "barbara",
@@ -55,31 +45,31 @@
       "id": "mellegue",
       "name": "Mellegue (Nebeur)",
       "name_ar": "ملاق (نبر)",
-      "severity_score": 99.9625,
+      "severity_score": 98.89375,
       "band": "severe",
-      "pct_of_avg": 0.075,
-      "z_score_water": 0.6708203932499367,
-      "date": "2026-09-13"
+      "pct_of_avg": 2.2125,
+      "z_score_water": -3.5906624935876588,
+      "date": "2026-08-20"
     },
     {
       "id": "sarrat",
       "name": "Sarrat",
       "name_ar": "السراط",
-      "severity_score": 99.4,
+      "severity_score": 99.375,
       "band": "severe",
-      "pct_of_avg": 1.2,
-      "z_score_water": -0.46367690032729647,
-      "date": "2026-09-13"
+      "pct_of_avg": 1.25,
+      "z_score_water": -0.2207633622090921,
+      "date": "2026-08-20"
     },
     {
       "id": "lakhmess",
       "name": "Lakhmess",
       "name_ar": "لخمس",
-      "severity_score": 99.75,
-      "band": "severe",
-      "pct_of_avg": 0.5,
-      "z_score_water": 0.5383496626556361,
-      "date": "2026-09-13"
+      "severity_score": 70.0,
+      "band": "drought",
+      "pct_of_avg": 60.0,
+      "z_score_water": 0.30000000000000004,
+      "date": "2026-08-20"
     },
     {
       "id": "rmil",
@@ -105,31 +95,31 @@
       "id": "el-aroussia",
       "name": "El Aroussia",
       "name_ar": "العروسية",
-      "severity_score": 100.0,
+      "severity_score": 98.375,
       "band": "severe",
-      "pct_of_avg": 0.0,
-      "z_score_water": -0.4472135954999579,
-      "date": "2026-09-13"
+      "pct_of_avg": 3.25,
+      "z_score_water": 1.2375429709880854,
+      "date": "2026-08-20"
     },
     {
       "id": "el-houareb",
       "name": "El Houareb",
       "name_ar": "الهوارب",
-      "severity_score": 99.85000000000001,
+      "severity_score": 99.83333333333333,
       "band": "severe",
-      "pct_of_avg": 0.3,
-      "z_score_water": -0.43818394283274753,
-      "date": "2026-09-13"
+      "pct_of_avg": 0.3333333333333333,
+      "z_score_water": -0.8365174938138297,
+      "date": "2026-08-20"
     },
     {
       "id": "nebhana",
       "name": "Nebhana",
       "name_ar": "نبهانة",
-      "severity_score": 99.98571428571428,
+      "severity_score": 99.97142857142858,
       "band": "severe",
-      "pct_of_avg": 0.028571428571428574,
-      "z_score_water": 0.44721359549995787,
-      "date": "2026-09-13"
+      "pct_of_avg": 0.05714285714285715,
+      "z_score_water": -0.6799476208674369,
+      "date": "2026-08-30"
     },
     {
       "id": "sidi-saad",
@@ -158,28 +148,18 @@
       "severity_score": 100.0,
       "band": "severe",
       "pct_of_avg": 0.0,
-      "z_score_water": 0.0,
-      "date": "2026-09-13"
-    },
-    {
-      "id": "tessa",
-      "name": "Tessa",
-      "name_ar": "التساء",
-      "severity_score": 99.96666666666668,
-      "band": "severe",
-      "pct_of_avg": 0.06666666666666667,
-      "z_score_water": 0.0,
-      "date": "2026-09-13"
+      "z_score_water": -0.5,
+      "date": "2026-08-20"
     },
     {
       "id": "moula",
       "name": "Moula",
       "name_ar": "مولى",
-      "severity_score": 99.92857142857143,
+      "severity_score": 91.5,
       "band": "severe",
-      "pct_of_avg": 0.14285714285714288,
-      "z_score_water": 0.7302967433402214,
-      "date": "2026-09-13"
+      "pct_of_avg": 17.0,
+      "z_score_water": 7.884219653220596,
+      "date": "2026-08-20"
     },
     {
       "id": "melah",
@@ -195,11 +175,11 @@
       "id": "harka",
       "name": "Harka",
       "name_ar": "الحركة",
-      "severity_score": 99.92857142857143,
+      "severity_score": 99.57142857142857,
       "band": "severe",
-      "pct_of_avg": 0.14285714285714288,
-      "z_score_water": -0.7844645405527361,
-      "date": "2026-09-13"
+      "pct_of_avg": 0.8571428571428572,
+      "z_score_water": -0.1212678125181666,
+      "date": "2026-08-20"
     },
     {
       "id": "kebir",
@@ -277,7 +257,7 @@
       "id": "bizerte",
       "name": "Bizerte",
       "name_ar": "بنزرت",
-      "severity_score": 62.81827568513584,
+      "severity_score": 59.29211559582824,
       "band": "watch",
       "z_ndvi": -1.2512783866257489,
       "z_ndmi": 1.4716574734672514,
@@ -287,7 +267,7 @@
       "id": "kef",
       "name": "Le Kef",
       "name_ar": "الكاف",
-      "severity_score": 61.63320605607772,
+      "severity_score": 55.53320754260819,
       "band": "watch",
       "z_ndvi": -0.05800041955812817,
       "z_ndmi": 0.16152244800622936,
@@ -297,7 +277,7 @@
       "id": "sousse",
       "name": "Sousse",
       "name_ar": "سوسة",
-      "severity_score": 60.38815965116272,
+      "severity_score": 60.38475569712971,
       "band": "watch",
       "z_ndvi": 0.136181882433161,
       "z_ndmi": 0.19936892545521576,
