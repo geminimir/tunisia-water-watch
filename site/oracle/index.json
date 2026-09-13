@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "description": "Tunisia Water Watch verifiable data oracle. Every listed endpoint's SHA-256 is in manifest.json. Downstream consumers (parametric insurance, development banks, researchers) can hash the file they receive and compare to the manifest to detect tampering.",
-  "generated_at": "2026-09-13 01:03 UTC",
+  "generated_at": "2026-09-13 01:09 UTC",
   "endpoints": {
     "latest": "latest.json",
     "anomalies": "anomalies.json",
@@ -13,11 +13,11 @@
   "counts": {
     "dams": 37,
     "governorates": 24,
-    "dam_readings": 2091,
-    "governorate_readings": 1337
+    "dam_readings": 2128,
+    "governorate_readings": 1361
   },
   "coverage": {
-    "dam_history_span_days": 1711,
-    "governorate_history_span_days": 1698
+    "dam_history_span_days": 1712,
+    "governorate_history_span_days": 1712
   }
 }

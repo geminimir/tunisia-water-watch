@@ -511,7 +511,7 @@
       "scene_id": "S2B_32SNF_20260820_0_L2A"
     },
     {
-      "date": "2026-09-12",
+      "date": "2026-09-13",
       "mean_ndvi": null,
       "mean_ndmi": null,
       "healthy_pct": null,
@@ -630,5 +630,5 @@
     "2026-07": -0.0964,
     "2026-08": -0.1139
   },
-  "generated_at": "2026-09-13 01:03 UTC"
+  "generated_at": "2026-09-13 01:09 UTC"
 }

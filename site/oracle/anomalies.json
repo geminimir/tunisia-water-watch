@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-13 01:03 UTC",
+  "generated_at": "2026-09-13 01:09 UTC",
   "dams": [
     {
       "id": "sejnane",
@@ -7,8 +7,8 @@
       "severity_score": 95.0,
       "band": "severe",
       "pct_of_avg": 10.0,
-      "z_score_water": -0.7825659062664225,
-      "date": "2026-09-12"
+      "z_score_water": -0.6702436410211757,
+      "date": "2026-09-13"
     },
     {
       "id": "joumine",
@@ -16,8 +16,8 @@
       "severity_score": 99.99375,
       "band": "severe",
       "pct_of_avg": 0.0125,
-      "z_score_water": -0.6923575314371633,
-      "date": "2026-09-12"
+      "z_score_water": -0.602237974882263,
+      "date": "2026-09-13"
     },
     {
       "id": "ghezala",
@@ -25,8 +25,8 @@
       "severity_score": 95.0,
       "band": "severe",
       "pct_of_avg": 10.0,
-      "z_score_water": -0.9979487157886733,
-      "date": "2026-09-12"
+      "z_score_water": -0.8194526164907736,
+      "date": "2026-09-13"
     },
     {
       "id": "kasseb",
@@ -34,8 +34,8 @@
       "severity_score": 99.71666666666667,
       "band": "severe",
       "pct_of_avg": 0.5666666666666668,
-      "z_score_water": 6.06217782649107,
-      "date": "2026-09-12"
+      "z_score_water": 1.704025734460517,
+      "date": "2026-09-13"
     },
     {
       "id": "barbara",
@@ -43,8 +43,8 @@
       "severity_score": 98.925,
       "band": "severe",
       "pct_of_avg": 2.15,
-      "z_score_water": -0.12371791482634857,
-      "date": "2026-09-12"
+      "z_score_water": -0.11405318970243959,
+      "date": "2026-09-13"
     },
     {
       "id": "mellegue",
@@ -52,8 +52,8 @@
       "severity_score": 99.9625,
       "band": "severe",
       "pct_of_avg": 0.075,
-      "z_score_water": 0.7833494518006401,
-      "date": "2026-09-12"
+      "z_score_water": 0.6708203932499367,
+      "date": "2026-09-13"
     },
     {
       "id": "sarrat",
@@ -61,8 +61,8 @@
       "severity_score": 99.4,
       "band": "severe",
       "pct_of_avg": 1.2,
-      "z_score_water": -0.5197071062094505,
-      "date": "2026-09-12"
+      "z_score_water": -0.46367690032729647,
+      "date": "2026-09-13"
     },
     {
       "id": "lakhmess",
@@ -70,26 +70,26 @@
       "severity_score": 99.75,
       "band": "severe",
       "pct_of_avg": 0.5,
-      "z_score_water": 0.6111111111111113,
-      "date": "2026-09-12"
+      "z_score_water": 0.5383496626556361,
+      "date": "2026-09-13"
     },
     {
       "id": "rmil",
       "name": "Rmil",
-      "severity_score": 50.282921810699584,
+      "severity_score": 50.141862264637595,
       "band": "watch",
-      "pct_of_avg": 99.43415637860083,
-      "z_score_water": 0.06023494790606783,
-      "date": "2026-09-12"
+      "pct_of_avg": 99.7162754707248,
+      "z_score_water": 0.05561576288140831,
+      "date": "2026-09-13"
     },
     {
       "id": "bir-mcherga",
       "name": "Bir Mcherga",
-      "severity_score": 54.73071324599709,
+      "severity_score": 52.48281130634072,
       "band": "watch",
-      "pct_of_avg": 90.53857350800583,
-      "z_score_water": 0.21097247606636746,
-      "date": "2026-09-12"
+      "pct_of_avg": 95.03437738731856,
+      "z_score_water": 0.19374164079381867,
+      "date": "2026-09-13"
     },
     {
       "id": "el-aroussia",
@@ -97,17 +97,17 @@
       "severity_score": 100.0,
       "band": "severe",
       "pct_of_avg": 0.0,
-      "z_score_water": -0.5,
-      "date": "2026-09-12"
+      "z_score_water": -0.4472135954999579,
+      "date": "2026-09-13"
     },
     {
       "id": "el-houareb",
       "name": "El Houareb",
-      "severity_score": 99.85,
+      "severity_score": 99.85000000000001,
       "band": "severe",
       "pct_of_avg": 0.3,
-      "z_score_water": -0.4892530591415386,
-      "date": "2026-09-12"
+      "z_score_water": -0.43818394283274753,
+      "date": "2026-09-13"
     },
     {
       "id": "nebhana",
@@ -115,26 +115,17 @@
       "severity_score": 99.98571428571428,
       "band": "severe",
       "pct_of_avg": 0.028571428571428574,
-      "z_score_water": 0.5,
-      "date": "2026-09-12"
+      "z_score_water": 0.44721359549995787,
+      "date": "2026-09-13"
     },
     {
       "id": "sidi-saad",
       "name": "Sidi Saad",
-      "severity_score": 61.78351783517835,
+      "severity_score": 56.6787506971556,
       "band": "watch",
-      "pct_of_avg": 76.4329643296433,
-      "z_score_water": -0.2292213042279111,
-      "date": "2026-09-12"
-    },
-    {
-      "id": "chiba",
-      "name": "Chiba",
-      "severity_score": 87.57142857142857,
-      "band": "severe",
-      "pct_of_avg": 24.857142857142858,
-      "z_score_water": 6.538280379448765,
-      "date": "2026-09-12"
+      "pct_of_avg": 86.6424986056888,
+      "z_score_water": -0.21027756312171003,
+      "date": "2026-09-13"
     },
     {
       "id": "masri",
@@ -142,8 +133,8 @@
       "severity_score": 96.33333333333333,
       "band": "severe",
       "pct_of_avg": 7.333333333333334,
-      "z_score_water": 0.8689468060105425,
-      "date": "2026-09-12"
+      "z_score_water": 0.7323479639107047,
+      "date": "2026-09-13"
     },
     {
       "id": "abid",
@@ -152,16 +143,16 @@
       "band": "severe",
       "pct_of_avg": 0.0,
       "z_score_water": 0.0,
-      "date": "2026-09-12"
+      "date": "2026-09-13"
     },
     {
       "id": "tessa",
       "name": "Tessa",
-      "severity_score": 99.96666666666667,
+      "severity_score": 99.96666666666668,
       "band": "severe",
       "pct_of_avg": 0.06666666666666667,
       "z_score_water": 0.0,
-      "date": "2026-09-12"
+      "date": "2026-09-13"
     },
     {
       "id": "moula",
@@ -169,17 +160,17 @@
       "severity_score": 99.92857142857143,
       "band": "severe",
       "pct_of_avg": 0.14285714285714288,
-      "z_score_water": 0.8660254037844386,
-      "date": "2026-09-12"
+      "z_score_water": 0.7302967433402214,
+      "date": "2026-09-13"
     },
     {
       "id": "melah",
       "name": "El Melah",
-      "severity_score": 98.05433800649112,
+      "severity_score": 96.25442834138487,
       "band": "severe",
-      "pct_of_avg": 3.891323987017767,
-      "z_score_water": -1.4230045300509773,
-      "date": "2026-09-12"
+      "pct_of_avg": 7.491143317230273,
+      "z_score_water": -1.0592719263861878,
+      "date": "2026-09-13"
     },
     {
       "id": "harka",
@@ -187,17 +178,17 @@
       "severity_score": 99.92857142857143,
       "band": "severe",
       "pct_of_avg": 0.14285714285714288,
-      "z_score_water": -0.944911182523068,
-      "date": "2026-09-12"
+      "z_score_water": -0.7844645405527361,
+      "date": "2026-09-13"
     },
     {
       "id": "kebir",
       "name": "El Kebir",
-      "severity_score": 71.63561076604555,
+      "severity_score": 71.45833333333333,
       "band": "drought",
-      "pct_of_avg": 56.72877846790891,
-      "z_score_water": 6.3358291582151205,
-      "date": "2026-09-12"
+      "pct_of_avg": 57.08333333333334,
+      "z_score_water": 1.710732653753407,
+      "date": "2026-09-13"
     },
     {
       "id": "el-breck",
@@ -205,8 +196,8 @@
       "severity_score": 98.875,
       "band": "severe",
       "pct_of_avg": 2.2499999999999996,
-      "z_score_water": 0.39217020329753544,
-      "date": "2026-09-12"
+      "z_score_water": 0.35506342941861213,
+      "date": "2026-09-13"
     },
     {
       "id": "sidi-abdelmoumen",
@@ -214,17 +205,17 @@
       "severity_score": 99.83333333333333,
       "band": "severe",
       "pct_of_avg": 0.3333333333333333,
-      "z_score_water": 5.5,
-      "date": "2026-09-12"
+      "z_score_water": 1.687322975464215,
+      "date": "2026-09-13"
     },
     {
       "id": "rmel",
       "name": "Rmel",
-      "severity_score": 84.41558441558442,
+      "severity_score": 83.33333333333333,
       "band": "severe",
-      "pct_of_avg": 31.16883116883117,
-      "z_score_water": -0.11028219331407113,
-      "date": "2026-09-12"
+      "pct_of_avg": 33.333333333333336,
+      "z_score_water": -0.10170952554312153,
+      "date": "2026-09-13"
     },
     {
       "id": "el-abid",
@@ -232,8 +223,8 @@
       "severity_score": 100.0,
       "band": "severe",
       "pct_of_avg": 0.0,
-      "z_score_water": -1.1176758740742283,
-      "date": "2026-09-12"
+      "z_score_water": -0.8942122963847935,
+      "date": "2026-09-13"
     }
   ],
   "governorates": [
@@ -244,25 +235,25 @@
       "band": "watch",
       "z_ndvi": -0.8580167390161542,
       "z_ndmi": -0.2058970128542522,
-      "date": "2026-09-12"
+      "date": "2026-09-13"
     },
     {
       "id": "zaghouan",
       "name": "Zaghouan",
-      "severity_score": 50.21788259944478,
+      "severity_score": 50.028282481530624,
       "band": "watch",
       "z_ndvi": 0.284517606941494,
       "z_ndmi": 0.6623220840684519,
-      "date": "2026-09-12"
+      "date": "2026-09-13"
     },
     {
       "id": "bizerte",
       "name": "Bizerte",
-      "severity_score": 62.65023603185138,
+      "severity_score": 62.81827568513584,
       "band": "watch",
       "z_ndvi": -1.2512783866257489,
       "z_ndmi": 1.4716574734672514,
-      "date": "2026-09-12"
+      "date": "2026-09-13"
     },
     {
       "id": "kef",
@@ -271,7 +262,7 @@
       "band": "watch",
       "z_ndvi": -0.05800041955812817,
       "z_ndmi": 0.16152244800622936,
-      "date": "2026-09-12"
+      "date": "2026-09-13"
     },
     {
       "id": "sousse",
@@ -280,7 +271,7 @@
       "band": "watch",
       "z_ndvi": 0.136181882433161,
       "z_ndmi": 0.19936892545521576,
-      "date": "2026-09-12"
+      "date": "2026-09-13"
     },
     {
       "id": "monastir",
@@ -289,88 +280,88 @@
       "band": "watch",
       "z_ndvi": -0.27608055426079053,
       "z_ndmi": -0.12175409832491628,
-      "date": "2026-09-12"
-    },
-    {
-      "id": "monastir",
-      "name": "Monastir",
-      "severity_score": 68.45505397926824,
-      "band": "drought",
-      "z_ndvi": -1.5897371419538746,
-      "z_ndmi": -1.2875162789874364,
-      "date": "2026-08-22"
+      "date": "2026-09-13"
     },
     {
       "id": "mahdia",
       "name": "Mahdia",
-      "severity_score": 70.13871118221405,
-      "band": "drought",
-      "z_ndvi": -1.7667063675282821,
-      "z_ndmi": -1.3517477729918626,
-      "date": "2026-08-22"
+      "severity_score": 55.92007729551884,
+      "band": "watch",
+      "z_ndvi": -0.5980884257552348,
+      "z_ndmi": -0.26613578011862776,
+      "date": "2026-09-13"
     },
     {
       "id": "sfax",
       "name": "Sfax",
-      "severity_score": 55.5658107941864,
+      "severity_score": 57.04859023278514,
       "band": "watch",
-      "z_ndvi": 0.09425513270614168,
-      "z_ndmi": -1.3444648572700026,
-      "date": "2026-08-12"
-    },
-    {
-      "id": "kairouan",
-      "name": "Kairouan",
-      "severity_score": 73.12371003769594,
-      "band": "drought",
-      "z_ndvi": -1.0167655723422255,
-      "z_ndmi": -0.6825459363831485,
-      "date": "2026-08-30"
+      "z_ndvi": -0.6895255938356861,
+      "z_ndmi": -0.35448992660135303,
+      "date": "2026-09-13"
     },
     {
       "id": "kasserine",
       "name": "Kasserine",
-      "severity_score": 60.63518912374973,
+      "severity_score": 61.92476741165492,
       "band": "watch",
-      "z_ndvi": 0.21237469485828775,
-      "z_ndmi": 0.001522553919594273,
-      "date": "2026-08-20"
+      "z_ndvi": 0.05458715371668454,
+      "z_ndmi": -0.03948025981888824,
+      "date": "2026-09-13"
+    },
+    {
+      "id": "sidi-bouzid",
+      "name": "Sidi Bouzid",
+      "severity_score": 63.95884325768345,
+      "band": "watch",
+      "z_ndvi": -1.1460029680999488,
+      "z_ndmi": -1.0678816148058845,
+      "date": "2026-09-13"
     },
     {
       "id": "medenine",
       "name": "Medenine",
-      "severity_score": 58.38019830155217,
+      "severity_score": 53.95914612567388,
       "band": "watch",
-      "z_ndvi": -1.0204599858285326,
-      "z_ndmi": -0.08700899461691007,
-      "date": "2026-08-12"
+      "z_ndvi": -0.37564619770651675,
+      "z_ndmi": -0.21854084396623466,
+      "date": "2026-09-13"
     },
     {
       "id": "tataouine",
       "name": "Tataouine",
-      "severity_score": 59.116215090189215,
+      "severity_score": 50.25755116624737,
       "band": "watch",
-      "z_ndvi": -0.3769204293547214,
-      "z_ndmi": -1.3165918369824965,
-      "date": "2026-08-04"
+      "z_ndvi": 0.14756356347937183,
+      "z_ndmi": -0.30088352126505846,
+      "date": "2026-09-13"
     },
     {
       "id": "gafsa",
       "name": "Gafsa",
-      "severity_score": 55.14372309307198,
+      "severity_score": 61.81546350784778,
       "band": "watch",
-      "z_ndvi": -0.3870308501684954,
-      "z_ndmi": -0.4522761762411978,
-      "date": "2026-08-20"
+      "z_ndvi": -1.2211989359413347,
+      "z_ndmi": -0.48530065510530274,
+      "date": "2026-09-13"
     },
     {
       "id": "tozeur",
       "name": "Tozeur",
-      "severity_score": 52.64029086967816,
+      "severity_score": 64.0554869039686,
       "band": "watch",
-      "z_ndvi": -0.4012887856023693,
-      "z_ndmi": 0.10555259047260743,
-      "date": "2026-08-20"
+      "z_ndvi": -0.6178117672427864,
+      "z_ndmi": -1.9688175941086596,
+      "date": "2026-09-13"
+    },
+    {
+      "id": "kebili",
+      "name": "Kebili",
+      "severity_score": 57.178114796726454,
+      "band": "watch",
+      "z_ndvi": -0.585592262814099,
+      "z_ndmi": -0.5553440519448097,
+      "date": "2026-09-13"
     }
   ]
 }
