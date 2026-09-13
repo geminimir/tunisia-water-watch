@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-13 01:09 UTC",
+  "generated_at": "2026-09-13 01:21 UTC",
   "stale_days": 0,
   "national_drought_index": 85.76954577379885,
   "national_composite_severity": 58.91874235399532,
@@ -761,10 +761,10 @@
       "mean_ndmi": -0.0752,
       "healthy_pct": 5.87,
       "confidence": 1.0,
-      "z_ndvi": 0.9336890053361832,
-      "z_ndmi": 0.23404938671489225,
+      "z_ndvi": 0.09408762401495746,
+      "z_ndmi": 0.6552951737239353,
       "regional_water_pct": null,
-      "severity_score": 41.608448145585015,
+      "severity_score": 46.193244310552195,
       "severity_band": "normal"
     },
     {
@@ -782,8 +782,8 @@
       "z_ndvi": null,
       "z_ndmi": null,
       "regional_water_pct": null,
-      "severity_score": 26.00506338325479,
-      "severity_band": "abundant"
+      "severity_score": null,
+      "severity_band": "unknown"
     },
     {
       "id": "ben-arous",
@@ -797,11 +797,11 @@
       "mean_ndmi": -0.1284,
       "healthy_pct": 5.32,
       "confidence": 1.0,
-      "z_ndvi": 1.2841342007168364,
-      "z_ndmi": 0.4369027959606693,
+      "z_ndvi": -0.8580167390161542,
+      "z_ndmi": -0.2058970128542522,
       "regional_water_pct": null,
-      "severity_score": 37.91971970083407,
-      "severity_band": "normal"
+      "severity_score": 57.668398021318005,
+      "severity_band": "watch"
     },
     {
       "id": "manouba",
@@ -815,10 +815,10 @@
       "mean_ndmi": -0.1362,
       "healthy_pct": 3.95,
       "confidence": 1.0,
-      "z_ndvi": 0.46908468638135653,
-      "z_ndmi": -0.04509844968920539,
+      "z_ndvi": 0.7143301178788952,
+      "z_ndmi": 1.0818894346309043,
       "regional_water_pct": null,
-      "severity_score": 46.5466748705638,
+      "severity_score": 39.34793922923877,
       "severity_band": "normal"
     },
     {
@@ -923,10 +923,10 @@
       "mean_ndmi": -0.1394,
       "healthy_pct": 1.26,
       "confidence": 1.0,
-      "z_ndvi": 0.9236279056918013,
-      "z_ndmi": 0.0914236691688205,
+      "z_ndvi": -0.05800041955812817,
+      "z_ndmi": 0.16152244800622936,
       "regional_water_pct": 0.33541666666666664,
-      "severity_score": 56.040533092104596,
+      "severity_score": 61.63320605607772,
       "severity_band": "watch"
     },
     {
@@ -962,8 +962,8 @@
       "z_ndvi": 0.136181882433161,
       "z_ndmi": 0.19936892545521576,
       "regional_water_pct": 0.028571428571428574,
-      "severity_score": 77.91490556834671,
-      "severity_band": "drought"
+      "severity_score": 60.38815965116272,
+      "severity_band": "watch"
     },
     {
       "id": "monastir",

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-13 01:09 UTC",
+  "generated_at": "2026-09-13 01:21 UTC",
   "dams": [
     {
       "id": "sejnane",
@@ -84,6 +84,7 @@
     {
       "id": "rmil",
       "name": "Rmil",
+      "name_ar": "الرميل",
       "severity_score": 50.141862264637595,
       "band": "watch",
       "pct_of_avg": 99.7162754707248,
@@ -93,6 +94,7 @@
     {
       "id": "bir-mcherga",
       "name": "Bir Mcherga",
+      "name_ar": "بير مشارقة",
       "severity_score": 52.48281130634072,
       "band": "watch",
       "pct_of_avg": 95.03437738731856,
@@ -112,6 +114,7 @@
     {
       "id": "el-houareb",
       "name": "El Houareb",
+      "name_ar": "الهوارب",
       "severity_score": 99.85000000000001,
       "band": "severe",
       "pct_of_avg": 0.3,
@@ -131,6 +134,7 @@
     {
       "id": "sidi-saad",
       "name": "Sidi Saad",
+      "name_ar": "سيدي سعد",
       "severity_score": 56.6787506971556,
       "band": "watch",
       "pct_of_avg": 86.6424986056888,
@@ -160,6 +164,7 @@
     {
       "id": "tessa",
       "name": "Tessa",
+      "name_ar": "التساء",
       "severity_score": 99.96666666666668,
       "band": "severe",
       "pct_of_avg": 0.06666666666666667,
@@ -179,6 +184,7 @@
     {
       "id": "melah",
       "name": "El Melah",
+      "name_ar": "الملاح",
       "severity_score": 96.25442834138487,
       "band": "severe",
       "pct_of_avg": 7.491143317230273,
@@ -198,6 +204,7 @@
     {
       "id": "kebir",
       "name": "El Kebir",
+      "name_ar": "الكبير",
       "severity_score": 71.45833333333333,
       "band": "drought",
       "pct_of_avg": 57.08333333333334,
@@ -227,6 +234,7 @@
     {
       "id": "rmel",
       "name": "Rmel",
+      "name_ar": "الرمل",
       "severity_score": 83.33333333333333,
       "band": "severe",
       "pct_of_avg": 33.333333333333336,
@@ -248,6 +256,7 @@
     {
       "id": "ben-arous",
       "name": "Ben Arous",
+      "name_ar": "بن عروس",
       "severity_score": 57.668398021318005,
       "band": "watch",
       "z_ndvi": -0.8580167390161542,
@@ -257,6 +266,7 @@
     {
       "id": "zaghouan",
       "name": "Zaghouan",
+      "name_ar": "زغوان",
       "severity_score": 50.028282481530624,
       "band": "watch",
       "z_ndvi": 0.284517606941494,
@@ -266,6 +276,7 @@
     {
       "id": "bizerte",
       "name": "Bizerte",
+      "name_ar": "بنزرت",
       "severity_score": 62.81827568513584,
       "band": "watch",
       "z_ndvi": -1.2512783866257489,
@@ -276,7 +287,7 @@
       "id": "kef",
       "name": "Le Kef",
       "name_ar": "الكاف",
-      "severity_score": 56.040533092104596,
+      "severity_score": 61.63320605607772,
       "band": "watch",
       "z_ndvi": -0.05800041955812817,
       "z_ndmi": 0.16152244800622936,
@@ -285,6 +296,7 @@
     {
       "id": "sousse",
       "name": "Sousse",
+      "name_ar": "سوسة",
       "severity_score": 60.38815965116272,
       "band": "watch",
       "z_ndvi": 0.136181882433161,
@@ -294,6 +306,7 @@
     {
       "id": "monastir",
       "name": "Monastir",
+      "name_ar": "المنستير",
       "severity_score": 52.727601666060465,
       "band": "watch",
       "z_ndvi": -0.27608055426079053,
@@ -303,6 +316,7 @@
     {
       "id": "mahdia",
       "name": "Mahdia",
+      "name_ar": "المهدية",
       "severity_score": 55.92007729551884,
       "band": "watch",
       "z_ndvi": -0.5980884257552348,
@@ -312,6 +326,7 @@
     {
       "id": "sfax",
       "name": "Sfax",
+      "name_ar": "صفاقس",
       "severity_score": 57.04859023278514,
       "band": "watch",
       "z_ndvi": -0.6895255938356861,
@@ -321,6 +336,7 @@
     {
       "id": "kasserine",
       "name": "Kasserine",
+      "name_ar": "القصرين",
       "severity_score": 61.92476741165492,
       "band": "watch",
       "z_ndvi": 0.05458715371668454,
@@ -330,6 +346,7 @@
     {
       "id": "sidi-bouzid",
       "name": "Sidi Bouzid",
+      "name_ar": "سيدي بوزيد",
       "severity_score": 63.95884325768345,
       "band": "watch",
       "z_ndvi": -1.1460029680999488,
@@ -339,6 +356,7 @@
     {
       "id": "medenine",
       "name": "Medenine",
+      "name_ar": "مدنين",
       "severity_score": 53.95914612567388,
       "band": "watch",
       "z_ndvi": -0.37564619770651675,
@@ -348,6 +366,7 @@
     {
       "id": "tataouine",
       "name": "Tataouine",
+      "name_ar": "تطاوين",
       "severity_score": 50.25755116624737,
       "band": "watch",
       "z_ndvi": 0.14756356347937183,
@@ -357,6 +376,7 @@
     {
       "id": "gafsa",
       "name": "Gafsa",
+      "name_ar": "قفصة",
       "severity_score": 61.81546350784778,
       "band": "watch",
       "z_ndvi": -1.2211989359413347,
@@ -366,6 +386,7 @@
     {
       "id": "tozeur",
       "name": "Tozeur",
+      "name_ar": "توزر",
       "severity_score": 64.0554869039686,
       "band": "watch",
       "z_ndvi": -0.6178117672427864,
@@ -375,6 +396,7 @@
     {
       "id": "kebili",
       "name": "Kebili",
+      "name_ar": "قبلي",
       "severity_score": 57.178114796726454,
       "band": "watch",
       "z_ndvi": -0.585592262814099,
