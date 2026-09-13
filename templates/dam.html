@@ -81,7 +81,7 @@ new Chart(document.getElementById('dam-chart'), {
       {
         label: {{ t.chart_surface|tojson }},
         data: series.map(p => p.surface_area_km2),
-        borderColor: '#1e6fbf', backgroundColor: 'rgba(30,111,191,0.15)',
+        borderColor: '#0f4c81', backgroundColor: 'rgba(15,76,129,0.10)',
         tension: 0.25, fill: true, spanGaps: true, pointRadius: 2
       },
       {
@@ -91,7 +91,14 @@ new Chart(document.getElementById('dam-chart'), {
       }
     ]
   },
-  options: { responsive: true }
+  options: {
+    responsive: true, animation: false,
+    plugins: { legend: { labels: { color: '#3a3f4a', font: { size: 12 } } } },
+    scales: {
+      x: { grid: { display: false }, ticks: { color: '#6b6b76', font: { size: 11 } } },
+      y: { grid: { color: 'rgba(20,22,30,0.06)' }, ticks: { color: '#6b6b76', font: { size: 11 } } },
+    },
+  }
 });
 </script>
 

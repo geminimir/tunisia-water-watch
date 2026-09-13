@@ -8,24 +8,37 @@
 </div>
 {% endif %}
 
-<section class="hero">
-  <h1>{{ t.agri_hero_title }}</h1>
-  <p>{{ t.agri_hero_body|replace("{n}", govs|length|string) }}</p>
-</section>
-
-<section class="stats">
-  <div class="stat drought-{{ 'red' if composite_band in (t.band_drought, t.band_severe) else ('yellow' if composite_band == t.band_watch else 'green') }}">
-    <div class="stat-value">{{ (composite_score|round(0))|int if composite_score is not none else "—" }}</div>
-    <div class="stat-label">{{ t.stat_national_composite|replace("{band}", composite_band) }}</div>
+<section class="hero-composite">
+  {% set band = composite_band|string %}
+  {% set score_int = (composite_score|round(0))|int if composite_score is not none else 0 %}
+  {% set circumference = 339.29 %}
+  <div class="gauge band-{{ ({'abondant':'abundant','normal':'normal','vigilance':'watch','sécheresse':'drought','sévère':'severe'}.get(band, band)) if lang == 'fr' else ({'وفير':'abundant','عادي':'normal','تحذير':'watch','جفاف':'drought','شديد':'severe'}.get(band, band)) }}">
+    <svg viewBox="0 0 132 132">
+      <circle class="gauge-track" cx="66" cy="66" r="54"/>
+      <circle class="gauge-fill" cx="66" cy="66" r="54"
+              stroke-dasharray="{{ (score_int / 100 * circumference)|round(1) }} {{ circumference }}"/>
+    </svg>
+    <div class="gauge-value">
+      <div class="n">{{ score_int if composite_score is not none else "—" }}</div>
+      <div class="u">{{ band }}</div>
+    </div>
   </div>
-  <div class="stat">
-    <div class="stat-value">{{ govs|length }}</div>
-    <div class="stat-label">{{ t.stat_governorates_monitored }}</div>
+  <div>
+    <div class="head-label">{{ t.stat_national_composite|replace("({band})", "")|replace(" ()", "") }}</div>
+    <h1>{{ t.agri_hero_title }}</h1>
+    <p class="body">{{ t.agri_hero_body|replace("{n}", govs|length|string) }}</p>
   </div>
 </section>
 
 <section class="map-section">
   <div id="gov-map"></div>
+  <div class="map-legend">
+    <div class="row"><span class="dot" style="background:#2f7d5c"></span>{{ t.band_abundant }} / {{ t.band_normal }}</div>
+    <div class="row"><span class="dot" style="background:#c98a2b"></span>{{ t.band_watch }}</div>
+    <div class="row"><span class="dot" style="background:#b0361c"></span>{{ t.band_drought }}</div>
+    <div class="row"><span class="dot" style="background:#7a2417"></span>{{ t.band_severe }}</div>
+    <div class="row"><span class="dot" style="background:#8a8f98"></span>{{ t.band_unknown }}</div>
+  </div>
 </section>
 
 <section class="table-section">
@@ -39,6 +52,7 @@
         <th class="num">{{ t.th_ndvi }}</th>
         <th class="num">{{ t.th_ndmi }}</th>
         <th class="num">{{ t.th_healthy_pct }}</th>
+        <th class="spark">·</th>
         <th class="num">{{ t.th_severity }}</th>
         <th>{{ t.th_band }}</th>
       </tr>
@@ -47,11 +61,12 @@
       {% for g in govs %}
       <tr>
         <td><a href="governorate/{{ g.id }}.html">{{ g.display_name }}</a></td>
-        <td>{{ g.display_region }}</td>
-        <td>{{ g.last_date or "—" }}</td>
+        <td class="muted">{{ g.display_region }}</td>
+        <td class="tiny">{{ g.last_date or "—" }}</td>
         <td class="num">{{ "%.3f"|format(g.mean_ndvi) if g.mean_ndvi is not none else "—" }}</td>
         <td class="num">{{ "%.3f"|format(g.mean_ndmi) if g.mean_ndmi is not none else "—" }}</td>
         <td class="num">{{ "%.0f"|format(g.healthy_pct) if g.healthy_pct is not none else "—" }}</td>
+        <td class="spark">{{ g.sparkline|safe }}</td>
         <td class="num">{{ (g.severity_score|round(0))|int if g.severity_score is not none else "—" }}</td>
         <td><span class="badge badge-band-{{ g.severity_band }}">{{ g.display_band }}</span></td>
       </tr>
@@ -64,15 +79,17 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 const govs = {{ govs_json|safe }};
-const bandColors = { abundant:'#2e8b57', normal:'#7ea72a', watch:'#e2a03f', drought:'#c0392b', severe:'#7a1d17', unknown:'#8a8f98' };
+const bandColors = { abundant:'#2f7d5c', normal:'#7a8a2a', watch:'#c98a2b', drought:'#b0361c', severe:'#7a2417', unknown:'#8a8f98' };
 const map = L.map('gov-map', { scrollWheelZoom: false }).setView([34.5, 9.6], 6);
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap contributors', maxZoom: 12 }).addTo(map);
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+  attribution: '© OpenStreetMap · CARTO', subdomains: 'abcd', maxZoom: 12,
+}).addTo(map);
 for (const g of govs) {
+  const c = bandColors[g.severity_band] || '#8a8f98';
   L.circleMarker([g.lat, g.lon], {
-    radius: 10, color: bandColors[g.severity_band] || '#8a8f98',
-    fillColor: bandColors[g.severity_band] || '#8a8f98', fillOpacity: 0.75, weight: 1
+    radius: 10, color: c, fillColor: c, fillOpacity: 0.72, weight: 1.5,
   }).bindPopup(
-    `<strong>${g.display_name}</strong><br>${g.display_region}<br>` +
+    `<strong>${g.display_name}</strong><br>${g.display_region} — ${g.focus}<br>` +
     `NDVI: ${g.mean_ndvi == null ? '—' : g.mean_ndvi.toFixed(3)}, NDMI: ${g.mean_ndmi == null ? '—' : g.mean_ndmi.toFixed(3)}<br>` +
     `<a href="governorate/${g.id}.html">→</a>`
   ).addTo(map);

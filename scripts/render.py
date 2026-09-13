@@ -258,6 +258,36 @@ def _group_gov_readings(rows: list[dict]) -> dict[str, list[dict]]:
     return out
 
 
+def _sparkline_svg(values: list[float | None], width: int = 100, height: int = 24,
+                   stroke: str = "#0f4c81") -> str:
+    """Return an inline SVG sparkline for the given series.
+
+    None values create gaps. Empty or all-None input returns an empty string
+    so the template can render a placeholder instead."""
+    clean = [(i, v) for i, v in enumerate(values) if v is not None]
+    if len(clean) < 2:
+        return ""
+    ys = [v for _, v in clean]
+    ymin = min(ys)
+    ymax = max(ys)
+    yrange = max(1e-6, ymax - ymin)
+    n = len(values)
+    pts: list[str] = []
+    for i, v in clean:
+        x = (i / max(1, n - 1)) * (width - 2) + 1
+        y = height - 2 - ((v - ymin) / yrange) * (height - 4)
+        pts.append(f"{x:.1f},{y:.1f}")
+    last_x = (clean[-1][0] / max(1, n - 1)) * (width - 2) + 1
+    last_y = height - 2 - ((clean[-1][1] - ymin) / yrange) * (height - 4)
+    return (
+        f'<svg viewBox="0 0 {width} {height}" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">'
+        f'<polyline fill="none" stroke="{stroke}" stroke-width="1.4" stroke-linecap="round" '
+        f'stroke-linejoin="round" points="{" ".join(pts)}"/>'
+        f'<circle cx="{last_x:.1f}" cy="{last_y:.1f}" r="1.8" fill="{stroke}"/>'
+        f'</svg>'
+    )
+
+
 def _monthly_medians(series: list[dict], key: str) -> dict[str, float]:
     buckets: dict[str, list[float]] = defaultdict(list)
     for r in series:
@@ -435,7 +465,7 @@ def _view_for_lang(dam_view: list[dict], gov_view: list[dict], lang: str) -> tup
         e = dict(d)
         e["display_name"] = d["name_ar"] if lang == "ar" else d["name"]
         e["display_river"] = d["river_ar"] if lang == "ar" else d["river"]
-        e["display_governorate"] = d["governorate"]  # keep Latin for now; also fine as-is
+        e["display_governorate"] = d["governorate"]
         e["display_status"] = translate_status(d["status"], lang)
         e["display_band"] = translate_band(d["severity_band"] or "unknown", lang)
         out_dams.append(e)
@@ -448,6 +478,31 @@ def _view_for_lang(dam_view: list[dict], gov_view: list[dict], lang: str) -> tup
         e["display_band"] = translate_band(g["severity_band"] or "unknown", lang)
         out_govs.append(e)
     return out_dams, out_govs
+
+
+_BAND_STROKE = {
+    "abundant": "#2f7d5c",
+    "normal": "#7a8a2a",
+    "watch": "#c98a2b",
+    "drought": "#b0361c",
+    "severe": "#7a2417",
+    "unknown": "#8a8f98",
+}
+
+
+def _attach_sparklines(dam_view: list[dict], gov_view: list[dict],
+                      per_dam: dict, per_gov: dict) -> None:
+    """Mutate views to add a `sparkline` SVG string per entity — last 24 months."""
+    for d in dam_view:
+        series = per_dam.get(d["id"], [])
+        vals = [r.get("surface_area_km2") for r in series[-24:]]
+        colour = _BAND_STROKE.get(d.get("severity_band") or "unknown", "#0f4c81")
+        d["sparkline"] = _sparkline_svg(vals, stroke=colour)
+    for g in gov_view:
+        series = per_gov.get(g["id"], [])
+        vals = [r.get("mean_ndvi") for r in series[-24:]]
+        colour = _BAND_STROKE.get(g.get("severity_band") or "unknown", "#0f4c81")
+        g["sparkline"] = _sparkline_svg(vals, stroke=colour)
 
 
 # ------------------------- language tree renderer -------------------------
@@ -464,6 +519,7 @@ def _render_language_tree(
     direction = "rtl" if lang == "ar" else "ltr"
     t = t_for(lang)
     dam_view, gov_view = _view_for_lang(ctx["dam_view"], ctx["gov_view"], lang)
+    _attach_sparklines(dam_view, gov_view, ctx["per_dam"], ctx["per_gov"])
 
     common = {
         "t": t,

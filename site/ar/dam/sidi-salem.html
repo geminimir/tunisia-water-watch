@@ -5,13 +5,23 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>سيدي سالم — مراقبة مياه تونس</title>
 <meta name="description" content="مراقبة مستقلة عبر الأقمار الاصطناعية للموارد المائية والزراعة في تونس.">
+<meta name="theme-color" content="#0f4c81">
+<meta property="og:title" content="مراقبة مياه تونس">
+<meta property="og:description" content="مراقبة مستقلة عبر الأقمار الاصطناعية للموارد المائية والزراعة في تونس.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_TN">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap">
+
 <link rel="stylesheet" href="../../assets/style.css">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💧</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230f4c81'/><text x='50' y='72' font-size='58' text-anchor='middle' fill='white'>💧</text></svg>">
 </head>
 <body class="lang-ar">
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="../index.html">💧 مراقبة مياه تونس</a>
+    <a class="brand" href="../index.html">مراقبة مياه تونس</a>
     <nav>
       <a href="../index.html">السدود</a>
       <a href="../agriculture.html">الزراعة</a>
@@ -282,7 +292,7 @@ new Chart(document.getElementById('dam-chart'), {
       {
         label: "\u0627\u0644\u0645\u0633\u0627\u062d\u0629 (\u0643\u0645\u00b2)",
         data: series.map(p => p.surface_area_km2),
-        borderColor: '#1e6fbf', backgroundColor: 'rgba(30,111,191,0.15)',
+        borderColor: '#0f4c81', backgroundColor: 'rgba(15,76,129,0.10)',
         tension: 0.25, fill: true, spanGaps: true, pointRadius: 2
       },
       {
@@ -292,14 +302,21 @@ new Chart(document.getElementById('dam-chart'), {
       }
     ]
   },
-  options: { responsive: true }
+  options: {
+    responsive: true, animation: false,
+    plugins: { legend: { labels: { color: '#3a3f4a', font: { size: 12 } } } },
+    scales: {
+      x: { grid: { display: false }, ticks: { color: '#6b6b76', font: { size: 11 } } },
+      y: { grid: { color: 'rgba(20,22,30,0.06)' }, ticks: { color: '#6b6b76', font: { size: 11 } } },
+    },
+  }
 });
 </script>
 
 </main>
 <footer class="site-footer">
   <div class="wrap">
-    <p>آخر تحديث: <strong>2026-09-13 03:22 UTC</strong> · التشغيل التالي: <strong>2026-09-18</strong></p>
+    <p>آخر تحديث: <strong>2026-09-13 03:30 UTC</strong> · التشغيل التالي: <strong>2026-09-18</strong></p>
     <p class="muted">بيانات مستنبطة من Sentinel-2 L2A عبر واجهات STAC العامة. المساحة المائية مؤشر تقريبي لحجم الخزان وليست بديلاً عن المسح البحري. رخصة MIT. بدون ضمان.</p>
     <p class="small"><a href="../../oracle/index.json">أوراكل البيانات (JSON + بصمة SHA-256)</a> · <a href="../../data/latest.json">latest.json</a> · <a href="../../data/readings.csv">readings.csv</a></p>
   </div>
