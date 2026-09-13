@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "description": "Tunisia Water Watch verifiable data oracle. Every listed endpoint's SHA-256 is in manifest.json.",
-  "generated_at": "2026-09-13 03:30 UTC",
+  "generated_at": "2026-09-13 03:32 UTC",
   "endpoints": {
     "latest": "latest.json",
     "anomalies": "anomalies.json",
