@@ -203,6 +203,24 @@ STRINGS: dict[str, dict[str, str]] = {
     # Agriculture placeholder (kept as fallback)
     "agri_soon_h": {"fr": "Agriculture", "ar": "الزراعة"},
 
+    # Briefing (state-of-Tunisia-water paragraph)
+    "briefing_eyebrow": {"fr": "Bulletin de la semaine", "ar": "نشرة الأسبوع"},
+
+    # Notable this week
+    "notable_h": {"fr": "À suivre cette semaine", "ar": "أبرز ما يجب متابعته هذا الأسبوع"},
+    "notable_dams_below": {"fr": "Barrages en baisse marquée", "ar": "سدود في تراجع واضح"},
+    "notable_dams_above": {"fr": "Barrages au-dessus de la normale", "ar": "سدود فوق المعدل"},
+    "notable_govs_below": {"fr": "Gouvernorats sous stress végétal", "ar": "ولايات تحت إجهاد نباتي"},
+    "notable_govs_above": {"fr": "Gouvernorats plus verts que la normale", "ar": "ولايات أكثر خضرة من المعدل"},
+    "notable_none": {"fr": "Pas d'anomalie significative cette semaine.", "ar": "لا شذوذ ملحوظ هذا الأسبوع."},
+
+    # Trend deltas
+    "delta_vs_last_run": {"fr": "vs semaine dernière", "ar": "مقارنة بالأسبوع الماضي"},
+    "delta_first_run": {"fr": "premier relevé", "ar": "أول قراءة"},
+
+    # Anomaly line label
+    "anomaly_line_label": {"fr": "Situation actuelle", "ar": "الوضع الحالي"},
+
     # Language picker (root landing)
     "picker_title": {"fr": "Choisir la langue", "ar": "اختر اللغة"},
     "picker_fr": {"fr": "Français", "ar": "Français"},

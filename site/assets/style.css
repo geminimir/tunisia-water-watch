@@ -372,6 +372,71 @@ html[dir="rtl"] .tiny { direction: ltr; text-align: end; unicode-bidi: embed; }
 .dam-header { margin: 0.5rem 0 1.5rem; }
 .dam-header h1 { font-size: 2rem; }
 .dam-header p { color: var(--muted); margin: 0.25rem 0 0; }
+.anomaly-line {
+  margin-top: 0.75rem !important;
+  padding: 0.75rem 1rem;
+  background: var(--brand-tint);
+  border-inline-start: 3px solid var(--brand);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  color: var(--ink-2) !important;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+html[dir="rtl"] .anomaly-line { border-radius: var(--radius-sm) 0 0 var(--radius-sm); }
+
+/* ---------- briefing (state of the week) ---------- */
+.briefing { margin-top: 0.5rem; }
+.briefing-body {
+  color: var(--ink-2);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0.4rem 0 0;
+  max-width: 640px;
+}
+
+/* ---------- notable this week ---------- */
+.notable { margin: 2rem 0; }
+.notable-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+.notable-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.15rem;
+  box-shadow: var(--shadow-sm);
+}
+.notable-panel .eyebrow { margin-bottom: 0.5rem; }
+.notable-panel ul { list-style: none; padding: 0; margin: 0; }
+.notable-panel li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.35rem 0;
+  border-bottom: 1px dashed var(--border);
+  font-size: 0.92rem;
+}
+.notable-panel li:last-child { border-bottom: none; }
+.notable-panel li a { font-weight: 500; color: var(--ink); border-bottom: none; }
+.notable-panel li a:hover { color: var(--brand); }
+.notable-panel .num { font-variant-numeric: tabular-nums; color: var(--ink-2); margin-inline-start: auto; }
+
+/* ---------- deltas on hero stats ---------- */
+.stat-delta { margin-top: 0.5rem; font-size: 0.78rem; }
+.delta {
+  display: inline-block;
+  padding: 0.05rem 0.4rem;
+  border-radius: 4px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  margin-inline-end: 0.4rem;
+}
+.delta-up   { background: rgba(47, 125, 92, 0.15); color: var(--green); }
+.delta-down { background: rgba(176, 54, 28, 0.12); color: var(--red); }
+.delta-flat { background: rgba(20, 22, 30, 0.05); color: var(--muted); }
+.delta-note { color: var(--muted); font-size: 0.78rem; }
 
 /* ---------- banner ---------- */
 

@@ -43,6 +43,7 @@ from i18n import (
     LANGUAGES, DEFAULT_LANG, t_for,
     translate_band, translate_focus, translate_region, translate_status,
 )
+from narrative import build_briefing, build_dam_line, build_gov_line, build_notable
 
 ROOT = Path(__file__).resolve().parent.parent
 TEMPLATES = ROOT / "templates"
@@ -54,6 +55,7 @@ GOV_CSV = DATA / "gov_readings.csv"
 LATEST_JSON = DATA / "latest.json"
 DAMS_JSON = ROOT / "config" / "dams.json"
 GOV_JSON = ROOT / "config" / "governorates.json"
+COMPOSITE_HISTORY = DATA / "composite_history.csv"
 
 MIN_MONTH_SAMPLES = 3
 MIN_ANNUAL_SAMPLES = 12
@@ -298,6 +300,48 @@ def _monthly_medians(series: list[dict], key: str) -> dict[str, float]:
     return {ym: statistics.median(vs) for ym, vs in sorted(buckets.items())}
 
 
+def _composite_history_previous() -> dict[str, float] | None:
+    """Return the previous run's national metrics for delta computation."""
+    if not COMPOSITE_HISTORY.exists():
+        return None
+    with COMPOSITE_HISTORY.open() as fh:
+        rows = list(csv.DictReader(fh))
+    if not rows:
+        return None
+    last = rows[-1]
+    out: dict[str, float] = {}
+    for k in ("national_composite", "reservoir_index", "national_surface_km2"):
+        try:
+            if last.get(k):
+                out[k] = float(last[k])
+        except ValueError:
+            pass
+    return out
+
+
+def _composite_history_append(date_str: str, composite: float | None,
+                              reservoir_index: float | None,
+                              surface_km2: float) -> None:
+    header = ["date", "national_composite", "reservoir_index", "national_surface_km2"]
+    write_header = not COMPOSITE_HISTORY.exists()
+    with COMPOSITE_HISTORY.open("a", newline="") as fh:
+        w = csv.writer(fh)
+        if write_header:
+            w.writerow(header)
+        w.writerow([
+            date_str,
+            f"{composite:.3f}" if composite is not None else "",
+            f"{reservoir_index:.3f}" if reservoir_index is not None else "",
+            f"{surface_km2:.3f}",
+        ])
+
+
+def _delta(current: float | None, previous: float | None) -> float | None:
+    if current is None or previous is None:
+        return None
+    return current - previous
+
+
 def _span_days(rows: list[dict]) -> int:
     dates: list[datetime] = []
     for r in rows:
@@ -515,7 +559,7 @@ def _attach_sparklines(dam_view: list[dict], gov_view: list[dict],
 
 def _render_language_tree(
     env: Environment, lang: str, ctx: dict[str, Any], github_repo: str,
-) -> None:
+) -> str:
     lang_root = SITE / lang
     lang_root.mkdir(parents=True, exist_ok=True)
     (lang_root / "dam").mkdir(parents=True, exist_ok=True)
@@ -527,6 +571,17 @@ def _render_language_tree(
     dam_view, gov_view = _view_for_lang(ctx["dam_view"], ctx["gov_view"], lang)
     _attach_sparklines(dam_view, gov_view, ctx["per_dam"], ctx["per_gov"])
 
+    # Per-entity narrative lines used on detail pages.
+    month_now = ctx["now"].month
+    history_years = max(1, _span_days(ctx["rows"]) // 365)
+    for d in dam_view:
+        d["anomaly_line"] = build_dam_line(d, lang, month_now, history_years)
+    for g in gov_view:
+        g["anomaly_line"] = build_gov_line(g, lang, month_now, history_years)
+
+    briefing = build_briefing(ctx, lang)
+    notable = build_notable(ctx, lang)
+
     common = {
         "t": t,
         "lang": lang, "other_lang": other, "dir": direction,
@@ -535,7 +590,15 @@ def _render_language_tree(
         "github_repo": github_repo,
         "stale_days": ctx["stale_days"], "is_stale": ctx["is_stale"],
         "staleness_days": STALENESS_DAYS,
+        "deltas": ctx.get("deltas") or {},
+        "briefing": briefing,
+        "notable": notable,
     }
+
+    # Save the briefing to a stable path (both under site/ for Pages and
+    # under the oracle for verifiable consumers).
+    lang_root_dir = SITE / lang
+    (lang_root_dir / "briefing.txt").write_text(briefing)
 
     total_area = ctx["total_area"]
     total_avg = ctx["total_avg"]
@@ -611,6 +674,8 @@ def _render_language_tree(
             series_json=json.dumps(series, default=str),
             **common,
         ))
+
+    return briefing
 
 
 # ------------------------- language picker landing -------------------------
@@ -858,13 +923,38 @@ def render_site(github_repo: str = "geminimir/water-watch") -> None:
     SITE.mkdir(parents=True, exist_ok=True)
     ctx = _prepare_data()
 
+    # Trend deltas vs previous run: read history first (before we append this run).
+    prev = _composite_history_previous()
+    ctx["deltas"] = {
+        "composite": _delta(ctx["composite_score"], (prev or {}).get("national_composite")),
+        "reservoir_index": _delta(ctx["drought_index"], (prev or {}).get("reservoir_index")),
+        "surface_km2": _delta(ctx["total_area"], (prev or {}).get("national_surface_km2")),
+    }
+
     _write_latest_and_data(ctx)
     _write_oracle(ctx)
 
+    briefings: dict[str, str] = {}
     for lang in LANGUAGES:
-        _render_language_tree(env, lang, ctx, github_repo)
+        b = _render_language_tree(env, lang, ctx, github_repo)
+        briefings[lang] = b
 
     _write_picker()
+
+    # Publish briefings under the oracle for machine consumers.
+    oracle_dir = SITE / "oracle"
+    oracle_dir.mkdir(parents=True, exist_ok=True)
+    for lang, text in briefings.items():
+        (oracle_dir / f"briefing_{lang}.txt").write_text(text)
+    (oracle_dir / "briefing_latest.txt").write_text(briefings.get(DEFAULT_LANG, ""))
+
+    # Now append this run to the history so next run has a "previous".
+    _composite_history_append(
+        ctx["now"].strftime("%Y-%m-%d"),
+        ctx["composite_score"],
+        ctx["drought_index"],
+        ctx["total_area"],
+    )
 
 
 if __name__ == "__main__":

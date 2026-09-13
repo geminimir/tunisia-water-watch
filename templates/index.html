@@ -26,14 +26,38 @@
   <div>
     <div class="head-label">{{ t.stat_composite_severity|replace("({band})", "")|replace(" ()", "") }}</div>
     <h1>{{ t.index_hero_title }}</h1>
+    {% if briefing %}
+    <div class="briefing">
+      <div class="eyebrow">{{ t.briefing_eyebrow }}</div>
+      <p class="briefing-body">{{ briefing }}</p>
+    </div>
+    {% else %}
     <p class="body">{{ t.index_hero_body|replace("{n}", dams|length|string) }}</p>
+    {% endif %}
   </div>
 </section>
+
+{% macro delta_pill(delta, unit='pts', good_is_up=True) %}
+  {% if delta is not none %}
+    {% set d = delta|round(1) %}
+    {% if d|abs < 0.05 %}
+      <span class="delta delta-flat">→ 0 {{ unit }}</span>
+    {% elif d > 0 %}
+      <span class="delta {{ 'delta-up' if good_is_up else 'delta-down' }}">↑ {{ d }} {{ unit }}</span>
+    {% else %}
+      <span class="delta {{ 'delta-down' if good_is_up else 'delta-up' }}">↓ {{ d|abs }} {{ unit }}</span>
+    {% endif %}
+    <span class="delta-note">{{ t.delta_vs_last_run }}</span>
+  {% else %}
+    <span class="delta-note">{{ t.delta_first_run }}</span>
+  {% endif %}
+{% endmacro %}
 
 <section class="stats">
   <div class="stat">
     <div class="stat-value">{{ total_area_km2|round(1) }} km²</div>
     <div class="stat-label">{{ t.stat_total_area }}</div>
+    <div class="stat-delta">{{ delta_pill(deltas.surface_km2, 'km²', good_is_up=True) }}</div>
   </div>
   <div class="stat">
     <div class="stat-value">{{ dams_read }}/{{ dams|length }}</div>
@@ -46,8 +70,64 @@
   <div class="stat drought-{{ 'red' if drought_index is not none and drought_index < 60 else ('yellow' if drought_index is not none and drought_index < 85 else 'green') }}">
     <div class="stat-value">{{ (drought_index|round(0))|int if drought_index is not none else "—" }}</div>
     <div class="stat-label">{{ t.stat_reservoir_index }}</div>
+    <div class="stat-delta">{{ delta_pill(deltas.reservoir_index, 'pts', good_is_up=True) }}</div>
   </div>
 </section>
+
+{% if notable and (notable.dams_below or notable.dams_above or notable.govs_below) %}
+<section class="notable">
+  <h2>{{ t.notable_h }}</h2>
+  <div class="notable-grid">
+    {% if notable.dams_below %}
+    <div class="notable-panel">
+      <div class="eyebrow">{{ t.notable_dams_below }}</div>
+      <ul>
+        {% for d in notable.dams_below %}
+        <li>
+          <a href="dam/{{ d.id }}.html">{{ d.name }}</a>
+          <span class="tiny">·</span>
+          <span class="num">{{ "%.0f"|format(d.pct_of_avg) if d.pct_of_avg is not none else "—" }}%</span>
+          <span class="delta-note">z = {{ "%.1f"|format(d.z_score) }}</span>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
+    {% if notable.dams_above %}
+    <div class="notable-panel">
+      <div class="eyebrow">{{ t.notable_dams_above }}</div>
+      <ul>
+        {% for d in notable.dams_above %}
+        <li>
+          <a href="dam/{{ d.id }}.html">{{ d.name }}</a>
+          <span class="tiny">·</span>
+          <span class="num">{{ "%.0f"|format(d.pct_of_avg) if d.pct_of_avg is not none else "—" }}%</span>
+          <span class="delta-note">z = {{ "%.1f"|format(d.z_score) }}</span>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
+    {% if notable.govs_below %}
+    <div class="notable-panel">
+      <div class="eyebrow">{{ t.notable_govs_below }}</div>
+      <ul>
+        {% for g in notable.govs_below %}
+        <li>
+          <a href="governorate/{{ g.id }}.html">{{ g.name }}</a>
+          <span class="tiny">·</span>
+          <span class="num">NDVI {{ "%.3f"|format(g.mean_ndvi) if g.mean_ndvi is not none else "—" }}</span>
+          <span class="delta-note">z = {{ "%.1f"|format(g.z_ndvi) }}</span>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% endif %}
 
 <section class="map-section">
   <div id="map"></div>

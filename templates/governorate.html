@@ -12,6 +12,9 @@
 <section class="dam-header">
   <h1>{{ gov.display_name }}</h1>
   <p class="muted">{{ t.meta_region_of|replace("{v}", gov.display_region) }} · {{ t.meta_focus|replace("{v}", gov.display_focus) }}</p>
+  {% if gov.anomaly_line %}
+  <p class="anomaly-line">{{ gov.anomaly_line }}</p>
+  {% endif %}
 </section>
 
 <section class="stats">
